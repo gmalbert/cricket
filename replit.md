@@ -11,7 +11,7 @@ IPL T20 cricket betting analytics platform built with Streamlit. Provides win pr
 
 ## Project Structure
 ```
-app.py                    - Main Streamlit entry point
+predictions.py            - Main Streamlit entry point
 pages_app/
   todays_matches.py       - Page 1: Live fixtures + win probabilities
   player_props.py         - Page 2: Batter/bowler prop projections
@@ -50,5 +50,5 @@ docs/
 
 ## Running
 ```bash
-streamlit run app.py --server.port 5000 --server.address 0.0.0.0
+streamlit run predictions.py --server.port 5000 --server.address 0.0.0.0
 ```
