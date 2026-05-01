@@ -1,1 +1,14 @@
 venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Large raw data files — downloaded nightly by the pipeline, not committed
+cache/raw/
+
+# Model binaries — re-trained each nightly run
+cache/models/
+
+# Cached JSON predictions ARE committed (nightly pipeline pushes them)
+# cache/*.json  ← intentionally not ignored

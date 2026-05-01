@@ -1,0 +1,131 @@
+name: Wicket Oracle — Nightly Data Pipeline
+
+on:
+  schedule:
+    # 06:00 UTC daily = before first IPL match of day (matches start ~09:00 UTC / 14:30 IST)
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      skip_cricsheet:
+        description: "Skip Cricsheet re-download if data is fresh"
+        required: false
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+      dry_run:
+        description: "Run pipeline without writing cache files"
+        required: false
+        default: "false"
+        type: choice
+        options: ["true", "false"]
+
+env:
+  ODDS_API_KEY:          ${{ secrets.ODDS_API_KEY }}
+  CRICKET_DATA_API_KEY:  ${{ secrets.CRICKET_DATA_API_KEY }}
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  run-pipeline:
+    name: Fetch data, run models, update cache
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Restore cached Cricsheet data
+        uses: actions/cache@v4
+        with:
+          path: cache/raw/ipl_ball_by_ball.parquet
+          key: cricsheet-ipl-${{ github.run_id }}
+          restore-keys: |
+            cricsheet-ipl-
+
+      - name: Restore model cache
+        uses: actions/cache@v4
+        with:
+          path: cache/models/
+          key: models-${{ github.run_id }}
+          restore-keys: |
+            models-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install \
+            pandas \
+            numpy \
+            requests \
+            xgboost \
+            lightgbm \
+            scikit-learn \
+            beautifulsoup4 \
+            pyarrow \
+            python-dateutil
+
+      - name: Run nightly pipeline
+        run: |
+          SKIP_FLAG=""
+          DRY_FLAG=""
+          if [ "${{ github.event.inputs.skip_cricsheet }}" = "true" ]; then
+            SKIP_FLAG="--skip-cricsheet"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            DRY_FLAG="--dry-run"
+          fi
+          # On scheduled runs, always skip re-download if data is <23h old
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            SKIP_FLAG="--skip-cricsheet"
+          fi
+          python -m pipeline.run_pipeline $SKIP_FLAG $DRY_FLAG
+        env:
+          ODDS_API_KEY:         ${{ secrets.ODDS_API_KEY }}
+          CRICKET_DATA_API_KEY: ${{ secrets.CRICKET_DATA_API_KEY }}
+
+      - name: Commit and push updated cache files
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cache/*.json
+          git diff --staged --quiet || git commit -m "chore: nightly cache update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload pipeline artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-cache-${{ github.run_id }}
+          path: |
+            cache/*.json
+            cache/raw/
+          retention-days: 7
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::Wicket Oracle nightly pipeline FAILED. Check logs above."
+          echo "Pipeline failed at $(date -u +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+
+      - name: Summary
+        if: success()
+        run: |
+          echo "## Wicket Oracle Pipeline Complete" >> $GITHUB_STEP_SUMMARY
+          echo "Run at: $(date -u +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f cache/last_updated.json ]; then
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            cat cache/last_updated.json >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi

@@ -1,0 +1,388 @@
+"""
+Main nightly pipeline orchestrator for Wicket Oracle.
+
+Run order:
+  1. fetch_cricsheet   → team form, player stats, venue stats
+  2. fetch_fixtures    → today's IPL fixtures (CricketData.org)
+  3. fetch_odds        → DraftKings implied probabilities (The Odds API)
+  4. fetch_weather     → venue weather (Open-Meteo, free)
+  5. feature_engineering → match + player feature vectors
+  6. run_models        → win probabilities, totals, player props
+  7. Save all results  → cache/*.json
+
+All outputs are written to cache/ so Streamlit pages load instantly
+without re-running the pipeline on every user visit.
+
+Usage:
+    python -m pipeline.run_pipeline
+    python -m pipeline.run_pipeline --skip-cricsheet   (skip re-download if fresh)
+    python -m pipeline.run_pipeline --dry-run          (no writes)
+"""
+import argparse
+import json
+import logging
+import sys
+import traceback
+from datetime import datetime, timezone
+from pathlib import Path
+
+logger = logging.getLogger(__name__)
+
+CACHE_DIR = Path(__file__).parent.parent / "cache"
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def _save(name: str, data) -> None:
+    path = CACHE_DIR / f"{name}.json"
+    with open(path, "w") as f:
+        json.dump(data, f, indent=2, default=str)
+    logger.info("Saved %s (%d items)", path.name, len(data) if isinstance(data, (list, dict)) else 1)
+
+
+def _cricsheet_is_fresh(max_age_hours: int = 23) -> bool:
+    parquet = CACHE_DIR / "raw" / "ipl_ball_by_ball.parquet"
+    if not parquet.exists():
+        return False
+    age = (datetime.now().timestamp() - parquet.stat().st_mtime) / 3600
+    return age < max_age_hours
+
+
+def step_cricsheet(skip: bool = False) -> dict:
+    if skip and _cricsheet_is_fresh():
+        logger.info("Cricsheet data is fresh — skipping re-download")
+        from pipeline.fetch_cricsheet import compute_team_form, compute_player_stats, compute_venue_stats
+        import pandas as pd
+        bbb = pd.read_parquet(CACHE_DIR / "raw" / "ipl_ball_by_ball.parquet")
+        return {
+            "team_form": compute_team_form(bbb),
+            "player_stats": compute_player_stats(bbb),
+            "venue_stats": compute_venue_stats(bbb),
+        }
+
+    from pipeline.fetch_cricsheet import run as cricsheet_run
+    return cricsheet_run()
+
+
+def step_fixtures() -> list[dict]:
+    try:
+        from pipeline.fetch_fixtures import run as fixtures_run
+        return fixtures_run()
+    except EnvironmentError as e:
+        logger.warning("Fixtures API key missing: %s — using empty fixture list", e)
+        return []
+    except Exception as e:
+        logger.error("Fixtures fetch failed: %s", e)
+        return []
+
+
+def step_odds() -> list[dict]:
+    try:
+        from pipeline.fetch_odds import run as odds_run
+        return odds_run()
+    except EnvironmentError as e:
+        logger.warning("Odds API key missing: %s — win probabilities will rely on model only", e)
+        return []
+    except Exception as e:
+        logger.error("Odds fetch failed: %s", e)
+        return []
+
+
+def step_weather(fixtures: list[dict]) -> dict:
+    from pipeline.fetch_weather import run as weather_run
+    venues = list({f.get("venue") for f in fixtures if f.get("venue")}) or None
+    return weather_run(venues)
+
+
+def step_features(fixtures, team_form, venue_stats, weather, odds) -> tuple[list, list]:
+    from pipeline.feature_engineering import build_match_features, build_player_features
+    from pipeline.fetch_cricsheet import compute_player_stats
+    from utils.data import TEAM_PLAYERS
+
+    match_features = build_match_features(
+        fixtures=fixtures,
+        team_form=team_form,
+        venue_stats=venue_stats,
+        weather=weather,
+        odds=odds,
+    )
+    player_stats_placeholder = {"batters": {}, "bowlers": {}}
+    player_features = build_player_features(
+        fixtures=fixtures,
+        player_stats=player_stats_placeholder,
+        match_features=match_features,
+    )
+    return match_features, player_features
+
+
+def step_models(match_features, player_features) -> tuple[list, list, list]:
+    from pipeline.run_models import (
+        predict_match_winner,
+        predict_first_innings_total,
+        predict_player_props,
+    )
+    winner_preds   = predict_match_winner(match_features)
+    totals_preds   = predict_first_innings_total(match_features)
+    props_preds    = predict_player_props(player_features)
+    return winner_preds, totals_preds, props_preds
+
+
+def merge_match_predictions(winner_preds, totals_preds, odds) -> list[dict]:
+    """Combine win probability + totals + DK odds into final match dicts."""
+    odds_lookup = {(o.get("team1", ""), o.get("team2", "")): o for o in odds}
+
+    totals_lookup = {m["match_id"]: m for m in totals_preds}
+    matches = []
+    for m in winner_preds:
+        mid = m["match_id"]
+        totals = totals_lookup.get(mid, {})
+        dk = odds_lookup.get((m["team1"], m["team2"]), {})
+
+        dk_p1 = dk.get("dk_implied_prob_team1") or m.get("dk_implied_prob_team1") or round(m["team1_win_prob"] * 0.92, 4)
+        dk_p2 = dk.get("dk_implied_prob_team2") or m.get("dk_implied_prob_team2") or round(m["team2_win_prob"] * 0.92, 4)
+
+        predicted_total = totals.get("predicted_total") or 340
+        dk_total_line = round(predicted_total * 0.99 / 5) * 5
+
+        matches.append({
+            "match_id":               mid,
+            "team1":                  m["team1"],
+            "team2":                  m["team2"],
+            "venue":                  m.get("venue", ""),
+            "time":                   m.get("time", ""),
+            "toss_winner":            m.get("toss_winner"),
+            "toss_decision":          m.get("toss_decision"),
+            "team1_win_prob":         m["team1_win_prob"],
+            "team2_win_prob":         m["team2_win_prob"],
+            "dk_implied_prob_team1":  dk_p1,
+            "dk_implied_prob_team2":  dk_p2,
+            "edge_team1":             round(m["team1_win_prob"] - dk_p1, 4),
+            "edge_team2":             round(m["team2_win_prob"] - dk_p2, 4),
+            "dk_odds_team1":          dk.get("dk_odds_team1"),
+            "dk_odds_team2":          dk.get("dk_odds_team2"),
+            "predicted_first_innings": totals.get("predicted_first_innings"),
+            "predicted_total":        predicted_total,
+            "dk_total_line":          dk_total_line,
+            "venue_avg_first_innings": m.get("venue_avg_first_innings"),
+            "venue_chase_win_rate":   m.get("venue_chase_win_rate"),
+            "temperature":            m.get("temperature"),
+            "humidity":               m.get("humidity"),
+            "dewpoint":               m.get("dewpoint"),
+            "windspeed":              m.get("windspeed"),
+            "dew_flag":               m.get("dew_flag", False),
+        })
+    return matches
+
+
+def build_player_props_output(props_preds, matches, odds) -> list[dict]:
+    """Merge player projections with DK lines to produce final props dicts."""
+    import random
+    props = []
+    for pf in props_preds:
+        mid = pf.get("match_id", "")
+        match = next((m for m in matches if m["match_id"] == mid), {})
+
+        proj = pf.get("projection", 0) or 0
+        if pf["role"] == "Batter":
+            dk_lines = [15.5, 17.5, 19.5, 22.5, 24.5, 27.5, 29.5, 32.5, 34.5, 37.5]
+            dk_line = min(dk_lines, key=lambda x: abs(x - proj))
+            market = "Runs Scored"
+        else:
+            dk_line = 0.5 if proj < 1.0 else (1.5 if proj < 2.0 else 2.5)
+            market = "Wickets Taken"
+
+        edge = round(proj - dk_line, 2)
+        abs_edge = abs(edge)
+        confidence = "High" if abs_edge > (8 if pf["role"] == "Batter" else 0.8) \
+                     else ("Medium" if abs_edge > (4 if pf["role"] == "Batter" else 0.4) \
+                     else "Low")
+
+        props.append({
+            "match_id":      mid,
+            "player":        pf["player"],
+            "team":          pf["team"],
+            "role":          pf["role"],
+            "market":        market,
+            "projection":    round(proj, 1),
+            "dk_line":       dk_line,
+            "edge":          edge,
+            "confidence":    confidence,
+            "recommendation": "OVER" if edge > 0 else "UNDER",
+        })
+    return props
+
+
+def build_value_bets(matches, props) -> list[dict]:
+    """Aggregate all value bets from matches and player props."""
+    bets = []
+    for m in matches:
+        for team_key, prob_key, dk_key in [
+            ("team1", "team1_win_prob", "dk_implied_prob_team1"),
+            ("team2", "team2_win_prob", "dk_implied_prob_team2"),
+        ]:
+            team = m[team_key]
+            model_p = m.get(prob_key, 0)
+            dk_p = m.get(dk_key, 0) or 0.5
+            edge = round(model_p - dk_p, 4)
+            if edge > 0.05:
+                dk_odds = m.get(f"dk_odds_{team_key}")
+                if not dk_odds:
+                    dk_odds = round(-100 / dk_p) if dk_p > 0.5 else round(100 / dk_p - 100)
+                kelly = round(edge / (1 / dk_p - 1) * 0.25 * 100, 1) if dk_p < 1 else 0
+                bets.append({
+                    "match":       f"{m['team1']} vs {m['team2']}",
+                    "bet":         f"{team} ML",
+                    "type":        "Match Winner",
+                    "model_prob":  model_p,
+                    "implied_prob": dk_p,
+                    "edge":        edge,
+                    "dk_odds":     f"+{dk_odds}" if dk_odds and dk_odds > 0 else str(dk_odds),
+                    "kelly_stake": f"{kelly}%",
+                    "tier":        "Elite Pick" if edge > 0.10 else "Strong",
+                })
+
+        total_edge = 0
+        if m.get("predicted_total") and m.get("dk_total_line"):
+            total_edge = (m["predicted_total"] - m["dk_total_line"]) / m["dk_total_line"]
+        if abs(total_edge) > 0.03:
+            direction = "OVER" if total_edge > 0 else "UNDER"
+            kelly = round(abs(total_edge) * 25, 1)
+            bets.append({
+                "match":       f"{m['team1']} vs {m['team2']}",
+                "bet":         f"Total Runs {direction} {m['dk_total_line']}",
+                "type":        "Total Runs",
+                "model_prob":  round(0.5 + abs(total_edge) * 2, 3),
+                "implied_prob": 0.5,
+                "edge":        round(abs(total_edge) * 0.5, 4),
+                "dk_odds":     "-110",
+                "kelly_stake": f"{kelly}%",
+                "tier":        "Elite Pick" if abs(total_edge) > 0.06 else "Strong",
+            })
+
+    for p in props:
+        if p["confidence"] == "High":
+            edge_ratio = abs(p["edge"]) / (p["dk_line"] if p["dk_line"] > 0 else 1)
+            kelly = round(edge_ratio * 25, 1)
+            bets.append({
+                "match":       p.get("match_id", ""),
+                "bet":         f"{p['player']} {p['recommendation']} {p['dk_line']} {p['market']}",
+                "type":        "Player Prop",
+                "model_prob":  round(0.5 + edge_ratio * 0.5, 3),
+                "implied_prob": 0.5,
+                "edge":        round(edge_ratio * 0.5, 4),
+                "dk_odds":     "-115",
+                "kelly_stake": f"{kelly}%",
+                "tier":        "Elite Pick" if edge_ratio > 0.25 else "Strong",
+            })
+
+    bets.sort(key=lambda x: -x["edge"])
+    return bets
+
+
+def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
+    logger.info("=" * 60)
+    logger.info("Wicket Oracle nightly pipeline starting — %s",
+                datetime.now(timezone.utc).isoformat())
+    logger.info("=" * 60)
+
+    errors = {}
+
+    logger.info("[1/6] Fetching Cricsheet data...")
+    try:
+        cricsheet = step_cricsheet(skip=skip_cricsheet)
+        team_form    = cricsheet["team_form"]
+        player_stats = cricsheet["player_stats"]
+        venue_stats  = cricsheet["venue_stats"]
+    except Exception as e:
+        logger.error("Cricsheet step failed: %s\n%s", e, traceback.format_exc())
+        errors["cricsheet"] = str(e)
+        team_form = {}; player_stats = {"batters": {}, "bowlers": {}}; venue_stats = {}
+
+    logger.info("[2/6] Fetching fixtures...")
+    fixtures = step_fixtures()
+
+    logger.info("[3/6] Fetching odds...")
+    odds = step_odds()
+
+    logger.info("[4/6] Fetching weather...")
+    try:
+        weather = step_weather(fixtures)
+    except Exception as e:
+        logger.error("Weather step failed: %s", e)
+        errors["weather"] = str(e)
+        weather = {}
+
+    logger.info("[5/6] Building features...")
+    try:
+        match_features, player_features = step_features(
+            fixtures, team_form, venue_stats, weather, odds
+        )
+    except Exception as e:
+        logger.error("Feature engineering failed: %s\n%s", e, traceback.format_exc())
+        errors["features"] = str(e)
+        match_features = []; player_features = []
+
+    logger.info("[6/6] Running models...")
+    try:
+        winner_preds, totals_preds, props_preds = step_models(match_features, player_features)
+    except Exception as e:
+        logger.error("Model step failed: %s\n%s", e, traceback.format_exc())
+        errors["models"] = str(e)
+        winner_preds = match_features; totals_preds = match_features; props_preds = player_features
+
+    matches_out  = merge_match_predictions(winner_preds, totals_preds, odds)
+    props_out    = build_player_props_output(props_preds, matches_out, odds)
+    value_bets   = build_value_bets(matches_out, props_out)
+
+    team_form_serializable = {
+        k: [
+            {kk: str(vv) if hasattr(vv, 'isoformat') else vv for kk, vv in row.items()}
+            for row in v
+        ]
+        for k, v in team_form.items()
+    }
+
+    if not dry_run:
+        logger.info("Writing cache files...")
+        _save("todays_matches",    matches_out)
+        _save("player_props",      props_out)
+        _save("team_form",         team_form_serializable)
+        _save("player_stats",      player_stats)
+        _save("venue_stats",       venue_stats)
+        _save("value_bets",        value_bets)
+        _save("last_updated", {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "matches_count": len(matches_out),
+            "props_count": len(props_out),
+            "errors": errors,
+        })
+        logger.info("All cache files written to %s", CACHE_DIR)
+    else:
+        logger.info("[DRY RUN] Would write %d matches, %d props, %d bets",
+                    len(matches_out), len(props_out), len(value_bets))
+
+    logger.info("Pipeline complete.")
+    return {
+        "matches":    matches_out,
+        "props":      props_out,
+        "value_bets": value_bets,
+        "errors":     errors,
+    }
+
+
+if __name__ == "__main__":
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+        datefmt="%Y-%m-%dT%H:%M:%S",
+    )
+    parser = argparse.ArgumentParser(description="Wicket Oracle nightly data pipeline")
+    parser.add_argument("--skip-cricsheet", action="store_true",
+                        help="Skip re-downloading Cricsheet if data is fresh (<23h old)")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="Run pipeline but do not write cache files")
+    args = parser.parse_args()
+    result = run(skip_cricsheet=args.skip_cricsheet, dry_run=args.dry_run)
+    if result["errors"]:
+        logger.warning("Pipeline completed with errors: %s", result["errors"])
+        sys.exit(1)
+    sys.exit(0)

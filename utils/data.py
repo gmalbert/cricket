@@ -5,6 +5,8 @@ import json
 from datetime import datetime, timedelta
 import random
 
+from utils.cache import load_cache, cache_exists
+
 IPL_TEAMS_2026 = [
     "Mumbai Indians",
     "Chennai Super Kings",
@@ -74,7 +76,141 @@ TEAM_PLAYERS = {
     },
 }
 
+
+# ---------------------------------------------------------------------------
+# Cache-first helpers
+# ---------------------------------------------------------------------------
+
 def get_todays_matches():
+    cached = load_cache("todays_matches")
+    if cached:
+        return cached
+    return _mock_todays_matches()
+
+
+def get_player_props(match):
+    cached = load_cache("player_props")
+    if cached:
+        mid = match.get("match_id", "")
+        match_props = [p for p in cached if p.get("match_id") == mid]
+        if match_props:
+            return match_props
+    return _mock_player_props(match)
+
+
+def get_team_form(team_name):
+    cached = load_cache("team_form")
+    if cached and team_name in cached:
+        raw = cached[team_name]
+        results = []
+        for i, entry in enumerate(raw[:10]):
+            results.append({
+                "match": i + 1,
+                "opponent": entry.get("opponent", "Unknown"),
+                "result": entry.get("result", "W"),
+                "score": entry.get("score", 160),
+                "opp_score": entry.get("opp_score", 155),
+                "powerplay_runs": entry.get("powerplay_runs") or 52,
+                "death_economy": entry.get("death_economy") or 10.2,
+                "date": entry.get("date", ""),
+            })
+        if results:
+            return results
+    return _mock_team_form(team_name)
+
+
+def get_value_bets(matches):
+    cached = load_cache("value_bets")
+    if cached:
+        return cached
+    return _mock_value_bets(matches)
+
+
+def get_batter_profile(player_name):
+    cached = load_cache("player_stats")
+    if cached:
+        batter = cached.get("batters", {}).get(player_name)
+        if batter:
+            random.seed(hash(player_name) % 7777)
+            career_avg = round(random.uniform(22, 52), 1)
+            sr = round(random.uniform(115, 165), 1)
+            return {
+                "name": player_name,
+                "career_avg": career_avg,
+                "career_sr": sr,
+                "recent_scores": batter.get("recent_scores", []),
+                "recent_avg": batter.get("recent_avg", career_avg),
+                "recent_sr": batter.get("recent_sr", sr),
+                "vs_pace_avg": round(career_avg * random.uniform(0.85, 1.1), 1),
+                "vs_spin_avg": round(career_avg * random.uniform(0.9, 1.15), 1),
+                "powerplay_avg": round(career_avg * random.uniform(0.7, 1.0), 1),
+                "boundaries_per_innings": round(random.uniform(2.5, 7.5), 1),
+            }
+    return _mock_batter_profile(player_name)
+
+
+def get_bowler_profile(player_name):
+    cached = load_cache("player_stats")
+    if cached:
+        bowler = cached.get("bowlers", {}).get(player_name)
+        if bowler:
+            random.seed(hash(player_name) % 5555)
+            career_econ = round(random.uniform(6.8, 9.5), 2)
+            return {
+                "name": player_name,
+                "career_economy": career_econ,
+                "wickets_per_match": round(random.uniform(0.8, 2.5), 2),
+                "recent_economy": bowler.get("recent_economy", career_econ),
+                "death_economy": round(career_econ * random.uniform(1.05, 1.35), 2),
+                "powerplay_economy": round(career_econ * random.uniform(0.8, 1.0), 2),
+                "vs_lhb_economy": round(career_econ * random.uniform(0.92, 1.08), 2),
+                "vs_rhb_economy": round(career_econ * random.uniform(0.93, 1.07), 2),
+                "wickets_last5": bowler.get("wickets_last5", [1, 2, 0, 1, 2]),
+            }
+    return _mock_bowler_profile(player_name)
+
+
+def get_venue_stats():
+    cached = load_cache("venue_stats")
+    if cached:
+        merged = {}
+        for name, static in IPL_VENUES.items():
+            live = cached.get(name, {})
+            merged[name] = {
+                **static,
+                "avg_first_innings": live.get("avg_first_innings") or static["avg_first_innings"],
+                "chase_win_rate": live.get("chase_win_rate") or static["chase_win_rate"],
+            }
+        return merged
+    return IPL_VENUES
+
+
+def get_ipl_schedule():
+    cached = load_cache("schedule")
+    if cached:
+        return cached
+    return _mock_ipl_schedule()
+
+
+def get_points_table():
+    cached = load_cache("points_table")
+    if cached:
+        return cached
+    return _mock_points_table()
+
+
+def get_model_performance():
+    cached = load_cache("model_performance")
+    if cached:
+        return cached
+    return _mock_model_performance()
+
+
+# ---------------------------------------------------------------------------
+# Mock data fallbacks (used when no cache is present)
+# ---------------------------------------------------------------------------
+
+def _mock_todays_matches():
     random.seed(42)
     teams = IPL_TEAMS_2026.copy()
     random.shuffle(teams)
@@ -83,7 +219,7 @@ def get_todays_matches():
     match_times = ["14:00 IST", "18:00 IST", "20:00 IST"]
     for i in range(0, min(4, len(teams)), 2):
         t1 = teams[i]
-        t2 = teams[i+1]
+        t2 = teams[i + 1]
         venue = random.choice(venues)
         venue_info = IPL_VENUES[venue]
         p1 = round(random.uniform(0.40, 0.65), 3)
@@ -92,14 +228,15 @@ def get_todays_matches():
         dk_line2 = round(1 - dk_line1, 3)
         edge1 = round(p1 - dk_line1, 3)
         edge2 = round(p2 - dk_line2, 3)
-        weather = get_venue_weather(venue_info["lat"], venue_info["lon"])
+        weather = _fetch_weather(venue_info["lat"], venue_info["lon"])
+        time_str = match_times[i // 2] if i // 2 < len(match_times) else "20:00 IST"
         matches.append({
             "match_id": f"IPL2026_M{50+i}",
             "team1": t1,
             "team2": t2,
             "venue": venue,
             "city": venue_info["city"],
-            "time": match_times[i // 2] if i // 2 < len(match_times) else "20:00 IST",
+            "time": time_str,
             "team1_win_prob": p1,
             "team2_win_prob": p2,
             "dk_implied_prob_team1": dk_line1,
@@ -114,11 +251,12 @@ def get_todays_matches():
             "toss_decision": None,
             "temperature": weather.get("temperature", 28),
             "humidity": weather.get("humidity", 60),
-            "dew_flag": weather.get("humidity", 60) > 75 and "20:00" in match_times[i // 2 if i // 2 < len(match_times) else -1],
+            "dew_flag": weather.get("humidity", 60) > 75 and "20:00" in time_str,
         })
     return matches
 
-def get_venue_weather(lat, lon):
+
+def _fetch_weather(lat, lon):
     try:
         url = (
             f"https://api.open-meteo.com/v1/forecast"
@@ -138,14 +276,18 @@ def get_venue_weather(lat, lon):
         pass
     return {"temperature": 28, "humidity": 60}
 
-def get_team_form(team_name):
+
+# Keep old name as alias for backward-compat
+get_venue_weather = _fetch_weather
+
+
+def _mock_team_form(team_name):
     random.seed(hash(team_name) % 1000)
     results = []
     for i in range(10):
         opp = random.choice([t for t in IPL_TEAMS_2026 if t != team_name])
         won = random.random() > 0.45
         score = random.randint(145, 210)
-        opp_score = random.randint(145, 210) if not won else random.randint(120, score - 5)
         if won:
             opp_score = random.randint(120, score - 5)
         else:
@@ -160,11 +302,12 @@ def get_team_form(team_name):
             "opp_score": opp_score,
             "powerplay_runs": powerplay,
             "death_economy": death,
-            "date": (datetime.now() - timedelta(days=(10-i)*4)).strftime("%b %d"),
+            "date": (datetime.now() - timedelta(days=(10 - i) * 4)).strftime("%b %d"),
         })
     return results
 
-def get_ipl_schedule():
+
+def _mock_ipl_schedule():
     random.seed(2026)
     schedule = []
     teams = IPL_TEAMS_2026.copy()
@@ -176,15 +319,12 @@ def get_ipl_schedule():
         random.shuffle(shuffled)
         for i in range(0, len(shuffled), 2):
             t1 = shuffled[i]
-            t2 = shuffled[i+1]
-            match_date = base_date + timedelta(days=week*7 + i//2*2)
+            t2 = shuffled[i + 1]
+            match_date = base_date + timedelta(days=week * 7 + i // 2 * 2)
             venue = random.choice(venues)
             p1 = round(random.uniform(0.38, 0.62), 2)
             played = match_date < datetime.now()
-            if played:
-                winner = t1 if random.random() < p1 else t2
-            else:
-                winner = None
+            winner = (t1 if random.random() < p1 else t2) if played else None
             schedule.append({
                 "match": match_num,
                 "date": match_date.strftime("%b %d"),
@@ -199,7 +339,8 @@ def get_ipl_schedule():
             match_num += 1
     return schedule
 
-def get_points_table():
+
+def _mock_points_table():
     random.seed(99)
     table = []
     for team in IPL_TEAMS_2026:
@@ -214,53 +355,42 @@ def get_points_table():
             "L": lost,
             "NRR": nrr,
             "Pts": won * 2,
-            "Playoff Prob": round(min(0.98, max(0.02, 0.5 + (won/played - 0.5) * 2 + nrr * 0.1)), 2),
+            "Playoff Prob": round(min(0.98, max(0.02, 0.5 + (won / played - 0.5) * 2 + nrr * 0.1)), 2),
         })
     table.sort(key=lambda x: (-x["Pts"], -x["NRR"]))
     for i, row in enumerate(table):
         row["Pos"] = i + 1
     return table
 
-def get_player_props(match):
+
+def _mock_player_props(match):
     random.seed(hash(match["match_id"]) % 9999)
     props = []
-    for team, role in [(match["team1"], "BAT"), (match["team2"], "BAT")]:
-        players = TEAM_PLAYERS.get(team, {}).get("batters", [])
-        for p in players[:4]:
+    for team in [match["team1"], match["team2"]]:
+        for p in TEAM_PLAYERS.get(team, {}).get("batters", [])[:4]:
             proj = round(random.uniform(12, 55), 1)
             dk_line = round(random.choice([15.5, 17.5, 19.5, 22.5, 24.5, 27.5, 29.5, 32.5, 34.5, 37.5]))
             edge = round(proj - dk_line, 1)
             props.append({
-                "player": p,
-                "team": team,
-                "role": "Batter",
-                "market": "Runs Scored",
-                "projection": proj,
-                "dk_line": dk_line,
-                "edge": edge,
+                "player": p, "team": team, "role": "Batter", "market": "Runs Scored",
+                "projection": proj, "dk_line": dk_line, "edge": edge,
                 "confidence": "High" if abs(edge) > 8 else ("Medium" if abs(edge) > 4 else "Low"),
                 "recommendation": "OVER" if edge > 0 else "UNDER",
             })
-    for team in [match["team1"], match["team2"]]:
-        bowlers = TEAM_PLAYERS.get(team, {}).get("bowlers", [])
-        for b in bowlers[:3]:
+        for b in TEAM_PLAYERS.get(team, {}).get("bowlers", [])[:3]:
             proj = round(random.uniform(0.5, 3.2), 1)
             dk_line = random.choice([0.5, 1.5, 2.5])
             edge = round(proj - dk_line, 1)
             props.append({
-                "player": b,
-                "team": team,
-                "role": "Bowler",
-                "market": "Wickets Taken",
-                "projection": proj,
-                "dk_line": dk_line,
-                "edge": edge,
+                "player": b, "team": team, "role": "Bowler", "market": "Wickets Taken",
+                "projection": proj, "dk_line": dk_line, "edge": edge,
                 "confidence": "High" if abs(edge) > 0.8 else ("Medium" if abs(edge) > 0.4 else "Low"),
                 "recommendation": "OVER" if edge > 0 else "UNDER",
             })
     return props
 
-def get_batter_profile(player_name):
+
+def _mock_batter_profile(player_name):
     random.seed(hash(player_name) % 7777)
     career_avg = round(random.uniform(22, 52), 1)
     sr = round(random.uniform(115, 165), 1)
@@ -278,7 +408,8 @@ def get_batter_profile(player_name):
         "boundaries_per_innings": round(random.uniform(2.5, 7.5), 1),
     }
 
-def get_bowler_profile(player_name):
+
+def _mock_bowler_profile(player_name):
     random.seed(hash(player_name) % 5555)
     economy = round(random.uniform(6.8, 9.5), 2)
     wickets_pm = round(random.uniform(0.8, 2.5), 2)
@@ -294,7 +425,8 @@ def get_bowler_profile(player_name):
         "wickets_last5": [random.randint(0, 4) for _ in range(5)],
     }
 
-def get_model_performance():
+
+def _mock_model_performance():
     seasons = ["IPL 2024", "IPL 2025"]
     metrics = {}
     for season in seasons:
@@ -309,41 +441,37 @@ def get_model_performance():
             "props_roi": round(random.uniform(-8, 15), 1),
             "total_bets": random.randint(120, 280),
             "winning_bets": random.randint(70, 180),
-            "calibration_data": [(round(i * 0.1, 1), round(i * 0.1 + random.uniform(-0.05, 0.05), 3)) for i in range(1, 10)],
+            "calibration_data": [
+                (round(i * 0.1, 1), round(i * 0.1 + random.uniform(-0.05, 0.05), 3))
+                for i in range(1, 10)
+            ],
         }
     return metrics
 
-def get_value_bets(matches):
+
+def _mock_value_bets(matches):
     bets = []
     for m in matches:
-        if m["edge_team1"] > 0.05:
-            dk_odds = round(-100 / m["dk_implied_prob_team1"])
-            kelly = round(m["edge_team1"] / (1 / m["dk_implied_prob_team1"] - 1) * 0.25, 3)
-            bets.append({
-                "match": f"{m['team1']} vs {m['team2']}",
-                "bet": f"{m['team1']} ML",
-                "type": "Match Winner",
-                "model_prob": m["team1_win_prob"],
-                "implied_prob": m["dk_implied_prob_team1"],
-                "edge": m["edge_team1"],
-                "dk_odds": f"+{dk_odds}" if dk_odds > 0 else str(dk_odds),
-                "kelly_stake": f"{kelly*100:.1f}%",
-                "tier": "Elite Pick" if m["edge_team1"] > 0.10 else "Strong",
-            })
-        if m["edge_team2"] > 0.05:
-            dk_odds = round(-100 / m["dk_implied_prob_team2"])
-            kelly = round(m["edge_team2"] / (1 / m["dk_implied_prob_team2"] - 1) * 0.25, 3)
-            bets.append({
-                "match": f"{m['team1']} vs {m['team2']}",
-                "bet": f"{m['team2']} ML",
-                "type": "Match Winner",
-                "model_prob": m["team2_win_prob"],
-                "implied_prob": m["dk_implied_prob_team2"],
-                "edge": m["edge_team2"],
-                "dk_odds": f"+{dk_odds}" if dk_odds > 0 else str(dk_odds),
-                "kelly_stake": f"{kelly*100:.1f}%",
-                "tier": "Elite Pick" if m["edge_team2"] > 0.10 else "Strong",
-            })
+        for edge_key, team_key, prob_key, dk_key in [
+            ("edge_team1", "team1", "team1_win_prob", "dk_implied_prob_team1"),
+            ("edge_team2", "team2", "team2_win_prob", "dk_implied_prob_team2"),
+        ]:
+            edge = m.get(edge_key, 0)
+            dk_p = m.get(dk_key, 0.5) or 0.5
+            if edge > 0.05:
+                dk_odds = round(-100 / dk_p)
+                kelly = round(edge / (1 / dk_p - 1) * 0.25 * 100, 1)
+                bets.append({
+                    "match": f"{m['team1']} vs {m['team2']}",
+                    "bet": f"{m[team_key]} ML",
+                    "type": "Match Winner",
+                    "model_prob": m[prob_key],
+                    "implied_prob": dk_p,
+                    "edge": edge,
+                    "dk_odds": f"+{dk_odds}" if dk_odds > 0 else str(dk_odds),
+                    "kelly_stake": f"{kelly}%",
+                    "tier": "Elite Pick" if edge > 0.10 else "Strong",
+                })
         total_edge = (m["predicted_total"] - m["dk_total_line"]) / m["dk_total_line"]
         if abs(total_edge) > 0.03:
             bets.append({
@@ -354,7 +482,7 @@ def get_value_bets(matches):
                 "implied_prob": 0.5,
                 "edge": round(abs(total_edge) * 0.5, 3),
                 "dk_odds": "-110",
-                "kelly_stake": f"{round(abs(total_edge)*25, 1)}%",
+                "kelly_stake": f"{round(abs(total_edge) * 25, 1)}%",
                 "tier": "Elite Pick" if abs(total_edge) > 0.06 else "Strong",
             })
     bets.sort(key=lambda x: -x["edge"])
