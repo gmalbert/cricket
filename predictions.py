@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Wicket Oracle",
+    page_title="Wicket Odds",
     page_icon="🏏",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -23,7 +23,7 @@ PAGES = {
 def main():
     with st.sidebar:
         st.image("data_files/logo.png", width='stretch')
-        st.markdown("## Wicket Oracle")
+        st.markdown("## Wicket Odds")
         st.markdown("*Cricket Betting Analytics*")
         st.divider()
 
