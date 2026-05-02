@@ -398,6 +398,12 @@ def step_matchup_edge(team_form: dict, venue_stats: dict) -> dict:
     }
 
 
+def step_reconcile(dry_run: bool = False) -> tuple[list, int]:
+    """Reconcile yesterday's predictions against actual results."""
+    from pipeline.reconcile_predictions import run as recon_run
+    return recon_run(dry_run=dry_run)
+
+
 def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
     logger.info("=" * 60)
     logger.info("Wicket Oracle nightly pipeline starting — %s",
@@ -406,7 +412,16 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
 
     errors = {}
 
-    logger.info("[1/7] Fetching Cricsheet data...")
+    logger.info("[0/8] Reconciling yesterday's predictions...")
+    try:
+        prediction_log, n_new = step_reconcile(dry_run=dry_run)
+        logger.info("Reconciled %d new match results (log total=%d)", n_new, len(prediction_log))
+    except Exception as e:
+        logger.error("Reconciliation failed: %s", e)
+        errors["reconcile"] = str(e)
+        prediction_log = []
+
+    logger.info("[1/8] Fetching Cricsheet data...")
     try:
         cricsheet = step_cricsheet(skip=skip_cricsheet)
         team_form    = cricsheet["team_form"]
@@ -492,19 +507,24 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         _save("value_bets",            value_bets)
         _save("playoff_probabilities", mc_result)
         _save("matchup_edge_history",  edge_history)
+        # prediction_log is written by step_reconcile (at step 0); re-save here
+        # to capture any new records added during this run
+        if prediction_log:
+            _save("prediction_log", prediction_log)
         _save("last_updated", {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "matches_count": len(matches_out),
             "props_count": len(props_out),
             "monte_carlo_sims": mc_result.get("n_simulations", 0),
             "matchup_bets_analysed": edge_history.get("total_bets_analysed", 0),
+            "prediction_log_records": len(prediction_log),
             "errors": errors,
         })
         logger.info("All cache files written to %s", CACHE_DIR)
     else:
-        logger.info("[DRY RUN] Would write %d matches, %d props, %d bets, MC=%s, edge=%s",
+        logger.info("[DRY RUN] Would write %d matches, %d props, %d bets, MC=%s, edge=%s, log=%d",
                     len(matches_out), len(props_out), len(value_bets),
-                    bool(mc_result), bool(edge_history))
+                    bool(mc_result), bool(edge_history), len(prediction_log))
 
     logger.info("Pipeline complete.")
     return {
@@ -513,6 +533,7 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         "value_bets":           value_bets,
         "playoff_probabilities": mc_result,
         "matchup_edge_history": edge_history,
+        "prediction_log":       prediction_log,
         "errors":               errors,
     }
 
