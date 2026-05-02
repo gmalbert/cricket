@@ -42,7 +42,7 @@ def render():
             return ""
 
         styled = display_df.style.map(highlight_result, subset=["Result"])
-        st.dataframe(styled, hide_index=True, use_container_width=True)
+        st.dataframe(styled, hide_index=True, width='stretch')
 
     with tab2:
         st.subheader("Phase-by-Phase Scoring Breakdown")
@@ -60,18 +60,18 @@ def render():
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("**Batting Phase Averages**")
             phase_df = pd.DataFrame({"Phase": phases, "Avg Runs": runs, "Avg Wickets": wickets})
-            st.dataframe(phase_df, hide_index=True, use_container_width=True)
+            st.dataframe(phase_df, hide_index=True, width='stretch')
         with col2:
             st.markdown("**Economy Rate by Phase (Bowling)**")
             bowling_econ = [round(random.uniform(6.8, 8.2), 2) for _ in phases]
             bowl_df = pd.DataFrame({"Phase": phases, "Economy": bowling_econ})
-            st.dataframe(bowl_df, hide_index=True, use_container_width=True)
+            st.dataframe(bowl_df, hide_index=True, width='stretch')
 
     with tab3:
         st.subheader("Venue Record")
@@ -91,7 +91,7 @@ def render():
                 "Avg Score": avg,
             })
         vdf = pd.DataFrame(venue_records)
-        st.dataframe(vdf, hide_index=True, use_container_width=True)
+        st.dataframe(vdf, hide_index=True, width='stretch')
 
     with tab4:
         st.subheader("Head-to-Head vs All Teams (Last 10 T20s)")
@@ -124,4 +124,4 @@ def render():
             return ""
 
         styled = h2h_df.style.map(highlight_result, subset=["Result"])
-        st.dataframe(styled, hide_index=True, use_container_width=True)
+        st.dataframe(styled, hide_index=True, width='stretch')

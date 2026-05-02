@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+*.code-workspace
 
 # Large raw data files — downloaded nightly by the pipeline, not committed
 cache/raw/

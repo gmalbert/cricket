@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast"
 
 VENUE_COORDS = {
+    # Short names (used internally)
     "Wankhede Stadium":                              {"lat": 18.9388, "lon": 72.8258},
     "MA Chidambaram Stadium":                        {"lat": 13.0629, "lon": 80.2792},
     "M. Chinnaswamy Stadium":                        {"lat": 12.9791, "lon": 77.5496},
@@ -21,6 +22,20 @@ VENUE_COORDS = {
     "Sawai Mansingh Stadium":                        {"lat": 26.8949, "lon": 75.8009},
     "BRSABV Ekana Cricket Stadium":                  {"lat": 26.8467, "lon": 80.9462},
     "Himachal Pradesh Cricket Association Stadium":  {"lat": 32.2198, "lon": 76.3234},
+    "Maharaja Yadavindra Singh International Cricket Stadium": {"lat": 30.6942, "lon": 76.7336},
+    # City-qualified names returned by the fixtures API
+    "Wankhede Stadium, Mumbai":                      {"lat": 18.9388, "lon": 72.8258},
+    "MA Chidambaram Stadium, Chennai":               {"lat": 13.0629, "lon": 80.2792},
+    "M. Chinnaswamy Stadium, Bengaluru":             {"lat": 12.9791, "lon": 77.5496},
+    "Eden Gardens, Kolkata":                         {"lat": 22.5647, "lon": 88.3433},
+    "Arun Jaitley Stadium, Delhi":                   {"lat": 28.6364, "lon": 77.2173},
+    "Narendra Modi Stadium, Ahmedabad":              {"lat": 23.0908, "lon": 72.0846},
+    "Rajiv Gandhi Intl Cricket Stadium, Hyderabad":  {"lat": 17.4042, "lon": 78.5428},
+    "Sawai Mansingh Stadium, Jaipur":                {"lat": 26.8949, "lon": 75.8009},
+    "BRSABV Ekana Cricket Stadium, Lucknow":         {"lat": 26.8467, "lon": 80.9462},
+    "Himachal Pradesh Cricket Association Stadium, Dharamsala": {"lat": 32.2198, "lon": 76.3234},
+    "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur, New Chandigarh": {"lat": 30.6942, "lon": 76.7336},
+    "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur": {"lat": 30.6942, "lon": 76.7336},
 }
 
 DEFAULT_MATCH_HOUR_UTC = 14
@@ -91,6 +106,10 @@ def fetch_all_venue_weather(venues: list[str] | None = None, match_hour_utc: int
     results = {}
     for name in targets:
         coords = VENUE_COORDS.get(name)
+        if not coords:
+            # Try matching just the part before the first comma
+            short = name.split(",")[0].strip()
+            coords = VENUE_COORDS.get(short)
         if not coords:
             logger.warning("No coordinates found for venue: %s", name)
             results[name] = {"temperature": 28, "humidity": 60, "windspeed": 10, "dew_flag": False}

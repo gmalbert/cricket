@@ -25,7 +25,7 @@ def download_ipl_data() -> pd.DataFrame:
 
     frames = []
     with zipfile.ZipFile(io.BytesIO(resp.content)) as zf:
-        csv_files = [f for f in zf.namelist() if f.endswith(".csv") and not f.startswith("_")]
+        csv_files = [f for f in zf.namelist() if f.endswith(".csv") and "_info" not in f]
         logger.info("Found %d CSV files in archive", len(csv_files))
         for name in csv_files:
             try:
@@ -40,6 +40,11 @@ def download_ipl_data() -> pd.DataFrame:
 
     combined = pd.concat(frames, ignore_index=True)
     logger.info("Loaded %d rows of ball-by-ball data", len(combined))
+
+    # Normalise mixed-type string columns so parquet serialisation doesn't fail
+    # (e.g. 'season' contains both "2020" and "2020/21")
+    for col in combined.select_dtypes(include="object").columns:
+        combined[col] = combined[col].astype(str)
 
     out_path = RAW_DIR / "ipl_ball_by_ball.parquet"
     combined.to_parquet(out_path, index=False)
@@ -62,6 +67,10 @@ def compute_team_form(bbb: pd.DataFrame, last_n: int = 10) -> dict:
     bbb = bbb.copy()
     bbb["start_date"] = pd.to_datetime(bbb["start_date"], errors="coerce")
 
+    # Derive over number from the ball column (format: over.delivery, e.g. 5.3)
+    if "ball" in bbb.columns:
+        bbb["over"] = bbb["ball"].astype(float).apply(lambda x: int(x))
+
     match_meta = (
         bbb.groupby("match_id")
         .agg(
@@ -83,8 +92,16 @@ def compute_team_form(bbb: pd.DataFrame, last_n: int = 10) -> dict:
     )
     innings_agg["total_runs"] = innings_agg["runs"] + innings_agg["extras"]
 
-    powerplay = bbb[bbb.get("over", pd.Series(dtype=float)).between(0, 5) if "over" in bbb.columns else bbb.index.isin([])]
-    death = bbb[bbb.get("over", pd.Series(dtype=float)).between(15, 19) if "over" in bbb.columns else bbb.index.isin([])]
+    # Per-match totals for both teams (to compute opponent score and W/L)
+    match_totals = (
+        innings_agg[innings_agg["innings"].isin([1, 2])]
+        .groupby(["match_id", "batting_team"])["total_runs"]
+        .sum()
+        .reset_index()
+    )
+
+    powerplay = bbb[bbb["over"].between(0, 5)] if "over" in bbb.columns else pd.DataFrame()
+    death     = bbb[bbb["over"].between(15, 19)] if "over" in bbb.columns else pd.DataFrame()
 
     pp_agg = (
         powerplay.groupby(["match_id", "batting_team"])["runs_off_bat"]
@@ -110,27 +127,47 @@ def compute_team_form(bbb: pd.DataFrame, last_n: int = 10) -> dict:
         team_innings = team_innings.merge(match_meta[["match_id", "start_date"]], on="match_id", how="left")
         team_innings = team_innings.sort_values("start_date", ascending=False).head(last_n)
 
-        pp_team = pp_agg[pp_agg["batting_team"] == team] if not pp_agg.empty else pd.DataFrame()
-        death_team = death_bowl[death_bowl["bowling_team"] == team] if not death_bowl.empty else pd.DataFrame()
+        pp_team    = pp_agg[pp_agg["batting_team"] == team]
+        death_team = death_bowl[death_bowl["bowling_team"] == team]
+
+        # Build a lookup: match_id → {opponent, team_score, opp_score, winner}
+        team_scores = match_totals[match_totals["batting_team"] == team][["match_id", "total_runs"]].rename(columns={"total_runs": "team_score"})
+        opp_scores  = match_totals[match_totals["batting_team"] != team][["match_id", "batting_team", "total_runs"]].rename(columns={"total_runs": "opp_score", "batting_team": "opponent"})
+        match_lookup = (
+            team_scores
+            .merge(opp_scores, on="match_id", how="left")
+            .set_index("match_id")
+        )
 
         results = []
         for _, row in team_innings.iterrows():
-            inns_pp = pp_team[pp_team["match_id"] == row["match_id"]]
+            mid = row["match_id"]
+
+            inns_pp = pp_team[pp_team["match_id"] == mid]
             pp_runs = int(inns_pp["powerplay_runs"].values[0]) if not inns_pp.empty else None
 
-            inns_death = death_team[death_team["match_id"] == row["match_id"]]
+            inns_death = death_team[death_team["match_id"] == mid]
             if not inns_death.empty:
                 d_runs = inns_death["death_runs"].values[0] + inns_death["death_extras"].values[0]
                 death_econ = round(d_runs / 4, 2) if d_runs else None
             else:
                 death_econ = None
 
+            meta = match_lookup.loc[mid] if mid in match_lookup.index else None
+            opponent  = str(meta["opponent"])  if meta is not None and pd.notna(meta.get("opponent"))  else None
+            team_score = int(meta["team_score"]) if meta is not None and pd.notna(meta.get("team_score")) else int(row["total_runs"])
+            opp_score  = int(meta["opp_score"])  if meta is not None and pd.notna(meta.get("opp_score"))  else None
+            won = (team_score > opp_score) if opp_score is not None else None
+
             results.append({
-                "match_id": row["match_id"],
-                "date": str(row["start_date"].date()) if pd.notna(row["start_date"]) else None,
-                "innings": int(row["innings"]),
-                "score": int(row["total_runs"]),
-                "wickets": int(row["wickets"]),
+                "match_id":      mid,
+                "date":          str(row["start_date"].date()) if pd.notna(row["start_date"]) else None,
+                "innings":       int(row["innings"]),
+                "opponent":      opponent,
+                "result":        ("W" if won else "L") if won is not None else None,
+                "score":         team_score,
+                "opp_score":     opp_score,
+                "wickets":       int(row["wickets"]),
                 "powerplay_runs": pp_runs,
                 "death_economy": death_econ,
             })
@@ -145,7 +182,7 @@ def compute_player_stats(bbb: pd.DataFrame) -> dict:
     Compute rolling batter and bowler stats for the last 10 T20 innings.
     Returns {"batters": {...}, "bowlers": {...}}
     """
-    required_bat = {"batter", "runs_off_bat", "match_id", "start_date"}
+    required_bat = {"striker", "runs_off_bat", "match_id", "start_date"}
     required_bowl = {"bowler", "runs_off_bat", "wicket_type", "match_id", "start_date"}
 
     bbb = bbb.copy()
@@ -154,13 +191,14 @@ def compute_player_stats(bbb: pd.DataFrame) -> dict:
     batters = {}
     if required_bat.issubset(bbb.columns):
         bat_agg = (
-            bbb.groupby(["match_id", "batter"])
+            bbb.groupby(["match_id", "striker"])
             .agg(
                 runs=("runs_off_bat", "sum"),
                 balls=("runs_off_bat", "count"),
                 start_date=("start_date", "first"),
             )
             .reset_index()
+            .rename(columns={"striker": "batter"})
             .sort_values("start_date", ascending=False)
         )
         for player, grp in bat_agg.groupby("batter"):
@@ -222,7 +260,9 @@ def compute_venue_stats(bbb: pd.DataFrame) -> dict:
     first_inn = innings_totals[innings_totals["innings"] == 1]
     venue_avg = first_inn.groupby("venue")["total"].mean().round(1).to_dict()
 
-    match_results = innings_totals.pivot_table(
+    # Restrict to regular innings only (super overs create innings 3/4 etc.)
+    reg_innings = innings_totals[innings_totals["innings"].isin([1, 2])]
+    match_results = reg_innings.pivot_table(
         index=["match_id", "venue"], columns="innings", values="total"
     ).reset_index()
     match_results.columns = ["match_id", "venue", "inn1", "inn2"]

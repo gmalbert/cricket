@@ -46,7 +46,7 @@ def render():
                     plot_bgcolor="rgba(0,0,0,0)",
                     paper_bgcolor="rgba(0,0,0,0)",
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width='stretch')
 
             with col2:
                 st.subheader("Model vs DraftKings")
@@ -68,7 +68,7 @@ def render():
                     return ""
 
                 styled = df.style.map(color_edge, subset=["Edge"])
-                st.dataframe(styled, hide_index=True, use_container_width=True)
+                st.dataframe(styled, hide_index=True, width='stretch')
 
                 total_diff = m["predicted_total"] - m["dk_total_line"]
                 direction = "OVER" if total_diff > 0 else "UNDER"
@@ -89,28 +89,7 @@ def render():
                     st.success("No Dew Expected")
 
                 st.divider()
-                st.metric("Venue Avg Score", m["venue_avg_first_innings"])
-                chase_pct = int(m["venue_chase_win_rate"] * 100)
-                st.metric("Chase Win Rate", f"{chase_pct}%")
-
-            toss_col1, toss_col2 = st.columns(2)
-            with toss_col1:
-                st.subheader("🪙 Toss Tracker")
-                toss_winner = st.selectbox(
-                    "Toss Winner",
-                    ["Not Yet", m["team1"], m["team2"]],
-                    key=f"toss_winner_{m['match_id']}"
-                )
-                toss_decision = st.selectbox(
-                    "Decision",
-                    ["—", "Bat", "Field"],
-                    key=f"toss_decision_{m['match_id']}"
-                )
-                if toss_winner != "Not Yet" and toss_decision != "—":
-                    adj = 0.05 if toss_decision == "Field" else -0.02
-                    if toss_winner == m["team1"]:
-                        adj_p1 = min(0.95, m["team1_win_prob"] + adj)
-                    else:
-                        adj_p1 = max(0.05, m["team1_win_prob"] - adj)
-                    adj_p2 = round(1 - adj_p1, 3)
-                    st.success(f"Post-toss: **{m['team1']}** {adj_p1*100:.1f}% | **{m['team2']}** {adj_p2*100:.1f}%")
+                st.metric("Venue Avg Score", m["venue_avg_first_innings"] or "N/A")
+                chase_rate = m.get("venue_chase_win_rate")
+                chase_pct = int(chase_rate * 100) if chase_rate is not None else None
+                st.metric("Chase Win Rate", f"{chase_pct}%" if chase_pct is not None else "N/A")

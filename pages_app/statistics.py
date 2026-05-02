@@ -28,7 +28,7 @@ def render():
             })
 
         venue_df = pd.DataFrame(venue_data)
-        st.dataframe(venue_df, hide_index=True, use_container_width=True)
+        st.dataframe(venue_df, hide_index=True, width='stretch')
 
         st.divider()
         selected_venue = st.selectbox("Venue Detail", list(IPL_VENUES.keys()))
@@ -55,7 +55,7 @@ def render():
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
     with tab2:
         st.subheader("Batter Profiles")
@@ -90,7 +90,7 @@ def render():
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
         col1, col2, col3 = st.columns(3)
         col1.metric("vs Pace Avg", profile["vs_pace_avg"])
@@ -129,7 +129,7 @@ def render():
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
         phases = ["Powerplay (1-6)", "Middle (7-15)", "Death (16-20)"]
         economies = [profile["powerplay_economy"], profile["career_economy"], profile["death_economy"]]
@@ -146,7 +146,7 @@ def render():
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        st.plotly_chart(phase_fig, use_container_width=True)
+        st.plotly_chart(phase_fig, width='stretch')
 
         col1, col2 = st.columns(2)
         col1.metric("vs LHB Economy", profile["vs_lhb_economy"])
@@ -173,4 +173,4 @@ def render():
                 "Matches (IPL 2026)": random.randint(3, 14),
             })
         ump_df = pd.DataFrame(ump_data).sort_values("Avg Wides/Match", ascending=False)
-        st.dataframe(ump_df, hide_index=True, use_container_width=True)
+        st.dataframe(ump_df, hide_index=True, width='stretch')

@@ -94,9 +94,8 @@ def step_weather(fixtures: list[dict]) -> dict:
     return weather_run(venues)
 
 
-def step_features(fixtures, team_form, venue_stats, weather, odds) -> tuple[list, list]:
+def step_features(fixtures, team_form, venue_stats, weather, odds, player_stats=None) -> tuple[list, list]:
     from pipeline.feature_engineering import build_match_features, build_player_features
-    from pipeline.fetch_cricsheet import compute_player_stats
     from utils.data import TEAM_PLAYERS
 
     match_features = build_match_features(
@@ -106,10 +105,9 @@ def step_features(fixtures, team_form, venue_stats, weather, odds) -> tuple[list
         weather=weather,
         odds=odds,
     )
-    player_stats_placeholder = {"batters": {}, "bowlers": {}}
     player_features = build_player_features(
         fixtures=fixtures,
-        player_stats=player_stats_placeholder,
+        player_stats=player_stats or {"batters": {}, "bowlers": {}},
         match_features=match_features,
     )
     return match_features, player_features
@@ -263,8 +261,13 @@ def build_value_bets(matches, props) -> list[dict]:
         if p["confidence"] == "High":
             edge_ratio = abs(p["edge"]) / (p["dk_line"] if p["dk_line"] > 0 else 1)
             kelly = round(edge_ratio * 25, 1)
+            mid = p.get("match_id", "")
+            match_label = next(
+                (f"{m['team1']} vs {m['team2']}" for m in matches if m["match_id"] == mid),
+                mid,
+            )
             bets.append({
-                "match":       p.get("match_id", ""),
+                "match":       match_label,
                 "bet":         f"{p['player']} {p['recommendation']} {p['dk_line']} {p['market']}",
                 "type":        "Player Prop",
                 "model_prob":  round(0.5 + edge_ratio * 0.5, 3),

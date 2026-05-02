@@ -1,0 +1,57 @@
+[
+  {
+    "match": "05d33d50-3efe-42f9-98f7-1f363a2f153a",
+    "bet": "H Klaasen OVER 37.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.757,
+    "implied_prob": 0.5,
+    "edge": 0.2573,
+    "dk_odds": "-115",
+    "kelly_stake": "12.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "05d33d50-3efe-42f9-98f7-1f363a2f153a",
+    "bet": "Abhishek Sharma OVER 37.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.667,
+    "implied_prob": 0.5,
+    "edge": 0.1667,
+    "dk_odds": "-115",
+    "kelly_stake": "8.3%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "7e0789c4-6bdc-48da-a67f-49213f6d731e",
+    "bet": "V Kohli OVER 37.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.636,
+    "implied_prob": 0.5,
+    "edge": 0.136,
+    "dk_odds": "-115",
+    "kelly_stake": "6.8%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "7e0789c4-6bdc-48da-a67f-49213f6d731e",
+    "bet": "B Sai Sudharsan OVER 37.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.615,
+    "implied_prob": 0.5,
+    "edge": 0.1147,
+    "dk_odds": "-115",
+    "kelly_stake": "5.7%",
+    "tier": "Strong"
+  },
+  {
+    "match": "Mumbai Indians vs Sunrisers Hyderabad",
+    "bet": "Sunrisers Hyderabad ML",
+    "type": "Match Winner",
+    "model_prob": 0.642,
+    "implied_prob": 0.5906,
+    "edge": 0.0514,
+    "dk_odds": "-169",
+    "kelly_stake": "1.9%",
+    "tier": "Strong"
+  }
+]

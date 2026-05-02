@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-from utils.data import get_todays_matches, get_value_bets, get_player_props
+from utils.data import get_todays_matches, get_value_bets
 
 def render():
     st.title("💰 Value Bets")
@@ -10,26 +10,11 @@ def render():
     matches = get_todays_matches()
     bets = get_value_bets(matches)
 
-    for m in matches:
-        props = get_player_props(m)
-        for p in props:
-            if p["confidence"] == "High" and abs(p["edge"]) > 6:
-                import random
-                random.seed(hash(p["player"]) % 8888)
-                dk_odds = "-115" if p["recommendation"] == "OVER" else "-110"
-                kelly = round(abs(p["edge"]) / (p["dk_line"] if p["dk_line"] > 0 else 1) * 0.25 * 100, 1)
-                edge_ratio = abs(p["edge"]) / (p["dk_line"] if p["dk_line"] > 0 else 1)
-                bets.append({
-                    "match": f"{m['team1']} vs {m['team2']}",
-                    "bet": f"{p['player']} {p['recommendation']} {p['dk_line']} {p['market']}",
-                    "type": "Player Prop",
-                    "model_prob": round(0.5 + edge_ratio * 0.5, 2),
-                    "implied_prob": 0.5,
-                    "edge": round(edge_ratio * 0.5, 3),
-                    "dk_odds": dk_odds,
-                    "kelly_stake": f"{kelly}%",
-                    "tier": "Elite Pick" if edge_ratio > 0.25 else "Strong",
-                })
+    # Build a UUID → "Team1 vs Team2" lookup to fix cached bets that stored match_id
+    mid_to_label = {m["match_id"]: f"{m['team1']} vs {m['team2']}" for m in matches if m.get("match_id")}
+    for b in bets:
+        if b.get("match") in mid_to_label:
+            b["match"] = mid_to_label[b["match"]]
 
     bets.sort(key=lambda x: -x["edge"])
 
@@ -56,28 +41,43 @@ def render():
 
     filtered = [b for b in bets if b["type"] in filter_type]
 
-    for b in filtered:
-        tier_badge = "🏆 ELITE PICK" if b["tier"] == "Elite Pick" else "⭐ STRONG"
-        type_icon = {"Match Winner": "🏏", "Total Runs": "📊", "Player Prop": "🎯"}.get(b["type"], "")
+    if not filtered:
+        st.info("No bets match the selected filters.")
+    else:
+        type_icon = {"Match Winner": "🏏", "Total Runs": "📊", "Player Prop": "🎯"}
+        tier_badge = {"Elite Pick": "🏆 ELITE", "Strong": "⭐ STRONG"}
 
-        with st.container():
-            c1, c2, c3, c4, c5, c6 = st.columns([2, 2, 1, 1, 1, 1])
-            with c1:
-                st.markdown(f"**{type_icon} {b['bet']}**")
-                st.caption(b["match"])
-            with c2:
-                st.caption(b["type"])
-                st.markdown(f"{tier_badge}")
-            with c3:
-                st.metric("Model", f"{b['model_prob']*100:.0f}%")
-            with c4:
-                st.metric("DK Implied", f"{b['implied_prob']*100:.0f}%")
-            with c5:
-                st.metric("Edge", f"{b['edge']*100:+.1f}%")
-            with c6:
-                st.metric("Kelly Stake", b["kelly_stake"])
-                st.caption(f"DK: {b['dk_odds']}")
-            st.divider()
+        df = pd.DataFrame([
+            {
+                "Type": type_icon.get(b["type"], "") + " " + b["type"],
+                "Bet": b["bet"],
+                "Match": b["match"],
+                "Tier": tier_badge.get(b["tier"], b["tier"]),
+                "Model %": f"{b['model_prob']*100:.0f}%",
+                "DK Implied": f"{b['implied_prob']*100:.0f}%",
+                "Edge": f"{b['edge']*100:+.1f}%",
+                "Kelly": b["kelly_stake"],
+                "DK Odds": b["dk_odds"],
+            }
+            for b in filtered
+        ])
+
+        st.dataframe(
+            df,
+            width='stretch',
+            hide_index=True,
+            column_config={
+                "Type": st.column_config.TextColumn(width="small"),
+                "Bet": st.column_config.TextColumn(width="large"),
+                "Match": st.column_config.TextColumn(width="medium"),
+                "Tier": st.column_config.TextColumn(width="small"),
+                "Model %": st.column_config.TextColumn(width="small"),
+                "DK Implied": st.column_config.TextColumn(width="small"),
+                "Edge": st.column_config.TextColumn(width="small"),
+                "Kelly": st.column_config.TextColumn(width="small"),
+                "DK Odds": st.column_config.TextColumn(width="small"),
+            },
+        )
 
     st.subheader("Edge Distribution")
     if filtered:
@@ -102,4 +102,5 @@ def render():
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
+

@@ -32,7 +32,7 @@ def render():
             return [""] * len(row)
 
         styled = display_df.style.apply(highlight_playoff, axis=1)
-        st.dataframe(styled, hide_index=True, use_container_width=True)
+        st.dataframe(styled, hide_index=True, width='stretch')
         st.caption("🟢 Green = Playoff qualification zone (Top 4)")
 
     # ------------------------------------------------------------------ #
@@ -66,7 +66,7 @@ def render():
         filtered["Prediction / Result"] = filtered.apply(format_row, axis=1)
         display = filtered[["match", "date", "team1", "team2", "venue", "Prediction / Result"]].copy()
         display.columns = ["#", "Date", "Team 1", "Team 2", "Venue", "Prediction / Result"]
-        st.dataframe(display, hide_index=True, use_container_width=True)
+        st.dataframe(display, hide_index=True, width='stretch')
 
     # ------------------------------------------------------------------ #
     # TAB 3 — Monte Carlo Playoff Probabilities
@@ -142,7 +142,7 @@ def render():
                 plot_bgcolor="rgba(0,0,0,0)",
                 paper_bgcolor="rgba(0,0,0,0)",
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
 
             # Summary table
             summary = tr_df[[
@@ -168,7 +168,7 @@ def render():
             st.dataframe(
                 summary.style.apply(color_qualify, axis=1),
                 hide_index=True,
-                use_container_width=True,
+                width='stretch',
             )
 
             # Magic numbers
@@ -209,7 +209,7 @@ def render():
                 plot_bgcolor="rgba(0,0,0,0)",
                 paper_bgcolor="rgba(0,0,0,0)",
             )
-            st.plotly_chart(fig2, use_container_width=True)
+            st.plotly_chart(fig2, width='stretch')
 
             # Qualification + Title combined table
             combined = pd.DataFrame(team_results)[[
@@ -222,7 +222,7 @@ def render():
             combined["Qualify %"] = combined["Qualify %"].apply(lambda x: f"{x*100:.1f}%")
             combined["Title %"]   = combined["Title %"].apply(lambda x: f"{x*100:.1f}%")
             combined["Avg Finish"]= combined["Avg Finish"].apply(lambda x: f"{x:.2f}")
-            st.dataframe(combined, hide_index=True, use_container_width=True)
+            st.dataframe(combined, hide_index=True, width='stretch')
 
         # ---- Position Distribution -------------------------------------
         with inner_tab3:
@@ -260,7 +260,7 @@ def render():
                 plot_bgcolor="rgba(0,0,0,0)",
                 paper_bgcolor="rgba(0,0,0,0)",
             )
-            st.plotly_chart(fig3, use_container_width=True)
+            st.plotly_chart(fig3, width='stretch')
 
             # Team selector for detailed view
             selected_team = st.selectbox("Detailed view for team:", teams_list)
@@ -278,7 +278,7 @@ def render():
                     for k, v in sorted(pos_data.items())
                 ])
                 if not pos_df.empty:
-                    st.dataframe(pos_df, hide_index=True, use_container_width=True)
+                    st.dataframe(pos_df, hide_index=True, width='stretch')
 
         # ---- Match Importance ------------------------------------------
         with inner_tab4:
@@ -312,7 +312,7 @@ def render():
                     plot_bgcolor="rgba(0,0,0,0)",
                     paper_bgcolor="rgba(0,0,0,0)",
                 )
-                st.plotly_chart(fig4, use_container_width=True)
+                st.plotly_chart(fig4, width='stretch')
 
                 # Full table
                 mi_display = mi_df[[
@@ -325,6 +325,6 @@ def render():
                 mi_display["Importance"]        = mi_display["Importance"].apply(lambda x: f"{x*100:.1f}%")
                 mi_display["T1 Qualify Swing"]  = mi_display["T1 Qualify Swing"].apply(lambda x: f"{x*100:.1f}%")
                 mi_display["T2 Qualify Swing"]  = mi_display["T2 Qualify Swing"].apply(lambda x: f"{x*100:.1f}%")
-                st.dataframe(mi_display, hide_index=True, use_container_width=True)
+                st.dataframe(mi_display, hide_index=True, width='stretch')
 
                 st.markdown(f"*{mc.get('methodology', '')}*")

@@ -1,0 +1,243 @@
+{
+  "team_results": [
+    {
+      "team": "Gujarat Titans",
+      "current_pts": 14,
+      "current_nrr": -0.122,
+      "games_remaining": 1,
+      "qualify_prob": 1.0,
+      "title_prob": 0.469,
+      "avg_finish": 1.66,
+      "avg_final_pts": 16.0,
+      "magic_number": 0,
+      "position_dist": {
+        "P1": 46.9,
+        "P2": 40.3,
+        "P3": 12.8,
+        "P4": 0.0,
+        "P5": 0.0
+      }
+    },
+    {
+      "team": "Rajasthan Royals",
+      "current_pts": 12,
+      "current_nrr": 0.923,
+      "games_remaining": 1,
+      "qualify_prob": 1.0,
+      "title_prob": 0.2409,
+      "avg_finish": 2.53,
+      "avg_final_pts": 13.2,
+      "magic_number": 0,
+      "position_dist": {
+        "P1": 24.1,
+        "P2": 29.2,
+        "P3": 16.8,
+        "P4": 29.9,
+        "P5": 0.0
+      }
+    },
+    {
+      "team": "Punjab Kings",
+      "current_pts": 12,
+      "current_nrr": 0.785,
+      "games_remaining": 1,
+      "qualify_prob": 0.933,
+      "title_prob": 0.1625,
+      "avg_finish": 3.03,
+      "avg_final_pts": 12.8,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 16.2,
+        "P2": 18.8,
+        "P3": 17.5,
+        "P4": 40.7,
+        "P5": 6.7
+      }
+    },
+    {
+      "team": "Mumbai Indians",
+      "current_pts": 12,
+      "current_nrr": -0.4,
+      "games_remaining": 2,
+      "qualify_prob": 0.8131,
+      "title_prob": 0.1276,
+      "avg_finish": 3.12,
+      "avg_final_pts": 15.8,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 12.8,
+        "P2": 11.6,
+        "P3": 50.9,
+        "P4": 6.1,
+        "P5": 12.6
+      }
+    },
+    {
+      "team": "Royal Challengers Bengaluru",
+      "current_pts": 10,
+      "current_nrr": 0.658,
+      "games_remaining": 1,
+      "qualify_prob": 0.1968,
+      "title_prob": 0.0,
+      "avg_finish": 5.12,
+      "avg_final_pts": 10.0,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 0.0,
+        "P2": 0.0,
+        "P3": 2.1,
+        "P4": 17.6,
+        "P5": 51.7
+      }
+    },
+    {
+      "team": "Chennai Super Kings",
+      "current_pts": 8,
+      "current_nrr": -0.303,
+      "games_remaining": 2,
+      "qualify_prob": 0.0571,
+      "title_prob": 0.0,
+      "avg_finish": 7.92,
+      "avg_final_pts": 9.2,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 0.0,
+        "P2": 0.0,
+        "P3": 0.0,
+        "P4": 5.7,
+        "P5": 10.7
+      }
+    },
+    {
+      "team": "Kolkata Knight Riders",
+      "current_pts": 8,
+      "current_nrr": 1.077,
+      "games_remaining": 1,
+      "qualify_prob": 0.0,
+      "title_prob": 0.0,
+      "avg_finish": 7.27,
+      "avg_final_pts": 9.0,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 0.0,
+        "P2": 0.0,
+        "P3": 0.0,
+        "P4": 0.0,
+        "P5": 18.2
+      }
+    },
+    {
+      "team": "Lucknow Super Giants",
+      "current_pts": 8,
+      "current_nrr": 0.138,
+      "games_remaining": 1,
+      "qualify_prob": 0.0,
+      "title_prob": 0.0,
+      "avg_finish": 7.81,
+      "avg_final_pts": 8.0,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 0.0,
+        "P2": 0.0,
+        "P3": 0.0,
+        "P4": 0.0,
+        "P5": 0.0
+      }
+    },
+    {
+      "team": "Sunrisers Hyderabad",
+      "current_pts": 8,
+      "current_nrr": 0.123,
+      "games_remaining": 1,
+      "qualify_prob": 0.0,
+      "title_prob": 0.0,
+      "avg_finish": 7.83,
+      "avg_final_pts": 9.0,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 0.0,
+        "P2": 0.0,
+        "P3": 0.0,
+        "P4": 0.0,
+        "P5": 0.0
+      }
+    },
+    {
+      "team": "Delhi Capitals",
+      "current_pts": 8,
+      "current_nrr": 0.043,
+      "games_remaining": 1,
+      "qualify_prob": 0.0,
+      "title_prob": 0.0,
+      "avg_finish": 8.71,
+      "avg_final_pts": 9.0,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 0.0,
+        "P2": 0.0,
+        "P3": 0.0,
+        "P4": 0.0,
+        "P5": 0.0
+      }
+    }
+  ],
+  "match_importance": [
+    {
+      "match": 30,
+      "date": "May 04",
+      "team1": "Mumbai Indians",
+      "team2": "Chennai Super Kings",
+      "importance": 0.2705,
+      "t1_swing": 0.406,
+      "t2_swing": 0.135
+    },
+    {
+      "match": 32,
+      "date": "May 05",
+      "team1": "Mumbai Indians",
+      "team2": "Lucknow Super Giants",
+      "importance": 0.1635,
+      "t1_swing": 0.327,
+      "t2_swing": 0.0
+    },
+    {
+      "match": 35,
+      "date": "May 11",
+      "team1": "Gujarat Titans",
+      "team2": "Royal Challengers Bengaluru",
+      "importance": 0.131,
+      "t1_swing": 0.0,
+      "t2_swing": 0.262
+    },
+    {
+      "match": 33,
+      "date": "May 07",
+      "team1": "Chennai Super Kings",
+      "team2": "Delhi Capitals",
+      "importance": 0.056,
+      "t1_swing": 0.112,
+      "t2_swing": 0.0
+    },
+    {
+      "match": 31,
+      "date": "May 03",
+      "team1": "Rajasthan Royals",
+      "team2": "Punjab Kings",
+      "importance": 0.0005,
+      "t1_swing": 0.0,
+      "t2_swing": 0.001
+    },
+    {
+      "match": 34,
+      "date": "May 09",
+      "team1": "Sunrisers Hyderabad",
+      "team2": "Kolkata Knight Riders",
+      "importance": 0.0,
+      "t1_swing": 0.0,
+      "t2_swing": 0.0
+    }
+  ],
+  "n_simulations": 10000,
+  "remaining_matches": 6,
+  "methodology": "10,000 Monte Carlo simulations. Each sim samples remaining match outcomes using model win probabilities, resolves ties via NRR with Gaussian noise, and records top-4 finishes. Match importance = average swing in qualification probability when forcing each team to win."
+}

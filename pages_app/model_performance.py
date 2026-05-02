@@ -109,7 +109,7 @@ def render():
                 height=340,
                 **PLOT_DEFAULTS,
             )
-            st.plotly_chart(fig_roll, use_container_width=True)
+            st.plotly_chart(fig_roll, width='stretch')
 
             # ---- Cumulative ROI curve ------------------------------------
             st.subheader("Cumulative P&L (bets with >3% edge, flat -110 line)")
@@ -135,7 +135,7 @@ def render():
                     height=300,
                     **PLOT_DEFAULTS,
                 )
-                st.plotly_chart(fig_cum, use_container_width=True)
+                st.plotly_chart(fig_cum, width='stretch')
 
             # ---- Accuracy by edge bucket ---------------------------------
             st.subheader("Accuracy & ROI by Edge Bucket")
@@ -154,7 +154,7 @@ def render():
                 })
             if bucket_stats:
                 bkt_df = pd.DataFrame(bucket_stats)
-                st.dataframe(bkt_df, hide_index=True, use_container_width=True)
+                st.dataframe(bkt_df, hide_index=True, width='stretch')
 
             st.divider()
 
@@ -224,7 +224,7 @@ def render():
             st.dataframe(
                 display_log.style.apply(row_color, axis=1),
                 hide_index=True,
-                use_container_width=True,
+                width='stretch',
             )
             st.caption(f"Showing {len(display_log)} of {total} records.")
 
@@ -252,7 +252,7 @@ def render():
             "Batter MAE":        [f"{metrics[s]['props_batter_mae']} runs" for s in seasons],
             "Bowler MAE":        [f"{metrics[s]['props_bowler_mae']} wkts" for s in seasons],
         }
-        st.dataframe(pd.DataFrame(acc_data), hide_index=True, use_container_width=True)
+        st.dataframe(pd.DataFrame(acc_data), hide_index=True, width='stretch')
 
     # ------------------------------------------------------------------ #
     # TAB 3 — ROI Tracker
@@ -273,7 +273,7 @@ def render():
             ))
         fig.add_hline(y=0, line_color="gray", line_dash="dash")
         fig.update_layout(barmode="group", yaxis_title="ROI (%)", height=380, **PLOT_DEFAULTS)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
         roi_df = pd.DataFrame({
             "Season":           seasons,
@@ -281,7 +281,7 @@ def render():
             "Totals ROI":       [f"{metrics[s]['totals_roi']:+.1f}%"       for s in seasons],
             "Props ROI":        [f"{metrics[s]['props_roi']:+.1f}%"        for s in seasons],
         })
-        st.dataframe(roi_df, hide_index=True, use_container_width=True)
+        st.dataframe(roi_df, hide_index=True, width='stretch')
 
     # ------------------------------------------------------------------ #
     # TAB 4 — Calibration Curve
@@ -308,7 +308,7 @@ def render():
             yaxis=dict(range=[0, 1]),
             **PLOT_DEFAULTS,
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
         st.caption("Closer to the diagonal = better calibrated. Platt scaling applied post-training.")
 
     # ------------------------------------------------------------------ #
@@ -337,7 +337,7 @@ def render():
             showscale=False,
         ))
         fig.update_layout(height=350, **PLOT_DEFAULTS)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
         accuracy  = (tp + tn) / total
         precision = tp / (tp + fp) if (tp + fp) > 0 else 0
@@ -412,7 +412,7 @@ def render():
             fig5.add_hline(y=0, line_dash="dash", line_color="gray")
             fig5.update_layout(yaxis_title="Historical ROI (%)", xaxis_tickangle=-40,
                                height=400, **PLOT_DEFAULTS)
-            st.plotly_chart(fig5, use_container_width=True)
+            st.plotly_chart(fig5, width='stretch')
 
             df_m = pd.DataFrame(filtered)[[
                 "matchup_key", "n_games", "avg_edge", "win_rate_edge_positive",
@@ -436,7 +436,7 @@ def render():
                 return [TIER_COLORS.get(row["Tier"], "")] * len(row)
 
             st.dataframe(df_m.style.apply(color_tier, axis=1),
-                         hide_index=True, use_container_width=True)
+                         hide_index=True, width='stretch')
 
         st.divider()
         st.subheader("ROI by Edge-Size Bucket")
@@ -471,13 +471,13 @@ def render():
                 legend=dict(orientation="h", y=1.08),
                 **PLOT_DEFAULTS,
             )
-            st.plotly_chart(fig_b, use_container_width=True)
+            st.plotly_chart(fig_b, width='stretch')
 
             bucket_df = pd.DataFrame(edge_buckets)
             bucket_df["win_rate"] = bucket_df["win_rate"].apply(lambda x: f"{x*100:.1f}%")
             bucket_df["roi"]      = bucket_df["roi"].apply(lambda x: f"{x:+.1f}%")
             bucket_df.columns     = ["Edge Range", "# Bets", "Win Rate", "ROI"]
-            st.dataframe(bucket_df, hide_index=True, use_container_width=True)
+            st.dataframe(bucket_df, hide_index=True, width='stretch')
 
         if rolling_roi:
             st.divider()
@@ -496,7 +496,7 @@ def render():
             fig_r.add_hline(y=0, line_dash="dash", line_color="gray")
             fig_r.update_layout(xaxis_title="Bet Number", yaxis_title="Cumulative ROI (%)",
                                  height=320, **PLOT_DEFAULTS)
-            st.plotly_chart(fig_r, use_container_width=True)
+            st.plotly_chart(fig_r, width='stretch')
 
     # ------------------------------------------------------------------ #
     # TAB 7 — Venue Edge Tracker
@@ -564,7 +564,7 @@ def render():
             legend=dict(orientation="h", y=1.08),
             **PLOT_DEFAULTS,
         )
-        st.plotly_chart(fig6, use_container_width=True)
+        st.plotly_chart(fig6, width='stretch')
         st.caption("Bubble size = number of games analysed.")
 
         st.divider()
@@ -579,7 +579,7 @@ def render():
         fig7.add_hline(y=0, line_dash="dash", line_color="gray")
         fig7.update_layout(yaxis_title="Avg Model Edge vs DK (%)",
                            xaxis_tickangle=-35, height=350, **PLOT_DEFAULTS)
-        st.plotly_chart(fig7, use_container_width=True)
+        st.plotly_chart(fig7, width='stretch')
 
         df_v = pd.DataFrame(filtered_v)[[
             "venue", "venue_type", "n_games", "avg_model_edge",
@@ -603,5 +603,5 @@ def render():
             return [""] * len(row)
 
         st.dataframe(df_v.style.apply(color_venue, axis=1),
-                     hide_index=True, use_container_width=True)
+                     hide_index=True, width='stretch')
         st.caption("🟢 Both markets profitable · 🔴 Both markets losing · White = mixed")

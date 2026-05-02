@@ -37,7 +37,7 @@ def fetch_current_matches() -> list[dict]:
         logger.warning("CricketData API returned non-success: %s", data.get("status"))
         return []
     matches = data.get("data", [])
-    ipl = [m for m in matches if IPL_KEYWORD in m.get("series", "")]
+    ipl = [m for m in matches if IPL_KEYWORD in m.get("name", "")]
     logger.info("Found %d IPL matches (of %d total)", len(ipl), len(matches))
     return ipl
 

@@ -35,44 +35,44 @@ IPL_VENUES = {
 
 TEAM_PLAYERS = {
     "Mumbai Indians": {
-        "batters": ["Rohit Sharma", "Ishan Kishan", "Suryakumar Yadav", "Tilak Varma", "Hardik Pandya", "Tim David"],
-        "bowlers": ["Jasprit Bumrah", "Suryakumar Yadav", "Piyush Chawla", "Gerald Coetzee", "Nuwan Thushara"]
+        "batters": ["RG Sharma", "SA Yadav", "Tilak Varma", "HH Pandya", "RD Rickelton", "Naman Dhir"],
+        "bowlers": ["JJ Bumrah", "HH Pandya", "TA Boult", "DL Chahar", "MJ Santner"]
     },
     "Chennai Super Kings": {
-        "batters": ["Ruturaj Gaikwad", "Devon Conway", "Ajinkya Rahane", "Shivam Dube", "MS Dhoni", "Ravindra Jadeja"],
-        "bowlers": ["Deepak Chahar", "Matheesha Pathirana", "Tushar Deshpande", "Ravindra Jadeja", "Moeen Ali"]
+        "batters": ["RD Gaikwad", "S Dube", "RA Jadeja", "R Ravindra", "MS Dhoni", "A Mhatre"],
+        "bowlers": ["RA Jadeja", "M Pathirana", "TU Deshpande", "Noor Ahmad", "KK Ahmed"]
     },
     "Royal Challengers Bengaluru": {
-        "batters": ["Faf du Plessis", "Virat Kohli", "Glenn Maxwell", "Dinesh Karthik", "Cameron Green", "Rajat Patidar"],
-        "bowlers": ["Mohammed Siraj", "Josh Hazlewood", "Wanindu Hasaranga", "Karn Sharma", "Reece Topley"]
+        "batters": ["V Kohli", "RM Patidar", "PD Salt", "F du Plessis", "D Padikkal", "JM Sharma"],
+        "bowlers": ["Yash Dayal", "B Kumar", "JR Hazlewood", "Suyash Sharma", "KH Pandya"]
     },
     "Kolkata Knight Riders": {
-        "batters": ["Phil Salt", "Sunil Narine", "Angkrish Raghuvanshi", "Nitish Rana", "Andre Russell", "Rinku Singh"],
-        "bowlers": ["Mitchell Starc", "Varun Chakravarthy", "Sunil Narine", "Harshit Rana", "Spencer Johnson"]
+        "batters": ["SP Narine", "A Raghuvanshi", "RK Singh", "AM Rahane", "VR Iyer", "AD Russell"],
+        "bowlers": ["SP Narine", "CV Varun", "VG Arora", "Harshit Rana", "AD Russell"]
     },
     "Delhi Capitals": {
-        "batters": ["Jake Fraser-McGurk", "David Warner", "Abishek Porel", "Rishabh Pant", "Axar Patel", "Tristan Stubbs"],
-        "bowlers": ["Anrich Nortje", "Kuldeep Yadav", "Axar Patel", "Ishant Sharma", "Rasikh Dar Salam"]
+        "batters": ["KL Rahul", "RR Pant", "T Stubbs", "AR Patel", "Abishek Porel", "Sameer Rizvi"],
+        "bowlers": ["Kuldeep Yadav", "AR Patel", "Mukesh Kumar", "KK Ahmed", "V Nigam"]
     },
     "Punjab Kings": {
-        "batters": ["Shikhar Dhawan", "Jonny Bairstow", "Sam Curran", "Liam Livingstone", "Jitesh Sharma", "Rilee Rossouw"],
-        "bowlers": ["Arshdeep Singh", "Nathan Ellis", "Harshal Patel", "Sam Curran", "Rahul Chahar"]
+        "batters": ["SS Iyer", "P Simran Singh", "Shashank Singh", "Priyansh Arya", "SM Curran", "N Wadhera"],
+        "bowlers": ["Arshdeep Singh", "M Jansen", "HV Patel", "YS Chahal", "SM Curran"]
     },
     "Rajasthan Royals": {
-        "batters": ["Jos Buttler", "Yashasvi Jaiswal", "Sanju Samson", "Shimron Hetmyer", "Devdutt Padikkal", "Dhruv Jurel"],
-        "bowlers": ["Trent Boult", "Yuzvendra Chahal", "Sandeep Sharma", "Ravichandran Ashwin", "Nandre Burger"]
+        "batters": ["YBK Jaiswal", "SV Samson", "R Parag", "SO Hetmyer", "Dhruv Jurel", "V Suryavanshi"],
+        "bowlers": ["Sandeep Sharma", "JC Archer", "YS Chahal", "Avesh Khan", "R Ashwin"]
     },
     "Sunrisers Hyderabad": {
-        "batters": ["Travis Head", "Abhishek Sharma", "Heinrich Klaasen", "Aiden Markram", "Abdul Samad", "Shahbaz Ahmed"],
-        "bowlers": ["Pat Cummins", "Bhuvneshwar Kumar", "T Natarajan", "Jaydev Unadkat", "Shahbaz Ahmed"]
+        "batters": ["TM Head", "Abhishek Sharma", "H Klaasen", "Nithish Kumar Reddy", "Ishan Kishan", "Aniket Verma"],
+        "bowlers": ["PJ Cummins", "B Kumar", "HV Patel", "JD Unadkat", "E Malinga"]
     },
     "Gujarat Titans": {
-        "batters": ["Shubman Gill", "Wriddhiman Saha", "Sai Sudharsan", "David Miller", "Vijay Shankar", "Kane Williamson"],
-        "bowlers": ["Mohammed Shami", "Mohit Sharma", "Rashid Khan", "Noor Ahmad", "Joshua Little"]
+        "batters": ["Shubman Gill", "B Sai Sudharsan", "JC Buttler", "Washington Sundar", "R Tewatia", "M Shahrukh Khan"],
+        "bowlers": ["Rashid Khan", "Mohammed Siraj", "M Prasidh Krishna", "R Sai Kishore", "K Rabada"]
     },
     "Lucknow Super Giants": {
-        "batters": ["KL Rahul", "Quinton de Kock", "Marcus Stoinis", "Deepak Hooda", "Nicholas Pooran", "Ayush Badoni"],
-        "bowlers": ["Mark Wood", "Ravi Bishnoi", "Mohsin Khan", "Naveen-ul-Haq", "Krunal Pandya"]
+        "batters": ["N Pooran", "AK Markram", "MR Marsh", "A Badoni", "RR Pant", "KL Rahul"],
+        "bowlers": ["Ravi Bishnoi", "Avesh Khan", "Mohsin Khan", "DS Rathi", "Prince Yadav"]
     },
 }
 
