@@ -62,6 +62,7 @@ docs/
   - Qualification status (guaranteed / contention / long shot / eliminated)
 - Value bets with Kelly Criterion sizing (25% fractional)
 - Model performance backtesting (IPL 2024/2025)
+- H2H betting edge tracker (per-matchup and per-venue ROI vs DraftKings, edge-size bucket analysis, cumulative ROI curve)
 - Venue, batter, bowler, and umpire statistical profiles
 - Sidebar cache status banner (live data vs simulated)
 

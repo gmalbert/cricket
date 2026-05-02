@@ -17,6 +17,7 @@ CACHE_FILES = {
     "player_stats":        "player_stats.json",
     "value_bets":          "value_bets.json",
     "playoff_probabilities": "playoff_probabilities.json",
+    "matchup_edge_history": "matchup_edge_history.json",
     "last_updated":        "last_updated.json",
 }
 

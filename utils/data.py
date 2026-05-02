@@ -206,6 +206,22 @@ def get_model_performance():
     return _mock_model_performance()
 
 
+def get_matchup_edge_history():
+    """
+    Return historical model-vs-DK edge performance broken down by:
+      - Team matchup (every pair)
+      - Venue / surface type
+      - Edge-size bucket (0-3%, 3-6%, 6-10%, 10-15%, 15%+)
+      - 30-game rolling ROI curve
+
+    Loads from cache when pipeline has run; otherwise generates mock history.
+    """
+    cached = load_cache("matchup_edge_history")
+    if cached and cached.get("matchups"):
+        return cached
+    return _mock_matchup_edge_history()
+
+
 def get_playoff_probabilities():
     """
     Return Monte Carlo playoff simulation results.
@@ -464,6 +480,114 @@ def _mock_model_performance():
             ],
         }
     return metrics
+
+
+def _mock_matchup_edge_history():
+    random.seed(2026)
+
+    venue_types = {
+        "Wankhede Stadium":                             "Batting Paradise",
+        "M. Chinnaswamy Stadium":                       "Batting Paradise",
+        "Narendra Modi Stadium":                        "Batting Paradise",
+        "Arun Jaitley Stadium":                         "Balanced",
+        "Eden Gardens":                                 "Balanced",
+        "Rajiv Gandhi Intl Cricket Stadium":            "Balanced",
+        "MA Chidambaram Stadium":                       "Spin Track",
+        "Sawai Mansingh Stadium":                       "Spin Track",
+        "BRSABV Ekana Cricket Stadium":                 "Bowling Friendly",
+        "Himachal Pradesh Cricket Association Stadium": "Bowling Friendly",
+    }
+
+    teams = IPL_TEAMS_2026
+
+    # Per-matchup records
+    matchups = []
+    for i, t1 in enumerate(teams):
+        for t2 in teams[i + 1:]:
+            random.seed(hash(t1 + t2) % 99999)
+            n         = random.randint(4, 14)
+            avg_edge  = round(random.uniform(-0.02, 0.14), 4)
+            win_rate  = round(max(0.30, min(0.85, 0.5 + avg_edge * 2 + random.uniform(-0.10, 0.10))), 3)
+            roi       = round((win_rate - 0.524) * 100 * random.uniform(0.7, 1.3), 2)
+            consist   = round(random.uniform(0.02, 0.08), 4)
+            tier      = (
+                "Elite"   if avg_edge > 0.09 and roi > 8 else
+                "Strong"  if avg_edge > 0.05 and roi > 3 else
+                "Neutral" if avg_edge >= 0              else "Avoid"
+            )
+            matchups.append({
+                "team1":                   t1,
+                "team2":                   t2,
+                "matchup_key":             f"{t1} vs {t2}",
+                "n_games":                 n,
+                "avg_edge":                avg_edge,
+                "win_rate_edge_positive":  win_rate,
+                "roi":                     roi,
+                "edge_consistency":        consist,
+                "best_season":             random.choice(["IPL 2024", "IPL 2025"]),
+                "tier":                    tier,
+            })
+    matchups.sort(key=lambda x: -x["roi"])
+
+    # Per-venue records
+    venues_out = []
+    for venue, vtype in venue_types.items():
+        random.seed(hash(venue) % 88888)
+        n      = random.randint(8, 22)
+        me     = round(random.uniform(-0.01, 0.12), 4)
+        roi_w  = round((random.uniform(0.45, 0.70) - 0.524) * 100, 2)
+        roi_t  = round(random.uniform(-8, 15), 2)
+        fie    = round(random.uniform(-18, 18), 1)
+        best   = "Winner" if roi_w > roi_t else ("Over" if fie > 0 else "Under")
+        venues_out.append({
+            "venue":                   venue,
+            "venue_type":              vtype,
+            "n_games":                 n,
+            "avg_model_edge":          me,
+            "roi_match_winner":        roi_w,
+            "roi_totals":              roi_t,
+            "avg_first_innings_error": fie,
+            "best_bet_type":           best,
+        })
+    venues_out.sort(key=lambda x: -x["roi_match_winner"])
+
+    # Edge-bucket ROI breakdown
+    bucket_defs = [
+        ("0–3%",  0.00, 0.03),
+        ("3–6%",  0.03, 0.06),
+        ("6–10%", 0.06, 0.10),
+        ("10–15%",0.10, 0.15),
+        ("15%+",  0.15, 1.00),
+    ]
+    edge_buckets = []
+    random.seed(555)
+    for label, lo, hi in bucket_defs:
+        n_bets   = random.randint(15, 80)
+        base_roi = (lo + hi) / 2 * 100 * random.uniform(0.5, 1.8) - 2
+        win_r    = round(max(0.35, min(0.78, 0.524 + base_roi / 150)), 3)
+        edge_buckets.append({
+            "label":    label,
+            "n_bets":   n_bets,
+            "win_rate": win_r,
+            "roi":      round(base_roi, 2),
+        })
+
+    # 50-game rolling cumulative ROI curve
+    random.seed(777)
+    rolling = []
+    cumulative = 0.0
+    for i in range(1, 51):
+        cumulative = round(cumulative + random.uniform(-1.1, 1.5), 2)
+        rolling.append({"game": i, "cumulative_roi": cumulative})
+
+    return {
+        "matchups":             matchups,
+        "venues":               venues_out,
+        "edge_buckets":         edge_buckets,
+        "rolling_roi":          rolling,
+        "seasons":              ["IPL 2024", "IPL 2025"],
+        "total_bets_analysed":  sum(b["n_bets"] for b in edge_buckets),
+    }
 
 
 def _mock_value_bets(matches):
