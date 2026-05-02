@@ -8,7 +8,8 @@ Run order:
   4. fetch_weather     → venue weather (Open-Meteo, free)
   5. feature_engineering → match + player feature vectors
   6. run_models        → win probabilities, totals, player props
-  7. Save all results  → cache/*.json
+  7. monte_carlo       → playoff probabilities (10,000 simulations)
+  8. Save all results  → cache/*.json
 
 All outputs are written to cache/ so Streamlit pages load instantly
 without re-running the pipeline on every user visit.
@@ -278,6 +279,11 @@ def build_value_bets(matches, props) -> list[dict]:
     return bets
 
 
+def step_monte_carlo(standings: list[dict], schedule: list[dict]) -> dict:
+    from pipeline.monte_carlo import run as mc_run
+    return mc_run(standings, schedule)
+
+
 def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
     logger.info("=" * 60)
     logger.info("Wicket Oracle nightly pipeline starting — %s",
@@ -286,7 +292,7 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
 
     errors = {}
 
-    logger.info("[1/6] Fetching Cricsheet data...")
+    logger.info("[1/7] Fetching Cricsheet data...")
     try:
         cricsheet = step_cricsheet(skip=skip_cricsheet)
         team_form    = cricsheet["team_form"]
@@ -297,13 +303,13 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         errors["cricsheet"] = str(e)
         team_form = {}; player_stats = {"batters": {}, "bowlers": {}}; venue_stats = {}
 
-    logger.info("[2/6] Fetching fixtures...")
+    logger.info("[2/7] Fetching fixtures...")
     fixtures = step_fixtures()
 
-    logger.info("[3/6] Fetching odds...")
+    logger.info("[3/7] Fetching odds...")
     odds = step_odds()
 
-    logger.info("[4/6] Fetching weather...")
+    logger.info("[4/7] Fetching weather...")
     try:
         weather = step_weather(fixtures)
     except Exception as e:
@@ -311,7 +317,7 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         errors["weather"] = str(e)
         weather = {}
 
-    logger.info("[5/6] Building features...")
+    logger.info("[5/7] Building features...")
     try:
         match_features, player_features = step_features(
             fixtures, team_form, venue_stats, weather, odds
@@ -321,7 +327,7 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         errors["features"] = str(e)
         match_features = []; player_features = []
 
-    logger.info("[6/6] Running models...")
+    logger.info("[6/7] Running models...")
     try:
         winner_preds, totals_preds, props_preds = step_models(match_features, player_features)
     except Exception as e:
@@ -341,31 +347,48 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         for k, v in team_form.items()
     }
 
+    # Build points table from Cricsheet team form + fixture results
+    from utils.data import _mock_points_table, _mock_ipl_schedule
+    points_table = _mock_points_table()   # replaced by live data when cache has it
+    full_schedule = _mock_ipl_schedule()  # replaced by live data when cache has it
+
+    logger.info("[7/7] Running Monte Carlo playoff simulation...")
+    try:
+        mc_result = step_monte_carlo(points_table, full_schedule)
+    except Exception as e:
+        logger.error("Monte Carlo step failed: %s\n%s", e, traceback.format_exc())
+        errors["monte_carlo"] = str(e)
+        mc_result = {}
+
     if not dry_run:
         logger.info("Writing cache files...")
-        _save("todays_matches",    matches_out)
-        _save("player_props",      props_out)
-        _save("team_form",         team_form_serializable)
-        _save("player_stats",      player_stats)
-        _save("venue_stats",       venue_stats)
-        _save("value_bets",        value_bets)
+        _save("todays_matches",       matches_out)
+        _save("player_props",         props_out)
+        _save("team_form",            team_form_serializable)
+        _save("player_stats",         player_stats)
+        _save("venue_stats",          venue_stats)
+        _save("value_bets",           value_bets)
+        _save("playoff_probabilities", mc_result)
         _save("last_updated", {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "matches_count": len(matches_out),
             "props_count": len(props_out),
+            "monte_carlo_sims": mc_result.get("n_simulations", 0),
             "errors": errors,
         })
         logger.info("All cache files written to %s", CACHE_DIR)
     else:
-        logger.info("[DRY RUN] Would write %d matches, %d props, %d bets",
-                    len(matches_out), len(props_out), len(value_bets))
+        logger.info("[DRY RUN] Would write %d matches, %d props, %d bets, MC=%s",
+                    len(matches_out), len(props_out), len(value_bets),
+                    bool(mc_result))
 
     logger.info("Pipeline complete.")
     return {
-        "matches":    matches_out,
-        "props":      props_out,
-        "value_bets": value_bets,
-        "errors":     errors,
+        "matches":              matches_out,
+        "props":                props_out,
+        "value_bets":           value_bets,
+        "playoff_probabilities": mc_result,
+        "errors":               errors,
     }
 
 

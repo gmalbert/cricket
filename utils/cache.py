@@ -7,16 +7,17 @@ CACHE_DIR = Path(__file__).parent.parent / "cache"
 CACHE_DIR.mkdir(exist_ok=True)
 
 CACHE_FILES = {
-    "todays_matches":   "todays_matches.json",
-    "player_props":     "player_props.json",
-    "schedule":         "schedule.json",
-    "points_table":     "points_table.json",
-    "team_form":        "team_form.json",
-    "model_performance":"model_performance.json",
-    "venue_stats":      "venue_stats.json",
-    "player_stats":     "player_stats.json",
-    "value_bets":       "value_bets.json",
-    "last_updated":     "last_updated.json",
+    "todays_matches":      "todays_matches.json",
+    "player_props":        "player_props.json",
+    "schedule":            "schedule.json",
+    "points_table":        "points_table.json",
+    "team_form":           "team_form.json",
+    "model_performance":   "model_performance.json",
+    "venue_stats":         "venue_stats.json",
+    "player_stats":        "player_stats.json",
+    "value_bets":          "value_bets.json",
+    "playoff_probabilities": "playoff_probabilities.json",
+    "last_updated":        "last_updated.json",
 }
 
 

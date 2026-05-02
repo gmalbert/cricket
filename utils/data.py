@@ -206,6 +206,23 @@ def get_model_performance():
     return _mock_model_performance()
 
 
+def get_playoff_probabilities():
+    """
+    Return Monte Carlo playoff simulation results.
+    Loads from cache when the nightly pipeline has run, otherwise
+    computes a fresh simulation against mock standings + schedule.
+    """
+    cached = load_cache("playoff_probabilities")
+    if cached and cached.get("team_results"):
+        return cached
+
+    # Fallback: run the simulation now against mock data
+    from pipeline.monte_carlo import run as mc_run
+    standings = _mock_points_table()
+    schedule  = _mock_ipl_schedule()
+    return mc_run(standings, schedule)
+
+
 # ---------------------------------------------------------------------------
 # Mock data fallbacks (used when no cache is present)
 # ---------------------------------------------------------------------------
