@@ -37,6 +37,7 @@ VENUE_COORDS = {
     "Himachal Pradesh Cricket Association Stadium, Dharamsala": {"lat": 32.2198, "lon": 76.3234},
     "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur, New Chandigarh": {"lat": 30.6942, "lon": 76.7336},
     "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur": {"lat": 30.6942, "lon": 76.7336},
+    "Rajiv Gandhi International Stadium, Hyderabad": {"lat": 17.4068, "lon": 78.5505}
 }
 
 DEFAULT_MATCH_HOUR_UTC = 14
