@@ -3,6 +3,7 @@ Fetch match-time weather forecasts from Open-Meteo (free, no API key).
 Used to compute temperature, humidity, dew flag per venue.
 """
 import logging
+import time
 import requests
 from datetime import datetime, timezone
 
@@ -39,6 +40,9 @@ VENUE_COORDS = {
 }
 
 DEFAULT_MATCH_HOUR_UTC = 14
+_REQUEST_TIMEOUT = (5, 20)   # (connect, read) seconds
+_MAX_RETRIES = 3
+_RETRY_BACKOFF = 2           # seconds between attempts
 
 
 def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MATCH_HOUR_UTC) -> dict:
@@ -50,13 +54,23 @@ def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MA
         "forecast_days": 2,
         "timezone": "UTC",
     }
-    try:
-        resp = requests.get(OPEN_METEO_URL, params=params, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as e:
-        logger.warning("Open-Meteo request failed: %s", e)
-        return {"temperature": 28, "humidity": 60, "windspeed": 10, "dewpoint": 15, "dew_flag": False}
+    _fallback = {"temperature": 28, "humidity": 60, "windspeed": 10, "dewpoint": 15, "dew_flag": False}
+    data: dict = {}
+    last_exc: Exception | None = None
+    for attempt in range(1, _MAX_RETRIES + 1):
+        try:
+            resp = requests.get(OPEN_METEO_URL, params=params, timeout=_REQUEST_TIMEOUT)
+            resp.raise_for_status()
+            data = resp.json()
+            break
+        except Exception as e:
+            last_exc = e
+            if attempt < _MAX_RETRIES:
+                logger.debug("Open-Meteo attempt %d failed (%s); retrying in %ds", attempt, e, _RETRY_BACKOFF)
+                time.sleep(_RETRY_BACKOFF)
+    else:
+        logger.warning("Open-Meteo request failed after %d attempts: %s", _MAX_RETRIES, last_exc)
+        return _fallback
 
     hourly = data.get("hourly", {})
     times = hourly.get("time", [])
