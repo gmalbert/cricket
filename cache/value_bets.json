@@ -1,5 +1,137 @@
 [
   {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "Shubman Gill UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "B Sai Sudharsan UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "JC Buttler UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "Washington Sundar UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "R Tewatia UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "M Shahrukh Khan UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "SS Iyer UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "P Simran Singh UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "Shashank Singh UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "Priyansh Arya UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "SM Curran UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "N Wadhera UNDER 15.5 Runs Scored",
+    "type": "Player Prop",
+    "model_prob": 0.839,
+    "implied_prob": 0.5,
+    "edge": 0.3387,
+    "dk_odds": "-115",
+    "kelly_stake": "16.9%",
+    "tier": "Elite Pick"
+  },
+  {
     "match": "Sunrisers Hyderabad vs Kolkata Knight Riders",
     "bet": "TM Head UNDER 15.5 Runs Scored",
     "type": "Player Prop",
@@ -528,136 +660,15 @@
     "tier": "Elite Pick"
   },
   {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "RG Sharma UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "SA Yadav UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "Tilak Varma UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "HH Pandya UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "RD Rickelton UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "Naman Dhir UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "TM Head UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "Abhishek Sharma UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "H Klaasen UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "Nithish Kumar Reddy UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "Ishan Kishan UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "Aniket Verma UNDER 15.5 Runs Scored",
-    "type": "Player Prop",
-    "model_prob": 0.839,
-    "implied_prob": 0.5,
-    "edge": 0.3387,
-    "dk_odds": "-115",
-    "kelly_stake": "16.9%",
-    "tier": "Elite Pick"
+    "match": "Gujarat Titans vs Punjab Kings",
+    "bet": "Punjab Kings ML",
+    "type": "Match Winner",
+    "model_prob": 0.9729,
+    "implied_prob": 0.8951,
+    "edge": 0.0778,
+    "dk_odds": "-112",
+    "kelly_stake": "16.6%",
+    "tier": "Strong"
   },
   {
     "match": "Chennai Super Kings vs Mumbai Indians",
@@ -668,17 +679,6 @@
     "edge": 0.0545,
     "dk_odds": "-159",
     "kelly_stake": "2.3%",
-    "tier": "Strong"
-  },
-  {
-    "match": "Mumbai Indians vs Sunrisers Hyderabad",
-    "bet": "Sunrisers Hyderabad ML",
-    "type": "Match Winner",
-    "model_prob": 0.6312,
-    "implied_prob": 0.5807,
-    "edge": 0.0505,
-    "dk_odds": "-172",
-    "kelly_stake": "1.7%",
     "tier": "Strong"
   }
 ]
