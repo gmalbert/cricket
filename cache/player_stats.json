@@ -210,6 +210,7 @@
     },
     "A Raghuvanshi": {
       "recent_scores": [
+        59,
         9,
         10,
         8,
@@ -218,11 +219,10 @@
         7,
         52,
         51,
-        14,
-        1
+        14
       ],
-      "recent_avg": 22.4,
-      "recent_sr": 127.3
+      "recent_avg": 28.2,
+      "recent_sr": 125.9
     },
     "A Singh": {
       "recent_scores": [
@@ -664,6 +664,7 @@
     },
     "AM Rahane": {
       "recent_scores": [
+        43,
         10,
         0,
         0,
@@ -672,11 +673,10 @@
         8,
         8,
         67,
-        15,
-        48
+        15
       ],
-      "recent_avg": 22.5,
-      "recent_sr": 134.7
+      "recent_avg": 22.0,
+      "recent_sr": 128.7
     },
     "AN Ahmed": {
       "recent_scores": [
@@ -901,6 +901,7 @@
     },
     "Abhishek Sharma": {
       "recent_scores": [
+        15,
         45,
         57,
         135,
@@ -909,11 +910,10 @@
         74,
         0,
         48,
-        7,
-        32
+        7
       ],
-      "recent_avg": 45.7,
-      "recent_sr": 185.0
+      "recent_avg": 44.0,
+      "recent_sr": 184.1
     },
     "Abishek Porel": {
       "recent_scores": [
@@ -968,6 +968,7 @@
     },
     "Aniket Verma": {
       "recent_scores": [
+        6,
         1,
         2,
         6,
@@ -976,11 +977,10 @@
         1,
         43,
         12,
-        26,
-        5
+        26
       ],
-      "recent_avg": 11.6,
-      "recent_sr": 175.8
+      "recent_avg": 11.7,
+      "recent_sr": 162.5
     },
     "Anirudh Singh": {
       "recent_scores": [
@@ -1071,6 +1071,7 @@
     },
     "Arshad Khan": {
       "recent_scores": [
+        8,
         20,
         1,
         1,
@@ -1079,11 +1080,10 @@
         58,
         20,
         1,
-        2,
-        15
+        2
       ],
-      "recent_avg": 11.9,
-      "recent_sr": 132.2
+      "recent_avg": 11.2,
+      "recent_sr": 128.7
     },
     "Arshad Khan (2)": {
       "recent_scores": [
@@ -1096,17 +1096,17 @@
       "recent_scores": [
         1,
         1,
+        1,
         4,
         2,
         2,
         0,
         9,
         0,
-        10,
-        0
+        10
       ],
-      "recent_avg": 2.9,
-      "recent_sr": 69.0
+      "recent_avg": 3.0,
+      "recent_sr": 71.4
     },
     "Ashok Sharma": {
       "recent_scores": [
@@ -1294,6 +1294,7 @@
     },
     "B Sai Sudharsan": {
       "recent_scores": [
+        57,
         6,
         87,
         100,
@@ -1302,11 +1303,10 @@
         15,
         12,
         73,
-        13,
-        80
+        13
       ],
-      "recent_avg": 40.8,
-      "recent_sr": 158.1
+      "recent_avg": 38.5,
+      "recent_sr": 154.0
     },
     "B Stanlake": {
       "recent_scores": [
@@ -1541,6 +1541,7 @@
     },
     "C Connolly": {
       "recent_scores": [
+        0,
         30,
         17,
         87,
@@ -1549,11 +1550,12 @@
         36,
         72
       ],
-      "recent_avg": 38.6,
-      "recent_sr": 163.6
+      "recent_avg": 33.8,
+      "recent_sr": 162.7
     },
     "C Green": {
       "recent_scores": [
+        3,
         34,
         27,
         79,
@@ -1562,11 +1564,10 @@
         4,
         2,
         18,
-        27,
-        38
+        27
       ],
-      "recent_avg": 26.1,
-      "recent_sr": 146.6
+      "recent_avg": 22.6,
+      "recent_sr": 140.4
     },
     "C Madan": {
       "recent_scores": [
@@ -2480,6 +2481,13 @@
       "recent_avg": 22.4,
       "recent_sr": 143.6
     },
+    "E Malinga": {
+      "recent_scores": [
+        2
+      ],
+      "recent_avg": 2.0,
+      "recent_sr": 28.6
+    },
     "EJG Morgan": {
       "recent_scores": [
         4,
@@ -2540,14 +2548,15 @@
     },
     "FH Allen": {
       "recent_scores": [
+        29,
         1,
         9,
         6,
         28,
         37
       ],
-      "recent_avg": 16.2,
-      "recent_sr": 184.1
+      "recent_avg": 18.3,
+      "recent_sr": 189.7
     },
     "FH Edwards": {
       "recent_scores": [
@@ -2774,6 +2783,7 @@
     },
     "H Klaasen": {
       "recent_scores": [
+        11,
         65,
         29,
         37,
@@ -2782,11 +2792,10 @@
         39,
         62,
         52,
-        31,
-        105
+        31
       ],
-      "recent_avg": 51.9,
-      "recent_sr": 161.7
+      "recent_avg": 42.5,
+      "recent_sr": 148.1
     },
     "HC Brook": {
       "recent_scores": [
@@ -2838,6 +2847,7 @@
     },
     "HH Pandya": {
       "recent_scores": [
+        18,
         31,
         1,
         15,
@@ -2846,11 +2856,10 @@
         9,
         18,
         15,
-        22,
-        26
+        22
       ],
-      "recent_avg": 19.1,
-      "recent_sr": 148.1
+      "recent_avg": 18.3,
+      "recent_sr": 134.6
     },
     "HM Amla": {
       "recent_scores": [
@@ -2881,6 +2890,7 @@
     },
     "HV Patel": {
       "recent_scores": [
+        6,
         4,
         0,
         1,
@@ -2889,11 +2899,10 @@
         12,
         0,
         12,
-        0,
-        1
+        0
       ],
-      "recent_avg": 3.8,
-      "recent_sr": 76.0
+      "recent_avg": 4.3,
+      "recent_sr": 84.3
     },
     "Harbhajan Singh": {
       "recent_scores": [
@@ -3095,6 +3104,7 @@
     },
     "Ishan Kishan": {
       "recent_scores": [
+        42,
         0,
         74,
         25,
@@ -3103,11 +3113,10 @@
         27,
         1,
         14,
-        80,
-        29
+        80
       ],
-      "recent_avg": 34.1,
-      "recent_sr": 183.3
+      "recent_avg": 35.4,
+      "recent_sr": 183.4
     },
     "J Arunkumar": {
       "recent_scores": [
@@ -3253,6 +3262,7 @@
     },
     "JC Buttler": {
       "recent_scores": [
+        26,
         39,
         39,
         25,
@@ -3261,11 +3271,10 @@
         60,
         52,
         26,
-        38,
-        5
+        38
       ],
-      "recent_avg": 31.4,
-      "recent_sr": 151.0
+      "recent_avg": 33.5,
+      "recent_sr": 149.6
     },
     "JD Ryder": {
       "recent_scores": [
@@ -3487,6 +3496,7 @@
     },
     "JO Holder": {
       "recent_scores": [
+        5,
         12,
         23,
         11,
@@ -3495,11 +3505,10 @@
         1,
         1,
         13,
-        11,
-        0
+        11
       ],
-      "recent_avg": 7.3,
-      "recent_sr": 143.1
+      "recent_avg": 7.8,
+      "recent_sr": 139.3
     },
     "JP Behrendorff": {
       "recent_scores": [
@@ -4100,14 +4109,15 @@
     },
     "Kartik Sharma": {
       "recent_scores": [
+        54,
         15,
         18,
         6,
         1,
         18
       ],
-      "recent_avg": 11.6,
-      "recent_sr": 113.7
+      "recent_avg": 18.7,
+      "recent_sr": 123.1
     },
     "Kartik Tyagi": {
       "recent_scores": [
@@ -4125,10 +4135,11 @@
     },
     "Krish Bhagat": {
       "recent_scores": [
+        3,
         7
       ],
-      "recent_avg": 7.0,
-      "recent_sr": 46.7
+      "recent_avg": 5.0,
+      "recent_sr": 47.6
     },
     "Kuldeep Yadav": {
       "recent_scores": [
@@ -4394,6 +4405,7 @@
     },
     "M Jansen": {
       "recent_scores": [
+        20,
         1,
         9,
         0,
@@ -4402,11 +4414,10 @@
         25,
         1,
         5,
-        34,
-        3
+        34
       ],
-      "recent_avg": 8.5,
-      "recent_sr": 109.0
+      "recent_avg": 10.2,
+      "recent_sr": 121.4
     },
     "M Kaif": {
       "recent_scores": [
@@ -5054,6 +5065,7 @@
     },
     "MP Stoinis": {
       "recent_scores": [
+        40,
         62,
         29,
         10,
@@ -5062,11 +5074,10 @@
         6,
         2,
         26,
-        44,
-        15
+        44
       ],
-      "recent_avg": 20.3,
-      "recent_sr": 205.1
+      "recent_avg": 22.8,
+      "recent_sr": 178.1
     },
     "MP Yadav": {
       "recent_scores": [
@@ -5455,8 +5466,16 @@
       "recent_avg": 14.0,
       "recent_sr": 97.9
     },
+    "N Sindhu": {
+      "recent_scores": [
+        15
+      ],
+      "recent_avg": 15.0,
+      "recent_sr": 136.4
+    },
     "N Wadhera": {
       "recent_scores": [
+        0,
         25,
         13,
         14,
@@ -5465,11 +5484,10 @@
         15,
         48,
         8,
-        2,
-        16
+        2
       ],
-      "recent_avg": 15.4,
-      "recent_sr": 114.9
+      "recent_avg": 13.8,
+      "recent_sr": 111.3
     },
     "NA Saini": {
       "recent_scores": [
@@ -5585,6 +5603,7 @@
     },
     "Naman Dhir": {
       "recent_scores": [
+        57,
         22,
         0,
         45,
@@ -5593,11 +5612,10 @@
         25,
         28,
         5,
-        37,
-        9
+        37
       ],
-      "recent_avg": 22.2,
-      "recent_sr": 151.0
+      "recent_avg": 27.0,
+      "recent_sr": 152.5
     },
     "Navdeep Saini": {
       "recent_scores": [
@@ -5808,6 +5826,7 @@
     },
     "P Simran Singh": {
       "recent_scores": [
+        15,
         59,
         76,
         0,
@@ -5816,11 +5835,10 @@
         43,
         37,
         26,
-        6,
-        18
+        6
       ],
-      "recent_avg": 39.6,
-      "recent_sr": 162.3
+      "recent_avg": 39.3,
+      "recent_sr": 158.5
     },
     "PA Patel": {
       "recent_scores": [
@@ -5928,6 +5946,7 @@
     },
     "PJ Cummins": {
       "recent_scores": [
+        10,
         13,
         19,
         1,
@@ -5936,11 +5955,10 @@
         14,
         2,
         18,
-        0,
-        24
+        0
       ],
-      "recent_avg": 12.1,
-      "recent_sr": 157.1
+      "recent_avg": 10.7,
+      "recent_sr": 162.1
     },
     "PJ Sangwan": {
       "recent_scores": [
@@ -6167,6 +6185,7 @@
     },
     "Priyansh Arya": {
       "recent_scores": [
+        2,
         29,
         43,
         93,
@@ -6175,11 +6194,10 @@
         39,
         7,
         24,
-        20,
-        7
+        20
       ],
-      "recent_avg": 33.4,
-      "recent_sr": 215.5
+      "recent_avg": 32.9,
+      "recent_sr": 216.4
     },
     "Q de Kock": {
       "recent_scores": [
@@ -6288,12 +6306,13 @@
     },
     "R Minz": {
       "recent_scores": [
+        5,
         1,
         3,
         3
       ],
-      "recent_avg": 2.3,
-      "recent_sr": 41.2
+      "recent_avg": 3.0,
+      "recent_sr": 60.0
     },
     "R Ninan": {
       "recent_scores": [
@@ -6438,8 +6457,16 @@
       "recent_avg": 4.8,
       "recent_sr": 82.6
     },
+    "R Smaran": {
+      "recent_scores": [
+        4
+      ],
+      "recent_avg": 4.0,
+      "recent_sr": 100.0
+    },
     "R Tewatia": {
       "recent_scores": [
+        2,
         27,
         8,
         7,
@@ -6448,11 +6475,10 @@
         12,
         11,
         16,
-        14,
-        2
+        14
       ],
       "recent_avg": 10.8,
-      "recent_sr": 118.7
+      "recent_sr": 114.9
     },
     "R Vinay Kumar": {
       "recent_scores": [
@@ -6529,6 +6555,7 @@
     },
     "RD Gaikwad": {
       "recent_scores": [
+        67,
         74,
         22,
         19,
@@ -6537,14 +6564,14 @@
         7,
         28,
         6,
-        1,
-        5
+        1
       ],
-      "recent_avg": 18.4,
-      "recent_sr": 110.8
+      "recent_avg": 24.6,
+      "recent_sr": 115.5
     },
     "RD Rickelton": {
       "recent_scores": [
+        37,
         123,
         2,
         37,
@@ -6553,11 +6580,10 @@
         81,
         27,
         25,
-        2,
-        61
+        2
       ],
-      "recent_avg": 37.5,
-      "recent_sr": 164.5
+      "recent_avg": 35.1,
+      "recent_sr": 165.6
     },
     "RE Levi": {
       "recent_scores": [
@@ -6676,6 +6702,7 @@
     },
     "RK Singh": {
       "recent_scores": [
+        22,
         87,
         53,
         1,
@@ -6684,11 +6711,10 @@
         35,
         33,
         9,
-        9,
-        19
+        9
       ],
-      "recent_avg": 25.6,
-      "recent_sr": 140.7
+      "recent_avg": 25.9,
+      "recent_sr": 137.0
     },
     "RM Patidar": {
       "recent_scores": [
@@ -7020,6 +7046,7 @@
     },
     "S Arora": {
       "recent_scores": [
+        2,
         30,
         8,
         13,
@@ -7028,8 +7055,8 @@
         0,
         9
       ],
-      "recent_avg": 13.3,
-      "recent_sr": 169.1
+      "recent_avg": 11.9,
+      "recent_sr": 155.7
     },
     "S Badree": {
       "recent_scores": [
@@ -7287,6 +7314,7 @@
     },
     "SA Yadav": {
       "recent_scores": [
+        21,
         5,
         36,
         15,
@@ -7295,11 +7323,10 @@
         6,
         51,
         16,
-        44,
-        33
+        44
       ],
-      "recent_avg": 23.9,
-      "recent_sr": 143.1
+      "recent_avg": 22.7,
+      "recent_sr": 142.8
     },
     "SB Bangar": {
       "recent_scores": [
@@ -7791,6 +7818,7 @@
     },
     "SS Iyer": {
       "recent_scores": [
+        19,
         30,
         71,
         5,
@@ -7799,11 +7827,10 @@
         50,
         18,
         1,
-        87,
-        2
+        87
       ],
-      "recent_avg": 39.9,
-      "recent_sr": 172.7
+      "recent_avg": 41.6,
+      "recent_sr": 166.4
     },
     "SS Prabhudessai": {
       "recent_scores": [
@@ -7886,6 +7913,7 @@
     "SV Samson": {
       "recent_scores": [
         11,
+        11,
         101,
         7,
         48,
@@ -7893,11 +7921,10 @@
         9,
         7,
         6,
-        41,
-        20
+        41
       ],
-      "recent_avg": 36.5,
-      "recent_sr": 158.0
+      "recent_avg": 35.6,
+      "recent_sr": 158.9
     },
     "SW Billings": {
       "recent_scores": [
@@ -8117,12 +8144,13 @@
     },
     "Shivang Kumar": {
       "recent_scores": [
+        1,
         12,
         5,
         4
       ],
-      "recent_avg": 7.0,
-      "recent_sr": 140.0
+      "recent_avg": 5.5,
+      "recent_sr": 129.4
     },
     "Shoaib Ahmed": {
       "recent_scores": [
@@ -8153,6 +8181,7 @@
     },
     "Shubman Gill": {
       "recent_scores": [
+        5,
         43,
         33,
         32,
@@ -8161,11 +8190,10 @@
         56,
         70,
         39,
-        1,
-        13
+        1
       ],
-      "recent_avg": 38.7,
-      "recent_sr": 149.4
+      "recent_avg": 37.9,
+      "recent_sr": 149.2
     },
     "Sikandar Raza": {
       "recent_scores": [
@@ -8234,13 +8262,14 @@
     },
     "Suryansh Shedge": {
       "recent_scores": [
+        57,
         3,
         1,
         4,
         2
       ],
-      "recent_avg": 2.5,
-      "recent_sr": 71.4
+      "recent_avg": 13.4,
+      "recent_sr": 155.8
     },
     "Swapnil Singh": {
       "recent_scores": [
@@ -8344,6 +8373,7 @@
     },
     "TA Boult": {
       "recent_scores": [
+        7,
         1,
         1,
         1,
@@ -8352,11 +8382,10 @@
         2,
         0,
         1,
-        15,
-        0
+        15
       ],
-      "recent_avg": 3.3,
-      "recent_sr": 86.8
+      "recent_avg": 4.0,
+      "recent_sr": 102.6
     },
     "TD Paine": {
       "recent_scores": [
@@ -8460,6 +8489,7 @@
     },
     "TM Head": {
       "recent_scores": [
+        61,
         76,
         6,
         37,
@@ -8468,11 +8498,10 @@
         38,
         7,
         46,
-        11,
-        76
+        11
       ],
-      "recent_avg": 33.8,
-      "recent_sr": 162.5
+      "recent_avg": 32.3,
+      "recent_sr": 164.8
     },
     "TM Srivastava": {
       "recent_scores": [
@@ -8529,6 +8558,7 @@
     },
     "Tilak Varma": {
       "recent_scores": [
+        5,
         7,
         37,
         101,
@@ -8537,11 +8567,10 @@
         14,
         0,
         20,
-        44,
-        25
+        44
       ],
-      "recent_avg": 25.7,
-      "recent_sr": 163.7
+      "recent_avg": 23.7,
+      "recent_sr": 153.9
     },
     "U Kaul": {
       "recent_scores": [
@@ -8624,13 +8653,14 @@
     },
     "Urvil Patel": {
       "recent_scores": [
+        24,
         4,
         37,
         0,
         31
       ],
-      "recent_avg": 18.0,
-      "recent_sr": 194.6
+      "recent_avg": 19.2,
+      "recent_sr": 195.9
     },
     "V Kohli": {
       "recent_scores": [
@@ -8834,12 +8864,13 @@
     "Vijaykumar Vyshak": {
       "recent_scores": [
         1,
+        1,
         0,
         13,
         0
       ],
-      "recent_avg": 3.5,
-      "recent_sr": 107.7
+      "recent_avg": 3.0,
+      "recent_sr": 93.8
     },
     "Virat Singh": {
       "recent_scores": [
@@ -8914,6 +8945,7 @@
     },
     "WG Jacks": {
       "recent_scores": [
+        1,
         46,
         17,
         21,
@@ -8922,11 +8954,10 @@
         22,
         36,
         1,
-        22,
-        5
+        22
       ],
-      "recent_avg": 25.2,
-      "recent_sr": 146.5
+      "recent_avg": 24.8,
+      "recent_sr": 145.9
     },
     "WP Saha": {
       "recent_scores": [
@@ -8962,6 +8993,7 @@
     },
     "Washington Sundar": {
       "recent_scores": [
+        40,
         12,
         1,
         19,
@@ -8970,11 +9002,10 @@
         21,
         55,
         4,
-        18,
-        48
+        18
       ],
-      "recent_avg": 21.7,
-      "recent_sr": 145.6
+      "recent_avg": 20.9,
+      "recent_sr": 142.2
     },
     "X Thalaivan Sargunam": {
       "recent_scores": [
@@ -8985,11 +9016,12 @@
     },
     "XC Bartlett": {
       "recent_scores": [
+        0,
         11,
         11
       ],
-      "recent_avg": 11.0,
-      "recent_sr": 110.0
+      "recent_avg": 7.3,
+      "recent_sr": 104.8
     },
     "Y Gnaneswara Rao": {
       "recent_scores": [
@@ -9250,13 +9282,13 @@
     },
     "A Kamboj": {
       "wickets_last5": [
+        3,
         0,
         1,
         3,
-        2,
-        3
+        2
       ],
-      "recent_economy": 6.28,
+      "recent_economy": 6.11,
       "recent_wickets_per_match": 1.8
     },
     "A Kumble": {
@@ -9572,14 +9604,14 @@
     },
     "AM Ghazanfar": {
       "wickets_last5": [
-        2,
+        1,
         2,
         2,
         2,
         2
       ],
-      "recent_economy": 8.33,
-      "recent_wickets_per_match": 2.0
+      "recent_economy": 8.58,
+      "recent_wickets_per_match": 1.8
     },
     "AM Nayar": {
       "wickets_last5": [
@@ -9677,12 +9709,12 @@
     "AS Roy": {
       "wickets_last5": [
         1,
+        1,
         0,
         1,
-        2,
-        1
+        2
       ],
-      "recent_economy": 7.2,
+      "recent_economy": 7.45,
       "recent_wickets_per_match": 1.0
     },
     "AU Rashid": {
@@ -9738,7 +9770,7 @@
         0,
         0
       ],
-      "recent_economy": 11.14,
+      "recent_economy": 10.83,
       "recent_wickets_per_match": 0.0
     },
     "Akash Deep": {
@@ -9838,14 +9870,14 @@
     },
     "Arshad Khan": {
       "wickets_last5": [
+        0,
         4,
         2,
         0,
-        1,
         1
       ],
-      "recent_economy": 9.06,
-      "recent_wickets_per_match": 1.6
+      "recent_economy": 9.84,
+      "recent_wickets_per_match": 1.4
     },
     "Arshad Khan (2)": {
       "wickets_last5": [
@@ -9856,13 +9888,13 @@
     },
     "Arshdeep Singh": {
       "wickets_last5": [
+        2,
         1,
         1,
         1,
-        3,
-        2
+        3
       ],
-      "recent_economy": 10.28,
+      "recent_economy": 9.8,
       "recent_wickets_per_match": 1.6
     },
     "Ashok Sharma": {
@@ -10169,13 +10201,13 @@
     "C Green": {
       "wickets_last5": [
         1,
-        0,
-        0,
         1,
-        2
+        0,
+        0,
+        1
       ],
-      "recent_economy": 8.89,
-      "recent_wickets_per_match": 0.8
+      "recent_economy": 9.89,
+      "recent_wickets_per_match": 0.6
     },
     "C Munro": {
       "wickets_last5": [
@@ -10348,14 +10380,14 @@
     },
     "CV Varun": {
       "wickets_last5": [
+        3,
         2,
         3,
         2,
-        0,
         0
       ],
-      "recent_economy": 7.71,
-      "recent_wickets_per_match": 1.4
+      "recent_economy": 7.18,
+      "recent_wickets_per_match": 2.0
     },
     "D Brevis": {
       "wickets_last5": [
@@ -10710,14 +10742,14 @@
     },
     "E Malinga": {
       "wickets_last5": [
+        0,
         1,
         2,
         4,
-        3,
-        2
+        3
       ],
-      "recent_economy": 6.98,
-      "recent_wickets_per_match": 2.4
+      "recent_economy": 7.62,
+      "recent_wickets_per_match": 2.0
     },
     "F du Plessis": {
       "wickets_last5": [
@@ -10944,14 +10976,14 @@
     },
     "HH Pandya": {
       "wickets_last5": [
-        1,
         0,
         1,
         0,
-        1
+        1,
+        0
       ],
-      "recent_economy": 10.45,
-      "recent_wickets_per_match": 0.6
+      "recent_economy": 10.58,
+      "recent_wickets_per_match": 0.4
     },
     "HR Shokeen": {
       "wickets_last5": [
@@ -10970,10 +11002,10 @@
         0,
         0,
         0,
-        1
+        0
       ],
-      "recent_economy": 10.59,
-      "recent_wickets_per_match": 0.2
+      "recent_economy": 10.6,
+      "recent_wickets_per_match": 0.0
     },
     "Harbhajan Singh": {
       "wickets_last5": [
@@ -11159,14 +11191,14 @@
     },
     "J Overton": {
       "wickets_last5": [
+        1,
         0,
         1,
         3,
-        0,
-        4
+        0
       ],
-      "recent_economy": 7.69,
-      "recent_wickets_per_match": 1.6
+      "recent_economy": 8.3,
+      "recent_wickets_per_match": 1.0
     },
     "J Suchith": {
       "wickets_last5": [
@@ -11339,14 +11371,14 @@
     },
     "JJ Bumrah": {
       "wickets_last5": [
+        1,
         0,
         1,
         1,
-        0,
         0
       ],
-      "recent_economy": 8.15,
-      "recent_wickets_per_match": 0.4
+      "recent_economy": 7.79,
+      "recent_wickets_per_match": 0.6
     },
     "JJ van der Wath": {
       "wickets_last5": [
@@ -11381,14 +11413,14 @@
     },
     "JO Holder": {
       "wickets_last5": [
+        4,
         2,
         0,
         1,
-        0,
         0
       ],
-      "recent_economy": 9.17,
-      "recent_wickets_per_match": 0.6
+      "recent_economy": 7.93,
+      "recent_wickets_per_match": 1.4
     },
     "JP Behrendorff": {
       "wickets_last5": [
@@ -11538,14 +11570,14 @@
     },
     "K Rabada": {
       "wickets_last5": [
+        2,
         1,
         3,
         0,
-        3,
         3
       ],
-      "recent_economy": 8.32,
-      "recent_wickets_per_match": 2.0
+      "recent_economy": 7.94,
+      "recent_wickets_per_match": 1.8
     },
     "K Santokie": {
       "wickets_last5": [
@@ -11825,21 +11857,22 @@
     },
     "Kartik Tyagi": {
       "wickets_last5": [
+        2,
         1,
         3,
         0,
-        2,
-        1
+        2
       ],
-      "recent_economy": 8.27,
-      "recent_wickets_per_match": 1.4
+      "recent_economy": 7.71,
+      "recent_wickets_per_match": 1.6
     },
     "Krish Bhagat": {
       "wickets_last5": [
         0,
+        0,
         0
       ],
-      "recent_economy": 10.25,
+      "recent_economy": 10.5,
       "recent_wickets_per_match": 0.0
     },
     "Kuldeep Yadav": {
@@ -12015,14 +12048,14 @@
     },
     "M Jansen": {
       "wickets_last5": [
+        1,
         0,
         0,
         2,
-        1,
-        0
+        1
       ],
-      "recent_economy": 9.58,
-      "recent_wickets_per_match": 0.6
+      "recent_economy": 9.23,
+      "recent_wickets_per_match": 0.8
     },
     "M Kartik": {
       "wickets_last5": [
@@ -12303,12 +12336,13 @@
     },
     "MJ Suthar": {
       "wickets_last5": [
+        0,
         1,
         1,
         0
       ],
-      "recent_economy": 8.86,
-      "recent_wickets_per_match": 0.67
+      "recent_economy": 11.04,
+      "recent_wickets_per_match": 0.5
     },
     "MK Lomror": {
       "wickets_last5": [
@@ -12378,14 +12412,14 @@
     },
     "MP Stoinis": {
       "wickets_last5": [
+        1,
         0,
         0,
         1,
-        0,
         0
       ],
-      "recent_economy": 10.95,
-      "recent_wickets_per_match": 0.2
+      "recent_economy": 9.96,
+      "recent_wickets_per_match": 0.4
     },
     "MP Yadav": {
       "wickets_last5": [
@@ -12502,13 +12536,13 @@
     },
     "Mohammed Siraj": {
       "wickets_last5": [
+        2,
         1,
         1,
         1,
-        1,
-        2
+        1
       ],
-      "recent_economy": 7.05,
+      "recent_economy": 7.2,
       "recent_wickets_per_match": 1.2
     },
     "Mohit Rathee": {
@@ -12549,13 +12583,13 @@
     },
     "Mukesh Choudhary": {
       "wickets_last5": [
+        0,
         1,
         2,
         1,
-        0,
         0
       ],
-      "recent_economy": 10.68,
+      "recent_economy": 9.35,
       "recent_wickets_per_match": 0.8
     },
     "Mukesh Kumar": {
@@ -12751,14 +12785,14 @@
     },
     "Noor Ahmad": {
       "wickets_last5": [
+        2,
         1,
         2,
         0,
-        3,
-        1
+        3
       ],
-      "recent_economy": 6.86,
-      "recent_wickets_per_match": 1.4
+      "recent_economy": 6.29,
+      "recent_wickets_per_match": 1.6
     },
     "O Thomas": {
       "wickets_last5": [
@@ -12936,14 +12970,14 @@
     },
     "PJ Cummins": {
       "wickets_last5": [
+        1,
         0,
         1,
         0,
-        3,
-        0
+        3
       ],
-      "recent_economy": 7.86,
-      "recent_wickets_per_match": 0.8
+      "recent_economy": 8.16,
+      "recent_wickets_per_match": 1.0
     },
     "PJ Sangwan": {
       "wickets_last5": [
@@ -12995,6 +13029,13 @@
       ],
       "recent_economy": 8.21,
       "recent_wickets_per_match": 0.2
+    },
+    "PR Veer": {
+      "wickets_last5": [
+        0
+      ],
+      "recent_economy": 12.5,
+      "recent_wickets_per_match": 0.0
     },
     "PV Tambe": {
       "wickets_last5": [
@@ -13452,6 +13493,13 @@
       "recent_economy": 8.0,
       "recent_wickets_per_match": 0.0
     },
+    "RS Ghosh": {
+      "wickets_last5": [
+        1
+      ],
+      "recent_economy": 8.0,
+      "recent_wickets_per_match": 1.0
+    },
     "RS Hangargekar": {
       "wickets_last5": [
         0,
@@ -13485,6 +13533,13 @@
       "recent_economy": 11.0,
       "recent_wickets_per_match": 0.0
     },
+    "Raghu Sharma": {
+      "wickets_last5": [
+        0
+      ],
+      "recent_economy": 6.0,
+      "recent_wickets_per_match": 0.0
+    },
     "Ramandeep Singh": {
       "wickets_last5": [
         0,
@@ -13498,13 +13553,13 @@
     },
     "Rashid Khan": {
       "wickets_last5": [
+        1,
         2,
         0,
         2,
-        0,
-        1
+        0
       ],
-      "recent_economy": 8.97,
+      "recent_economy": 8.29,
       "recent_wickets_per_match": 1.0
     },
     "Rasikh Salam": {
@@ -13987,14 +14042,14 @@
     },
     "SP Narine": {
       "wickets_last5": [
+        2,
         3,
         2,
         1,
-        1,
         1
       ],
-      "recent_economy": 5.46,
-      "recent_wickets_per_match": 1.6
+      "recent_economy": 6.34,
+      "recent_wickets_per_match": 1.8
     },
     "SPD Smith": {
       "wickets_last5": [
@@ -14127,10 +14182,10 @@
         1,
         1,
         1,
-        4
+        1
       ],
-      "recent_economy": 8.21,
-      "recent_wickets_per_match": 1.6
+      "recent_economy": 8.39,
+      "recent_wickets_per_match": 1.0
     },
     "Sandeep Sharma": {
       "wickets_last5": [
@@ -14211,14 +14266,14 @@
     },
     "Shivang Kumar": {
       "wickets_last5": [
+        1,
         0,
         0,
         1,
-        0,
-        3
+        0
       ],
-      "recent_economy": 9.67,
-      "recent_wickets_per_match": 0.8
+      "recent_economy": 9.71,
+      "recent_wickets_per_match": 0.4
     },
     "Shoaib Ahmed": {
       "wickets_last5": [
@@ -14382,14 +14437,14 @@
     },
     "TA Boult": {
       "wickets_last5": [
+        0,
         1,
         1,
         0,
-        0,
-        2
+        0
       ],
-      "recent_economy": 9.73,
-      "recent_wickets_per_match": 0.8
+      "recent_economy": 9.98,
+      "recent_wickets_per_match": 0.4
     },
     "TG Southee": {
       "wickets_last5": [
@@ -14618,14 +14673,14 @@
     },
     "VG Arora": {
       "wickets_last5": [
+        1,
         2,
         1,
         1,
-        1,
-        2
+        1
       ],
-      "recent_economy": 8.6,
-      "recent_wickets_per_match": 1.4
+      "recent_economy": 8.26,
+      "recent_wickets_per_match": 1.2
     },
     "VR Aaron": {
       "wickets_last5": [
@@ -14692,13 +14747,13 @@
     },
     "Vijaykumar Vyshak": {
       "wickets_last5": [
+        2,
         0,
         1,
         1,
-        0,
-        2
+        0
       ],
-      "recent_economy": 10.53,
+      "recent_economy": 10.12,
       "recent_wickets_per_match": 0.8
     },
     "Vivrant Sharma": {
@@ -14775,14 +14830,14 @@
     },
     "XC Bartlett": {
       "wickets_last5": [
+        0,
         1,
         0,
         0,
-        1,
-        2
+        1
       ],
-      "recent_economy": 11.4,
-      "recent_wickets_per_match": 0.8
+      "recent_economy": 11.18,
+      "recent_wickets_per_match": 0.4
     },
     "Y Gnaneswara Rao": {
       "wickets_last5": [
@@ -14852,14 +14907,14 @@
     },
     "YS Chahal": {
       "wickets_last5": [
+        0,
         3,
         0,
         1,
-        0,
-        1
+        0
       ],
-      "recent_economy": 9.38,
-      "recent_wickets_per_match": 1.0
+      "recent_economy": 9.76,
+      "recent_wickets_per_match": 0.8
     },
     "Yash Dayal": {
       "wickets_last5": [
