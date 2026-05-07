@@ -6,13 +6,13 @@
       "current_nrr": -0.122,
       "games_remaining": 1,
       "qualify_prob": 1.0,
-      "title_prob": 0.7604,
-      "avg_finish": 1.24,
+      "title_prob": 1.0,
+      "avg_finish": 1.0,
       "avg_final_pts": 16.0,
       "magic_number": 0,
       "position_dist": {
-        "P1": 76.0,
-        "P2": 24.0,
+        "P1": 100.0,
+        "P2": 0.0,
         "P3": 0.0,
         "P4": 0.0,
         "P5": 0.0
@@ -22,16 +22,16 @@
       "team": "Rajasthan Royals",
       "current_pts": 12,
       "current_nrr": 0.923,
-      "games_remaining": 1,
+      "games_remaining": 0,
       "qualify_prob": 1.0,
-      "title_prob": 0.2396,
-      "avg_finish": 1.76,
-      "avg_final_pts": 14.0,
+      "title_prob": 0.0,
+      "avg_finish": 2.0,
+      "avg_final_pts": 12.0,
       "magic_number": 0,
       "position_dist": {
-        "P1": 24.0,
-        "P2": 75.9,
-        "P3": 0.1,
+        "P1": 0.0,
+        "P2": 100.0,
+        "P3": 0.0,
         "P4": 0.0,
         "P5": 0.0
       }
@@ -48,8 +48,8 @@
       "magic_number": 0,
       "position_dist": {
         "P1": 0.0,
-        "P2": 0.1,
-        "P3": 99.9,
+        "P2": 0.0,
+        "P3": 100.0,
         "P4": 0.0,
         "P5": 0.0
       }
@@ -79,7 +79,7 @@
       "games_remaining": 0,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 5.47,
+      "avg_finish": 5.59,
       "avg_final_pts": 10.0,
       "magic_number": null,
       "position_dist": {
@@ -87,7 +87,7 @@
         "P2": 0.0,
         "P3": 0.0,
         "P4": 0.0,
-        "P5": 53.4
+        "P5": 40.8
       }
     },
     {
@@ -97,7 +97,7 @@
       "games_remaining": 1,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 6.34,
+      "avg_finish": 5.82,
       "avg_final_pts": 8.0,
       "magic_number": null,
       "position_dist": {
@@ -105,25 +105,7 @@
         "P2": 0.0,
         "P3": 0.0,
         "P4": 0.0,
-        "P5": 46.6
-      }
-    },
-    {
-      "team": "Sunrisers Hyderabad",
-      "current_pts": 8,
-      "current_nrr": 0.123,
-      "games_remaining": 1,
-      "qualify_prob": 0.0,
-      "title_prob": 0.0,
-      "avg_finish": 7.86,
-      "avg_final_pts": 9.1,
-      "magic_number": null,
-      "position_dist": {
-        "P1": 0.0,
-        "P2": 0.0,
-        "P3": 0.0,
-        "P4": 0.0,
-        "P5": 0.0
+        "P5": 59.2
       }
     },
     {
@@ -133,8 +115,8 @@
       "games_remaining": 1,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 8.09,
-      "avg_final_pts": 8.9,
+      "avg_finish": 7.54,
+      "avg_final_pts": 9.2,
       "magic_number": null,
       "position_dist": {
         "P1": 0.0,
@@ -151,8 +133,26 @@
       "games_remaining": 0,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 8.5,
+      "avg_finish": 8.01,
       "avg_final_pts": 8.0,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 0.0,
+        "P2": 0.0,
+        "P3": 0.0,
+        "P4": 0.0,
+        "P5": 0.0
+      }
+    },
+    {
+      "team": "Sunrisers Hyderabad",
+      "current_pts": 8,
+      "current_nrr": 0.123,
+      "games_remaining": 1,
+      "qualify_prob": 0.0,
+      "title_prob": 0.0,
+      "avg_finish": 8.04,
+      "avg_final_pts": 8.8,
       "magic_number": null,
       "position_dist": {
         "P1": 0.0,
@@ -166,10 +166,10 @@
       "team": "Chennai Super Kings",
       "current_pts": 8,
       "current_nrr": -0.303,
-      "games_remaining": 1,
+      "games_remaining": 0,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 8.74,
+      "avg_finish": 10.0,
       "avg_final_pts": 8.0,
       "magic_number": null,
       "position_dist": {
@@ -182,15 +182,6 @@
     }
   ],
   "match_importance": [
-    {
-      "match": 33,
-      "date": "May 07",
-      "team1": "Rajasthan Royals",
-      "team2": "Chennai Super Kings",
-      "importance": 0.0,
-      "t1_swing": 0.0,
-      "t2_swing": 0.0
-    },
     {
       "match": 34,
       "date": "May 09",
@@ -211,6 +202,6 @@
     }
   ],
   "n_simulations": 10000,
-  "remaining_matches": 3,
+  "remaining_matches": 2,
   "methodology": "10,000 Monte Carlo simulations. Each sim samples remaining match outcomes using model win probabilities, resolves ties via NRR with Gaussian noise, and records top-4 finishes. Match importance = average swing in qualification probability when forcing each team to win."
 }
