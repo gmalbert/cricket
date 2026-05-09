@@ -79,7 +79,7 @@
       "games_remaining": 0,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 5.59,
+      "avg_finish": 5.39,
       "avg_final_pts": 10.0,
       "magic_number": null,
       "position_dist": {
@@ -87,7 +87,7 @@
         "P2": 0.0,
         "P3": 0.0,
         "P4": 0.0,
-        "P5": 40.8
+        "P5": 61.2
       }
     },
     {
@@ -97,7 +97,7 @@
       "games_remaining": 1,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 5.82,
+      "avg_finish": 5.61,
       "avg_final_pts": 8.0,
       "magic_number": null,
       "position_dist": {
@@ -105,25 +105,7 @@
         "P2": 0.0,
         "P3": 0.0,
         "P4": 0.0,
-        "P5": 59.2
-      }
-    },
-    {
-      "team": "Delhi Capitals",
-      "current_pts": 8,
-      "current_nrr": 0.043,
-      "games_remaining": 1,
-      "qualify_prob": 0.0,
-      "title_prob": 0.0,
-      "avg_finish": 7.54,
-      "avg_final_pts": 9.2,
-      "magic_number": null,
-      "position_dist": {
-        "P1": 0.0,
-        "P2": 0.0,
-        "P3": 0.0,
-        "P4": 0.0,
-        "P5": 0.0
+        "P5": 38.8
       }
     },
     {
@@ -133,7 +115,7 @@
       "games_remaining": 0,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 8.01,
+      "avg_finish": 7.0,
       "avg_final_pts": 8.0,
       "magic_number": null,
       "position_dist": {
@@ -148,11 +130,29 @@
       "team": "Sunrisers Hyderabad",
       "current_pts": 8,
       "current_nrr": 0.123,
-      "games_remaining": 1,
+      "games_remaining": 0,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 8.04,
-      "avg_final_pts": 8.8,
+      "avg_finish": 8.0,
+      "avg_final_pts": 8.0,
+      "magic_number": null,
+      "position_dist": {
+        "P1": 0.0,
+        "P2": 0.0,
+        "P3": 0.0,
+        "P4": 0.0,
+        "P5": 0.0
+      }
+    },
+    {
+      "team": "Delhi Capitals",
+      "current_pts": 8,
+      "current_nrr": 0.043,
+      "games_remaining": 0,
+      "qualify_prob": 0.0,
+      "title_prob": 0.0,
+      "avg_finish": 9.0,
+      "avg_final_pts": 8.0,
       "magic_number": null,
       "position_dist": {
         "P1": 0.0,
@@ -183,15 +183,6 @@
   ],
   "match_importance": [
     {
-      "match": 34,
-      "date": "May 09",
-      "team1": "Delhi Capitals",
-      "team2": "Sunrisers Hyderabad",
-      "importance": 0.0,
-      "t1_swing": 0.0,
-      "t2_swing": 0.0
-    },
-    {
       "match": 35,
       "date": "May 11",
       "team1": "Kolkata Knight Riders",
@@ -202,6 +193,6 @@
     }
   ],
   "n_simulations": 10000,
-  "remaining_matches": 2,
+  "remaining_matches": 1,
   "methodology": "10,000 Monte Carlo simulations. Each sim samples remaining match outcomes using model win probabilities, resolves ties via NRR with Gaussian noise, and records top-4 finishes. Match importance = average swing in qualification probability when forcing each team to win."
 }
