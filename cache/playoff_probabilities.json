@@ -4,11 +4,11 @@
       "team": "Gujarat Titans",
       "current_pts": 14,
       "current_nrr": -0.122,
-      "games_remaining": 1,
+      "games_remaining": 0,
       "qualify_prob": 1.0,
       "title_prob": 1.0,
       "avg_finish": 1.0,
-      "avg_final_pts": 16.0,
+      "avg_final_pts": 14.0,
       "magic_number": 0,
       "position_dist": {
         "P1": 100.0,
@@ -79,7 +79,7 @@
       "games_remaining": 0,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 5.39,
+      "avg_finish": 5.0,
       "avg_final_pts": 10.0,
       "magic_number": null,
       "position_dist": {
@@ -87,17 +87,17 @@
         "P2": 0.0,
         "P3": 0.0,
         "P4": 0.0,
-        "P5": 61.2
+        "P5": 100.0
       }
     },
     {
       "team": "Kolkata Knight Riders",
       "current_pts": 8,
       "current_nrr": 1.077,
-      "games_remaining": 1,
+      "games_remaining": 0,
       "qualify_prob": 0.0,
       "title_prob": 0.0,
-      "avg_finish": 5.61,
+      "avg_finish": 6.0,
       "avg_final_pts": 8.0,
       "magic_number": null,
       "position_dist": {
@@ -105,7 +105,7 @@
         "P2": 0.0,
         "P3": 0.0,
         "P4": 0.0,
-        "P5": 38.8
+        "P5": 0.0
       }
     },
     {
@@ -181,18 +181,8 @@
       }
     }
   ],
-  "match_importance": [
-    {
-      "match": 35,
-      "date": "May 11",
-      "team1": "Kolkata Knight Riders",
-      "team2": "Gujarat Titans",
-      "importance": 0.0,
-      "t1_swing": 0.0,
-      "t2_swing": 0.0
-    }
-  ],
+  "match_importance": [],
   "n_simulations": 10000,
-  "remaining_matches": 1,
+  "remaining_matches": 0,
   "methodology": "10,000 Monte Carlo simulations. Each sim samples remaining match outcomes using model win probabilities, resolves ties via NRR with Gaussian noise, and records top-4 finishes. Match importance = average swing in qualification probability when forcing each team to win."
 }
