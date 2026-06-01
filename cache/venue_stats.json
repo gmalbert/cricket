@@ -1,111 +1,159 @@
 {
-  "Himachal Pradesh Cricket Association Stadium, Dharamsala": {
-    "avg_first_innings": 205.2,
-    "chase_win_rate": 0.333
-  },
   "M Chinnaswamy Stadium": {
     "avg_first_innings": 168.1,
     "chase_win_rate": 0.547
   },
-  "Maharashtra Cricket Association Stadium, Pune": {
-    "avg_first_innings": 171.5,
-    "chase_win_rate": 0.231
+  "Shaheed Veer Narayan Singh International Stadium": {
+    "avg_first_innings": 146.3,
+    "chase_win_rate": 0.667
   },
-  "Sharjah Cricket Stadium": {
-    "avg_first_innings": 159.0,
-    "chase_win_rate": 0.643
+  "M Chinnaswamy Stadium, Bengaluru": {
+    "avg_first_innings": 190.4,
+    "chase_win_rate": 0.542
   },
-  "Kingsmead": {
-    "avg_first_innings": 152.0,
-    "chase_win_rate": 0.4
+  "Sheikh Zayed Stadium": {
+    "avg_first_innings": 158.9,
+    "chase_win_rate": 0.552
   },
-  "St George's Park": {
-    "avg_first_innings": 159.0,
-    "chase_win_rate": 0.571
-  },
-  "Punjab Cricket Association IS Bindra Stadium": {
-    "avg_first_innings": 175.6,
-    "chase_win_rate": 0.6
-  },
-  "Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh": {
-    "avg_first_innings": 197.8,
-    "chase_win_rate": 0.4
-  },
-  "Subrata Roy Sahara Stadium": {
-    "avg_first_innings": 149.4,
-    "chase_win_rate": 0.375
+  "Maharaja Yadavindra Singh International Cricket Stadium, New Chandigarh": {
+    "avg_first_innings": 221.3,
+    "chase_win_rate": 0.5
   },
   "Arun Jaitley Stadium, Delhi": {
     "avg_first_innings": 193.6,
     "chase_win_rate": 0.533
   },
-  "Dubai International Cricket Stadium": {
-    "avg_first_innings": 163.8,
-    "chase_win_rate": 0.478
+  "Barabati Stadium": {
+    "avg_first_innings": 167.7,
+    "chase_win_rate": 0.429
   },
-  "Rajiv Gandhi International Stadium, Uppal, Hyderabad": {
-    "avg_first_innings": 194.7,
-    "chase_win_rate": 0.48
+  "Brabourne Stadium, Mumbai": {
+    "avg_first_innings": 177.4,
+    "chase_win_rate": 0.529
   },
   "SuperSport Park": {
     "avg_first_innings": 154.8,
     "chase_win_rate": 0.667
   },
+  "M.Chinnaswamy Stadium": {
+    "avg_first_innings": 173.9,
+    "chase_win_rate": 0.467
+  },
+  "Saurashtra Cricket Association Stadium": {
+    "avg_first_innings": 168.9,
+    "chase_win_rate": 0.6
+  },
+  "Sardar Patel Stadium, Motera": {
+    "avg_first_innings": 163.2,
+    "chase_win_rate": 0.417
+  },
   "MA Chidambaram Stadium, Chepauk": {
     "avg_first_innings": 166.0,
     "chase_win_rate": 0.354
   },
-  "New Wanderers Stadium": {
-    "avg_first_innings": 144.0,
+  "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium": {
+    "avg_first_innings": 157.5,
+    "chase_win_rate": 0.462
+  },
+  "Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh": {
+    "avg_first_innings": 197.8,
+    "chase_win_rate": 0.4
+  },
+  "Wankhede Stadium": {
+    "avg_first_innings": 166.0,
+    "chase_win_rate": 0.507
+  },
+  "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow": {
+    "avg_first_innings": 174.8,
+    "chase_win_rate": 0.571
+  },
+  "Dr DY Patil Sports Academy, Mumbai": {
+    "avg_first_innings": 170.7,
+    "chase_win_rate": 0.5
+  },
+  "Rajiv Gandhi International Stadium, Uppal": {
+    "avg_first_innings": 156.1,
+    "chase_win_rate": 0.551
+  },
+  "Sharjah Cricket Stadium": {
+    "avg_first_innings": 159.0,
+    "chase_win_rate": 0.643
+  },
+  "St George's Park": {
+    "avg_first_innings": 159.0,
+    "chase_win_rate": 0.571
+  },
+  "Arun Jaitley Stadium": {
+    "avg_first_innings": 168.3,
+    "chase_win_rate": 0.429
+  },
+  "Wankhede Stadium, Mumbai": {
+    "avg_first_innings": 181.9,
+    "chase_win_rate": 0.576
+  },
+  "Maharashtra Cricket Association Stadium": {
+    "avg_first_innings": 166.4,
+    "chase_win_rate": 0.636
+  },
+  "Brabourne Stadium": {
+    "avg_first_innings": 180.4,
+    "chase_win_rate": 0.4
+  },
+  "Himachal Pradesh Cricket Association Stadium, Dharamsala": {
+    "avg_first_innings": 205.2,
+    "chase_win_rate": 0.333
+  },
+  "Punjab Cricket Association IS Bindra Stadium": {
+    "avg_first_innings": 175.6,
+    "chase_win_rate": 0.6
+  },
+  "Vidarbha Cricket Association Stadium, Jamtha": {
+    "avg_first_innings": 149.3,
+    "chase_win_rate": 0.333
+  },
+  "Barsapara Cricket Stadium, Guwahati": {
+    "avg_first_innings": 168.9,
+    "chase_win_rate": 0.5
+  },
+  "Eden Gardens": {
+    "avg_first_innings": 160.2,
+    "chase_win_rate": 0.558
+  },
+  "Newlands": {
+    "avg_first_innings": 139.4,
+    "chase_win_rate": 0.143
+  },
+  "Zayed Cricket Stadium, Abu Dhabi": {
+    "avg_first_innings": 159.0,
     "chase_win_rate": 0.625
   },
   "Dr DY Patil Sports Academy": {
     "avg_first_innings": 146.6,
     "chase_win_rate": 0.588
   },
-  "Dr DY Patil Sports Academy, Mumbai": {
-    "avg_first_innings": 170.7,
-    "chase_win_rate": 0.5
+  "Feroz Shah Kotla": {
+    "avg_first_innings": 161.6,
+    "chase_win_rate": 0.508
   },
-  "Barabati Stadium": {
-    "avg_first_innings": 167.7,
-    "chase_win_rate": 0.429
-  },
-  "Maharaja Yadavindra Singh International Cricket Stadium, New Chandigarh": {
-    "avg_first_innings": 221.3,
-    "chase_win_rate": 0.5
-  },
-  "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium": {
-    "avg_first_innings": 157.5,
-    "chase_win_rate": 0.462
-  },
-  "Eden Gardens": {
-    "avg_first_innings": 160.2,
-    "chase_win_rate": 0.558
-  },
-  "Barsapara Cricket Stadium, Guwahati": {
-    "avg_first_innings": 168.9,
-    "chase_win_rate": 0.5
-  },
-  "Punjab Cricket Association IS Bindra Stadium, Mohali": {
-    "avg_first_innings": 164.1,
-    "chase_win_rate": 0.545
+  "Maharashtra Cricket Association Stadium, Pune": {
+    "avg_first_innings": 171.5,
+    "chase_win_rate": 0.231
   },
   "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnam": {
     "avg_first_innings": 208.8,
     "chase_win_rate": 0.5
   },
-  "Sardar Patel Stadium, Motera": {
-    "avg_first_innings": 163.2,
-    "chase_win_rate": 0.417
+  "OUTsurance Oval": {
+    "avg_first_innings": 135.0,
+    "chase_win_rate": 0.5
   },
-  "Wankhede Stadium": {
-    "avg_first_innings": 166.0,
-    "chase_win_rate": 0.507
+  "Himachal Pradesh Cricket Association Stadium": {
+    "avg_first_innings": 175.7,
+    "chase_win_rate": 0.444
   },
-  "De Beers Diamond Oval": {
-    "avg_first_innings": 158.0,
-    "chase_win_rate": 0.667
+  "Rajiv Gandhi International Stadium, Uppal, Hyderabad": {
+    "avg_first_innings": 194.7,
+    "chase_win_rate": 0.48
   },
   "MA Chidambaram Stadium, Chepauk, Chennai": {
     "avg_first_innings": 168.3,
@@ -115,41 +163,65 @@
     "avg_first_innings": 186.6,
     "chase_win_rate": 0.475
   },
-  "M Chinnaswamy Stadium, Bengaluru": {
-    "avg_first_innings": 190.4,
-    "chase_win_rate": 0.542
+  "JSCA International Stadium Complex": {
+    "avg_first_innings": 149.0,
+    "chase_win_rate": 0.714
   },
-  "Sawai Mansingh Stadium, Jaipur": {
-    "avg_first_innings": 194.5,
-    "chase_win_rate": 0.571
+  "Dubai International Cricket Stadium": {
+    "avg_first_innings": 163.8,
+    "chase_win_rate": 0.478
   },
-  "Punjab Cricket Association Stadium, Mohali": {
-    "avg_first_innings": 163.3,
-    "chase_win_rate": 0.571
+  "Rajiv Gandhi International Stadium": {
+    "avg_first_innings": 162.6,
+    "chase_win_rate": 0.467
   },
-  "Shaheed Veer Narayan Singh International Stadium": {
-    "avg_first_innings": 146.3,
-    "chase_win_rate": 0.667
+  "New Wanderers Stadium": {
+    "avg_first_innings": 144.0,
+    "chase_win_rate": 0.625
   },
-  "Arun Jaitley Stadium": {
-    "avg_first_innings": 168.3,
-    "chase_win_rate": 0.429
+  "Kingsmead": {
+    "avg_first_innings": 152.0,
+    "chase_win_rate": 0.4
   },
-  "Shaheed Veer Narayan Singh International Stadium, Raipur": {
-    "avg_first_innings": 179.0,
-    "chase_win_rate": 1.0
+  "MA Chidambaram Stadium": {
+    "avg_first_innings": 150.6,
+    "chase_win_rate": 0.556
+  },
+  "Eden Gardens, Kolkata": {
+    "avg_first_innings": 190.3,
+    "chase_win_rate": 0.448
+  },
+  "Holkar Cricket Stadium": {
+    "avg_first_innings": 160.3,
+    "chase_win_rate": 0.889
+  },
+  "Punjab Cricket Association IS Bindra Stadium, Mohali": {
+    "avg_first_innings": 164.1,
+    "chase_win_rate": 0.545
+  },
+  "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur": {
+    "avg_first_innings": 163.0,
+    "chase_win_rate": 0.5
   },
   "Buffalo Park": {
     "avg_first_innings": 147.3,
     "chase_win_rate": 0.333
   },
-  "Vidarbha Cricket Association Stadium, Jamtha": {
-    "avg_first_innings": 149.3,
-    "chase_win_rate": 0.333
+  "De Beers Diamond Oval": {
+    "avg_first_innings": 158.0,
+    "chase_win_rate": 0.667
   },
-  "Eden Gardens, Kolkata": {
-    "avg_first_innings": 190.3,
-    "chase_win_rate": 0.448
+  "Shaheed Veer Narayan Singh International Stadium, Raipur": {
+    "avg_first_innings": 179.0,
+    "chase_win_rate": 1.0
+  },
+  "Sawai Mansingh Stadium": {
+    "avg_first_innings": 157.7,
+    "chase_win_rate": 0.681
+  },
+  "Sawai Mansingh Stadium, Jaipur": {
+    "avg_first_innings": 194.5,
+    "chase_win_rate": 0.571
   },
   "Green Park": {
     "avg_first_innings": 161.2,
@@ -159,84 +231,12 @@
     "avg_first_innings": 146.8,
     "chase_win_rate": 0.4
   },
-  "Maharashtra Cricket Association Stadium": {
-    "avg_first_innings": 166.4,
-    "chase_win_rate": 0.636
+  "Subrata Roy Sahara Stadium": {
+    "avg_first_innings": 149.4,
+    "chase_win_rate": 0.375
   },
-  "Wankhede Stadium, Mumbai": {
-    "avg_first_innings": 181.9,
-    "chase_win_rate": 0.576
-  },
-  "Sheikh Zayed Stadium": {
-    "avg_first_innings": 158.9,
-    "chase_win_rate": 0.552
-  },
-  "Brabourne Stadium": {
-    "avg_first_innings": 180.4,
-    "chase_win_rate": 0.4
-  },
-  "Rajiv Gandhi International Stadium": {
-    "avg_first_innings": 162.6,
-    "chase_win_rate": 0.467
-  },
-  "MA Chidambaram Stadium": {
-    "avg_first_innings": 150.6,
-    "chase_win_rate": 0.556
-  },
-  "Rajiv Gandhi International Stadium, Uppal": {
-    "avg_first_innings": 156.1,
-    "chase_win_rate": 0.551
-  },
-  "Himachal Pradesh Cricket Association Stadium": {
-    "avg_first_innings": 175.7,
-    "chase_win_rate": 0.444
-  },
-  "Sawai Mansingh Stadium": {
-    "avg_first_innings": 157.7,
-    "chase_win_rate": 0.681
-  },
-  "OUTsurance Oval": {
-    "avg_first_innings": 135.0,
-    "chase_win_rate": 0.5
-  },
-  "Zayed Cricket Stadium, Abu Dhabi": {
-    "avg_first_innings": 159.0,
-    "chase_win_rate": 0.625
-  },
-  "Newlands": {
-    "avg_first_innings": 139.4,
-    "chase_win_rate": 0.143
-  },
-  "Saurashtra Cricket Association Stadium": {
-    "avg_first_innings": 168.9,
-    "chase_win_rate": 0.6
-  },
-  "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow": {
-    "avg_first_innings": 174.8,
+  "Punjab Cricket Association Stadium, Mohali": {
+    "avg_first_innings": 163.3,
     "chase_win_rate": 0.571
-  },
-  "M.Chinnaswamy Stadium": {
-    "avg_first_innings": 173.9,
-    "chase_win_rate": 0.467
-  },
-  "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur": {
-    "avg_first_innings": 163.0,
-    "chase_win_rate": 0.5
-  },
-  "Brabourne Stadium, Mumbai": {
-    "avg_first_innings": 177.4,
-    "chase_win_rate": 0.529
-  },
-  "Feroz Shah Kotla": {
-    "avg_first_innings": 161.6,
-    "chase_win_rate": 0.508
-  },
-  "JSCA International Stadium Complex": {
-    "avg_first_innings": 149.0,
-    "chase_win_rate": 0.714
-  },
-  "Holkar Cricket Stadium": {
-    "avg_first_innings": 160.3,
-    "chase_win_rate": 0.889
   }
 }
