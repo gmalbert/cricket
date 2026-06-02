@@ -98,7 +98,21 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add cache/*.json
           git diff --staged --quiet || git commit -m "chore: nightly cache update $(date -u +'%Y-%m-%d %H:%M UTC')"
+
+      - name: Export best bets for Sports Picks Grid
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          mkdir -p scripts
+          python scripts/export_best_bets.py
+        continue-on-error: true
+
+      - name: Commit best_bets_today.json
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git add data_files/best_bets_today.json || true
+          git diff --staged --quiet || git commit -m "chore: update best_bets_today [skip ci]"
           git push
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
