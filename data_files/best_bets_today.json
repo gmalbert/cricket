@@ -1,70 +1,9 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-06-01T01:21:30.074397+00:00",
+    "generated_at": "2026-06-03T07:56:21.395421+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
-  "bets": [
-    {
-      "game_date": "2026-06-01",
-      "game": "Mumbai Indians vs Sunrisers Hyderabad",
-      "game_time": "04:00 IST",
-      "bet_type": "Player Prop",
-      "pick": "H Klaasen OVER 37.5 Runs Scored",
-      "confidence": 0.757,
-      "edge": 0.2573,
-      "odds": -115,
-      "tier": "Elite",
-      "notes": "Kelly stake: 12.9%"
-    },
-    {
-      "game_date": "2026-06-01",
-      "game": "Mumbai Indians vs Sunrisers Hyderabad",
-      "game_time": "04:00 IST",
-      "bet_type": "Player Prop",
-      "pick": "Abhishek Sharma OVER 37.5 Runs Scored",
-      "confidence": 0.667,
-      "edge": 0.1667,
-      "odds": -115,
-      "tier": "Elite",
-      "notes": "Kelly stake: 8.3%"
-    },
-    {
-      "game_date": "2026-06-01",
-      "game": "Gujarat Titans vs Royal Challengers Bengaluru",
-      "game_time": "04:00 IST",
-      "bet_type": "Player Prop",
-      "pick": "V Kohli OVER 37.5 Runs Scored",
-      "confidence": 0.636,
-      "edge": 0.136,
-      "odds": -115,
-      "tier": "Elite",
-      "notes": "Kelly stake: 6.8%"
-    },
-    {
-      "game_date": "2026-06-01",
-      "game": "Gujarat Titans vs Royal Challengers Bengaluru",
-      "game_time": "04:00 IST",
-      "bet_type": "Player Prop",
-      "pick": "B Sai Sudharsan OVER 37.5 Runs Scored",
-      "confidence": 0.615,
-      "edge": 0.1147,
-      "odds": -115,
-      "tier": "Strong",
-      "notes": "Kelly stake: 5.7%"
-    },
-    {
-      "game_date": "2026-06-01",
-      "game": "Mumbai Indians vs Sunrisers Hyderabad",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "Sunrisers Hyderabad ML",
-      "confidence": 0.642,
-      "edge": 0.0514,
-      "odds": -169,
-      "tier": "Strong",
-      "notes": "Kelly stake: 1.9%"
-    }
-  ]
+  "bets": []
 }
