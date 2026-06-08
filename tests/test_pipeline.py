@@ -10,7 +10,10 @@ Tests cover:
 """
 
 import json
+import pandas as pd
 import pytest
+
+import pipeline.fetch_cricsheet as fetch_cricsheet
 
 
 # ── Match ID convention ───────────────────────────────────────────────────────
@@ -120,6 +123,28 @@ class TestFeatureEngineering:
 
 
 # ── Model output schema ───────────────────────────────────────────────────────
+
+class TestCricsheetFallbacks:
+    """Cricsheet download should fall back to cached parquet data when the remote fetch fails."""
+
+    def test_download_ipl_data_uses_cached_parquet_on_failure(self, tmp_path, monkeypatch):
+        cached = tmp_path / "cache" / "raw" / "ipl_ball_by_ball.parquet"
+        cached.parent.mkdir(parents=True, exist_ok=True)
+        expected = pd.DataFrame({"match_id": ["test_match"]})
+        expected.to_parquet(cached, index=False)
+
+        monkeypatch.setattr(fetch_cricsheet, "RAW_DIR", cached.parent)
+        monkeypatch.setattr(fetch_cricsheet, "CRICSHEET_IPL_URL", "https://example.invalid/cricsheet.zip")
+
+        def _boom(*args, **kwargs):
+            raise RuntimeError("simulated download failure")
+
+        monkeypatch.setattr(fetch_cricsheet.requests, "get", _boom)
+
+        result = fetch_cricsheet.download_ipl_data()
+
+        assert result.equals(expected)
+
 
 class TestModelOutputSchema:
     """The pipeline's prediction output must conform to the cache schema."""

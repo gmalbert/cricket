@@ -4,6 +4,7 @@ Downloads the latest IPL CSV pack and extracts match-level and
 player-level aggregates needed for feature engineering.
 """
 import io
+import time
 import zipfile
 import logging
 import requests
@@ -15,28 +16,59 @@ logger = logging.getLogger(__name__)
 CRICSHEET_IPL_URL = "https://cricsheet.org/downloads/ipl_male_csv2.zip"
 RAW_DIR = Path(__file__).parent.parent / "cache" / "raw"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
+_REQUEST_TIMEOUT = (10, 60)
+_MAX_RETRIES = 3
+_RETRY_BACKOFF = 2
 
 
 def download_ipl_data() -> pd.DataFrame:
     """Download the Cricsheet IPL CSV zip and return a combined ball-by-ball DataFrame."""
+    cached_path = RAW_DIR / "ipl_ball_by_ball.parquet"
+    headers = {"User-Agent": "Wicket-Oracle/1.0 (+https://github.com/gmalbert/cricket)"}
+
     logger.info("Downloading Cricsheet IPL data from %s", CRICSHEET_IPL_URL)
-    resp = requests.get(CRICSHEET_IPL_URL, timeout=120)
-    resp.raise_for_status()
+    last_exc: Exception | None = None
 
-    frames = []
-    with zipfile.ZipFile(io.BytesIO(resp.content)) as zf:
-        csv_files = [f for f in zf.namelist() if f.endswith(".csv") and "_info" not in f]
-        logger.info("Found %d CSV files in archive", len(csv_files))
-        for name in csv_files:
-            try:
-                with zf.open(name) as f:
-                    df = pd.read_csv(f, low_memory=False)
-                    frames.append(df)
-            except Exception as e:
-                logger.warning("Could not parse %s: %s", name, e)
+    for attempt in range(1, _MAX_RETRIES + 1):
+        try:
+            resp = requests.get(CRICSHEET_IPL_URL, headers=headers, timeout=_REQUEST_TIMEOUT)
+            resp.raise_for_status()
 
-    if not frames:
-        raise RuntimeError("No valid CSVs found in Cricsheet zip")
+            frames = []
+            with zipfile.ZipFile(io.BytesIO(resp.content)) as zf:
+                csv_files = [f for f in zf.namelist() if f.endswith(".csv") and "_info" not in f]
+                logger.info("Found %d CSV files in archive", len(csv_files))
+                for name in csv_files:
+                    try:
+                        with zf.open(name) as f:
+                            df = pd.read_csv(f, low_memory=False)
+                            frames.append(df)
+                    except Exception as e:
+                        logger.warning("Could not parse %s: %s", name, e)
+
+            if not frames:
+                raise RuntimeError("No valid CSVs found in Cricsheet zip")
+
+            combined = pd.concat(frames, ignore_index=True)
+            break
+        except Exception as exc:
+            last_exc = exc
+            if attempt < _MAX_RETRIES:
+                logger.warning("Cricsheet download attempt %d failed: %s; retrying in %ds", attempt, exc, _RETRY_BACKOFF)
+                time.sleep(_RETRY_BACKOFF)
+            else:
+                logger.warning("Cricsheet download failed after %d attempts: %s", _MAX_RETRIES, exc)
+                if cached_path.exists():
+                    logger.warning("Falling back to cached parquet at %s", cached_path)
+                    return pd.read_parquet(cached_path)
+                logger.warning("No cached Cricsheet parquet found; returning empty dataset")
+                return pd.DataFrame(columns=["match_id", "start_date", "batting_team", "bowling_team"])
+    else:
+        if cached_path.exists():
+            logger.warning("Falling back to cached parquet at %s", cached_path)
+            return pd.read_parquet(cached_path)
+        logger.warning("No cached Cricsheet parquet found; returning empty dataset")
+        return pd.DataFrame(columns=["match_id", "start_date", "batting_team", "bowling_team"])
 
     combined = pd.concat(frames, ignore_index=True)
     logger.info("Loaded %d rows of ball-by-ball data", len(combined))
