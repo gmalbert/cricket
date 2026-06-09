@@ -12,6 +12,7 @@ Tests cover:
 import json
 import pandas as pd
 import pytest
+import requests
 
 import pipeline.fetch_cricsheet as fetch_cricsheet
 import pipeline.fetch_weather as fetch_weather
@@ -151,6 +152,9 @@ class TestWeatherFallbacks:
     """Weather fetches should always fall back to safe defaults on upstream timeouts."""
 
     def test_fetch_venue_weather_returns_defaults_on_timeout(self, monkeypatch):
+        # Reset the module-level session to ensure clean test state
+        fetch_weather._reset_session()
+        
         class _FailingSession:
             def __init__(self):
                 self.headers = {}
@@ -164,6 +168,31 @@ class TestWeatherFallbacks:
 
         assert result["temperature"] == 28
         assert result["humidity"] == 60
+
+
+class TestCricsheetHttpFallbacks:
+    """Cricsheet should use cached data immediately when the upstream server rejects the download."""
+
+    def test_download_ipl_data_uses_cached_parquet_on_http_415(self, tmp_path, monkeypatch):
+        cached = tmp_path / "cache" / "raw" / "ipl_ball_by_ball.parquet"
+        cached.parent.mkdir(parents=True, exist_ok=True)
+        expected = pd.DataFrame({"match_id": ["test_match"]})
+        expected.to_parquet(cached, index=False)
+
+        monkeypatch.setattr(fetch_cricsheet, "RAW_DIR", cached.parent)
+        monkeypatch.setattr(fetch_cricsheet, "CRICSHEET_IPL_URL", "https://example.invalid/cricsheet.zip")
+
+        class _Response:
+            status_code = 415
+
+        def _boom(*args, **kwargs):
+            raise requests.HTTPError(response=_Response())
+
+        monkeypatch.setattr(fetch_cricsheet.requests, "get", _boom)
+
+        result = fetch_cricsheet.download_ipl_data()
+
+        assert result.equals(expected)
 
 
 class TestModelOutputSchema:
