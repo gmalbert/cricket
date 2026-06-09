@@ -11,6 +11,15 @@ import requests
 import pandas as pd
 from pathlib import Path
 
+
+def _fallback_to_cache(cached_path: Path) -> pd.DataFrame:
+    """Return cached parquet when the upstream Cricsheet download is rejected."""
+    if cached_path.exists():
+        logger.warning("Falling back to cached parquet at %s", cached_path)
+        return pd.read_parquet(cached_path)
+    logger.warning("No cached Cricsheet parquet found; returning empty dataset")
+    return pd.DataFrame(columns=["match_id", "start_date", "batting_team", "bowling_team"])
+
 logger = logging.getLogger(__name__)
 
 CRICSHEET_IPL_URL = "https://cricsheet.org/downloads/ipl_male_csv2.zip"
@@ -64,22 +73,20 @@ def download_ipl_data() -> pd.DataFrame:
             break
         except Exception as exc:
             last_exc = exc
+            status_code = None
+            if isinstance(exc, requests.HTTPError) and exc.response is not None:
+                status_code = exc.response.status_code
+            if status_code in (403, 415, 429):
+                logger.warning("Cricsheet download was rejected by the upstream server (HTTP %s); using cached parquet", status_code)
+                return _fallback_to_cache(cached_path)
             if attempt < _MAX_RETRIES:
                 logger.warning("Cricsheet download attempt %d failed: %s; retrying in %ds", attempt, exc, _RETRY_BACKOFF)
                 time.sleep(_RETRY_BACKOFF)
             else:
                 logger.warning("Cricsheet download failed after %d attempts: %s", _MAX_RETRIES, exc)
-                if cached_path.exists():
-                    logger.warning("Falling back to cached parquet at %s", cached_path)
-                    return pd.read_parquet(cached_path)
-                logger.warning("No cached Cricsheet parquet found; returning empty dataset")
-                return pd.DataFrame(columns=["match_id", "start_date", "batting_team", "bowling_team"])
+                return _fallback_to_cache(cached_path)
     else:
-        if cached_path.exists():
-            logger.warning("Falling back to cached parquet at %s", cached_path)
-            return pd.read_parquet(cached_path)
-        logger.warning("No cached Cricsheet parquet found; returning empty dataset")
-        return pd.DataFrame(columns=["match_id", "start_date", "batting_team", "bowling_team"])
+        return _fallback_to_cache(cached_path)
 
     combined = pd.concat(frames, ignore_index=True)
     logger.info("Loaded %d rows of ball-by-ball data", len(combined))
