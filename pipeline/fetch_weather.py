@@ -41,9 +41,13 @@ VENUE_COORDS = {
 }
 
 DEFAULT_MATCH_HOUR_UTC = 14
-_REQUEST_TIMEOUT = (5, 20)   # (connect, read) seconds
+_REQUEST_TIMEOUT = (10, 60)  # (connect, read) seconds
 _MAX_RETRIES = 3
 _RETRY_BACKOFF = 2           # seconds between attempts
+_REQUEST_HEADERS = {
+    "User-Agent": "Wicket-Oracle/1.0 (+https://github.com/gmalbert/cricket)",
+    "Accept": "application/json",
+}
 
 
 def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MATCH_HOUR_UTC) -> dict:
@@ -58,9 +62,11 @@ def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MA
     _fallback = {"temperature": 28, "humidity": 60, "windspeed": 10, "dewpoint": 15, "dew_flag": False}
     data: dict = {}
     last_exc: Exception | None = None
+    session = requests.Session()
+    session.headers.update(_REQUEST_HEADERS)
     for attempt in range(1, _MAX_RETRIES + 1):
         try:
-            resp = requests.get(OPEN_METEO_URL, params=params, timeout=_REQUEST_TIMEOUT)
+            resp = session.get(OPEN_METEO_URL, params=params, timeout=_REQUEST_TIMEOUT)
             resp.raise_for_status()
             data = resp.json()
             break
