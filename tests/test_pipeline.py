@@ -14,6 +14,7 @@ import pandas as pd
 import pytest
 
 import pipeline.fetch_cricsheet as fetch_cricsheet
+import pipeline.fetch_weather as fetch_weather
 
 
 # ── Match ID convention ───────────────────────────────────────────────────────
@@ -144,6 +145,25 @@ class TestCricsheetFallbacks:
         result = fetch_cricsheet.download_ipl_data()
 
         assert result.equals(expected)
+
+
+class TestWeatherFallbacks:
+    """Weather fetches should always fall back to safe defaults on upstream timeouts."""
+
+    def test_fetch_venue_weather_returns_defaults_on_timeout(self, monkeypatch):
+        class _FailingSession:
+            def __init__(self):
+                self.headers = {}
+
+            def get(self, *args, **kwargs):
+                raise TimeoutError("simulated timeout")
+
+        monkeypatch.setattr(fetch_weather.requests, "Session", lambda: _FailingSession())
+
+        result = fetch_weather.fetch_venue_weather(18.9388, 72.8258)
+
+        assert result["temperature"] == 28
+        assert result["humidity"] == 60
 
 
 class TestModelOutputSchema:

@@ -19,20 +19,31 @@ RAW_DIR.mkdir(parents=True, exist_ok=True)
 _REQUEST_TIMEOUT = (10, 60)
 _MAX_RETRIES = 3
 _RETRY_BACKOFF = 2
+_REQUEST_HEADERS = {
+    "User-Agent": "Wicket-Oracle/1.0 (+https://github.com/gmalbert/cricket)",
+    "Accept": "application/zip, application/octet-stream, */*",
+}
 
 
 def download_ipl_data() -> pd.DataFrame:
     """Download the Cricsheet IPL CSV zip and return a combined ball-by-ball DataFrame."""
     cached_path = RAW_DIR / "ipl_ball_by_ball.parquet"
-    headers = {"User-Agent": "Wicket-Oracle/1.0 (+https://github.com/gmalbert/cricket)"}
 
     logger.info("Downloading Cricsheet IPL data from %s", CRICSHEET_IPL_URL)
     last_exc: Exception | None = None
 
     for attempt in range(1, _MAX_RETRIES + 1):
         try:
-            resp = requests.get(CRICSHEET_IPL_URL, headers=headers, timeout=_REQUEST_TIMEOUT)
+            resp = requests.get(
+                CRICSHEET_IPL_URL,
+                headers=_REQUEST_HEADERS,
+                timeout=_REQUEST_TIMEOUT,
+                allow_redirects=True,
+                stream=True,
+            )
             resp.raise_for_status()
+            if "zip" not in resp.headers.get("Content-Type", "").lower() and not resp.content.startswith(b"PK"):
+                raise RuntimeError("Cricsheet response did not look like a ZIP archive")
 
             frames = []
             with zipfile.ZipFile(io.BytesIO(resp.content)) as zf:
