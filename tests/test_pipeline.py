@@ -152,6 +152,9 @@ class TestWeatherFallbacks:
     """Weather fetches should always fall back to safe defaults on upstream timeouts."""
 
     def test_fetch_venue_weather_returns_defaults_on_timeout(self, monkeypatch):
+        # Reset the module-level session to ensure clean test state
+        fetch_weather._reset_session()
+        
         class _FailingSession:
             def __init__(self):
                 self.headers = {}

@@ -41,13 +41,31 @@ VENUE_COORDS = {
 }
 
 DEFAULT_MATCH_HOUR_UTC = 14
-_REQUEST_TIMEOUT = (10, 60)  # (connect, read) seconds
-_MAX_RETRIES = 3
-_RETRY_BACKOFF = 2           # seconds between attempts
+_REQUEST_TIMEOUT = (20, 120)  # (connect, read) seconds - generous for GitHub Actions runners
+_MAX_RETRIES = 2              # Reduced from 3 to limit noise on persistent failures
+_RETRY_BACKOFF = 3            # seconds between attempts
 _REQUEST_HEADERS = {
     "User-Agent": "Wicket-Oracle/1.0 (+https://github.com/gmalbert/cricket)",
     "Accept": "application/json",
 }
+
+# Module-level session for connection pooling across all venue requests
+_weather_session = None
+
+
+def _get_session() -> requests.Session:
+    """Get or create a persistent requests session with proper configuration."""
+    global _weather_session
+    if _weather_session is None:
+        _weather_session = requests.Session()
+        _weather_session.headers.update(_REQUEST_HEADERS)
+    return _weather_session
+
+
+def _reset_session() -> None:
+    """Reset the module-level session. Only used for testing."""
+    global _weather_session
+    _weather_session = None
 
 
 def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MATCH_HOUR_UTC) -> dict:
@@ -62,8 +80,7 @@ def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MA
     _fallback = {"temperature": 28, "humidity": 60, "windspeed": 10, "dewpoint": 15, "dew_flag": False}
     data: dict = {}
     last_exc: Exception | None = None
-    session = requests.Session()
-    session.headers.update(_REQUEST_HEADERS)
+    session = _get_session()
     for attempt in range(1, _MAX_RETRIES + 1):
         try:
             resp = session.get(OPEN_METEO_URL, params=params, timeout=_REQUEST_TIMEOUT)
