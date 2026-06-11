@@ -174,8 +174,19 @@ def compute_team_form(bbb: pd.DataFrame, last_n: int = 10) -> dict:
 
     for team in all_teams:
         team_innings = innings_agg[innings_agg["batting_team"] == team].copy()
-        team_innings = team_innings.merge(match_meta[["match_id", "start_date"]], on="match_id", how="left")
-        team_innings = team_innings.sort_values("start_date", ascending=False).head(last_n)
+        
+        # Defensive: ensure match_meta has the columns we need
+        merge_cols = ["match_id"]
+        if "start_date" in match_meta.columns:
+            merge_cols.append("start_date")
+        
+        team_innings = team_innings.merge(match_meta[merge_cols], on="match_id", how="left")
+        
+        # Sort by start_date if available, otherwise keep original order
+        if "start_date" in team_innings.columns:
+            team_innings = team_innings.sort_values("start_date", ascending=False).head(last_n)
+        else:
+            team_innings = team_innings.head(last_n)
 
         pp_team    = pp_agg[pp_agg["batting_team"] == team]
         death_team = death_bowl[death_bowl["bowling_team"] == team]
@@ -208,10 +219,16 @@ def compute_team_form(bbb: pd.DataFrame, last_n: int = 10) -> dict:
             team_score = int(meta["team_score"]) if meta is not None and pd.notna(meta.get("team_score")) else int(row["total_runs"])
             opp_score  = int(meta["opp_score"])  if meta is not None and pd.notna(meta.get("opp_score"))  else None
             won = (team_score > opp_score) if opp_score is not None else None
+            
+            # Defensive: check if start_date exists in row before accessing
+            if "start_date" in row.index and pd.notna(row["start_date"]):
+                match_date = str(row["start_date"].date()) if hasattr(row["start_date"], 'date') else str(row["start_date"])
+            else:
+                match_date = None
 
             results.append({
                 "match_id":      mid,
-                "date":          str(row["start_date"].date()) if pd.notna(row["start_date"]) else None,
+                "date":          match_date,
                 "innings":       int(row["innings"]),
                 "opponent":      opponent,
                 "result":        ("W" if won else "L") if won is not None else None,
@@ -232,25 +249,36 @@ def compute_player_stats(bbb: pd.DataFrame) -> dict:
     Compute rolling batter and bowler stats for the last 10 T20 innings.
     Returns {"batters": {...}, "bowlers": {...}}
     """
-    required_bat = {"striker", "runs_off_bat", "match_id", "start_date"}
-    required_bowl = {"bowler", "runs_off_bat", "wicket_type", "match_id", "start_date"}
+    required_bat = {"striker", "runs_off_bat", "match_id"}
+    required_bowl = {"bowler", "runs_off_bat", "wicket_type", "match_id"}
 
     bbb = bbb.copy()
-    bbb["start_date"] = pd.to_datetime(bbb["start_date"], errors="coerce")
+    
+    # Only convert start_date if it exists
+    if "start_date" in bbb.columns:
+        bbb["start_date"] = pd.to_datetime(bbb["start_date"], errors="coerce")
 
     batters = {}
     if required_bat.issubset(bbb.columns):
+        agg_dict = {
+            "runs": ("runs_off_bat", "sum"),
+            "balls": ("runs_off_bat", "count"),
+        }
+        # Only include start_date in aggregation if it exists
+        if "start_date" in bbb.columns:
+            agg_dict["start_date"] = ("start_date", "first")
+        
         bat_agg = (
             bbb.groupby(["match_id", "striker"])
-            .agg(
-                runs=("runs_off_bat", "sum"),
-                balls=("runs_off_bat", "count"),
-                start_date=("start_date", "first"),
-            )
+            .agg(**agg_dict)
             .reset_index()
             .rename(columns={"striker": "batter"})
-            .sort_values("start_date", ascending=False)
         )
+        
+        # Sort by start_date if available
+        if "start_date" in bat_agg.columns:
+            bat_agg = bat_agg.sort_values("start_date", ascending=False)
+        
         for player, grp in bat_agg.groupby("batter"):
             last10 = grp.head(10)
             scores = last10["runs"].tolist()
@@ -264,18 +292,26 @@ def compute_player_stats(bbb: pd.DataFrame) -> dict:
 
     bowlers = {}
     if required_bowl.issubset(bbb.columns):
+        bowl_agg_dict = {
+            "runs": ("runs_off_bat", "sum"),
+            "extras": ("extras", "sum") if "extras" in bbb.columns else ("runs_off_bat", lambda x: 0),
+            "wickets": ("wicket_type", lambda x: x.notna().sum()),
+            "balls": ("runs_off_bat", "count"),
+        }
+        # Only include start_date in aggregation if it exists
+        if "start_date" in bbb.columns:
+            bowl_agg_dict["start_date"] = ("start_date", "first")
+        
         bowl_agg = (
             bbb.groupby(["match_id", "bowler"])
-            .agg(
-                runs=("runs_off_bat", "sum"),
-                extras=("extras", "sum") if "extras" in bbb.columns else ("runs_off_bat", lambda x: 0),
-                wickets=("wicket_type", lambda x: x.notna().sum()),
-                balls=("runs_off_bat", "count"),
-                start_date=("start_date", "first"),
-            )
+            .agg(**bowl_agg_dict)
             .reset_index()
-            .sort_values("start_date", ascending=False)
         )
+        
+        # Sort by start_date if available
+        if "start_date" in bowl_agg.columns:
+            bowl_agg = bowl_agg.sort_values("start_date", ascending=False)
+        
         for player, grp in bowl_agg.groupby("bowler"):
             last5 = grp.head(5)
             total_balls = last5["balls"].sum()

@@ -42,8 +42,8 @@ VENUE_COORDS = {
 
 DEFAULT_MATCH_HOUR_UTC = 14
 _REQUEST_TIMEOUT = (20, 120)  # (connect, read) seconds - generous for GitHub Actions runners
-_MAX_RETRIES = 2              # Reduced from 3 to limit noise on persistent failures
-_RETRY_BACKOFF = 3            # seconds between attempts
+_MAX_RETRIES = 4              # Increased to handle transient 502 errors
+_RETRY_BACKOFF = 5            # seconds between attempts (increased for 502 recovery)
 _REQUEST_HEADERS = {
     "User-Agent": "Wicket-Oracle/1.0 (+https://github.com/gmalbert/cricket)",
     "Accept": "application/json",
@@ -90,8 +90,15 @@ def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MA
         except Exception as e:
             last_exc = e
             if attempt < _MAX_RETRIES:
-                logger.debug("Open-Meteo attempt %d failed (%s); retrying in %ds", attempt, e, _RETRY_BACKOFF)
-                time.sleep(_RETRY_BACKOFF)
+                # Use exponential backoff for server errors (502, 503, 504)
+                is_server_error = (
+                    hasattr(e, 'response') and 
+                    e.response is not None and 
+                    e.response.status_code in (502, 503, 504)
+                )
+                wait_time = _RETRY_BACKOFF * (2 ** (attempt - 1)) if is_server_error else _RETRY_BACKOFF
+                logger.debug("Open-Meteo attempt %d failed (%s); retrying in %ds", attempt, e, wait_time)
+                time.sleep(wait_time)
     else:
         logger.warning("Open-Meteo request failed after %d attempts: %s", _MAX_RETRIES, last_exc)
         return _fallback
