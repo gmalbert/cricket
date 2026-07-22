@@ -1,6 +1,16 @@
 import streamlit as st
 import pandas as pd
 from utils.data import get_todays_matches, get_player_props
+from utils.cache import load_cache
+
+
+def _rivalry_note(player: str, rivalries: list[dict]) -> str:
+    relevant = [r for r in rivalries if player in (r.get("batter"), r.get("bowler"))]
+    if not relevant:
+        return "No material historical pairing"
+    rivalry = relevant[0]
+    opponent = rivalry["bowler"] if rivalry["batter"] == player else rivalry["batter"]
+    return f"vs {opponent}: {rivalry['score_label']} ({rivalry['sample_tier']} sample)"
 
 def render():
     st.title("🎯 Player Props")
@@ -17,6 +27,8 @@ def render():
 
     props = get_player_props(selected_match)
     df = pd.DataFrame(props)
+    hub = ((load_cache("match_hubs") or {}).get("matches", {})).get(selected_match.get("match_id", ""), {})
+    key_rivalries = hub.get("key_rivalries", [])
 
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -42,7 +54,7 @@ def render():
         conf_icon = {"High": "🔴", "Medium": "🟡", "Low": "⚪"}.get(row["confidence"], "")
         rec_icon = "⬆️" if row["recommendation"] == "OVER" else "⬇️"
 
-        col1, col2, col3, col4, col5, col6 = st.columns([2, 1.5, 1, 1, 1, 1])
+        col1, col2, col3, col4, col5, col6, col7 = st.columns([2, 1.5, 1, 1, 1, 1, 2])
         with col1:
             st.markdown(f"**{row['player']}** — *{row['team']}*")
             st.caption(f"{row['role']} | {row['market']}")
@@ -57,4 +69,6 @@ def render():
             st.markdown(f"**{rec_icon} {row['recommendation']}**")
         with col6:
             st.markdown(f"{conf_icon} {row['confidence']}")
+        with col7:
+            st.caption(_rivalry_note(row["player"], key_rivalries))
         st.divider()

@@ -64,6 +64,41 @@ def step_cricsheet(skip: bool = False) -> dict:
     return cricsheet_run()
 
 
+def step_rivalries() -> dict:
+    """Build descriptive historical batter-versus-bowler records from local raw data."""
+    from pipeline.build_rivalries import build_rivalries
+    from utils.data import TEAM_PLAYERS
+    import pandas as pd
+
+    raw_path = CACHE_DIR / "raw" / "ipl_ball_by_ball.parquet"
+    if not raw_path.exists():
+        return {
+            "schema_version": 1,
+            "rivalries": [],
+            "error": "Raw Cricsheet cache unavailable",
+        }
+    try:
+        return build_rivalries(pd.read_parquet(raw_path), rosters=TEAM_PLAYERS)
+    except Exception as exc:
+        logger.exception("Rivalry aggregation failed")
+        return {"schema_version": 1, "rivalries": [], "error": str(exc)}
+
+
+def step_match_hubs(matches, props, team_form, venue_stats, rivalries) -> dict:
+    """Compose fixture-specific evidence from existing in-memory pipeline output."""
+    from pipeline.build_match_hubs import build_match_hubs
+    from utils.data import TEAM_PLAYERS
+
+    return build_match_hubs(matches, props, team_form, venue_stats, rivalries, TEAM_PLAYERS)
+
+
+def step_shot_locations() -> dict:
+    """Emit an explicit cache state until a licensed location provider is approved."""
+    from pipeline.shot_locations import empty_shot_locations
+
+    return empty_shot_locations()
+
+
 def step_fixtures() -> list[dict]:
     try:
         from pipeline.fetch_fixtures import run as fixtures_run
@@ -435,6 +470,9 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         errors["cricsheet"] = str(e)
         team_form = {}; player_stats = {"batters": {}, "bowlers": {}}; venue_stats = {}
 
+    logger.info("[1b/8] Building historical batter-bowler rivalries...")
+    rivalries = step_rivalries()
+
     logger.info("[2/7] Fetching fixtures...")
     fixtures = step_fixtures()
 
@@ -479,6 +517,17 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         for k, v in team_form.items()
     }
 
+    logger.info("[6b/8] Building fixture-specific Match Hubs...")
+    try:
+        match_hubs = step_match_hubs(
+            matches_out, props_out, team_form_serializable, venue_stats, rivalries
+        )
+    except Exception as e:
+        logger.error("Match Hub build failed: %s", e)
+        errors["match_hubs"] = str(e)
+        match_hubs = {"schema_version": 1, "matches": {}, "error": str(e)}
+    shot_locations = step_shot_locations()
+
     # Build points table from Cricsheet team form + fixture results
     from utils.data import _mock_points_table, _mock_ipl_schedule
     points_table = _mock_points_table()   # replaced by live data when cache has it
@@ -510,6 +559,9 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
         _save("value_bets",            value_bets)
         _save("playoff_probabilities", mc_result)
         _save("matchup_edge_history",  edge_history)
+        _save("rivalries",             rivalries)
+        _save("match_hubs",            match_hubs)
+        _save("shot_locations",        shot_locations)
         # prediction_log is written by step_reconcile (at step 0); re-save here
         # to capture any new records added during this run
         if prediction_log:
@@ -521,6 +573,9 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
             "monte_carlo_sims": mc_result.get("n_simulations", 0),
             "matchup_bets_analysed": edge_history.get("total_bets_analysed", 0),
             "prediction_log_records": len(prediction_log),
+            "rivalry_records": len(rivalries.get("rivalries", [])),
+            "unmatched_squad_players": sum(len(players) for players in rivalries.get("unmatched_players", {}).values()),
+            "match_hubs_count": len(match_hubs.get("matches", {})),
             "errors": errors,
         })
         logger.info("All cache files written to %s", CACHE_DIR)
