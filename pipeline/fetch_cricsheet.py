@@ -11,6 +11,8 @@ import requests
 import pandas as pd
 from pathlib import Path
 
+from pipeline.competitions import get_competition
+
 
 def _fallback_to_cache(cached_path: Path) -> pd.DataFrame:
     """Return cached parquet when the upstream Cricsheet download is rejected."""
@@ -22,7 +24,8 @@ def _fallback_to_cache(cached_path: Path) -> pd.DataFrame:
 
 logger = logging.getLogger(__name__)
 
-CRICSHEET_IPL_URL = "https://cricsheet.org/downloads/ipl_male_csv2.zip"
+DEFAULT_COMPETITION = get_competition()
+CRICSHEET_IPL_URL = DEFAULT_COMPETITION.cricsheet_url
 RAW_DIR = Path(__file__).parent.parent / "cache" / "raw"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 _REQUEST_TIMEOUT = (10, 60)

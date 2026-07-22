@@ -1,12 +1,14 @@
 import streamlit as st
 import plotly.graph_objects as go
 from utils.data import get_todays_matches, IPL_VENUES
+from utils.cache import load_cache
 
 def render():
     st.title("🏏 Today's Matches")
     st.caption(f"IPL 2026 — Live Predictions & Odds Comparison")
 
     matches = get_todays_matches()
+    match_hubs = (load_cache("match_hubs") or {}).get("matches", {})
 
     if not matches:
         st.info("No matches scheduled today.")
@@ -93,3 +95,12 @@ def render():
                 chase_rate = m.get("venue_chase_win_rate")
                 chase_pct = int(chase_rate * 100) if chase_rate is not None else None
                 st.metric("Chase Win Rate", f"{chase_pct}%" if chase_pct is not None else "N/A")
+
+            hub = match_hubs.get(m.get("match_id", ""), {})
+            key_rivalries = hub.get("key_rivalries", [])[:3]
+            if key_rivalries:
+                import pandas as pd
+                st.subheader("Key historical battles")
+                battle_df = pd.DataFrame(key_rivalries)
+                display_cols = [key for key in ("batter", "bowler", "strike_rate", "dismissals", "sample_tier") if key in battle_df]
+                st.dataframe(battle_df[display_cols], hide_index=True, width="stretch")
