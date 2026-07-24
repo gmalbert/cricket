@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from utils.data import get_todays_matches, get_player_props
-from utils.cache import load_cache
+from utils.cache import load_cache_data_only
 
 
 def _rivalry_note(player: str, rivalries: list[dict]) -> str:
@@ -27,7 +27,19 @@ def render():
 
     props = get_player_props(selected_match)
     df = pd.DataFrame(props)
-    hub = ((load_cache("match_hubs") or {}).get("matches", {})).get(selected_match.get("match_id", ""), {})
+    if df.empty:
+        st.info("No player-prop data is available for this fixture.")
+        return
+    required_cols = {"role", "confidence", "recommendation", "edge"}
+    missing_cols = required_cols - set(df.columns)
+    if missing_cols:
+        st.warning(
+            "The cached player-prop data has an unexpected schema. "
+            f"Missing columns: {", ".join(sorted(missing_cols))}."
+        )
+        return
+
+    hub = ((load_cache_data_only("match_hubs") or {}).get("matches", {})).get(selected_match.get("match_id", ""), {})
     key_rivalries = hub.get("key_rivalries", [])
 
     col1, col2, col3 = st.columns(3)

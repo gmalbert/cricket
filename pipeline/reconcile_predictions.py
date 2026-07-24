@@ -41,7 +41,10 @@ def _load_json(path: Path):
         return None
     try:
         with open(path) as f:
-            return json.load(f)
+            payload = json.load(f)
+            if isinstance(payload, dict) and "data" in payload and "generated_at" in payload:
+                return payload["data"]
+            return payload
     except Exception:
         return None
 

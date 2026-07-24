@@ -1,0 +1,155 @@
+- generic [ref=f5e2]:
+  - generic [ref=f5e11]:
+    - generic [ref=f5e14]:
+      - button "Fullscreen" [ref=f5e19] [cursor=pointer]
+      - img "0" [ref=f5e25]
+    - heading "Wicket Oracle" [level=2] [ref=f5e30]
+    - paragraph [ref=f5e35]:
+      - emphasis [ref=f5e36]: Cricket Betting Analytics
+    - alert [ref=f5e39]:
+      - generic [ref=f5e42]:
+        - generic [ref=f5e43]: ✅
+        - generic [ref=f5e46]:
+          - paragraph [ref=f5e47]: Data is fresh
+          - paragraph [ref=f5e48]: "Last updated: 2026-07-23T00:42:14.529633+00:00"
+    - separator [ref=f5e53]
+    - heading "Competition Coverage" [level=3] [ref=f5e57]
+    - group [ref=f5e60]:
+      - generic "keyboard_arrow_right 📅 Indian Premier League" [ref=f5e61] [cursor=pointer]:
+        - generic [ref=f5e62]:
+          - generic [ref=f5e63]: keyboard_arrow_right
+          - paragraph [ref=f5e67]: 📅 Indian Premier League
+    - group [ref=f5e70]:
+      - generic "keyboard_arrow_right 🎯 International T20" [ref=f5e71] [cursor=pointer]:
+        - generic [ref=f5e72]:
+          - generic [ref=f5e73]: keyboard_arrow_right
+          - paragraph [ref=f5e77]: 🎯 International T20
+    - group [ref=f5e80]:
+      - generic "keyboard_arrow_right 🎯 ODI internationals" [ref=f5e81] [cursor=pointer]:
+        - generic [ref=f5e82]:
+          - generic [ref=f5e83]: keyboard_arrow_right
+          - paragraph [ref=f5e87]: 🎯 ODI internationals
+    - group [ref=f5e90]:
+      - generic "keyboard_arrow_right 📅 Big Bash League" [ref=f5e91] [cursor=pointer]:
+        - generic [ref=f5e92]:
+          - generic [ref=f5e93]: keyboard_arrow_right
+          - paragraph [ref=f5e97]: 📅 Big Bash League
+    - group [ref=f5e100]:
+      - generic "keyboard_arrow_right 📚 The Hundred" [ref=f5e101] [cursor=pointer]:
+        - generic [ref=f5e102]:
+          - generic [ref=f5e103]: keyboard_arrow_right
+          - paragraph [ref=f5e107]: 📚 The Hundred
+    - group [ref=f5e110]:
+      - generic "keyboard_arrow_right 📅 T20 Blast" [ref=f5e111] [cursor=pointer]:
+        - generic [ref=f5e112]:
+          - generic [ref=f5e113]: keyboard_arrow_right
+          - paragraph [ref=f5e117]: 📅 T20 Blast
+    - group [ref=f5e120]:
+      - generic "keyboard_arrow_right 📅 Pakistan Super League" [ref=f5e121] [cursor=pointer]:
+        - generic [ref=f5e122]:
+          - generic [ref=f5e123]: keyboard_arrow_right
+          - paragraph [ref=f5e127]: 📅 Pakistan Super League
+    - group [ref=f5e130]:
+      - generic "keyboard_arrow_right 📅 Caribbean Premier League" [ref=f5e131] [cursor=pointer]:
+        - generic [ref=f5e132]:
+          - generic [ref=f5e133]: keyboard_arrow_right
+          - paragraph [ref=f5e137]: 📅 Caribbean Premier League
+    - group [ref=f5e140]:
+      - generic "keyboard_arrow_right 📅 SA20" [ref=f5e141] [cursor=pointer]:
+        - generic [ref=f5e142]:
+          - generic [ref=f5e143]: keyboard_arrow_right
+          - paragraph [ref=f5e147]: 📅 SA20
+    - group [ref=f5e150]:
+      - generic "keyboard_arrow_right 📅 ICC T20 World Cup" [ref=f5e151] [cursor=pointer]:
+        - generic [ref=f5e152]:
+          - generic [ref=f5e153]: keyboard_arrow_right
+          - paragraph [ref=f5e157]: 📅 ICC T20 World Cup
+    - group [ref=f5e160]:
+      - generic "keyboard_arrow_right 📊 ICC World Cup" [ref=f5e161] [cursor=pointer]:
+        - generic [ref=f5e162]:
+          - generic [ref=f5e163]: keyboard_arrow_right
+          - paragraph [ref=f5e167]: 📊 ICC World Cup
+    - group [ref=f5e170]:
+      - generic "keyboard_arrow_right 📊 Major League Cricket" [ref=f5e171] [cursor=pointer]:
+        - generic [ref=f5e172]:
+          - generic [ref=f5e173]: keyboard_arrow_right
+          - paragraph [ref=f5e177]: 📊 Major League Cricket
+    - group [ref=f5e180]:
+      - generic "keyboard_arrow_right 📊 Lanka Premier League" [ref=f5e181] [cursor=pointer]:
+        - generic [ref=f5e182]:
+          - generic [ref=f5e183]: keyboard_arrow_right
+          - paragraph [ref=f5e187]: 📊 Lanka Premier League
+    - group [ref=f5e190]:
+      - generic "keyboard_arrow_right 📅 Test matches" [ref=f5e191] [cursor=pointer]:
+        - generic [ref=f5e192]:
+          - generic [ref=f5e193]: keyboard_arrow_right
+          - paragraph [ref=f5e197]: 📅 Test matches
+    - group [ref=f5e200]:
+      - generic "keyboard_arrow_right 📅 Women’s Big Bash" [ref=f5e201] [cursor=pointer]:
+        - generic [ref=f5e202]:
+          - generic [ref=f5e203]: keyboard_arrow_right
+          - paragraph [ref=f5e207]: 📅 Women’s Big Bash
+    - group [ref=f5e210]:
+      - generic "keyboard_arrow_right 📅 Women’s International T20" [ref=f5e211] [cursor=pointer]:
+        - generic [ref=f5e212]:
+          - generic [ref=f5e213]: keyboard_arrow_right
+          - paragraph [ref=f5e217]: 📅 Women’s International T20
+    - separator [ref=f5e222]
+    - paragraph [ref=f5e227]:
+      - emphasis [ref=f5e228]: Production-ready predictions backed by verified data
+  - generic [ref=f5e3]:
+    - banner [ref=f5e231]:
+      - generic [ref=f5e234]:
+        - button "Deploy" [ref=f5e236] [cursor=pointer]
+        - button "Main menu" [ref=f5e240] [cursor=pointer]
+    - generic [ref=f5e245]:
+      - generic [ref=f5e246]:
+        - tablist [ref=f5e248]:
+          - tab [ref=f5e249] [cursor=pointer]:
+            - paragraph [ref=f5e251]: Today's Matches
+          - tab [ref=f5e252] [cursor=pointer]:
+            - paragraph [ref=f5e254]: Match Hub
+          - tab [ref=f5e255] [cursor=pointer]:
+            - paragraph [ref=f5e257]: Player Props
+          - tab [ref=f5e258] [cursor=pointer]:
+            - paragraph [ref=f5e260]: Rivalry Analyzer
+          - tab [ref=f5e261] [cursor=pointer]:
+            - paragraph [ref=f5e263]: Team Deep Dive
+          - tab [ref=f5e264] [cursor=pointer]:
+            - paragraph [ref=f5e266]: Fixtures & Tournament Table
+          - tab [ref=f5e267] [cursor=pointer]:
+            - paragraph [ref=f5e269]: Value Bets
+          - tab [active] [selected] [ref=f5e270] [cursor=pointer]:
+            - paragraph [ref=f5e272]: Model Performance
+          - tab [ref=f5e273] [cursor=pointer]:
+            - paragraph [ref=f5e275]: Statistics
+        - tabpanel "Model Performance" [ref=f5e3776]:
+          - generic [ref=f5e3777]:
+            - heading "📈 Model Performance & Backtesting" [level=1] [ref=f5e3782]:
+              - text: 📈 Model Performance & Backtesting
+              - generic [ref=f5e3783]:
+                - link "Link to heading":
+                  - /url: "#model-performance-and-backtesting"
+            - generic [ref=f5e3785]:
+              - tablist [ref=f5e3787]:
+                - tab [selected] [ref=f5e3788] [cursor=pointer]:
+                  - paragraph [ref=f5e3790]: Live Accuracy
+                - tab [ref=f5e3791] [cursor=pointer]:
+                  - paragraph [ref=f5e3793]: Accuracy Summary
+                - tab [ref=f5e3794] [cursor=pointer]:
+                  - paragraph [ref=f5e3796]: ROI Tracker
+                - tab [ref=f5e3797] [cursor=pointer]:
+                  - paragraph [ref=f5e3799]: Calibration Curve
+                - tab [ref=f5e3800] [cursor=pointer]:
+                  - paragraph [ref=f5e3802]: Confusion Matrix
+                - tab [ref=f5e3803] [cursor=pointer]:
+                  - paragraph [ref=f5e3805]: Matchup Edge Tracker
+                - tab [ref=f5e3806] [cursor=pointer]:
+                  - paragraph [ref=f5e3808]: Venue Edge Tracker
+              - tabpanel "Live Accuracy" [ref=f5e3811]
+            - alert [ref=f5e3814]:
+              - generic [ref=f5e3817]:
+                - generic [ref=f5e3818]: 📭
+                - paragraph [ref=f5e3822]: No model-performance data available. Run the data pipeline to generate historical metrics.
+      - button "Scroll tabs left" [ref=f5e3823] [cursor=pointer]
+      - button "Scroll tabs right" [ref=f5e3541] [cursor=pointer]

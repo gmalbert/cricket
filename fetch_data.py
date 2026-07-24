@@ -113,9 +113,9 @@ def pull_models(match_features, player_features):
 
 def pull_monte_carlo(fixtures, team_form):
     from pipeline.run_pipeline import step_monte_carlo
-    from utils.data import _mock_points_table, _mock_ipl_schedule
-    points_table  = _mock_points_table()
-    full_schedule = _mock_ipl_schedule()
+    # Never feed simulated standings or schedules into a production run.
+    points_table  = []
+    full_schedule = fixtures
     return step_monte_carlo(points_table, full_schedule)
 
 

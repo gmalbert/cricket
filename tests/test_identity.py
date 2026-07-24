@@ -1,0 +1,118 @@
+"""Tests for identity resolution and confidence scoring."""
+import pytest
+
+from pipeline.identity import (
+    IdentityMatch,
+    match_team_name,
+    match_player_name,
+    calculate_identity_coverage,
+)
+
+
+def test_match_team_name_exact():
+    """Test exact team name match."""
+    result = match_team_name("Mumbai Indians", ["Mumbai Indians", "Chennai Super Kings"])
+    
+    assert result is not None
+    assert result.source == "Mumbai Indians"
+    assert result.target == "Mumbai Indians"
+    assert result.confidence == 1.0
+    assert result.method == "exact"
+
+
+def test_match_team_name_alias():
+    """Test team name match via alias."""
+    result = match_team_name("RCB", ["Royal Challengers Bengaluru", "Chennai Super Kings"])
+    
+    assert result is not None
+    assert result.target == "Royal Challengers Bengaluru"
+    assert result.confidence == 0.95
+    assert result.method == "alias"
+
+
+def test_match_team_name_substring():
+    """Test team name match via substring."""
+    result = match_team_name("Mumbai", ["Mumbai Indians", "Chennai Super Kings"])
+    
+    assert result is not None
+    assert result.target == "Mumbai Indians"
+    assert result.confidence == 0.85
+    assert result.method == "substring"
+
+
+def test_match_team_name_partial():
+    """Test team name match via partial overlap."""
+    result = match_team_name("Indians Mumbai", ["Mumbai Indians", "Chennai Super Kings"])
+    
+    assert result is not None
+    assert result.target == "Mumbai Indians"
+    assert result.confidence == 0.80
+    assert result.method == "partial"
+
+
+def test_match_team_name_no_match():
+    """Test team name with no match."""
+    result = match_team_name("Kolkata Knight Riders", ["Mumbai Indians", "Chennai Super Kings"])
+    
+    assert result is None
+
+
+def test_match_player_name_exact():
+    """Test exact player name match."""
+    result = match_player_name("Virat Kohli", ["Virat Kohli", "MS Dhoni"])
+    
+    assert result is not None
+    assert result.source == "Virat Kohli"
+    assert result.target == "Virat Kohli"
+    assert result.confidence == 1.0
+    assert result.method == "exact"
+
+
+def test_match_player_name_surname_initials():
+    """Test player name match via surname + initials."""
+    result = match_player_name("V Kohli", ["Virat Kohli", "MS Dhoni"])
+    
+    assert result is not None
+    assert result.target == "Virat Kohli"
+    assert result.confidence == 0.90
+    assert result.method == "surname_initials"
+
+
+def test_match_player_name_fuzzy():
+    """Test fuzzy player name match."""
+    result = match_player_name("Kohli", ["Virat Kohli", "MS Dhoni"])
+    
+    assert result is not None
+    assert result.target == "Virat Kohli"
+    assert result.confidence >= 0.80
+    assert result.method == "fuzzy"
+
+
+def test_calculate_identity_coverage():
+    """Test identity coverage calculation."""
+    source_items = ["Mumbai Indians", "Chennai Super Kings", "Royal Challengers Bangalore", "Unknown Team"]
+    target_items = ["Mumbai Indians", "Chennai Super Kings", "Royal Challengers Bengaluru"]
+    
+    matches = []
+    for source in source_items:
+        match = match_team_name(source, target_items)
+        if match:
+            matches.append(match)
+    
+    coverage = calculate_identity_coverage(matches, total_source=len(source_items))
+    
+    assert coverage["total"] == 4
+    assert coverage["matched"] == 3
+    assert coverage["unmatched"] == 1
+    assert coverage["rate"] == 0.75
+    assert coverage["high_confidence"] >= 2  # Exact and alias matches
+
+
+def test_calculate_identity_coverage_empty():
+    """Test identity coverage with no matches."""
+    coverage = calculate_identity_coverage([], total_source=10)
+    
+    assert coverage["total"] == 10
+    assert coverage["matched"] == 0
+    assert coverage["unmatched"] == 10
+    assert coverage["rate"] == 0.0

@@ -10,6 +10,7 @@ import logging
 import requests
 import pandas as pd
 from pathlib import Path
+from datetime import datetime, timezone
 
 from pipeline.competitions import get_competition
 
@@ -35,6 +36,83 @@ _REQUEST_HEADERS = {
     "User-Agent": "Wicket-Oracle/1.0 (+https://github.com/gmalbert/cricket)",
     "Accept": "application/zip, application/octet-stream, */*",
 }
+
+
+def historical_cache_path(competition_slug: str) -> Path:
+    return RAW_DIR / f"{competition_slug}_ball_by_ball.parquet"
+
+
+def download_competition_data(competition=None) -> pd.DataFrame:
+    """Download a registry-selected Cricsheet CSV archive into a namespaced cache.
+
+    The legacy IPL function remains unchanged for compatibility and its
+    fallback behavior. New competitions use this generic seam; archives that
+    do not expose CSV files are reported as an empty, not-ready dataset rather
+    than being silently treated as IPL data.
+    """
+    competition = competition or DEFAULT_COMPETITION
+    if competition.slug == DEFAULT_COMPETITION.slug:
+        return download_ipl_data()
+    cached_path = historical_cache_path(competition.slug)
+    if cached_path.exists():
+        return pd.read_parquet(cached_path)
+    try:
+        response = requests.get(competition.cricsheet_url, headers=_REQUEST_HEADERS,
+                                timeout=_REQUEST_TIMEOUT, allow_redirects=True)
+        response.raise_for_status()
+        frames = []
+        with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
+            for name in archive.namelist():
+                if not name.endswith(".csv") or "_info" in name:
+                    continue
+                with archive.open(name) as stream:
+                    frames.append(pd.read_csv(stream, low_memory=False))
+        if not frames:
+            logger.warning("No CSV files found for %s historical archive", competition.slug)
+            return pd.DataFrame()
+        result = pd.concat(frames, ignore_index=True)
+        for column in result.select_dtypes(include="object").columns:
+            result[column] = result[column].astype(str)
+        result.to_parquet(cached_path, index=False)
+        return result
+    except Exception as exc:
+        logger.warning("Historical download failed for %s: %s", competition.slug, exc)
+        return pd.DataFrame()
+
+
+def historical_coverage(frame: pd.DataFrame, competition) -> dict:
+    """Return the auditable coverage summary used by the publish gate."""
+    seasons = sorted(str(value) for value in frame.get("season", pd.Series(dtype=str)).dropna().unique())
+    matches = int(frame.get("match_id", pd.Series(dtype=str)).nunique()) if "match_id" in frame else 0
+    team_cols = [column for column in ("batting_team", "bowling_team") if column in frame]
+    player_cols = [column for column in ("striker", "bowler") if column in frame]
+    team_rate = float(frame[team_cols].notna().all(axis=1).mean()) if team_cols else 0.0
+    player_rate = float(frame[player_cols].notna().all(axis=1).mean()) if player_cols else 0.0
+    return {
+        "competition": competition.slug,
+        "dataset": competition.historical_dataset,
+        "seasons": seasons,
+        "completed_matches": matches,
+        "team_identity_rate": round(team_rate, 4),
+        "player_identity_rate": round(player_rate, 4),
+        "last_update": datetime.now(timezone.utc).isoformat(),
+        "ready": len(seasons) >= 2 and matches >= 100 and team_rate >= 0.80 and player_rate >= 0.90,
+    }
+
+
+def run_competition(competition=None) -> dict:
+    """Load and aggregate one registry competition without IPL assumptions."""
+    competition = competition or DEFAULT_COMPETITION
+    bbb = download_competition_data(competition)
+    if bbb.empty:
+        return {"team_form": {}, "player_stats": {"batters": {}, "bowlers": {}},
+                "venue_stats": {}, "historical_coverage": historical_coverage(bbb, competition)}
+    return {
+        "team_form": compute_team_form(bbb, last_n=10),
+        "player_stats": compute_player_stats(bbb),
+        "venue_stats": compute_venue_stats(bbb),
+        "historical_coverage": historical_coverage(bbb, competition),
+    }
 
 
 def download_ipl_data() -> pd.DataFrame:
@@ -378,6 +456,7 @@ def run(save_path: Path | None = None) -> dict:
         "team_form": team_form,
         "player_stats": player_stats,
         "venue_stats": venue_stats,
+        "historical_coverage": historical_coverage(bbb, DEFAULT_COMPETITION),
     }
 
 

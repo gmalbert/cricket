@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from utils.cache import load_cache
+from utils.cache import load_cache_data_only
 
 
 def _wagon_wheel(locations: list[dict]) -> go.Figure:
@@ -29,7 +29,7 @@ def _wagon_wheel(locations: list[dict]) -> go.Figure:
 def render() -> None:
     st.title("⚔️ Batter vs Bowler Rivalries")
     st.caption("Historical IPL ball-by-ball matchups. The matchup score is descriptive, not a win probability.")
-    payload = load_cache("rivalries") or {}
+    payload = load_cache_data_only("rivalries") or {}
     rows = payload.get("rivalries", [])
     if not rows:
         reason = payload.get("error", "Run the pipeline to build the historical rivalry cache.")
@@ -68,7 +68,7 @@ def render() -> None:
     st.dataframe(pd.DataFrame(row["recent_encounters"]), hide_index=True, width="stretch")
 
     st.subheader("Shot map")
-    locations_payload = load_cache("shot_locations") or {}
+    locations_payload = load_cache_data_only("shot_locations") or {}
     locations = [
         location for location in locations_payload.get("locations", [])
         if location.get("batter") == batter and location.get("bowler") == bowler

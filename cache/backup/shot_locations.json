@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-07-23T00:42:14.528358+00:00",
+  "source_run_id": "6c81c37f-c832-42be-adb5-1daf6abd137c",
+  "source_status": "ready",
+  "schema_version": 1,
+  "is_mock": false,
+  "data": {
+    "schema_version": 1,
+    "locations": [],
+    "status": "unavailable",
+    "reason": "No licensed shot-location provider configured."
+  }
+}

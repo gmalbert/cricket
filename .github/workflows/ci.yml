@@ -1,0 +1,200 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  schedule:
+    # Run daily at 07:00 UTC to catch issues early
+    - cron: '0 7 * * *'
+
+jobs:
+  lint-and-format:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install ruff mypy pytest pytest-cov
+      
+      - name: Run Ruff linter
+        run: ruff check . --output-format=github
+        continue-on-error: true
+      
+      - name: Run Ruff formatter check
+        run: ruff format --check .
+        continue-on-error: true
+      
+      - name: Type check with mypy
+        run: mypy pipeline/ utils/ pages_app/ --ignore-missing-imports
+        continue-on-error: true
+
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+      
+      - name: Run unit tests
+        run: |
+          pytest tests/ -v --cov=pipeline --cov=utils --cov-report=xml --cov-report=term
+        env:
+          APP_ENV: test
+      
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+        if: github.event_name == 'push'
+
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+      
+      - name: Run pipeline dry-run (smoke test)
+        run: |
+          python fetch_data.py --dry-run --skip-cricsheet
+        env:
+          APP_ENV: test
+      
+      - name: Verify cache schema
+        run: |
+          python -c "from utils.cache import CACHE_FILES; print('Cache files:', list(CACHE_FILES.keys()))"
+      
+      - name: Test production mode (no mock data)
+        run: |
+          python -c "
+          import os
+          os.environ['APP_ENV'] = 'production'
+          from utils.data import get_todays_matches
+          matches = get_todays_matches()
+          assert matches is None or isinstance(matches, list), 'Production mode should return None or list'
+          print('✅ Production mode test passed')
+          "
+
+  security-scan:
+    name: Security Scanning
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install safety
+        run: pip install safety
+      
+      - name: Check for known vulnerabilities
+        run: safety check --json
+        continue-on-error: true
+      
+      - name: Scan for secrets
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: main
+          head: HEAD
+        continue-on-error: true
+
+  build-check:
+    name: Build Verification
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Test imports
+        run: |
+          python -c "
+          import pipeline.run_pipeline
+          import pipeline.status
+          import pipeline.model_validation
+          import pipeline.identity
+          import pipeline.performance
+          import utils.cache
+          import utils.data
+          print('✅ All imports successful')
+          "
+      
+      - name: Verify file structure
+        run: |
+          test -f pipeline/status.py
+          test -f pipeline/status_tracker.py
+          test -f pipeline/run_manager.py
+          test -f pipeline/identity.py
+          test -f pipeline/model_validation.py
+          test -f pipeline/performance.py
+          echo "✅ All required files present"
+
+  notify:
+    name: Notify on Failure
+    runs-on: ubuntu-latest
+    needs: [lint-and-format, unit-tests, integration-tests, security-scan, build-check]
+    if: failure() && github.event_name == 'push'
+    
+    steps:
+      - name: Send notification
+        run: |
+          echo "❌ CI pipeline failed on ${{ github.ref }}"
+          echo "Check workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

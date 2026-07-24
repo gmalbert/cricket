@@ -4,7 +4,7 @@ from __future__ import annotations
 import pandas as pd
 import streamlit as st
 
-from utils.cache import load_cache
+from utils.cache import load_cache_data_only
 
 
 def _percent(value) -> str:
@@ -14,7 +14,7 @@ def _percent(value) -> str:
 def render() -> None:
     st.title("🧭 Match Hub")
     st.caption("Model, market, conditions, props, and historical player matchups in one cached research view.")
-    payload = load_cache("match_hubs") or {}
+    payload = load_cache_data_only("match_hubs") or {}
     hubs = payload.get("matches", {})
     if not hubs:
         st.info("No Match Hub is cached yet. Run the pipeline to generate one.")
