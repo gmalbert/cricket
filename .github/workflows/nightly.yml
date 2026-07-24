@@ -20,6 +20,7 @@ on:
         options: ["true", "false"]
 
 env:
+  APP_ENV:               production
   ODDS_API_KEY:          ${{ secrets.ODDS_API_KEY }}
   CRICKET_DATA_API_KEY:  ${{ secrets.CRICKET_DATA_API_KEY }}
   PYTHONUNBUFFERED: "1"
@@ -98,6 +99,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add cache/*.json
           git diff --staged --quiet || git commit -m "chore: nightly cache update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
 
       - name: Export best bets for Sports Picks Grid
         if: ${{ github.event.inputs.dry_run != 'true' }}
@@ -112,7 +114,6 @@ jobs:
           git add data_files/best_bets_today.json || true
           git diff --staged --quiet || git commit -m "chore: update best_bets_today [skip ci]"
           git push
-        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

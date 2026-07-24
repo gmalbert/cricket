@@ -1,11 +1,6 @@
-import streamlit as st
+"""Wicket Oracle Streamlit entry point and grouped application navigation."""
 
-st.set_page_config(
-    page_title="Wicket Odds",
-    page_icon="🏏",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+import streamlit as st
 
 from pages_app import (
     fixtures_table,
@@ -18,34 +13,125 @@ from pages_app import (
     todays_matches,
     value_bets,
 )
-from utils.cache import load_cache
+from pipeline.status import ProductionStatus, plain_language_status
+from utils.browser_time import browser_time
+from utils.cache import (
+    APP_ENV,
+    get_cache_metadata,
+    is_cache_stale,
+    is_mock_data,
+    load_cache_data_only,
+)
+from utils.data import get_competition_status
 
-PAGES = {
-    "Today's Matches": todays_matches.render,
-    "Match Hub": match_hub.render,
-    "Player Props": player_props.render,
-    "Rivalry Analyzer": rivalry_analyzer.render,
-    "Team Deep Dive": team_deep_dive.render,
-    "Fixtures & Tournament Table": fixtures_table.render,
-    "Value Bets": value_bets.render,
-    "Model Performance": model_performance.render,
-    "Statistics": statistics.render,
-}
 
-def main():
+st.set_page_config(
+    page_title="Wicket Oracle",
+    page_icon="🏏",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] { border-right: 1px solid #e5e7eb; }
+    [data-testid="stSidebar"] img { max-width: 150px; margin-bottom: .25rem; }
+    .wo-kicker { color: #64748b; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    .wo-status { border: 1px solid #dbe3ec; border-radius: 12px; padding: 1rem 1.1rem; background: #fff; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+def _status_rows() -> list[dict]:
+    raw = get_competition_status().get("competitions", {})
+    rows = []
+    for slug, item in raw.items():
+        status = item.get("status", "not_run")
+        try:
+            status_text = plain_language_status(ProductionStatus(status))
+        except ValueError:
+            status_text = status.replace("_", " ").title()
+        rows.append(
+            {
+                "Competition": item.get("competition_name", slug),
+                "Status": status_text,
+                "Fixtures": item.get("fixtures_count", item.get("fixture_count", 0)),
+                "Markets": item.get("draftkings_events", item.get("draftkings_event_count", 0)),
+                "Value bets": item.get("qualifying_bets", item.get("qualifying_bet_count", 0)),
+            }
+        )
+    return rows
+
+
+def status_page() -> None:
+    """Default landing page: one calm, useful health/status view."""
+    st.title("Wicket Oracle")
+    st.markdown('<div class="wo-kicker">Cricket betting analytics · system status</div>', unsafe_allow_html=True)
+    st.write("")
+
+    metadata = get_cache_metadata("last_updated") or get_cache_metadata("todays_matches") or {}
+    stale = is_cache_stale("last_updated", max_age_hours=24)
+    simulated = is_mock_data("last_updated") or is_mock_data("todays_matches")
+    status_label = "Simulated data" if simulated and APP_ENV == "development" else ("Needs refresh" if stale else "Live")
+    status_color = "#b45309" if stale or simulated else "#15803d"
+    a, b, c = st.columns(3)
+    a.metric("System", status_label, help="Status reflects the most recent cached pipeline output.")
+    b.metric("Environment", APP_ENV.title())
+    c.metric("Model", "h2h-v1" if load_cache_data_only("todays_matches") else "Not available")
+
+    st.markdown(
+        f'<div class="wo-status"><strong style="color:{status_color}">{status_label}</strong> '
+        "· The sidebar is now navigation only. Detailed health checks live here.</div>",
+        unsafe_allow_html=True,
+    )
+    if metadata.get("generated_at"):
+        st.markdown(browser_time(metadata["generated_at"], "Last pipeline update"), unsafe_allow_html=True)
+
+    st.subheader("Competition coverage")
+    rows = _status_rows()
+    if rows:
+        st.dataframe(rows, hide_index=True, width="stretch")
+    else:
+        st.info("No competition status has been cached yet.")
+
+    st.subheader("What’s where")
+    st.caption("Use the grouped sidebar navigation to move between live matches, betting markets, team/tournament research, and model diagnostics.")
+
+
+def _sidebar_brand() -> None:
     with st.sidebar:
-        st.image("data_files/logo.png", width='stretch')
-        st.markdown("## Wicket Odds")
-        st.markdown("*Cricket Betting Analytics*")
-        st.divider()
+        st.image("data_files/logo.png", width="stretch")
+        st.markdown("**Wicket Oracle**")
+        st.caption("Cricket betting analytics")
+        if APP_ENV == "development":
+            st.caption("🔧 Development mode")
 
 
+_sidebar_brand()
 
-    tabs = st.tabs(list(PAGES.keys()))
-    for tab, (name, render_fn) in zip(tabs, PAGES.items()):
-        with tab:
-            render_fn()
-
-
-if __name__ == "__main__":
-    main()
+pg = st.navigation(
+    {
+        "": [st.Page(status_page, title="Status", icon="🏠", url_path="status", default=True)],
+        "Live": [
+            st.Page(todays_matches.render, title="Today's Matches", icon="📅", url_path="todays-matches"),
+            st.Page(match_hub.render, title="Match Hub", icon="🧭", url_path="match-hub"),
+        ],
+        "Markets": [
+            st.Page(value_bets.render, title="Value Bets", icon="💰", url_path="value-bets"),
+            st.Page(player_props.render, title="Player Props", icon="🎯", url_path="player-props"),
+        ],
+        "Teams & Tournament": [
+            st.Page(team_deep_dive.render, title="Team Deep Dive", icon="📊", url_path="team-deep-dive"),
+            st.Page(fixtures_table.render, title="Fixtures & Table", icon="📅", url_path="fixtures-table"),
+        ],
+        "Research": [
+            st.Page(statistics.render, title="Statistics", icon="📋", url_path="statistics"),
+            st.Page(rivalry_analyzer.render, title="Rivalry Analyzer", icon="⚔️", url_path="rivalry-analyzer"),
+        ],
+        "Model": [st.Page(model_performance.render, title="Performance", icon="📈", url_path="performance")],
+    }
+)
+pg.run()

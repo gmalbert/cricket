@@ -5,7 +5,10 @@ import json
 from datetime import datetime, timedelta
 import random
 
-from utils.cache import load_cache, cache_exists
+from utils.cache import load_cache, cache_exists, APP_ENV, load_cache_data_only, load_backup_cache_data_only
+
+# Production mode: never return mock data
+IS_PRODUCTION = APP_ENV == "production"
 
 IPL_TEAMS_2026 = [
     "Mumbai Indians",
@@ -82,24 +85,47 @@ TEAM_PLAYERS = {
 # ---------------------------------------------------------------------------
 
 def get_todays_matches():
-    cached = load_cache("todays_matches")
+    """Return today's matches from cache.
+    
+    In production mode, returns None if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("todays_matches")
     if cached:
         return cached
+    # A no-fixture refresh must not blank the last usable production board.
+    backup = load_backup_cache_data_only("todays_matches")
+    if backup:
+        return backup
+    if IS_PRODUCTION:
+        return None
     return _mock_todays_matches()
 
 
 def get_player_props(match):
-    cached = load_cache("player_props")
+    """Return player props for a specific match.
+    
+    In production mode, returns empty list if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("player_props")
     if cached:
         mid = match.get("match_id", "")
         match_props = [p for p in cached if p.get("match_id") == mid]
         if match_props:
             return match_props
+    if IS_PRODUCTION:
+        return []
     return _mock_player_props(match)
 
 
 def get_team_form(team_name):
-    cached = load_cache("team_form")
+    """Return team form from cache.
+    
+    In production mode, returns empty list if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("team_form")
     if cached and team_name in cached:
         raw = cached[team_name]
         results = []
@@ -116,18 +142,47 @@ def get_team_form(team_name):
             })
         if results:
             return results
+    if IS_PRODUCTION:
+        return []
     return _mock_team_form(team_name)
 
 
 def get_value_bets(matches):
-    cached = load_cache("value_bets")
+    """Return value bets from cache.
+    
+    In production mode, returns empty list if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("value_bets")
     if cached:
         return cached
+    if IS_PRODUCTION:
+        return []
     return _mock_value_bets(matches)
 
 
+def get_competition_status():
+    """Return the durable per-competition readiness report, if available."""
+    return load_cache_data_only("competition_status") or {"schema_version": 1, "competitions": {}}
+
+
+def get_competition_options() -> list[dict]:
+    """Return registry metadata for UI filters and coverage reporting."""
+    from pipeline.competitions import enabled_competitions
+    return [{
+        "slug": c.slug, "name": c.display_name, "format": c.format,
+        "gender": c.gender, "historical_dataset": c.historical_dataset,
+        "season_window": c.season_window,
+    } for c in enabled_competitions()]
+
+
 def get_batter_profile(player_name):
-    cached = load_cache("player_stats")
+    """Return batter profile from cache.
+    
+    In production mode, returns None if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("player_stats")
     if cached:
         batter = cached.get("batters", {}).get(player_name)
         if batter:
@@ -146,11 +201,18 @@ def get_batter_profile(player_name):
                 "powerplay_avg": round(career_avg * random.uniform(0.7, 1.0), 1),
                 "boundaries_per_innings": round(random.uniform(2.5, 7.5), 1),
             }
+    if IS_PRODUCTION:
+        return None
     return _mock_batter_profile(player_name)
 
 
 def get_bowler_profile(player_name):
-    cached = load_cache("player_stats")
+    """Return bowler profile from cache.
+    
+    In production mode, returns None if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("player_stats")
     if cached:
         bowler = cached.get("bowlers", {}).get(player_name)
         if bowler:
@@ -167,6 +229,8 @@ def get_bowler_profile(player_name):
                 "vs_rhb_economy": round(career_econ * random.uniform(0.93, 1.07), 2),
                 "wickets_last5": bowler.get("wickets_last5", [1, 2, 0, 1, 2]),
             }
+    if IS_PRODUCTION:
+        return None
     return _mock_bowler_profile(player_name)
 
 
@@ -186,23 +250,44 @@ def get_venue_stats():
 
 
 def get_ipl_schedule():
-    cached = load_cache("schedule")
+    """Return IPL schedule from cache.
+    
+    In production mode, returns empty list if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("schedule")
     if cached:
         return cached
+    if IS_PRODUCTION:
+        return []
     return _mock_ipl_schedule()
 
 
 def get_points_table():
-    cached = load_cache("points_table")
+    """Return points table from cache.
+    
+    In production mode, returns empty list if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("points_table")
     if cached:
         return cached
+    if IS_PRODUCTION:
+        return []
     return _mock_points_table()
 
 
 def get_model_performance():
-    cached = load_cache("model_performance")
+    """Return model performance metrics from cache.
+    
+    In production mode, returns None if no cache exists.
+    In development mode, falls back to mock data.
+    """
+    cached = load_cache_data_only("model_performance")
     if cached:
         return cached
+    if IS_PRODUCTION:
+        return None
     return _mock_model_performance()
 
 
@@ -211,11 +296,15 @@ def get_prediction_log():
     Return the full historical prediction log, each entry being one
     completed match where a prediction was made and the actual result
     was later reconciled automatically by the nightly pipeline.
-    Cache-first; falls back to a realistic mock history.
+    
+    In production mode, returns empty list if no cache exists.
+    In development mode, falls back to mock data.
     """
-    cached = load_cache("prediction_log")
+    cached = load_cache_data_only("prediction_log")
     if cached and len(cached) > 0:
         return cached
+    if IS_PRODUCTION:
+        return []
     return _mock_prediction_log()
 
 
@@ -227,23 +316,30 @@ def get_matchup_edge_history():
       - Edge-size bucket (0-3%, 3-6%, 6-10%, 10-15%, 15%+)
       - 30-game rolling ROI curve
 
-    Loads from cache when pipeline has run; otherwise generates mock history.
+    In production mode, returns empty dict if no cache exists.
+    In development mode, falls back to mock data.
     """
-    cached = load_cache("matchup_edge_history")
+    cached = load_cache_data_only("matchup_edge_history")
     if cached and cached.get("matchups"):
         return cached
+    if IS_PRODUCTION:
+        return {"matchups": []}
     return _mock_matchup_edge_history()
 
 
 def get_playoff_probabilities():
     """
     Return Monte Carlo playoff simulation results.
-    Loads from cache when the nightly pipeline has run, otherwise
-    computes a fresh simulation against mock standings + schedule.
+    
+    In production mode, returns None if no cache exists.
+    In development mode, computes a fresh simulation against mock data.
     """
-    cached = load_cache("playoff_probabilities")
+    cached = load_cache_data_only("playoff_probabilities")
     if cached and cached.get("team_results"):
         return cached
+    
+    if IS_PRODUCTION:
+        return None
 
     # Fallback: run the simulation now against mock data
     from pipeline.monte_carlo import run as mc_run

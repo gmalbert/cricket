@@ -9,7 +9,7 @@ Run order:
   5. feature_engineering → match + player feature vectors
   6. run_models        → win probabilities, totals, player props
   7. monte_carlo       → playoff probabilities (10,000 simulations)
-  8. Save all results  → cache/*.json
+  8. Save all results  → cache/*.json (atomically with run manifest)
 
 All outputs are written to cache/ so Streamlit pages load instantly
 without re-running the pipeline on every user visit.
@@ -27,20 +27,43 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 
+from pipeline.run_manager import PipelineRun
+
 logger = logging.getLogger(__name__)
 
 CACHE_DIR = Path(__file__).parent.parent / "cache"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 
-def _save(name: str, data) -> None:
-    path = CACHE_DIR / f"{name}.json"
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2, default=str)
-    logger.info("Saved %s (%d items)", path.name, len(data) if isinstance(data, (list, dict)) else 1)
+def _append_odds_history(current: list[dict]) -> list[dict]:
+    """Keep an auditable, deduplicated price observation for every event."""
+    path = CACHE_DIR / "odds_history.json"
+    try:
+        with open(path) as handle:
+            content = json.load(handle)
+            # Handle metadata wrapper
+            if isinstance(content, dict) and "data" in content:
+                history = content["data"]
+            else:
+                history = content
+    except (FileNotFoundError, json.JSONDecodeError):
+        history = []
+    observed_at = datetime.now(timezone.utc).isoformat()
+    for row in current:
+        record = dict(row)
+        record["observed_at"] = observed_at
+        history.append(record)
+    # Keep the full event trail, but collapse exact duplicate observations from
+    # retries of the same nightly run.
+    deduped = {}
+    for row in history:
+        key = (row.get("event_id"), row.get("competition"), row.get("odds_timestamp"),
+               row.get("dk_odds_team1"), row.get("dk_odds_team2"))
+        deduped[key] = row
+    return list(deduped.values())
 
 
-def _cricsheet_is_fresh(max_age_hours: int = 23) -> bool:
+def _cricsheet_is_fresh(max_age_hours: int = 24 * 90) -> bool:
     parquet = CACHE_DIR / "raw" / "ipl_ball_by_ball.parquet"
     if not parquet.exists():
         return False
@@ -49,19 +72,48 @@ def _cricsheet_is_fresh(max_age_hours: int = 23) -> bool:
 
 
 def step_cricsheet(skip: bool = False) -> dict:
+    from pipeline.competitions import enabled_competitions
+    from pipeline.fetch_cricsheet import run as cricsheet_run, run_competition
+    from pipeline.competitions import get_competition
+
     if skip and _cricsheet_is_fresh():
-        logger.info("Cricsheet data is fresh — skipping re-download")
+        logger.info("IPL Cricsheet data is fresh — skipping IPL re-download")
         from pipeline.fetch_cricsheet import compute_team_form, compute_player_stats, compute_venue_stats
         import pandas as pd
         bbb = pd.read_parquet(CACHE_DIR / "raw" / "ipl_ball_by_ball.parquet")
-        return {
+        result = {
             "team_form": compute_team_form(bbb),
             "player_stats": compute_player_stats(bbb),
             "venue_stats": compute_venue_stats(bbb),
+            "historical_coverage": {"ipl_male": {"completed_matches": int(bbb["match_id"].nunique()) if "match_id" in bbb else 0, "ready": True}},
         }
-
-    from pipeline.fetch_cricsheet import run as cricsheet_run
-    return cricsheet_run()
+    else:
+        result = cricsheet_run()
+        # The IPL-specific loader returns one coverage record, while the
+        # competition-aware pipeline consumes a slug-keyed mapping.
+        coverage = result.get("historical_coverage", {})
+        if isinstance(coverage, dict) and "competition" in coverage:
+            result["historical_coverage"] = {"ipl_male": coverage}
+    # Every enabled competition gets an independent namespaced historical
+    # archive and coverage result. Aggregates can be shared by the feature
+    # layer, while the publish gate remains competition-specific.
+    for competition in enabled_competitions():
+        if competition.slug == "ipl_male":
+            continue
+        try:
+            historical = run_competition(competition)
+            result["team_form"].update(historical["team_form"])
+            result["player_stats"]["batters"].update(historical["player_stats"].get("batters", {}))
+            result["player_stats"]["bowlers"].update(historical["player_stats"].get("bowlers", {}))
+            result["venue_stats"].update(historical["venue_stats"])
+            result.setdefault("historical_coverage", {})[competition.slug] = historical["historical_coverage"]
+        except Exception as exc:
+            logger.warning("Historical load failed for %s: %s", competition.slug, exc)
+            result.setdefault("historical_coverage", {})[competition.slug] = {
+                "competition": competition.slug, "dataset": competition.historical_dataset,
+                "seasons": [], "completed_matches": 0, "ready": False, "error": str(exc),
+            }
+    return result
 
 
 def step_rivalries() -> dict:
@@ -149,33 +201,18 @@ def step_features(fixtures, team_form, venue_stats, weather, odds, player_stats=
 
 
 def step_models(match_features, player_features) -> tuple[list, list, list]:
-    from pipeline.run_models import (
-        predict_match_winner,
-        predict_first_innings_total,
-        predict_player_props,
-    )
-    winner_preds   = predict_match_winner(match_features)
-    totals_preds   = predict_first_innings_total(match_features)
-    props_preds    = predict_player_props(player_features)
-    return winner_preds, totals_preds, props_preds
+    from pipeline.run_models import predict_match_winner
+    # v1 exposes only the market with verified DraftKings labels.
+    return predict_match_winner(match_features), [], []
 
 
 def merge_match_predictions(winner_preds, totals_preds, odds) -> list[dict]:
-    """Combine win probability + totals + DK odds into final match dicts."""
-    odds_lookup = {(o.get("team1", ""), o.get("team2", "")): o for o in odds}
-
-    totals_lookup = {m["match_id"]: m for m in totals_preds}
+    """Combine h2h probabilities and DraftKings odds into final match dicts."""
+    from pipeline.fetch_odds import match_odds_for_fixture
     matches = []
     for m in winner_preds:
         mid = m["match_id"]
-        totals = totals_lookup.get(mid, {})
-        dk = odds_lookup.get((m["team1"], m["team2"]), {})
-
-        dk_p1 = dk.get("dk_implied_prob_team1") or m.get("dk_implied_prob_team1") or round(m["team1_win_prob"] * 0.92, 4)
-        dk_p2 = dk.get("dk_implied_prob_team2") or m.get("dk_implied_prob_team2") or round(m["team2_win_prob"] * 0.92, 4)
-
-        predicted_total = totals.get("predicted_total") or 340
-        dk_total_line = round(predicted_total * 0.99 / 5) * 5
+        dk = match_odds_for_fixture(m, odds) or {}
 
         matches.append({
             "match_id":               mid,
@@ -185,19 +222,29 @@ def merge_match_predictions(winner_preds, totals_preds, odds) -> list[dict]:
             "time":                   m.get("time", ""),
             "toss_winner":            m.get("toss_winner"),
             "toss_decision":          m.get("toss_decision"),
+            "competition":            m.get("competition", "ipl_male"),
+            "competition_name":       m.get("competition_name", "Indian Premier League"),
+            "format":                 m.get("format", "T20"),
+            "gender":                 m.get("gender", "male"),
+            "model_version":          "h2h-v1",
+            "training_coverage":      m.get("training_coverage", {}),
             "team1_win_prob":         m["team1_win_prob"],
             "team2_win_prob":         m["team2_win_prob"],
-            "dk_implied_prob_team1":  dk_p1,
-            "dk_implied_prob_team2":  dk_p2,
-            "edge_team1":             round(m["team1_win_prob"] - dk_p1, 4),
-            "edge_team2":             round(m["team2_win_prob"] - dk_p2, 4),
+            "dk_implied_prob_team1":  dk.get("dk_implied_prob_team1"),
+            "dk_implied_prob_team2":  dk.get("dk_implied_prob_team2"),
+            "edge_team1":             round(m["team1_win_prob"] - dk["dk_implied_prob_team1"], 4) if dk.get("dk_implied_prob_team1") is not None else None,
+            "edge_team2":             round(m["team2_win_prob"] - dk["dk_implied_prob_team2"], 4) if dk.get("dk_implied_prob_team2") is not None else None,
             "dk_odds_team1":          dk.get("dk_odds_team1"),
             "dk_odds_team2":          dk.get("dk_odds_team2"),
-            "predicted_first_innings": totals.get("predicted_first_innings"),
-            "predicted_total":        predicted_total,
-            "dk_total_line":          dk_total_line,
-            "venue_avg_first_innings": m.get("venue_avg_first_innings"),
-            "venue_chase_win_rate":   m.get("venue_chase_win_rate"),
+            "odds_timestamp":         dk.get("odds_timestamp"),
+            "odds_event_id":          dk.get("event_id"),
+            "odds_bookmaker":         dk.get("bookmaker"),
+            "odds_market":             dk.get("market", "h2h"),
+            "first_observed_price_team1": dk.get("first_observed_price_team1"),
+            "first_observed_price_team2": dk.get("first_observed_price_team2"),
+            "closing_price_team1":     dk.get("closing_price_team1"),
+            "closing_price_team2":     dk.get("closing_price_team2"),
+            "draftkings_available":   dk.get("event_status") == "draftkings_available",
             "temperature":            m.get("temperature"),
             "humidity":               m.get("humidity"),
             "dewpoint":               m.get("dewpoint"),
@@ -245,9 +292,10 @@ def build_player_props_output(props_preds, matches, odds) -> list[dict]:
     return props
 
 
-def build_value_bets(matches, props) -> list[dict]:
+def build_value_bets(matches, props, model_ready_by_competition: dict | None = None) -> list[dict]:
     """Aggregate all value bets from matches and player props."""
     bets = []
+    model_ready_by_competition = model_ready_by_competition or {}
     for m in matches:
         for team_key, prob_key, dk_key in [
             ("team1", "team1_win_prob", "dk_implied_prob_team1"),
@@ -255,9 +303,10 @@ def build_value_bets(matches, props) -> list[dict]:
         ]:
             team = m[team_key]
             model_p = m.get(prob_key, 0)
-            dk_p = m.get(dk_key, 0) or 0.5
-            edge = round(model_p - dk_p, 4)
-            if edge > 0.05:
+            dk_p = m.get(dk_key)
+            edge = round(model_p - dk_p, 4) if dk_p is not None else None
+            model_ready = model_ready_by_competition.get(m.get("competition", "ipl_male"), True)
+            if edge is not None and edge > 0.05 and m.get("draftkings_available") and model_ready:
                 dk_odds = m.get(f"dk_odds_{team_key}")
                 if not dk_odds:
                     dk_odds = round(-100 / dk_p) if dk_p > 0.5 else round(100 / dk_p - 100)
@@ -274,6 +323,11 @@ def build_value_bets(matches, props) -> list[dict]:
                     "tier":        "Elite Pick" if edge > 0.10 else "Strong",
                 })
 
+    # v1 deliberately omits totals and player props from published outputs.
+    bets.sort(key=lambda x: -x["edge"])
+    return bets
+
+    if False:  # retained implementation is disabled until additional markets are enabled
         total_edge = 0
         if m.get("predicted_total") and m.get("dk_total_line"):
             total_edge = (m["predicted_total"] - m["dk_total_line"]) / m["dk_total_line"]
@@ -319,6 +373,14 @@ def build_value_bets(matches, props) -> list[dict]:
 
 def step_monte_carlo(standings: list[dict], schedule: list[dict]) -> dict:
     from pipeline.monte_carlo import run as mc_run
+    if not standings:
+        return {
+            "n_simulations": 0,
+            "team_results": [],
+            "match_importance": [],
+            "remaining_matches": 0,
+            "error": "Live standings data is unavailable.",
+        }
     return mc_run(standings, schedule)
 
 
@@ -328,7 +390,20 @@ def step_matchup_edge(team_form: dict, venue_stats: dict) -> dict:
     from Cricsheet team form data. Falls back to mock history if data is thin.
     """
     from utils.data import _mock_matchup_edge_history, IPL_TEAMS_2026, IPL_VENUES
+    from utils.cache import APP_ENV
     import random, math
+
+    if APP_ENV == "production":
+        return {
+            "schema_version": 1,
+            "matchups": [],
+            "venues": [],
+            "edge_buckets": [],
+            "rolling_roi": [],
+            "seasons": [],
+            "total_bets_analysed": 0,
+            "error": "Production matchup history requires settled prediction data.",
+        }
 
     # If we don't have enough Cricsheet data, use mock
     if not team_form or len(team_form) < 5:
@@ -448,152 +523,247 @@ def run(skip_cricsheet: bool = False, dry_run: bool = False) -> dict:
                 datetime.now(timezone.utc).isoformat())
     logger.info("=" * 60)
 
-    errors = {}
+    # Use PipelineRun context manager for atomic cache publication
+    with PipelineRun(skip_cricsheet=skip_cricsheet, dry_run=dry_run) as pipeline_run:
+        errors = {}
 
-    logger.info("[0/8] Reconciling yesterday's predictions...")
-    try:
-        prediction_log, n_new = step_reconcile(dry_run=dry_run)
-        logger.info("Reconciled %d new match results (log total=%d)", n_new, len(prediction_log))
-    except Exception as e:
-        logger.error("Reconciliation failed: %s", e)
-        errors["reconcile"] = str(e)
-        prediction_log = []
+        logger.info("[0/8] Reconciling yesterday's predictions...")
+        try:
+            prediction_log, n_new = step_reconcile(dry_run=dry_run)
+            logger.info("Reconciled %d new match results (log total=%d)", n_new, len(prediction_log))
+            pipeline_run.add_count("prediction_log_records", len(prediction_log))
+            pipeline_run.add_count("new_settlements", n_new)
+        except Exception as e:
+            logger.error("Reconciliation failed: %s", e)
+            errors["reconcile"] = str(e)
+            pipeline_run.add_error("reconcile", {"error": str(e)})
+            prediction_log = []
 
-    logger.info("[1/8] Fetching Cricsheet data...")
-    try:
-        cricsheet = step_cricsheet(skip=skip_cricsheet)
-        team_form    = cricsheet["team_form"]
-        player_stats = cricsheet["player_stats"]
-        venue_stats  = cricsheet["venue_stats"]
-    except Exception as e:
-        logger.error("Cricsheet step failed: %s\n%s", e, traceback.format_exc())
-        errors["cricsheet"] = str(e)
-        team_form = {}; player_stats = {"batters": {}, "bowlers": {}}; venue_stats = {}
+        logger.info("[1/8] Fetching Cricsheet data...")
+        try:
+            cricsheet = step_cricsheet(skip=skip_cricsheet)
+            team_form    = cricsheet["team_form"]
+            player_stats = cricsheet["player_stats"]
+            venue_stats  = cricsheet["venue_stats"]
+            historical_coverage = cricsheet.get("historical_coverage", {})
+            pipeline_run.add_count("historical_competitions", len(historical_coverage))
+        except Exception as e:
+            logger.error("Cricsheet step failed: %s\n%s", e, traceback.format_exc())
+            errors["cricsheet"] = str(e)
+            pipeline_run.add_error("cricsheet", {"error": str(e), "traceback": traceback.format_exc()})
+            team_form = {}; player_stats = {"batters": {}, "bowlers": {}}; venue_stats = {}
+            historical_coverage = {}
 
-    logger.info("[1b/8] Building historical batter-bowler rivalries...")
-    rivalries = step_rivalries()
+        logger.info("[1b/8] Building historical batter-bowler rivalries...")
+        rivalries = step_rivalries()
+        pipeline_run.add_count("rivalry_records", len(rivalries.get("rivalries", [])))
 
-    logger.info("[2/7] Fetching fixtures...")
-    fixtures = step_fixtures()
+        logger.info("[2/7] Fetching fixtures...")
+        fixtures = step_fixtures()
+        pipeline_run.add_count("fixtures_fetched", len(fixtures))
 
-    logger.info("[3/7] Fetching odds...")
-    odds = step_odds()
+        logger.info("[3/7] Fetching odds...")
+        odds = step_odds()
+        pipeline_run.add_count("odds_events", len(odds))
+        try:
+            from pipeline.fetch_fixtures import add_odds_provisional_fixtures
+            fixtures = add_odds_provisional_fixtures(fixtures, odds)
+            logger.info("Fixture set after odds reconciliation: %d", len(fixtures))
+            pipeline_run.add_count("fixtures_after_odds", len(fixtures))
+        except Exception as e:
+            logger.warning("Could not reconcile odds events into provisional fixtures: %s", e)
+            pipeline_run.add_warning("fixtures", "Could not reconcile odds events")
 
-    logger.info("[4/7] Fetching weather...")
-    try:
-        weather = step_weather(fixtures)
-    except Exception as e:
-        logger.error("Weather step failed: %s", e)
-        errors["weather"] = str(e)
-        weather = {}
+        logger.info("[4/7] Fetching weather...")
+        try:
+            weather = step_weather(fixtures)
+        except Exception as e:
+            logger.error("Weather step failed: %s", e)
+            errors["weather"] = str(e)
+            pipeline_run.add_error("weather", {"error": str(e)})
+            weather = {}
 
-    logger.info("[5/7] Building features...")
-    try:
-        match_features, player_features = step_features(
-            fixtures, team_form, venue_stats, weather, odds
+        logger.info("[5/7] Building features...")
+        try:
+            match_features, player_features = step_features(
+                fixtures, team_form, venue_stats, weather, odds
+            )
+            pipeline_run.add_count("match_features", len(match_features))
+            pipeline_run.add_count("player_features", len(player_features))
+        except Exception as e:
+            logger.error("Feature engineering failed: %s\n%s", e, traceback.format_exc())
+            errors["features"] = str(e)
+            pipeline_run.add_error("features", {"error": str(e), "traceback": traceback.format_exc()})
+            match_features = []; player_features = []
+
+        logger.info("[6/7] Running models...")
+        try:
+            winner_preds, totals_preds, props_preds = step_models(match_features, player_features)
+        except Exception as e:
+            logger.error("Model step failed: %s\n%s", e, traceback.format_exc())
+            errors["models"] = str(e)
+            pipeline_run.add_error("models", {"error": str(e), "traceback": traceback.format_exc()})
+            winner_preds = match_features; totals_preds = match_features; props_preds = player_features
+
+        matches_out  = merge_match_predictions(winner_preds, totals_preds, odds)
+        props_out    = build_player_props_output(props_preds, matches_out, odds)
+        model_ready_by_competition = {
+            # The current trained artifact is IPL T20-specific. Historical
+            # coverage alone does not authorize publishing ODI, women's, or
+            # other competition picks until those models are validated.
+            slug: slug == "ipl_male" and bool(coverage.get("ready"))
+            for slug, coverage in historical_coverage.items()
+        }
+        value_bets   = build_value_bets(matches_out, props_out, model_ready_by_competition)
+        
+        pipeline_run.add_count("matches_predicted", len(matches_out))
+        pipeline_run.add_count("player_props", len(props_out))
+        pipeline_run.add_count("value_bets", len(value_bets))
+
+        from pipeline.coverage import build_status_report
+        bets_by_competition = {}
+        for bet in value_bets:
+            match_label = bet.get("match", "")
+            competition = next((m.get("competition", "ipl_male") for m in matches_out
+                                if f"{m.get('team1')} vs {m.get('team2')}" == match_label), "ipl_male")
+            bets_by_competition[competition] = bets_by_competition.get(competition, 0) + 1
+        status_report = build_status_report(
+            fixtures, odds, historical_coverage,
+            model_ready_by_competition=model_ready_by_competition,
+            bets_by_competition=bets_by_competition,
+            errors=errors,
         )
-    except Exception as e:
-        logger.error("Feature engineering failed: %s\n%s", e, traceback.format_exc())
-        errors["features"] = str(e)
-        match_features = []; player_features = []
 
-    logger.info("[6/7] Running models...")
-    try:
-        winner_preds, totals_preds, props_preds = step_models(match_features, player_features)
-    except Exception as e:
-        logger.error("Model step failed: %s\n%s", e, traceback.format_exc())
-        errors["models"] = str(e)
-        winner_preds = match_features; totals_preds = match_features; props_preds = player_features
+        team_form_serializable = {
+            k: [
+                {kk: str(vv) if hasattr(vv, 'isoformat') else vv for kk, vv in row.items()}
+                for row in v
+            ]
+            for k, v in team_form.items()
+        }
 
-    matches_out  = merge_match_predictions(winner_preds, totals_preds, odds)
-    props_out    = build_player_props_output(props_preds, matches_out, odds)
-    value_bets   = build_value_bets(matches_out, props_out)
+        logger.info("[6b/8] Building fixture-specific Match Hubs...")
+        try:
+            match_hubs = step_match_hubs(
+                matches_out, props_out, team_form_serializable, venue_stats, rivalries
+            )
+            pipeline_run.add_count("match_hubs", len(match_hubs.get("matches", {})))
+        except Exception as e:
+            logger.error("Match Hub build failed: %s", e)
+            errors["match_hubs"] = str(e)
+            pipeline_run.add_error("match_hubs", {"error": str(e)})
+            match_hubs = {"schema_version": 1, "matches": {}, "error": str(e)}
+        shot_locations = step_shot_locations()
 
-    team_form_serializable = {
-        k: [
-            {kk: str(vv) if hasattr(vv, 'isoformat') else vv for kk, vv in row.items()}
-            for row in v
-        ]
-        for k, v in team_form.items()
-    }
+        # Standings and schedule must come from the live fixture provider.  Do
+        # not substitute simulated IPL data in production when the provider
+        # has not returned a standings-capable payload.
+        points_table = []
+        full_schedule = fixtures
 
-    logger.info("[6b/8] Building fixture-specific Match Hubs...")
-    try:
-        match_hubs = step_match_hubs(
-            matches_out, props_out, team_form_serializable, venue_stats, rivalries
-        )
-    except Exception as e:
-        logger.error("Match Hub build failed: %s", e)
-        errors["match_hubs"] = str(e)
-        match_hubs = {"schema_version": 1, "matches": {}, "error": str(e)}
-    shot_locations = step_shot_locations()
+        logger.info("[7/8] Running Monte Carlo playoff simulation...")
+        try:
+            mc_result = step_monte_carlo(points_table, full_schedule)
+            pipeline_run.add_count("monte_carlo_sims", mc_result.get("n_simulations", 0))
+        except Exception as e:
+            logger.error("Monte Carlo step failed: %s\n%s", e, traceback.format_exc())
+            errors["monte_carlo"] = str(e)
+            pipeline_run.add_error("monte_carlo", {"error": str(e), "traceback": traceback.format_exc()})
+            mc_result = {}
 
-    # Build points table from Cricsheet team form + fixture results
-    from utils.data import _mock_points_table, _mock_ipl_schedule
-    points_table = _mock_points_table()   # replaced by live data when cache has it
-    full_schedule = _mock_ipl_schedule()  # replaced by live data when cache has it
+        logger.info("[8/8] Computing H2H matchup edge history...")
+        try:
+            edge_history = step_matchup_edge(team_form, venue_stats)
+            pipeline_run.add_count("matchup_bets_analysed", edge_history.get("total_bets_analysed", 0))
+        except Exception as e:
+            logger.error("Matchup edge step failed: %s\n%s", e, traceback.format_exc())
+            errors["matchup_edge"] = str(e)
+            pipeline_run.add_error("matchup_edge", {"error": str(e), "traceback": traceback.format_exc()})
+            edge_history = {}
 
-    logger.info("[7/8] Running Monte Carlo playoff simulation...")
-    try:
-        mc_result = step_monte_carlo(points_table, full_schedule)
-    except Exception as e:
-        logger.error("Monte Carlo step failed: %s\n%s", e, traceback.format_exc())
-        errors["monte_carlo"] = str(e)
-        mc_result = {}
-
-    logger.info("[8/8] Computing H2H matchup edge history...")
-    try:
-        edge_history = step_matchup_edge(team_form, venue_stats)
-    except Exception as e:
-        logger.error("Matchup edge step failed: %s\n%s", e, traceback.format_exc())
-        errors["matchup_edge"] = str(e)
-        edge_history = {}
-
-    if not dry_run:
-        logger.info("Writing cache files...")
-        _save("todays_matches",        matches_out)
-        _save("player_props",          props_out)
-        _save("team_form",             team_form_serializable)
-        _save("player_stats",          player_stats)
-        _save("venue_stats",           venue_stats)
-        _save("value_bets",            value_bets)
-        _save("playoff_probabilities", mc_result)
-        _save("matchup_edge_history",  edge_history)
-        _save("rivalries",             rivalries)
-        _save("match_hubs",            match_hubs)
-        _save("shot_locations",        shot_locations)
-        # prediction_log is written by step_reconcile (at step 0); re-save here
-        # to capture any new records added during this run
+        # Save all outputs to run directory with metadata
+        logger.info("Writing outputs to run directory...")
+        from utils.cache import save_cache_with_metadata
+        
+        # Helper to write with metadata
+        def write_with_meta(key: str, data):
+            wrapped = {
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "source_run_id": pipeline_run.run_id,
+                "source_status": "ready" if not errors else "partial",
+                "schema_version": 1,
+                "is_mock": False,
+                "data": data,
+            }
+            pipeline_run.write_output(key, wrapped)
+        
+        write_with_meta("todays_matches", matches_out)
+        write_with_meta("player_props", props_out)
+        write_with_meta("team_form", team_form_serializable)
+        write_with_meta("player_stats", player_stats)
+        write_with_meta("venue_stats", venue_stats)
+        write_with_meta("value_bets", value_bets)
+        write_with_meta("competition_status", status_report)
+        write_with_meta("odds_history", _append_odds_history(odds))
+        write_with_meta("playoff_probabilities", mc_result)
+        write_with_meta("matchup_edge_history", edge_history)
+        write_with_meta("schedule", full_schedule)
+        write_with_meta("points_table", points_table)
+        write_with_meta("rivalries", rivalries)
+        write_with_meta("match_hubs", match_hubs)
+        write_with_meta("shot_locations", shot_locations)
+        
         if prediction_log:
-            _save("prediction_log", prediction_log)
-        _save("last_updated", {
+            write_with_meta("prediction_log", prediction_log)
+        
+        last_updated = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
+            "run_id": pipeline_run.run_id,
             "matches_count": len(matches_out),
             "props_count": len(props_out),
+            "value_bets_count": len(value_bets),
             "monte_carlo_sims": mc_result.get("n_simulations", 0),
             "matchup_bets_analysed": edge_history.get("total_bets_analysed", 0),
             "prediction_log_records": len(prediction_log),
             "rivalry_records": len(rivalries.get("rivalries", [])),
-            "unmatched_squad_players": sum(len(players) for players in rivalries.get("unmatched_players", {}).values()),
             "match_hubs_count": len(match_hubs.get("matches", {})),
             "errors": errors,
-        })
-        logger.info("All cache files written to %s", CACHE_DIR)
-    else:
-        logger.info("[DRY RUN] Would write %d matches, %d props, %d bets, MC=%s, edge=%s, log=%d",
-                    len(matches_out), len(props_out), len(value_bets),
-                    bool(mc_result), bool(edge_history), len(prediction_log))
-
-    logger.info("Pipeline complete.")
-    return {
-        "matches":              matches_out,
-        "props":                props_out,
-        "value_bets":           value_bets,
-        "playoff_probabilities": mc_result,
-        "matchup_edge_history": edge_history,
-        "prediction_log":       prediction_log,
-        "errors":               errors,
-    }
+            "competition_status": status_report,
+        }
+        write_with_meta("last_updated", last_updated)
+        
+        logger.info("All outputs written to run directory: %s", pipeline_run.run_dir)
+        
+        # Determine if run was successful
+        # Success = we have at least some predictions OR valid status report
+        has_predictions = len(matches_out) > 0 or len(value_bets) > 0
+        has_valid_status = status_report and len(status_report.get("competitions", [])) > 0
+        
+        if has_predictions or has_valid_status:
+            # Validate required outputs exist
+            required_outputs = ["todays_matches", "value_bets", "competition_status", "last_updated"]
+            if pipeline_run.validate_outputs(required_outputs):
+                pipeline_run.mark_success()
+                logger.info("Pipeline run marked as successful")
+            else:
+                logger.warning("Pipeline run validation failed - missing required outputs")
+        else:
+            logger.warning("Pipeline run produced no predictions and no valid status - not marking as successful")
+        
+        # The context manager will save manifest and promote to production if successful
+        
+        logger.info("Pipeline complete.")
+        return {
+            "run_id": pipeline_run.run_id,
+            "matches":              matches_out,
+            "props":                props_out,
+            "value_bets":           value_bets,
+            "playoff_probabilities": mc_result,
+            "matchup_edge_history": edge_history,
+            "prediction_log":       prediction_log,
+            "errors":               errors,
+            "competition_status":   status_report,
+        }
 
 
 if __name__ == "__main__":

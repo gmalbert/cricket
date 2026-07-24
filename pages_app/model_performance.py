@@ -28,6 +28,13 @@ def render():
     ])
 
     metrics = get_model_performance()
+    if not isinstance(metrics, dict) or not metrics:
+        st.info(
+            "📭 No model-performance data available. Run the data pipeline "
+            "to generate historical metrics."
+        )
+        return
+
     seasons = list(metrics.keys())
 
     # ------------------------------------------------------------------ #

@@ -24,16 +24,28 @@ def render():
         table = get_points_table()
         df = pd.DataFrame(table)
         display_cols = ["Pos", "Team", "P", "W", "L", "NRR", "Pts"]
-        display_df = df[display_cols].copy()
+        missing_cols = [col for col in display_cols if col not in df.columns]
+        if df.empty:
+            st.info(
+                "📭 No points-table data available. Run the data pipeline to "
+                "generate the points table."
+            )
+        elif missing_cols:
+            st.warning(
+                "The cached points table has an unexpected schema. "
+                f"Missing columns: {', '.join(missing_cols)}."
+            )
+        else:
+            display_df = df[display_cols].copy()
 
-        def highlight_playoff(row):
-            if row["Pos"] <= 4:
-                return ["background-color: #d4edda"] * len(row)
-            return [""] * len(row)
+            def highlight_playoff(row):
+                if row["Pos"] <= 4:
+                    return ["background-color: #d4edda"] * len(row)
+                return [""] * len(row)
 
-        styled = display_df.style.apply(highlight_playoff, axis=1)
-        st.dataframe(styled, hide_index=True, width='stretch')
-        st.caption("🟢 Green = Playoff qualification zone (Top 4)")
+            styled = display_df.style.apply(highlight_playoff, axis=1)
+            st.dataframe(styled, hide_index=True, width='stretch')
+            st.caption("🟢 Green = Playoff qualification zone (Top 4)")
 
     # ------------------------------------------------------------------ #
     # TAB 2 — Full Schedule
@@ -43,30 +55,40 @@ def render():
         schedule = get_ipl_schedule()
         df = pd.DataFrame(schedule)
 
-        all_teams = sorted(set(df["team1"].tolist() + df["team2"].tolist()))
-        filter_team   = st.selectbox("Filter by Team", ["All Teams"] + all_teams)
-        show_upcoming = st.checkbox("Show only upcoming matches", value=False)
+        schedule_cols = ["match", "date", "team1", "team2", "venue", "played"]
+        missing_schedule_cols = [col for col in schedule_cols if col not in df.columns]
+        if df.empty:
+            st.info("📭 No schedule data available. Run the data pipeline to generate it.")
+        elif missing_schedule_cols:
+            st.warning(
+                "The cached schedule has an unexpected schema. "
+                f"Missing columns: {', '.join(missing_schedule_cols)}."
+            )
+        else:
+            all_teams = sorted(set(df["team1"].tolist() + df["team2"].tolist()))
+            filter_team   = st.selectbox("Filter by Team", ["All Teams"] + all_teams)
+            show_upcoming = st.checkbox("Show only upcoming matches", value=False)
 
-        filtered = df.copy()
-        if filter_team != "All Teams":
-            filtered = filtered[
-                (filtered["team1"] == filter_team) | (filtered["team2"] == filter_team)
-            ]
-        if show_upcoming:
-            filtered = filtered[~filtered["played"]]
+            filtered = df.copy()
+            if filter_team != "All Teams":
+                filtered = filtered[
+                    (filtered["team1"] == filter_team) | (filtered["team2"] == filter_team)
+                ]
+            if show_upcoming:
+                filtered = filtered[~filtered["played"]]
 
-        def format_row(row):
-            if row["played"] and row.get("winner"):
-                return f"✅ {row['winner']}"
-            p1 = row.get("team1_win_prob", 0.5)
-            p2 = row.get("team2_win_prob", 0.5)
-            return f"🏏 {p1*100:.0f}% / {p2*100:.0f}%"
+            def format_row(row):
+                if row["played"] and row.get("winner"):
+                    return f"✅ {row['winner']}"
+                p1 = row.get("team1_win_prob", 0.5)
+                p2 = row.get("team2_win_prob", 0.5)
+                return f"🏏 {p1*100:.0f}% / {p2*100:.0f}%"
 
-        filtered = filtered.copy()
-        filtered["Prediction / Result"] = filtered.apply(format_row, axis=1)
-        display = filtered[["match", "date", "team1", "team2", "venue", "Prediction / Result"]].copy()
-        display.columns = ["#", "Date", "Team 1", "Team 2", "Venue", "Prediction / Result"]
-        st.dataframe(display, hide_index=True, width='stretch')
+            filtered = filtered.copy()
+            filtered["Prediction / Result"] = filtered.apply(format_row, axis=1)
+            display = filtered[["match", "date", "team1", "team2", "venue", "Prediction / Result"]].copy()
+            display.columns = ["#", "Date", "Team 1", "Team 2", "Venue", "Prediction / Result"]
+            st.dataframe(display, hide_index=True, width='stretch')
 
     # ------------------------------------------------------------------ #
     # TAB 3 — Monte Carlo Playoff Probabilities

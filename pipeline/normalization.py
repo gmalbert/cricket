@@ -9,6 +9,7 @@ TEAM_ALIASES = {
     "Delhi Daredevils": "Delhi Capitals",
     "Kings XI Punjab": "Punjab Kings",
     "Royal Challengers Bangalore": "Royal Challengers Bengaluru",
+    "England Women": "England Women",
 }
 
 # This intentionally starts small. Add aliases only after verifying both names
@@ -30,6 +31,15 @@ def canonical_text(value: object) -> str:
 def canonical_team(team: object) -> str:
     name = canonical_text(team)
     return TEAM_ALIASES.get(name, name)
+
+
+def team_match_key(team1: object, team2: object) -> tuple[str, str]:
+    """Canonical, order-preserving key used to join fixture and odds records."""
+    return canonical_team(team1), canonical_team(team2)
+
+
+def unordered_team_match_key(team1: object, team2: object) -> frozenset[str]:
+    return frozenset(team_match_key(team1, team2))
 
 
 def canonical_player(player: object) -> str:

@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-07-23T01:32:51.493902+00:00",
+  "source_run_id": "3b9d8559-801b-4c78-80d7-2dddc7ecb25b",
+  "source_status": "ready",
+  "schema_version": 1,
+  "is_mock": false,
+  "data": {
+    "schema_version": 1,
+    "generated_at": "2026-07-23T01:32:51.475307+00:00",
+    "matches": {}
+  }
+}

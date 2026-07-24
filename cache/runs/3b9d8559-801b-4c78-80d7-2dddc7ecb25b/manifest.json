@@ -1,0 +1,53 @@
+{
+  "run_id": "3b9d8559-801b-4c78-80d7-2dddc7ecb25b",
+  "start_time": "2026-07-23T01:32:51.472659+00:00",
+  "end_time": "2026-07-23T01:32:51.578675+00:00",
+  "duration_seconds": 0.106016,
+  "success": true,
+  "skip_cricsheet": false,
+  "dry_run": false,
+  "git_commit": "9d22bd956b22777402dabf65fe2d0b10ffaea7f2",
+  "environment": "production",
+  "counts": {
+    "prediction_log_records": 0,
+    "new_settlements": 0,
+    "historical_competitions": 0,
+    "rivalry_records": 0,
+    "fixtures_fetched": 0,
+    "odds_events": 0,
+    "fixtures_after_odds": 0,
+    "match_features": 0,
+    "player_features": 0,
+    "matches_predicted": 0,
+    "player_props": 0,
+    "value_bets": 0,
+    "match_hubs": 0,
+    "monte_carlo_sims": 0,
+    "matchup_bets_analysed": 0
+  },
+  "errors": {},
+  "warnings": {
+    "validation": [
+      "todays_matches is empty",
+      "value_bets is empty"
+    ]
+  },
+  "output_hashes": {
+    "todays_matches": "c2043be53577d07b",
+    "player_props": "fe60392e596e61b3",
+    "team_form": "8b779f9932a9e87a",
+    "player_stats": "b57186d454a9654b",
+    "venue_stats": "baf18ef980058bd8",
+    "value_bets": "3048d3d7ad97e319",
+    "competition_status": "3e067d234129867a",
+    "odds_history": "c49d82959fcce031",
+    "playoff_probabilities": "3cd1d036d50d59c1",
+    "matchup_edge_history": "163de237fa9af109",
+    "schedule": "1896702abdd27fae",
+    "points_table": "2ffc1b838dabc7fb",
+    "rivalries": "a0992a91404c7c5e",
+    "match_hubs": "37fb7db053e689d4",
+    "shot_locations": "ee809f9d1a031e5c",
+    "last_updated": "c81f971bcd29ad01"
+  }
+}
