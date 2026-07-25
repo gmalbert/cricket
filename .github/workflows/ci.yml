@@ -138,11 +138,12 @@ jobs:
         continue-on-error: true
       
       - name: Scan for secrets
+        if: github.event_name != 'push' || github.ref != 'refs/heads/main'
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          base: main
-          head: HEAD
+          base: ${{ github.event.before }}
+          head: ${{ github.event.after }}
         continue-on-error: true
 
   build-check:

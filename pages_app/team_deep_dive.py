@@ -1,9 +1,11 @@
-import streamlit as st
+import random
+
 import pandas as pd
 import plotly.graph_objects as go
-import plotly.express as px
-from utils.data import IPL_TEAMS_2026, get_team_form, TEAM_PLAYERS
-import random
+import streamlit as st
+
+from utils.data import IPL_TEAMS_2026, get_team_form
+
 
 def render():
     st.title("📊 Team Deep Dive")
@@ -42,7 +44,7 @@ def render():
             return ""
 
         styled = display_df.style.map(highlight_result, subset=["Result"])
-        st.dataframe(styled, hide_index=True, width='stretch')
+        st.dataframe(styled, hide_index=True, width="stretch")
 
     with tab2:
         st.subheader("Phase-by-Phase Scoring Breakdown")
@@ -60,38 +62,41 @@ def render():
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, width="stretch")
 
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("**Batting Phase Averages**")
             phase_df = pd.DataFrame({"Phase": phases, "Avg Runs": runs, "Avg Wickets": wickets})
-            st.dataframe(phase_df, hide_index=True, width='stretch')
+            st.dataframe(phase_df, hide_index=True, width="stretch")
         with col2:
             st.markdown("**Economy Rate by Phase (Bowling)**")
             bowling_econ = [round(random.uniform(6.8, 8.2), 2) for _ in phases]
             bowl_df = pd.DataFrame({"Phase": phases, "Economy": bowling_econ})
-            st.dataframe(bowl_df, hide_index=True, width='stretch')
+            st.dataframe(bowl_df, hide_index=True, width="stretch")
 
     with tab3:
         st.subheader("Venue Record")
         from utils.data import IPL_VENUES
+
         venue_records = []
         random.seed(hash(team + "venue") % 3333)
         for venue in list(IPL_VENUES.keys())[:6]:
             played = random.randint(2, 8)
             won = random.randint(0, played)
             avg = random.randint(148, 190)
-            venue_records.append({
-                "Venue": venue,
-                "Played": played,
-                "Won": won,
-                "Lost": played - won,
-                "Win%": f"{int(won/played*100)}%",
-                "Avg Score": avg,
-            })
+            venue_records.append(
+                {
+                    "Venue": venue,
+                    "Played": played,
+                    "Won": won,
+                    "Lost": played - won,
+                    "Win%": f"{int(won / played * 100)}%",
+                    "Avg Score": avg,
+                }
+            )
         vdf = pd.DataFrame(venue_records)
-        st.dataframe(vdf, hide_index=True, width='stretch')
+        st.dataframe(vdf, hide_index=True, width="stretch")
 
     with tab4:
         st.subheader("Head-to-Head vs All Teams (Last 10 T20s)")
@@ -104,17 +109,20 @@ def render():
             score = random.randint(148, 205)
             opp_score = random.randint(120, score - 5) if won else random.randint(score + 5, score + 40)
             from datetime import datetime, timedelta
-            match_date = (datetime.now() - timedelta(days=(10-i)*60)).strftime("%b %d, %Y")
-            h2h.append({
-                "Date": match_date,
-                "Result": "W" if won else "L",
-                f"{team} Score": score,
-                f"{selected_opp} Score": opp_score,
-                "Venue": random.choice(list(IPL_VENUES.keys())),
-            })
+
+            match_date = (datetime.now() - timedelta(days=(10 - i) * 60)).strftime("%b %d, %Y")
+            h2h.append(
+                {
+                    "Date": match_date,
+                    "Result": "W" if won else "L",
+                    f"{team} Score": score,
+                    f"{selected_opp} Score": opp_score,
+                    "Venue": random.choice(list(IPL_VENUES.keys())),
+                }
+            )
         h2h_df = pd.DataFrame(h2h)
         wins_h2h = sum(1 for r in h2h if r["Result"] == "W")
-        st.markdown(f"**{team}** leads **{selected_opp}**: {wins_h2h}–{10-wins_h2h}")
+        st.markdown(f"**{team}** leads **{selected_opp}**: {wins_h2h}–{10 - wins_h2h}")
 
         def highlight_result(val):
             if val == "W":
@@ -124,4 +132,4 @@ def render():
             return ""
 
         styled = h2h_df.style.map(highlight_result, subset=["Result"])
-        st.dataframe(styled, hide_index=True, width='stretch')
+        st.dataframe(styled, hide_index=True, width="stretch")

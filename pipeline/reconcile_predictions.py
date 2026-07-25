@@ -17,24 +17,26 @@ Logic:
 This is 100% automatic — no manual input required.
 The log grows indefinitely and drives all "Live Accuracy" analytics.
 """
+
 import json
 import logging
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
 CACHE_DIR = Path(__file__).parent.parent / "cache"
-LOG_FILE  = CACHE_DIR / "prediction_log.json"
+LOG_FILE = CACHE_DIR / "prediction_log.json"
 
 # ROI for a winning bet at -110 (standard US line): +$0.909 per $1 risked
-ROI_WIN  =  0.909
+ROI_WIN = 0.909
 ROI_LOSS = -1.000
 
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _load_json(path: Path):
     if not path.exists():
@@ -57,16 +59,21 @@ def _save_json(path: Path, data) -> None:
 
 def _edge_bucket(edge: float) -> str:
     ae = abs(edge)
-    if ae < 0.03:  return "0–3%"
-    if ae < 0.06:  return "3–6%"
-    if ae < 0.10:  return "6–10%"
-    if ae < 0.15:  return "10–15%"
+    if ae < 0.03:
+        return "0–3%"
+    if ae < 0.06:
+        return "3–6%"
+    if ae < 0.10:
+        return "6–10%"
+    if ae < 0.15:
+        return "10–15%"
     return "15%+"
 
 
 # ---------------------------------------------------------------------------
 # Core reconciliation
 # ---------------------------------------------------------------------------
+
 
 def reconcile(
     predictions: list[dict] | None,
@@ -92,7 +99,7 @@ def reconcile(
         logger.info("Reconcile: no predictions to reconcile")
         return existing_log, 0
 
-    today = run_date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = run_date or datetime.now(UTC).strftime("%Y-%m-%d")
 
     # Build a lookup of actual results from the schedule
     results_lookup: dict[str, dict] = {}
@@ -129,60 +136,61 @@ def reconcile(
         # Model pick = team with higher win probability
         p1 = pred.get("team1_win_prob", 0.5)
         p2 = pred.get("team2_win_prob", 0.5)
-        model_pick       = t1 if p1 >= p2 else t2
-        model_pick_prob  = max(p1, p2)
-        correct          = (model_pick == actual_winner)
+        model_pick = t1 if p1 >= p2 else t2
+        model_pick_prob = max(p1, p2)
+        correct = model_pick == actual_winner
 
         # DK edge for the model pick
-        dk_key   = "dk_implied_prob_team1" if p1 >= p2 else "dk_implied_prob_team2"
-        dk_prob  = pred.get(dk_key) or 0.5
-        edge     = round(model_pick_prob - dk_prob, 4)
+        dk_key = "dk_implied_prob_team1" if p1 >= p2 else "dk_implied_prob_team2"
+        dk_prob = pred.get(dk_key) or 0.5
+        edge = round(model_pick_prob - dk_prob, 4)
 
         # Total runs accuracy
         pred_total = pred.get("predicted_total")
-        dk_line    = pred.get("dk_total_line")
-        actual_tot = result.get("actual_total")           # populated when Cricsheet has the data
-        total_direction  = None
-        total_correct    = None
-        roi_total        = None
+        dk_line = pred.get("dk_total_line")
+        actual_tot = result.get("actual_total")  # populated when Cricsheet has the data
+        total_direction = None
+        total_correct = None
+        roi_total = None
 
         if pred_total and dk_line and actual_tot:
             total_direction = "OVER" if pred_total > dk_line else "UNDER"
-            actual_dir      = "OVER" if actual_tot > dk_line else "UNDER"
-            total_correct   = (total_direction == actual_dir)
-            roi_total       = ROI_WIN if total_correct else ROI_LOSS
+            actual_dir = "OVER" if actual_tot > dk_line else "UNDER"
+            total_correct = total_direction == actual_dir
+            roi_total = ROI_WIN if total_correct else ROI_LOSS
         elif pred_total and dk_line:
             # Simulate realistic outcome: 54% accuracy on totals
             import random
+
             random.seed(hash(mid) % 77777)
-            total_correct   = random.random() < 0.54
+            total_correct = random.random() < 0.54
             total_direction = "OVER" if pred_total > dk_line else "UNDER"
-            roi_total       = ROI_WIN if total_correct else ROI_LOSS
+            roi_total = ROI_WIN if total_correct else ROI_LOSS
 
         # Only record bets where we had a positive edge (we wouldn't bet otherwise)
         roi_winner = (ROI_WIN if correct else ROI_LOSS) if edge > 0.03 else None
 
         record = {
-            "match_id":        mid,
-            "date":            pred.get("date") or today,
-            "team1":           t1,
-            "team2":           t2,
-            "venue":           pred.get("venue", ""),
-            "model_pick":      model_pick,
+            "match_id": mid,
+            "date": pred.get("date") or today,
+            "team1": t1,
+            "team2": t2,
+            "venue": pred.get("venue", ""),
+            "model_pick": model_pick,
             "model_pick_prob": round(model_pick_prob, 4),
-            "dk_implied":      round(dk_prob, 4),
-            "edge":            edge,
-            "edge_bucket":     _edge_bucket(edge),
-            "actual_winner":   actual_winner,
-            "correct":         correct,
+            "dk_implied": round(dk_prob, 4),
+            "edge": edge,
+            "edge_bucket": _edge_bucket(edge),
+            "actual_winner": actual_winner,
+            "correct": correct,
             "predicted_total": pred_total,
-            "dk_total_line":   dk_line,
-            "actual_total":    actual_tot,
+            "dk_total_line": dk_line,
+            "actual_total": actual_tot,
             "total_direction": total_direction,
-            "total_correct":   total_correct,
-            "roi_winner":      roi_winner,
-            "roi_total":       roi_total,
-            "reconciled_at":   today,
+            "total_correct": total_correct,
+            "roi_winner": roi_winner,
+            "roi_total": roi_total,
+            "reconciled_at": today,
         }
         new_records.append(record)
         logged_ids.add(mid)
@@ -199,14 +207,15 @@ def reconcile(
 # Public entry point
 # ---------------------------------------------------------------------------
 
+
 def run(dry_run: bool = False) -> tuple[list[dict], int]:
     """
     Load caches, reconcile, optionally save.
     Returns (updated_log, n_new_records).
     """
     existing_log = _load_json(LOG_FILE) or []
-    predictions  = _load_json(CACHE_DIR / "todays_matches.json")
-    schedule     = _load_json(CACHE_DIR / "schedule.json")
+    predictions = _load_json(CACHE_DIR / "todays_matches.json")
+    schedule = _load_json(CACHE_DIR / "schedule.json")
 
     updated_log, n_new = reconcile(predictions, schedule, existing_log)
 

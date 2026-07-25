@@ -1,8 +1,10 @@
-import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-from utils.data import get_todays_matches, get_value_bets, get_competition_status
-from utils.cache import get_cache_metadata, is_mock_data, APP_ENV
+import streamlit as st
+
+from utils.cache import APP_ENV, get_cache_metadata, is_mock_data
+from utils.data import get_competition_status, get_todays_matches, get_value_bets
+
 
 def render():
     st.title("💰 Value Bets")
@@ -11,43 +13,47 @@ def render():
     # Check data status
     metadata = get_cache_metadata("value_bets")
     is_mock = is_mock_data("value_bets")
-    
+
     if is_mock and APP_ENV == "development":
-        st.warning("⚠️ **SIMULATED DATA** - Development mode is showing mock bets. Set APP_ENV=production to hide simulated data.")
+        st.warning(
+            "⚠️ **SIMULATED DATA** - Development mode is showing mock bets. Set APP_ENV=production to hide simulated data."
+        )
     elif metadata:
         st.info(f"📊 Last updated: {metadata.get('generated_at', 'Unknown')}")
 
     matches = get_todays_matches()
-    
+
     # Handle None matches
     if matches is None:
         st.info("📭 No match data available. The pipeline has not run yet.")
         if APP_ENV == "production":
             st.warning("Production mode: Mock data is disabled. Run the pipeline to generate value bets.")
         return
-    
+
     bets = get_value_bets(matches)
-    
+
     # Handle None bets
     if bets is None:
         st.info("📭 No bet data available.")
         if APP_ENV == "production":
             st.warning("Production mode: Mock data is disabled.")
         return
-    
+
     status_report = get_competition_status().get("competitions", {})
 
     if status_report:
-        status_df = pd.DataFrame([
-            {
-                "Competition": row.get("competition_name", slug),
-                "Fixtures": row.get("fixtures_count", 0),
-                "DraftKings": "✅ Available" if row.get("draftkings_available") else "❌ Unavailable",
-                "Model": "✅ Ready" if row.get("model_ready") else "❌ Not ready",
-                "Status": row.get("reason") or "ready",
-            }
-            for slug, row in status_report.items()
-        ])
+        status_df = pd.DataFrame(
+            [
+                {
+                    "Competition": row.get("competition_name", slug),
+                    "Fixtures": row.get("fixtures_count", 0),
+                    "DraftKings": "✅ Available" if row.get("draftkings_available") else "❌ Unavailable",
+                    "Model": "✅ Ready" if row.get("model_ready") else "❌ Not ready",
+                    "Status": row.get("reason") or "ready",
+                }
+                for slug, row in status_report.items()
+            ]
+        )
         with st.expander("Competition readiness", expanded=not bool(bets)):
             st.dataframe(status_df, hide_index=True, width="stretch")
 
@@ -68,7 +74,7 @@ def render():
         - ✅ DraftKings market is available
         - ✅ Historical data is sufficient for reliable predictions
         - ✅ Model validation passes
-        
+
         Check the competition readiness table above to see which gates are blocking each competition.
         """)
         return
@@ -84,11 +90,7 @@ def render():
 
     st.divider()
 
-    filter_type = st.multiselect(
-        "Filter by Bet Type",
-        ["Match Winner"],
-        default=["Match Winner"]
-    )
+    filter_type = st.multiselect("Filter by Bet Type", ["Match Winner"], default=["Match Winner"])
 
     filtered = [b for b in bets if b["type"] in filter_type]
 
@@ -98,24 +100,26 @@ def render():
         type_icon = {"Match Winner": "🏏"}
         tier_badge = {"Elite Pick": "🏆 ELITE", "Strong": "⭐ STRONG"}
 
-        df = pd.DataFrame([
-            {
-                "Type": type_icon.get(b["type"], "") + " " + b["type"],
-                "Bet": b["bet"],
-                "Match": b["match"],
-                "Tier": tier_badge.get(b["tier"], b["tier"]),
-                "Model %": f"{b['model_prob']*100:.0f}%",
-                "DK Implied": f"{b['implied_prob']*100:.0f}%",
-                "Edge": f"{b['edge']*100:+.1f}%",
-                "Kelly": b["kelly_stake"],
-                "DK Odds": b["dk_odds"],
-            }
-            for b in filtered
-        ])
+        df = pd.DataFrame(
+            [
+                {
+                    "Type": type_icon.get(b["type"], "") + " " + b["type"],
+                    "Bet": b["bet"],
+                    "Match": b["match"],
+                    "Tier": tier_badge.get(b["tier"], b["tier"]),
+                    "Model %": f"{b['model_prob'] * 100:.0f}%",
+                    "DK Implied": f"{b['implied_prob'] * 100:.0f}%",
+                    "Edge": f"{b['edge'] * 100:+.1f}%",
+                    "Kelly": b["kelly_stake"],
+                    "DK Odds": b["dk_odds"],
+                }
+                for b in filtered
+            ]
+        )
 
         st.dataframe(
             df,
-            width='stretch',
+            width="stretch",
             hide_index=True,
             column_config={
                 "Type": st.column_config.TextColumn(width="small"),
@@ -139,13 +143,15 @@ def render():
         color_map = {"Match Winner": "#3498db"}
         colors = [color_map.get(t, "#95a5a6") for t in types]
 
-        fig = go.Figure(go.Bar(
-            x=labels,
-            y=edges,
-            marker_color=colors,
-            text=[f"{e:.1f}%" for e in edges],
-            textposition="auto",
-        ))
+        fig = go.Figure(
+            go.Bar(
+                x=labels,
+                y=edges,
+                marker_color=colors,
+                text=[f"{e:.1f}%" for e in edges],
+                textposition="auto",
+            )
+        )
         fig.update_layout(
             yaxis_title="Edge (%)",
             xaxis_tickangle=-45,
@@ -153,5 +159,4 @@ def render():
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        st.plotly_chart(fig, width='stretch')
-
+        st.plotly_chart(fig, width="stretch")

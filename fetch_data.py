@@ -19,7 +19,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -27,19 +27,36 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── Colour helpers (no external dep) ────────────────────────────────────────
-GREEN  = "\033[92m"
-RED    = "\033[91m"
+GREEN = "\033[92m"
+RED = "\033[91m"
 YELLOW = "\033[93m"
-CYAN   = "\033[96m"
-BOLD   = "\033[1m"
-RESET  = "\033[0m"
+CYAN = "\033[96m"
+BOLD = "\033[1m"
+RESET = "\033[0m"
 
-def ok(msg):    print(f"  {GREEN}✓{RESET}  {msg}")
-def fail(msg):  print(f"  {RED}✗{RESET}  {msg}")
-def warn(msg):  print(f"  {YELLOW}⚠{RESET}  {msg}")
-def info(msg):  print(f"  {CYAN}→{RESET}  {msg}")
-def header(msg):print(f"\n{BOLD}{msg}{RESET}")
-def divider():  print("─" * 56)
+
+def ok(msg):
+    print(f"  {GREEN}✓{RESET}  {msg}")
+
+
+def fail(msg):
+    print(f"  {RED}✗{RESET}  {msg}")
+
+
+def warn(msg):
+    print(f"  {YELLOW}⚠{RESET}  {msg}")
+
+
+def info(msg):
+    print(f"  {CYAN}→{RESET}  {msg}")
+
+
+def header(msg):
+    print(f"\n{BOLD}{msg}{RESET}")
+
+
+def divider():
+    print("─" * 56)
 
 
 # ── Environment check ────────────────────────────────────────────────────────
@@ -84,55 +101,65 @@ def run_step(label: str, fn, *args, **kwargs):
 
 def pull_cricsheet(skip: bool) -> dict:
     from pipeline.run_pipeline import step_cricsheet
+
     return step_cricsheet(skip=skip)
 
 
 def pull_fixtures() -> list:
     from pipeline.run_pipeline import step_fixtures
+
     return step_fixtures()
 
 
 def pull_odds() -> list:
     from pipeline.run_pipeline import step_odds
+
     return step_odds()
 
 
 def pull_weather(fixtures: list) -> dict:
     from pipeline.run_pipeline import step_weather
+
     return step_weather(fixtures)
 
 
 def pull_features(fixtures, team_form, venue_stats, weather, odds, player_stats=None):
     from pipeline.run_pipeline import step_features
+
     return step_features(fixtures, team_form, venue_stats, weather, odds, player_stats=player_stats)
 
 
 def pull_models(match_features, player_features):
     from pipeline.run_pipeline import step_models
+
     return step_models(match_features, player_features)
 
 
 def pull_monte_carlo(fixtures, team_form):
     from pipeline.run_pipeline import step_monte_carlo
+
     # Never feed simulated standings or schedules into a production run.
-    points_table  = []
+    points_table = []
     full_schedule = fixtures
     return step_monte_carlo(points_table, full_schedule)
 
 
 def pull_matchup_edge(team_form, venue_stats):
     from pipeline.run_pipeline import step_matchup_edge
+
     return step_matchup_edge(team_form, venue_stats)
 
 
 def pull_reconcile():
     from pipeline.run_pipeline import step_reconcile
+
     log, _n_new = step_reconcile()
     return log
 
 
 # ── Cache write ──────────────────────────────────────────────────────────────
 CACHE_DIR = Path("cache")
+
 
 def save(name: str, data, dry_run: bool) -> None:
     if dry_run:
@@ -149,15 +176,15 @@ def save(name: str, data, dry_run: bool) -> None:
 # ── Main ─────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(description="Wicket Oracle data pull")
-    parser.add_argument("--skip-cricsheet", action="store_true",
-                        help="Skip Cricsheet download if data is less than 23h old")
-    parser.add_argument("--dry-run", action="store_true",
-                        help="Run all steps but do not write any cache files")
+    parser.add_argument(
+        "--skip-cricsheet", action="store_true", help="Skip Cricsheet download if data is less than 23h old"
+    )
+    parser.add_argument("--dry-run", action="store_true", help="Run all steps but do not write any cache files")
     args = parser.parse_args()
 
     print(f"\n{BOLD}{'=' * 56}")
     print("  Wicket Oracle — Data Pull")
-    print(f"  {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"  {datetime.now(UTC).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"{'=' * 56}{RESET}")
 
     if args.dry_run:
@@ -167,8 +194,8 @@ def main():
     check_env()
     divider()
 
-    errors   = {}
-    timings  = {}
+    errors = {}
+    timings = {}
 
     # 2. Reconcile yesterday's predictions (step 0)
     header("Step 0 — Reconcile yesterday's predictions")
@@ -197,9 +224,9 @@ def main():
         ok(f"Player stats: {len(cricsheet.get('player_stats', {}))} players")
         ok(f"Venue stats: {len(cricsheet.get('venue_stats', {}))} venues")
 
-    team_form   = cricsheet.get("team_form", {})
+    team_form = cricsheet.get("team_form", {})
     player_stats = cricsheet.get("player_stats", {})
-    venue_stats  = cricsheet.get("venue_stats", {})
+    venue_stats = cricsheet.get("venue_stats", {})
 
     # 4. Fixtures
     header("Step 2 — Live fixtures (CricketData.org)")
@@ -239,8 +266,7 @@ def main():
     # 7. Feature engineering
     header("Step 5 — Feature engineering")
     feats, t, err = run_step(
-        "feature_engineering", pull_features,
-        fixtures, team_form, venue_stats, weather, odds, player_stats
+        "feature_engineering", pull_features, fixtures, team_form, venue_stats, weather, odds, player_stats
     )
     timings["features"] = t
     if err:
@@ -271,9 +297,10 @@ def main():
     header("Step 6b — Merge predictions into match output")
     try:
         from pipeline.run_pipeline import build_player_props_output, build_value_bets, merge_match_predictions
+
         matches_out = merge_match_predictions(winner_preds, totals_preds, odds)
-        props_out   = build_player_props_output(props_preds, matches_out, odds)
-        value_bets  = build_value_bets(matches_out, props_out)
+        props_out = build_player_props_output(props_preds, matches_out, odds)
+        value_bets = build_value_bets(matches_out, props_out)
         ok(f"{len(matches_out)} match(es) merged")
         ok(f"{len(props_out)} prop(s) merged")
         ok(f"{len(value_bets)} value bet(s) identified")
@@ -281,8 +308,8 @@ def main():
         fail(f"Merge failed: {e}")
         errors["merge"] = str(e)
         matches_out = []
-        props_out   = []
-        value_bets  = []
+        props_out = []
+        value_bets = []
 
     # 10. Monte Carlo
     header("Step 7 — Monte Carlo playoff simulator")
@@ -312,34 +339,35 @@ def main():
     header("Writing cache files")
     divider()
 
-    team_form_serializable = {
-        k: [
-            {kk: str(vv) if hasattr(vv, 'isoformat') else vv for kk, vv in row.items()}
-            for row in v
-        ]
-        for k, v in team_form.items()
-    } if team_form else {}
+    team_form_serializable = (
+        {
+            k: [{kk: str(vv) if hasattr(vv, "isoformat") else vv for kk, vv in row.items()} for row in v]
+            for k, v in team_form.items()
+        }
+        if team_form
+        else {}
+    )
 
-    save("todays_matches",       matches_out,           args.dry_run)
-    save("player_props",         props_out,             args.dry_run)
-    save("value_bets",           value_bets,            args.dry_run)
-    save("team_form",            team_form_serializable, args.dry_run)
-    save("player_stats",         player_stats,          args.dry_run)
-    save("venue_stats",          venue_stats,           args.dry_run)
-    save("playoff_probabilities",mc_result,             args.dry_run)
-    save("matchup_edge_history", edge_history,          args.dry_run)
-    save("schedule",             fixtures,              args.dry_run)
-    save("prediction_log",       prediction_log or [],  args.dry_run)
+    save("todays_matches", matches_out, args.dry_run)
+    save("player_props", props_out, args.dry_run)
+    save("value_bets", value_bets, args.dry_run)
+    save("team_form", team_form_serializable, args.dry_run)
+    save("player_stats", player_stats, args.dry_run)
+    save("venue_stats", venue_stats, args.dry_run)
+    save("playoff_probabilities", mc_result, args.dry_run)
+    save("matchup_edge_history", edge_history, args.dry_run)
+    save("schedule", fixtures, args.dry_run)
+    save("prediction_log", prediction_log or [], args.dry_run)
 
     last_updated = {
-        "timestamp":               datetime.now(timezone.utc).isoformat(),
-        "matches_count":           len(matches_out),
-        "props_count":             len(props_out),
-        "value_bets_count":        len(value_bets),
-        "monte_carlo_sims":        mc_result.get("n_simulations", 0),
-        "matchup_bets_analysed":   edge_history.get("total_bets_analysed", 0),
-        "prediction_log_records":  len(prediction_log) if prediction_log else 0,
-        "errors":                  errors,
+        "timestamp": datetime.now(UTC).isoformat(),
+        "matches_count": len(matches_out),
+        "props_count": len(props_out),
+        "value_bets_count": len(value_bets),
+        "monte_carlo_sims": mc_result.get("n_simulations", 0),
+        "matchup_bets_analysed": edge_history.get("total_bets_analysed", 0),
+        "prediction_log_records": len(prediction_log) if prediction_log else 0,
+        "errors": errors,
     }
     save("last_updated", last_updated, args.dry_run)
 

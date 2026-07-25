@@ -3,17 +3,17 @@
 Production states are defined in PRODUCTION_PLAN.md Phase 0.
 Each competition must have explicit status before being shown to users.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
-from enum import Enum
+from enum import StrEnum
 from typing import Any
 
 
-class ProductionStatus(str, Enum):
+class ProductionStatus(StrEnum):
     """Production readiness states for competitions."""
-    
+
     NOT_ENABLED = "not_enabled"
     NOT_RUN = "not_run"
     FETCH_FAILED = "fetch_failed"
@@ -29,10 +29,11 @@ class ProductionStatus(str, Enum):
 @dataclass
 class CompetitionStatus:
     """Detailed status for a single competition.
-    
+
     This is the evidence-backed truth for whether a competition should be shown
     to users and what predictions (if any) can be published.
     """
+
     competition_slug: str
     status: ProductionStatus
     last_successful_run: str | None = None
@@ -103,39 +104,39 @@ def determine_status(
     errors: dict[str, Any],
 ) -> ProductionStatus:
     """Apply production readiness gates to determine competition status.
-    
+
     This is the single authoritative function that classifies a competition's
     production state based on pipeline evidence.
     """
     if not enabled:
         return ProductionStatus.NOT_ENABLED
-    
+
     if last_run is None:
         return ProductionStatus.NOT_RUN
-    
+
     if errors:
         return ProductionStatus.FETCH_FAILED
-    
+
     if fixtures == 0:
         return ProductionStatus.NO_FIXTURES
-    
+
     if dk_events == 0:
         return ProductionStatus.NO_DRAFTKINGS_MARKET
-    
+
     # Minimum historical threshold: at least 100 matches to train a model
     if historical_matches < 100:
         return ProductionStatus.HISTORICAL_DATA_INSUFFICIENT
-    
+
     if model_version is None:
         return ProductionStatus.MODEL_NOT_READY
-    
+
     if qualifying_bets == 0:
         return ProductionStatus.NO_QUALIFYING_BETS
-    
+
     # Stale if data is older than 36 hours
     if data_age_hours is not None and data_age_hours > 36:
         return ProductionStatus.STALE
-    
+
     return ProductionStatus.READY
 
 

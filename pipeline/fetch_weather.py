@@ -2,10 +2,12 @@
 Fetch match-time weather forecasts from Open-Meteo (free, no API key).
 Used to compute temperature, humidity, dew flag per venue.
 """
+
 import logging
 import time
+from datetime import UTC, datetime
+
 import requests
-from datetime import datetime, timezone
 
 logger = logging.getLogger(__name__)
 
@@ -13,37 +15,40 @@ OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast"
 
 VENUE_COORDS = {
     # Short names (used internally)
-    "Wankhede Stadium":                              {"lat": 18.9388, "lon": 72.8258},
-    "MA Chidambaram Stadium":                        {"lat": 13.0629, "lon": 80.2792},
-    "M. Chinnaswamy Stadium":                        {"lat": 12.9791, "lon": 77.5496},
-    "Eden Gardens":                                  {"lat": 22.5647, "lon": 88.3433},
-    "Arun Jaitley Stadium":                          {"lat": 28.6364, "lon": 77.2173},
-    "Narendra Modi Stadium":                         {"lat": 23.0908, "lon": 72.0846},
-    "Rajiv Gandhi Intl Cricket Stadium":             {"lat": 17.4042, "lon": 78.5428},
-    "Sawai Mansingh Stadium":                        {"lat": 26.8949, "lon": 75.8009},
-    "BRSABV Ekana Cricket Stadium":                  {"lat": 26.8467, "lon": 80.9462},
-    "Himachal Pradesh Cricket Association Stadium":  {"lat": 32.2198, "lon": 76.3234},
+    "Wankhede Stadium": {"lat": 18.9388, "lon": 72.8258},
+    "MA Chidambaram Stadium": {"lat": 13.0629, "lon": 80.2792},
+    "M. Chinnaswamy Stadium": {"lat": 12.9791, "lon": 77.5496},
+    "Eden Gardens": {"lat": 22.5647, "lon": 88.3433},
+    "Arun Jaitley Stadium": {"lat": 28.6364, "lon": 77.2173},
+    "Narendra Modi Stadium": {"lat": 23.0908, "lon": 72.0846},
+    "Rajiv Gandhi Intl Cricket Stadium": {"lat": 17.4042, "lon": 78.5428},
+    "Sawai Mansingh Stadium": {"lat": 26.8949, "lon": 75.8009},
+    "BRSABV Ekana Cricket Stadium": {"lat": 26.8467, "lon": 80.9462},
+    "Himachal Pradesh Cricket Association Stadium": {"lat": 32.2198, "lon": 76.3234},
     "Maharaja Yadavindra Singh International Cricket Stadium": {"lat": 30.6942, "lon": 76.7336},
     # City-qualified names returned by the fixtures API
-    "Wankhede Stadium, Mumbai":                      {"lat": 18.9388, "lon": 72.8258},
-    "MA Chidambaram Stadium, Chennai":               {"lat": 13.0629, "lon": 80.2792},
-    "M. Chinnaswamy Stadium, Bengaluru":             {"lat": 12.9791, "lon": 77.5496},
-    "Eden Gardens, Kolkata":                         {"lat": 22.5647, "lon": 88.3433},
-    "Arun Jaitley Stadium, Delhi":                   {"lat": 28.6364, "lon": 77.2173},
-    "Narendra Modi Stadium, Ahmedabad":              {"lat": 23.0908, "lon": 72.0846},
-    "Rajiv Gandhi Intl Cricket Stadium, Hyderabad":  {"lat": 17.4042, "lon": 78.5428},
-    "Sawai Mansingh Stadium, Jaipur":                {"lat": 26.8949, "lon": 75.8009},
-    "BRSABV Ekana Cricket Stadium, Lucknow":         {"lat": 26.8467, "lon": 80.9462},
+    "Wankhede Stadium, Mumbai": {"lat": 18.9388, "lon": 72.8258},
+    "MA Chidambaram Stadium, Chennai": {"lat": 13.0629, "lon": 80.2792},
+    "M. Chinnaswamy Stadium, Bengaluru": {"lat": 12.9791, "lon": 77.5496},
+    "Eden Gardens, Kolkata": {"lat": 22.5647, "lon": 88.3433},
+    "Arun Jaitley Stadium, Delhi": {"lat": 28.6364, "lon": 77.2173},
+    "Narendra Modi Stadium, Ahmedabad": {"lat": 23.0908, "lon": 72.0846},
+    "Rajiv Gandhi Intl Cricket Stadium, Hyderabad": {"lat": 17.4042, "lon": 78.5428},
+    "Sawai Mansingh Stadium, Jaipur": {"lat": 26.8949, "lon": 75.8009},
+    "BRSABV Ekana Cricket Stadium, Lucknow": {"lat": 26.8467, "lon": 80.9462},
     "Himachal Pradesh Cricket Association Stadium, Dharamsala": {"lat": 32.2198, "lon": 76.3234},
-    "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur, New Chandigarh": {"lat": 30.6942, "lon": 76.7336},
+    "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur, New Chandigarh": {
+        "lat": 30.6942,
+        "lon": 76.7336,
+    },
     "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur": {"lat": 30.6942, "lon": 76.7336},
-    "Rajiv Gandhi International Stadium, Hyderabad": {"lat": 17.4068, "lon": 78.5505}
+    "Rajiv Gandhi International Stadium, Hyderabad": {"lat": 17.4068, "lon": 78.5505},
 }
 
 DEFAULT_MATCH_HOUR_UTC = 14
 _REQUEST_TIMEOUT = (20, 120)  # (connect, read) seconds - generous for GitHub Actions runners
-_MAX_RETRIES = 4              # Increased to handle transient 502 errors
-_RETRY_BACKOFF = 5            # seconds between attempts (increased for 502 recovery)
+_MAX_RETRIES = 4  # Increased to handle transient 502 errors
+_RETRY_BACKOFF = 5  # seconds between attempts (increased for 502 recovery)
 _REQUEST_HEADERS = {
     "User-Agent": "Wicket-Oracle/1.0 (+https://github.com/gmalbert/cricket)",
     "Accept": "application/json",
@@ -92,9 +97,7 @@ def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MA
             if attempt < _MAX_RETRIES:
                 # Use exponential backoff for server errors (502, 503, 504)
                 is_server_error = (
-                    hasattr(e, 'response') and 
-                    e.response is not None and 
-                    e.response.status_code in (502, 503, 504)
+                    hasattr(e, "response") and e.response is not None and e.response.status_code in (502, 503, 504)
                 )
                 wait_time = _RETRY_BACKOFF * (2 ** (attempt - 1)) if is_server_error else _RETRY_BACKOFF
                 logger.debug("Open-Meteo attempt %d failed (%s); retrying in %ds", attempt, e, wait_time)
@@ -110,14 +113,14 @@ def fetch_venue_weather(lat: float, lon: float, match_hour_utc: int = DEFAULT_MA
     winds = hourly.get("windspeed_10m", [])
     dewpoints = hourly.get("dewpoint_2m", [])
 
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = datetime.now(UTC).strftime("%Y-%m-%d")
     target_time = f"{today}T{match_hour_utc:02d}:00"
 
     idx = None
     if target_time in times:
         idx = times.index(target_time)
     elif times:
-        tomorrow = (datetime.now(timezone.utc).strftime("%Y-%m-%d"))
+        datetime.now(UTC).strftime("%Y-%m-%d")
         for i, t in enumerate(times):
             if t.startswith(today) and t >= target_time:
                 idx = i
@@ -175,5 +178,4 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     results = run()
     for venue, w in results.items():
-        logger.info("%s: %.1f°C, %d%% humidity, dew=%s",
-                    venue, w["temperature"], w["humidity"], w["dew_flag"])
+        logger.info("%s: %.1f°C, %d%% humidity, dew=%s", venue, w["temperature"], w["humidity"], w["dew_flag"])

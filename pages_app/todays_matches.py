@@ -1,9 +1,9 @@
-import streamlit as st
 import plotly.graph_objects as go
-from utils.data import get_todays_matches, IPL_VENUES, get_competition_options
-from utils.cache import load_cache, load_cache_data_only, get_cache_metadata, is_mock_data, APP_ENV
-from utils.browser_time import browser_time
+import streamlit as st
 
+from utils.browser_time import browser_time
+from utils.cache import APP_ENV, get_cache_metadata, is_mock_data, load_cache
+from utils.data import get_competition_options, get_todays_matches
 
 st.markdown(
     """
@@ -30,21 +30,25 @@ def render():
     # Check data status
     metadata = get_cache_metadata("todays_matches")
     is_mock = is_mock_data("todays_matches")
-    
+
     if is_mock and APP_ENV == "development":
-        st.warning("⚠️ **SIMULATED DATA** - Development mode is showing mock predictions. Set APP_ENV=production to hide simulated data.")
+        st.warning(
+            "⚠️ **SIMULATED DATA** - Development mode is showing mock predictions. Set APP_ENV=production to hide simulated data."
+        )
     elif metadata:
-        st.info(f"📊 Last updated: {metadata.get('generated_at', 'Unknown')} | Run ID: {metadata.get('source_run_id', 'N/A')[:8]}")
-    
+        st.info(
+            f"📊 Last updated: {metadata.get('generated_at', 'Unknown')} | Run ID: {metadata.get('source_run_id', 'N/A')[:8]}"
+        )
+
     matches = get_todays_matches()
-    
+
     # Handle None or empty matches
     if matches is None:
         st.info("📭 No match data available. The pipeline has not run yet or no cache exists.")
         if APP_ENV == "production":
             st.warning("Production mode: Mock data is disabled. Run the pipeline to generate predictions.")
         return
-    
+
     match_hubs_data = load_cache("match_hubs")
     if isinstance(match_hubs_data, dict) and "data" in match_hubs_data:
         match_hubs = match_hubs_data.get("data", {}).get("matches", {})
@@ -85,30 +89,34 @@ def render():
             if metadata and not is_mock:
                 st.caption(f"✅ Verified prediction | Model: {m.get('model_version', 'Unknown')}")
             st.markdown(browser_time(m.get("time"), "Scheduled"), unsafe_allow_html=True)
-            
+
             col1, col2 = st.columns([1.7, 1], gap="large")
 
             with col1:
                 st.subheader("Win Probabilities")
-                fig = go.Figure(go.Bar(
-                    x=[m["team1"], m["team2"]],
-                    y=[m["team1_win_prob"] * 100, m["team2_win_prob"] * 100],
-                    marker_color=["#2ecc71" if edge_team1 > 0.05 else "#3498db",
-                                  "#2ecc71" if edge_team2 > 0.05 else "#e74c3c"],
-                    text=[f"{m['team1_win_prob']*100:.1f}%", f"{m['team2_win_prob']*100:.1f}%"],
-                    textposition="auto",
-                ))
+                fig = go.Figure(
+                    go.Bar(
+                        x=[m["team1"], m["team2"]],
+                        y=[m["team1_win_prob"] * 100, m["team2_win_prob"] * 100],
+                        marker_color=[
+                            "#2ecc71" if edge_team1 > 0.05 else "#3498db",
+                            "#2ecc71" if edge_team2 > 0.05 else "#e74c3c",
+                        ],
+                        text=[f"{m['team1_win_prob'] * 100:.1f}%", f"{m['team2_win_prob'] * 100:.1f}%"],
+                        textposition="auto",
+                    )
+                )
                 fig.update_layout(
                     yaxis_title="Win Probability (%)",
                     height=215,
-                    margin=dict(l=10, r=10, t=10, b=10),
+                    margin={"l": 10, "r": 10, "t": 10, "b": 10},
                     showlegend=False,
                     plot_bgcolor="rgba(0,0,0,0)",
                     paper_bgcolor="rgba(0,0,0,0)",
                 )
                 st.plotly_chart(
                     fig,
-                    width='stretch',
+                    width="stretch",
                     key=f"win-probability-{m.get('match_id') or match_idx}",
                 )
 
@@ -117,11 +125,15 @@ def render():
                     st.subheader("Model vs DraftKings")
                     data = {
                         "Team": [m["team1"], m["team2"]],
-                        "Model %": [f"{m['team1_win_prob']*100:.1f}%", f"{m['team2_win_prob']*100:.1f}%"],
-                        "DK %": [f"{(m.get('dk_implied_prob_team1') or 0)*100:.1f}%", f"{(m.get('dk_implied_prob_team2') or 0)*100:.1f}%"],
-                        "Edge": [f"{edge_team1*100:+.1f}%", f"{edge_team2*100:+.1f}%"],
+                        "Model %": [f"{m['team1_win_prob'] * 100:.1f}%", f"{m['team2_win_prob'] * 100:.1f}%"],
+                        "DK %": [
+                            f"{(m.get('dk_implied_prob_team1') or 0) * 100:.1f}%",
+                            f"{(m.get('dk_implied_prob_team2') or 0) * 100:.1f}%",
+                        ],
+                        "Edge": [f"{edge_team1 * 100:+.1f}%", f"{edge_team2 * 100:+.1f}%"],
                     }
                     import pandas as pd
+
                     df = pd.DataFrame(data)
 
                     def color_edge(val):
@@ -171,7 +183,7 @@ def render():
                 if venue_items:
                     venue_html = "".join(
                         f'<div class="wo-venue-item"><div class="wo-weather-label">{label}</div>'
-                        f'<strong>{value}</strong></div>'
+                        f"<strong>{value}</strong></div>"
                         for label, value in venue_items
                     )
                     st.markdown(f'<div class="wo-venue-row">{venue_html}</div>', unsafe_allow_html=True)
@@ -180,7 +192,10 @@ def render():
             key_rivalries = hub.get("key_rivalries", [])[:3]
             if key_rivalries:
                 import pandas as pd
+
                 st.subheader("Key historical battles")
                 battle_df = pd.DataFrame(key_rivalries)
-                display_cols = [key for key in ("batter", "bowler", "strike_rate", "dismissals", "sample_tier") if key in battle_df]
+                display_cols = [
+                    key for key in ("batter", "bowler", "strike_rate", "dismissals", "sample_tier") if key in battle_df
+                ]
                 st.dataframe(battle_df[display_cols], hide_index=True, width="stretch")

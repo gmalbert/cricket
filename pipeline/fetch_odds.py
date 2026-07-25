@@ -3,10 +3,12 @@ Fetch current IPL odds from The Odds API.
 Requires ODDS_API_KEY environment variable.
 Endpoint: /v4/sports/cricket_ipl/odds
 """
-import os
+
 import logging
-import requests
+import os
 from datetime import datetime
+
+import requests
 from dotenv import load_dotenv
 
 from pipeline.competitions import Competition, enabled_competitions, get_competition
@@ -27,17 +29,19 @@ BOOKMAKERS = {"draftkings"}
 # The Odds API key may be shared across multiple repositories. Keep the
 # default nightly footprint small; expand explicitly with environment config.
 DEFAULT_ODDS_COMPETITIONS = (
-    "ipl_male", "international_t20", "odi_internationals", "big_bash",
-    "the_hundred", "t20_blast",
+    "ipl_male",
+    "international_t20",
+    "odi_internationals",
+    "big_bash",
+    "the_hundred",
+    "t20_blast",
 )
 
 
 def _get_api_key() -> str:
     key = os.environ.get("ODDS_API_KEY", "")
     if not key:
-        raise EnvironmentError(
-            "ODDS_API_KEY not set. Add it as a GitHub secret and env var."
-        )
+        raise OSError("ODDS_API_KEY not set. Add it as a GitHub secret and env var.")
     return key
 
 
@@ -126,29 +130,33 @@ def parse_odds(raw: list[dict]) -> list[dict]:
             dk_prob_home = round(dk_prob_home / total, 4)
             dk_prob_away = round(dk_prob_away / total, 4)
 
-        matches.append({
-            "event_id": event.get("id", ""),
-            "team1": home,
-            "team2": away,
-            "commence_time": commence,
-            "dk_implied_prob_team1": dk_prob_home,
-            "dk_implied_prob_team2": dk_prob_away,
-            "dk_odds_team1": dk_odds_home,
-            "dk_odds_team2": dk_odds_away,
-            "sport_key": event.get("sport_key", SPORT_KEY),
-            "competition": event.get("competition", "ipl_male"),
-            "competition_name": event.get("competition_name", "Indian Premier League"),
-            "format": event.get("format", "T20"),
-            "gender": event.get("gender", "male"),
-            "bookmaker": bookmaker_key,
-            "market": market_id or "h2h",
-            "odds_timestamp": bookmaker_updated or event_recorded,
-            "first_observed_price_team1": dk_odds_home,
-            "first_observed_price_team2": dk_odds_away,
-            "closing_price_team1": dk_odds_home,
-            "closing_price_team2": dk_odds_away,
-            "event_status": "draftkings_available" if bookmaker_key == "draftkings" and dk_prob_home and dk_prob_away else "no_draftkings_market",
-        })
+        matches.append(
+            {
+                "event_id": event.get("id", ""),
+                "team1": home,
+                "team2": away,
+                "commence_time": commence,
+                "dk_implied_prob_team1": dk_prob_home,
+                "dk_implied_prob_team2": dk_prob_away,
+                "dk_odds_team1": dk_odds_home,
+                "dk_odds_team2": dk_odds_away,
+                "sport_key": event.get("sport_key", SPORT_KEY),
+                "competition": event.get("competition", "ipl_male"),
+                "competition_name": event.get("competition_name", "Indian Premier League"),
+                "format": event.get("format", "T20"),
+                "gender": event.get("gender", "male"),
+                "bookmaker": bookmaker_key,
+                "market": market_id or "h2h",
+                "odds_timestamp": bookmaker_updated or event_recorded,
+                "first_observed_price_team1": dk_odds_home,
+                "first_observed_price_team2": dk_odds_away,
+                "closing_price_team1": dk_odds_home,
+                "closing_price_team2": dk_odds_away,
+                "event_status": "draftkings_available"
+                if bookmaker_key == "draftkings" and dk_prob_home and dk_prob_away
+                else "no_draftkings_market",
+            }
+        )
     return matches
 
 
@@ -204,7 +212,10 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     matches = run()
     for m in matches:
-        logger.info("%s vs %s | DK: %.1f%% / %.1f%%",
-                    m["team1"], m["team2"],
-                    (m["dk_implied_prob_team1"] or 0) * 100,
-                    (m["dk_implied_prob_team2"] or 0) * 100)
+        logger.info(
+            "%s vs %s | DK: %.1f%% / %.1f%%",
+            m["team1"],
+            m["team2"],
+            (m["dk_implied_prob_team1"] or 0) * 100,
+            (m["dk_implied_prob_team2"] or 0) * 100,
+        )

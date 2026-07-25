@@ -25,12 +25,13 @@ FOOTER_HTML = """
 def add_betting_oracle_footer():
     """
     Add the Betting Oracle footer to your Streamlit app.
-    
+
     Usage:
         from footer import add_betting_oracle_footer
-        
+
         # At the end of your app
         add_betting_oracle_footer()
     """
     import streamlit as st
+
     st.markdown(FOOTER_HTML, unsafe_allow_html=True)

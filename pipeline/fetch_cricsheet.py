@@ -3,14 +3,16 @@ Fetch and process IPL ball-by-ball data from Cricsheet.
 Downloads the latest IPL CSV pack and extracts match-level and
 player-level aggregates needed for feature engineering.
 """
+
 import io
+import logging
 import time
 import zipfile
-import logging
-import requests
-import pandas as pd
+from datetime import UTC, datetime
 from pathlib import Path
-from datetime import datetime, timezone
+
+import pandas as pd
+import requests
 
 from pipeline.competitions import get_competition
 
@@ -22,6 +24,7 @@ def _fallback_to_cache(cached_path: Path) -> pd.DataFrame:
         return pd.read_parquet(cached_path)
     logger.warning("No cached Cricsheet parquet found; returning empty dataset")
     return pd.DataFrame(columns=["match_id", "start_date", "batting_team", "bowling_team"])
+
 
 logger = logging.getLogger(__name__)
 
@@ -57,8 +60,9 @@ def download_competition_data(competition=None) -> pd.DataFrame:
     if cached_path.exists():
         return pd.read_parquet(cached_path)
     try:
-        response = requests.get(competition.cricsheet_url, headers=_REQUEST_HEADERS,
-                                timeout=_REQUEST_TIMEOUT, allow_redirects=True)
+        response = requests.get(
+            competition.cricsheet_url, headers=_REQUEST_HEADERS, timeout=_REQUEST_TIMEOUT, allow_redirects=True
+        )
         response.raise_for_status()
         frames = []
         with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
@@ -95,7 +99,7 @@ def historical_coverage(frame: pd.DataFrame, competition) -> dict:
         "completed_matches": matches,
         "team_identity_rate": round(team_rate, 4),
         "player_identity_rate": round(player_rate, 4),
-        "last_update": datetime.now(timezone.utc).isoformat(),
+        "last_update": datetime.now(UTC).isoformat(),
         "ready": len(seasons) >= 2 and matches >= 100 and team_rate >= 0.80 and player_rate >= 0.90,
     }
 
@@ -105,8 +109,12 @@ def run_competition(competition=None) -> dict:
     competition = competition or DEFAULT_COMPETITION
     bbb = download_competition_data(competition)
     if bbb.empty:
-        return {"team_form": {}, "player_stats": {"batters": {}, "bowlers": {}},
-                "venue_stats": {}, "historical_coverage": historical_coverage(bbb, competition)}
+        return {
+            "team_form": {},
+            "player_stats": {"batters": {}, "bowlers": {}},
+            "venue_stats": {},
+            "historical_coverage": historical_coverage(bbb, competition),
+        }
     return {
         "team_form": compute_team_form(bbb, last_n=10),
         "player_stats": compute_player_stats(bbb),
@@ -120,7 +128,6 @@ def download_ipl_data() -> pd.DataFrame:
     cached_path = RAW_DIR / "ipl_ball_by_ball.parquet"
 
     logger.info("Downloading Cricsheet IPL data from %s", CRICSHEET_IPL_URL)
-    last_exc: Exception | None = None
 
     for attempt in range(1, _MAX_RETRIES + 1):
         try:
@@ -153,15 +160,19 @@ def download_ipl_data() -> pd.DataFrame:
             combined = pd.concat(frames, ignore_index=True)
             break
         except Exception as exc:
-            last_exc = exc
             status_code = None
             if isinstance(exc, requests.HTTPError) and exc.response is not None:
                 status_code = exc.response.status_code
             if status_code in (403, 415, 429):
-                logger.warning("Cricsheet download was rejected by the upstream server (HTTP %s); using cached parquet", status_code)
+                logger.warning(
+                    "Cricsheet download was rejected by the upstream server (HTTP %s); using cached parquet",
+                    status_code,
+                )
                 return _fallback_to_cache(cached_path)
             if attempt < _MAX_RETRIES:
-                logger.warning("Cricsheet download attempt %d failed: %s; retrying in %ds", attempt, exc, _RETRY_BACKOFF)
+                logger.warning(
+                    "Cricsheet download attempt %d failed: %s; retrying in %ds", attempt, exc, _RETRY_BACKOFF
+                )
                 time.sleep(_RETRY_BACKOFF)
             else:
                 logger.warning("Cricsheet download failed after %d attempts: %s", _MAX_RETRIES, exc)
@@ -188,8 +199,16 @@ def compute_team_form(bbb: pd.DataFrame, last_n: int = 10) -> dict:
     For each team, compute rolling form over their last N T20 matches.
     Returns dict keyed by team name.
     """
-    required = {"match_id", "start_date", "batting_team", "bowling_team",
-                "runs_off_bat", "extras", "wicket_type", "innings"}
+    required = {
+        "match_id",
+        "start_date",
+        "batting_team",
+        "bowling_team",
+        "runs_off_bat",
+        "extras",
+        "wicket_type",
+        "innings",
+    }
     missing = required - set(bbb.columns)
     if missing:
         logger.warning("Missing columns for team form: %s", missing)
@@ -232,54 +251,62 @@ def compute_team_form(bbb: pd.DataFrame, last_n: int = 10) -> dict:
     )
 
     powerplay = bbb[bbb["over"].between(0, 5)] if "over" in bbb.columns else pd.DataFrame()
-    death     = bbb[bbb["over"].between(15, 19)] if "over" in bbb.columns else pd.DataFrame()
+    death = bbb[bbb["over"].between(15, 19)] if "over" in bbb.columns else pd.DataFrame()
 
     pp_agg = (
-        powerplay.groupby(["match_id", "batting_team"])["runs_off_bat"]
-        .sum()
-        .reset_index()
-        .rename(columns={"runs_off_bat": "powerplay_runs"})
-    ) if not powerplay.empty else pd.DataFrame(columns=["match_id", "batting_team", "powerplay_runs"])
+        (
+            powerplay.groupby(["match_id", "batting_team"])["runs_off_bat"]
+            .sum()
+            .reset_index()
+            .rename(columns={"runs_off_bat": "powerplay_runs"})
+        )
+        if not powerplay.empty
+        else pd.DataFrame(columns=["match_id", "batting_team", "powerplay_runs"])
+    )
 
     death_bowl = (
-        death.groupby(["match_id", "bowling_team"])
-        .agg(
-            death_runs=("runs_off_bat", "sum"),
-            death_extras=("extras", "sum"),
+        (
+            death.groupby(["match_id", "bowling_team"])
+            .agg(
+                death_runs=("runs_off_bat", "sum"),
+                death_extras=("extras", "sum"),
+            )
+            .reset_index()
         )
-        .reset_index()
-    ) if not death.empty else pd.DataFrame(columns=["match_id", "bowling_team", "death_runs", "death_extras"])
+        if not death.empty
+        else pd.DataFrame(columns=["match_id", "bowling_team", "death_runs", "death_extras"])
+    )
 
     all_teams = set(bbb["batting_team"].dropna().unique())
     form_by_team = {}
 
     for team in all_teams:
         team_innings = innings_agg[innings_agg["batting_team"] == team].copy()
-        
+
         # Defensive: ensure match_meta has the columns we need
         merge_cols = ["match_id"]
         if "start_date" in match_meta.columns:
             merge_cols.append("start_date")
-        
+
         team_innings = team_innings.merge(match_meta[merge_cols], on="match_id", how="left")
-        
+
         # Sort by start_date if available, otherwise keep original order
         if "start_date" in team_innings.columns:
             team_innings = team_innings.sort_values("start_date", ascending=False).head(last_n)
         else:
             team_innings = team_innings.head(last_n)
 
-        pp_team    = pp_agg[pp_agg["batting_team"] == team]
+        pp_team = pp_agg[pp_agg["batting_team"] == team]
         death_team = death_bowl[death_bowl["bowling_team"] == team]
 
         # Build a lookup: match_id → {opponent, team_score, opp_score, winner}
-        team_scores = match_totals[match_totals["batting_team"] == team][["match_id", "total_runs"]].rename(columns={"total_runs": "team_score"})
-        opp_scores  = match_totals[match_totals["batting_team"] != team][["match_id", "batting_team", "total_runs"]].rename(columns={"total_runs": "opp_score", "batting_team": "opponent"})
-        match_lookup = (
-            team_scores
-            .merge(opp_scores, on="match_id", how="left")
-            .set_index("match_id")
+        team_scores = match_totals[match_totals["batting_team"] == team][["match_id", "total_runs"]].rename(
+            columns={"total_runs": "team_score"}
         )
+        opp_scores = match_totals[match_totals["batting_team"] != team][
+            ["match_id", "batting_team", "total_runs"]
+        ].rename(columns={"total_runs": "opp_score", "batting_team": "opponent"})
+        match_lookup = team_scores.merge(opp_scores, on="match_id", how="left").set_index("match_id")
 
         results = []
         for _, row in team_innings.iterrows():
@@ -296,29 +323,37 @@ def compute_team_form(bbb: pd.DataFrame, last_n: int = 10) -> dict:
                 death_econ = None
 
             meta = match_lookup.loc[mid] if mid in match_lookup.index else None
-            opponent  = str(meta["opponent"])  if meta is not None and pd.notna(meta.get("opponent"))  else None
-            team_score = int(meta["team_score"]) if meta is not None and pd.notna(meta.get("team_score")) else int(row["total_runs"])
-            opp_score  = int(meta["opp_score"])  if meta is not None and pd.notna(meta.get("opp_score"))  else None
+            opponent = str(meta["opponent"]) if meta is not None and pd.notna(meta.get("opponent")) else None
+            team_score = (
+                int(meta["team_score"])
+                if meta is not None and pd.notna(meta.get("team_score"))
+                else int(row["total_runs"])
+            )
+            opp_score = int(meta["opp_score"]) if meta is not None and pd.notna(meta.get("opp_score")) else None
             won = (team_score > opp_score) if opp_score is not None else None
-            
+
             # Defensive: check if start_date exists in row before accessing
             if "start_date" in row.index and pd.notna(row["start_date"]):
-                match_date = str(row["start_date"].date()) if hasattr(row["start_date"], 'date') else str(row["start_date"])
+                match_date = (
+                    str(row["start_date"].date()) if hasattr(row["start_date"], "date") else str(row["start_date"])
+                )
             else:
                 match_date = None
 
-            results.append({
-                "match_id":      mid,
-                "date":          match_date,
-                "innings":       int(row["innings"]),
-                "opponent":      opponent,
-                "result":        ("W" if won else "L") if won is not None else None,
-                "score":         team_score,
-                "opp_score":     opp_score,
-                "wickets":       int(row["wickets"]),
-                "powerplay_runs": pp_runs,
-                "death_economy": death_econ,
-            })
+            results.append(
+                {
+                    "match_id": mid,
+                    "date": match_date,
+                    "innings": int(row["innings"]),
+                    "opponent": opponent,
+                    "result": ("W" if won else "L") if won is not None else None,
+                    "score": team_score,
+                    "opp_score": opp_score,
+                    "wickets": int(row["wickets"]),
+                    "powerplay_runs": pp_runs,
+                    "death_economy": death_econ,
+                }
+            )
 
         form_by_team[team] = results
 
@@ -334,7 +369,7 @@ def compute_player_stats(bbb: pd.DataFrame) -> dict:
     required_bowl = {"bowler", "runs_off_bat", "wicket_type", "match_id"}
 
     bbb = bbb.copy()
-    
+
     # Only convert start_date if it exists
     if "start_date" in bbb.columns:
         bbb["start_date"] = pd.to_datetime(bbb["start_date"], errors="coerce")
@@ -348,18 +383,15 @@ def compute_player_stats(bbb: pd.DataFrame) -> dict:
         # Only include start_date in aggregation if it exists
         if "start_date" in bbb.columns:
             agg_dict["start_date"] = ("start_date", "first")
-        
+
         bat_agg = (
-            bbb.groupby(["match_id", "striker"])
-            .agg(**agg_dict)
-            .reset_index()
-            .rename(columns={"striker": "batter"})
+            bbb.groupby(["match_id", "striker"]).agg(**agg_dict).reset_index().rename(columns={"striker": "batter"})
         )
-        
+
         # Sort by start_date if available
         if "start_date" in bat_agg.columns:
             bat_agg = bat_agg.sort_values("start_date", ascending=False)
-        
+
         for player, grp in bat_agg.groupby("batter"):
             last10 = grp.head(10)
             scores = last10["runs"].tolist()
@@ -382,17 +414,13 @@ def compute_player_stats(bbb: pd.DataFrame) -> dict:
         # Only include start_date in aggregation if it exists
         if "start_date" in bbb.columns:
             bowl_agg_dict["start_date"] = ("start_date", "first")
-        
-        bowl_agg = (
-            bbb.groupby(["match_id", "bowler"])
-            .agg(**bowl_agg_dict)
-            .reset_index()
-        )
-        
+
+        bowl_agg = bbb.groupby(["match_id", "bowler"]).agg(**bowl_agg_dict).reset_index()
+
         # Sort by start_date if available
         if "start_date" in bowl_agg.columns:
             bowl_agg = bowl_agg.sort_values("start_date", ascending=False)
-        
+
         for player, grp in bowl_agg.groupby("bowler"):
             last5 = grp.head(5)
             total_balls = last5["balls"].sum()
@@ -410,8 +438,7 @@ def compute_player_stats(bbb: pd.DataFrame) -> dict:
 
 def compute_venue_stats(bbb: pd.DataFrame) -> dict:
     """Compute first-innings avg and chase win rate per venue."""
-    required = {"venue", "innings", "batting_team", "bowling_team",
-                "runs_off_bat", "extras", "match_id"}
+    required = {"venue", "innings", "batting_team", "bowling_team", "runs_off_bat", "extras", "match_id"}
     if not required.issubset(bbb.columns):
         logger.warning("Missing columns for venue stats")
         return {}
@@ -464,7 +491,9 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     result = run()
     logger.info("Team form computed for %d teams", len(result["team_form"]))
-    logger.info("Player stats: %d batters, %d bowlers",
-                len(result["player_stats"]["batters"]),
-                len(result["player_stats"]["bowlers"]))
+    logger.info(
+        "Player stats: %d batters, %d bowlers",
+        len(result["player_stats"]["batters"]),
+        len(result["player_stats"]["bowlers"]),
+    )
     logger.info("Venue stats: %d venues", len(result["venue_stats"]))
