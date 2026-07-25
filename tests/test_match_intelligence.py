@@ -183,7 +183,10 @@ def test_shot_location_contract_is_explicit_when_no_provider_is_configured():
 
 
 def test_pipeline_writes_match_intelligence_caches(tmp_path, monkeypatch):
+    from pipeline import run_manager
     monkeypatch.setattr(run_pipeline, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(run_manager, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(run_manager, "RUNS_DIR", tmp_path / "runs")
     monkeypatch.setattr(run_pipeline, "step_reconcile", lambda dry_run: ([], 0))
     monkeypatch.setattr(run_pipeline, "step_cricsheet", lambda skip: {
         "team_form": {"Team A": [], "Team B": []},
