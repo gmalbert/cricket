@@ -19,7 +19,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -157,7 +157,7 @@ def main():
 
     print(f"\n{BOLD}{'=' * 56}")
     print("  Wicket Oracle — Data Pull")
-    print(f"  {datetime.now(datetime.UTC).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"  {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"{'=' * 56}{RESET}")
 
     if args.dry_run:
@@ -332,7 +332,7 @@ def main():
     save("prediction_log",       prediction_log or [],  args.dry_run)
 
     last_updated = {
-        "timestamp":               datetime.now(datetime.UTC).isoformat(),
+        "timestamp":               datetime.now(timezone.utc).isoformat(),
         "matches_count":           len(matches_out),
         "props_count":             len(props_out),
         "value_bets_count":        len(value_bets),
