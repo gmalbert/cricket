@@ -24,7 +24,6 @@ from utils.cache import (
 )
 from utils.data import get_competition_status
 
-
 st.set_page_config(
     page_title="Wicket Oracle",
     page_icon="🏏",
@@ -75,7 +74,9 @@ def status_page() -> None:
     metadata = get_cache_metadata("last_updated") or get_cache_metadata("todays_matches") or {}
     stale = is_cache_stale("last_updated", max_age_hours=24)
     simulated = is_mock_data("last_updated") or is_mock_data("todays_matches")
-    status_label = "Simulated data" if simulated and APP_ENV == "development" else ("Needs refresh" if stale else "Live")
+    status_label = (
+        "Simulated data" if simulated and APP_ENV == "development" else ("Needs refresh" if stale else "Live")
+    )
     status_color = "#b45309" if stale or simulated else "#15803d"
     a, b, c = st.columns(3)
     a.metric("System", status_label, help="Status reflects the most recent cached pipeline output.")
@@ -98,7 +99,9 @@ def status_page() -> None:
         st.info("No competition status has been cached yet.")
 
     st.subheader("What’s where")
-    st.caption("Use the grouped sidebar navigation to move between live matches, betting markets, team/tournament research, and model diagnostics.")
+    st.caption(
+        "Use the grouped sidebar navigation to move between live matches, betting markets, team/tournament research, and model diagnostics."
+    )
 
 
 def _sidebar_brand() -> None:

@@ -14,7 +14,7 @@ def browser_time(value: str | None, label: str = "Local time") -> str:
     safe_value = escape(str(value), quote=True)
     return (
         f'<span class="wo-time" data-utc="{safe_value}"><strong>{escape(label)}:</strong> '
-        f'<span>{safe_value}</span></span>'
+        f"<span>{safe_value}</span></span>"
         "<script>(function(){document.querySelectorAll('.wo-time').forEach(function(e){"
         "var v=e.dataset.utc,d=new Date(v);if(!Number.isNaN(d.getTime())&&/T|Z|\\+\\d{2}:?\\d{2}/.test(v)){"
         "e.lastElementChild.textContent=d.toLocaleString([], {dateStyle:'medium', timeStyle:'short'});}})})();</script>"

@@ -4,11 +4,11 @@ Export daily best bets for the Sports Picks Grid aggregator.
 Reads cache/value_bets.json and cache/todays_matches.json and writes
 data_files/best_bets_today.json in the unified schema.
 """
+
 from __future__ import annotations
 
 import json
-import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -19,10 +19,11 @@ OUT_PATH = ROOT / "data_files" / "best_bets_today.json"
 
 TIER_MAP = {
     "Elite Pick": "Elite",
-    "Elite":      "Elite",
-    "Strong":     "Strong",
-    "Good":       "Good",
+    "Elite": "Elite",
+    "Strong": "Strong",
+    "Good": "Good",
 }
+
 
 # Convert DK string odds like "-115" or "+130" to int
 def _parse_odds(dk_odds: str | int | None) -> int | None:
@@ -57,7 +58,7 @@ def load_todays_matches() -> dict[str, dict]:
 
 
 def build_bets(value_bets: list[dict], matches: dict[str, dict]) -> list[dict]:
-    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today_str = datetime.now(UTC).strftime("%Y-%m-%d")
     bets: list[dict] = []
 
     for vb in value_bets:
@@ -73,18 +74,20 @@ def build_bets(value_bets: list[dict], matches: dict[str, dict]) -> list[dict]:
         tier_raw = vb.get("tier", "Good")
         tier = TIER_MAP.get(tier_raw, "Good")
 
-        bets.append({
-            "game_date":  today_str,
-            "game":       game_str,
-            "game_time":  game_time,
-            "bet_type":   vb.get("type", "Match Winner"),
-            "pick":       vb.get("bet", ""),
-            "confidence": round(float(vb.get("model_prob", 0.0)), 4),
-            "edge":       round(float(edge), 4),
-            "odds":       _parse_odds(vb.get("dk_odds")),
-            "tier":       tier,
-            "notes":      f"Kelly stake: {vb.get('kelly_stake', '')}",
-        })
+        bets.append(
+            {
+                "game_date": today_str,
+                "game": game_str,
+                "game_time": game_time,
+                "bet_type": vb.get("type", "Match Winner"),
+                "pick": vb.get("bet", ""),
+                "confidence": round(float(vb.get("model_prob", 0.0)), 4),
+                "edge": round(float(edge), 4),
+                "odds": _parse_odds(vb.get("dk_odds")),
+                "tier": tier,
+                "notes": f"Kelly stake: {vb.get('kelly_stake', '')}",
+            }
+        )
 
     return bets
 
@@ -97,10 +100,10 @@ def main() -> None:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "meta": {
-            "sport":         "Cricket",
-            "generated_at":  datetime.now(timezone.utc).isoformat(),
+            "sport": "Cricket",
+            "generated_at": datetime.now(UTC).isoformat(),
             "model_version": "1.0.0",
-            "season":        str(datetime.now(timezone.utc).year),
+            "season": str(datetime.now(UTC).year),
         },
         "bets": bets,
     }
@@ -115,14 +118,15 @@ if __name__ == "__main__":
     except Exception as exc:
         print(f"[cricket export] Unhandled error: {exc} — writing empty fallback output")
         import traceback
+
         traceback.print_exc()
         OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         fallback = {
             "meta": {
                 "sport": "Cricket",
-                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "generated_at": datetime.now(UTC).isoformat(),
                 "model_version": "1.0.0",
-                "season": str(datetime.now(timezone.utc).year),
+                "season": str(datetime.now(UTC).year),
                 "notes": f"Export failed: {exc}",
             },
             "bets": [],
