@@ -71,7 +71,8 @@ jobs:
             scikit-learn \
             beautifulsoup4 \
             pyarrow \
-            python-dateutil
+            python-dateutil \
+            python-dotenv
 
       - name: Run nightly pipeline
         run: |

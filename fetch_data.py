@@ -19,11 +19,12 @@ import json
 import os
 import sys
 import time
-
-from dotenv import load_dotenv
-load_dotenv()
 from datetime import datetime, timezone
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ── Colour helpers (no external dep) ────────────────────────────────────────
 GREEN  = "\033[92m"
@@ -166,7 +167,6 @@ def main():
     check_env()
     divider()
 
-    results  = {}
     errors   = {}
     timings  = {}
 
@@ -270,7 +270,7 @@ def main():
     # 9. Merge predictions into final match dicts
     header("Step 6b — Merge predictions into match output")
     try:
-        from pipeline.run_pipeline import merge_match_predictions, build_player_props_output, build_value_bets
+        from pipeline.run_pipeline import build_player_props_output, build_value_bets, merge_match_predictions
         matches_out = merge_match_predictions(winner_preds, totals_preds, odds)
         props_out   = build_player_props_output(props_preds, matches_out, odds)
         value_bets  = build_value_bets(matches_out, props_out)
@@ -357,13 +357,13 @@ def main():
         print()
         if "ODDS_API_KEY" not in os.environ or "CRICKET_DATA_API_KEY" not in os.environ:
             print(f"  {YELLOW}Tip:{RESET} missing API keys are the most common cause of failures.")
-            print(f"       Set them in your shell before running:")
-            print(f"         export ODDS_API_KEY=your_key_here")
-            print(f"         export CRICKET_DATA_API_KEY=your_key_here\n")
+            print("       Set them in your shell before running:")
+            print("         export ODDS_API_KEY=your_key_here")
+            print("         export CRICKET_DATA_API_KEY=your_key_here\n")
     else:
         print(f"\n  {GREEN}{BOLD}All steps succeeded.{RESET}")
 
-    print(f"\n  Start the app with:")
+    print("\n  Start the app with:")
     print(f"    {CYAN}streamlit run predictions.py{RESET}\n")
 
     return 0 if not errors else 1
