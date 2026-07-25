@@ -3,10 +3,12 @@ Fetch today's IPL fixtures, live scores, toss results, and squad info
 from CricketData.org (formerly CricAPI).
 Requires CRICKET_DATA_API_KEY environment variable.
 """
-import os
+
 import logging
+import os
+from datetime import UTC, datetime
+
 import requests
-from datetime import datetime, timezone
 from dotenv import load_dotenv
 
 from pipeline.competitions import Competition, enabled_competitions, find_competition
@@ -24,9 +26,7 @@ IPL_KEYWORD = "Indian Premier League"
 def _get_api_key() -> str:
     key = os.environ.get("CRICKET_DATA_API_KEY", "")
     if not key:
-        raise EnvironmentError(
-            "CRICKET_DATA_API_KEY not set. Add it as a GitHub secret and env var."
-        )
+        raise OSError("CRICKET_DATA_API_KEY not set. Add it as a GitHub secret and env var.")
     return key
 
 
@@ -133,31 +133,33 @@ def parse_fixtures(raw_matches: list[dict]) -> list[dict]:
         date_str = m.get("date", "") or m.get("dateTimeGMT", "")
         try:
             match_dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-            match_time_ist = match_dt.astimezone(timezone.utc)
+            match_time_ist = match_dt.astimezone(UTC)
             time_label = match_time_ist.strftime("%H:%M IST")
         except Exception:
             time_label = "TBD"
 
-        fixtures.append({
-            "match_id": m.get("id", ""),
-            "team1": team1,
-            "team2": team2,
-            "venue": m.get("venue", ""),
-            "time": time_label,
-            "status": m.get("status", ""),
-            "toss_winner": toss_winner,
-            "toss_decision": toss_decision,
-            "matchStarted": m.get("matchStarted", False),
-            "matchEnded": m.get("matchEnded", False),
-            "competition": m.get("competition", "ipl_male"),
-            "competition_name": m.get("competition_name", m.get("name", "")),
-            "format": m.get("format", "T20"),
-            "gender": m.get("gender", "male"),
-            "scheduled_start": m.get("dateTimeGMT", date_str),
-            "city": m.get("city", ""),
-            "fixture_source": m.get("fixture_source", "cricketdata"),
-            "fixture_status": m.get("fixture_status", "confirmed"),
-        })
+        fixtures.append(
+            {
+                "match_id": m.get("id", ""),
+                "team1": team1,
+                "team2": team2,
+                "venue": m.get("venue", ""),
+                "time": time_label,
+                "status": m.get("status", ""),
+                "toss_winner": toss_winner,
+                "toss_decision": toss_decision,
+                "matchStarted": m.get("matchStarted", False),
+                "matchEnded": m.get("matchEnded", False),
+                "competition": m.get("competition", "ipl_male"),
+                "competition_name": m.get("competition_name", m.get("name", "")),
+                "format": m.get("format", "T20"),
+                "gender": m.get("gender", "male"),
+                "scheduled_start": m.get("dateTimeGMT", date_str),
+                "city": m.get("city", ""),
+                "fixture_source": m.get("fixture_source", "cricketdata"),
+                "fixture_status": m.get("fixture_status", "confirmed"),
+            }
+        )
     return fixtures
 
 
@@ -176,24 +178,26 @@ def add_odds_provisional_fixtures(fixtures: list[dict], odds: list[dict]) -> lis
         key = unordered_team_match_key(event.get("team1"), event.get("team2"))
         if not event.get("team1") or not event.get("team2") or key in known:
             continue
-        provisional.append({
-            "match_id": event.get("event_id", ""),
-            "team1": canonical_team(event.get("team1", "")),
-            "team2": canonical_team(event.get("team2", "")),
-            "venue": "",
-            "city": "",
-            "time": event.get("commence_time", "TBD"),
-            "scheduled_start": event.get("commence_time", ""),
-            "status": "Scheduled from DraftKings market",
-            "matchStarted": False,
-            "matchEnded": False,
-            "competition": event.get("competition", "ipl_male"),
-            "competition_name": event.get("competition_name", ""),
-            "format": event.get("format", "T20"),
-            "gender": event.get("gender", "male"),
-            "fixture_source": "odds_api",
-            "fixture_status": "provisional",
-        })
+        provisional.append(
+            {
+                "match_id": event.get("event_id", ""),
+                "team1": canonical_team(event.get("team1", "")),
+                "team2": canonical_team(event.get("team2", "")),
+                "venue": "",
+                "city": "",
+                "time": event.get("commence_time", "TBD"),
+                "scheduled_start": event.get("commence_time", ""),
+                "status": "Scheduled from DraftKings market",
+                "matchStarted": False,
+                "matchEnded": False,
+                "competition": event.get("competition", "ipl_male"),
+                "competition_name": event.get("competition_name", ""),
+                "format": event.get("format", "T20"),
+                "gender": event.get("gender", "male"),
+                "fixture_source": "odds_api",
+                "fixture_status": "provisional",
+            }
+        )
         known.add(key)
     return provisional
 

@@ -1,5 +1,5 @@
 """Tests for model validation and publish gates."""
-import pytest
+
 from datetime import datetime
 
 from pipeline.model_validation import (
@@ -13,7 +13,7 @@ def test_generate_model_version():
     """Test model version generation."""
     training_date = datetime(2026, 7, 22)
     version = generate_model_version("t20_h2h", training_date, "ipl_male")
-    
+
     assert version.startswith("t20_h2h_ipl_male_")
     assert len(version.split("_")) >= 4  # model_name_competition_date_hash
 
@@ -40,12 +40,12 @@ def test_model_metadata_creation():
         baseline_comparison=0.15,
         artifact_hash="abcdef123456",
     )
-    
+
     # Test serialization
     data = metadata.to_dict()
     assert data["model_name"] == "xgboost"
     assert data["brier_score"] == 0.18
-    
+
     # Test deserialization
     metadata2 = ModelMetadata.from_dict(data)
     assert metadata2.model_name == "xgboost"
@@ -87,9 +87,9 @@ def test_validate_model_predictions_valid():
             "model_version": "xgboost_v1",
         },
     ]
-    
+
     is_valid, error_message = validate_model_predictions(predictions, metadata)
-    
+
     assert is_valid is True
     assert error_message == []
 
@@ -121,9 +121,9 @@ def test_validate_model_predictions_missing_field():
             "model_version": "xgboost_v1",
         },
     ]
-    
+
     is_valid, error_message = validate_model_predictions(predictions, metadata)
-    
+
     assert is_valid is True  # team2 not in required_fields, so structure check passes
 
 
@@ -154,9 +154,9 @@ def test_validate_model_predictions_invalid_probability():
             "model_version": "xgboost_v1",
         },
     ]
-    
+
     is_valid, error_message = validate_model_predictions(predictions, metadata)
-    
+
     assert is_valid is False
     assert any("out of bounds" in e for e in error_message)
 
@@ -188,9 +188,9 @@ def test_validate_model_predictions_not_sum_to_one():
             "model_version": "xgboost_v1",
         },
     ]
-    
+
     is_valid, error_message = validate_model_predictions(predictions, metadata)
-    
+
     assert is_valid is False
     assert any("don't sum to" in e for e in error_message)
 
@@ -230,9 +230,9 @@ def test_validate_model_predictions_version_mismatch():
             "model_version": "lightgbm_v1",  # Different version
         },
     ]
-    
+
     is_valid, error_message = validate_model_predictions(predictions, metadata)
-    
+
     assert is_valid is False
     assert any("model versions" in e for e in error_message)
 
@@ -255,6 +255,6 @@ def test_validate_model_predictions_empty():
         artifact_hash="abc123",
     )
     is_valid, error_message = validate_model_predictions([], metadata)
-    
+
     assert is_valid is False
     assert "no predictions" in error_message[0].lower()

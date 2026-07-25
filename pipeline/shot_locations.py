@@ -4,6 +4,7 @@ Cricsheet's current IPL CSV workflow does not include verified x/y shot
 coordinates. This module deliberately contains no scraper or unsupported source
 adapter. It lets the UI render cached, licensed locations if one is approved.
 """
+
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass

@@ -10,15 +10,15 @@ Tests cover:
 """
 
 import json
+
 import pandas as pd
-import pytest
 import requests
 
 import pipeline.fetch_cricsheet as fetch_cricsheet
 import pipeline.fetch_weather as fetch_weather
 
-
 # ── Match ID convention ───────────────────────────────────────────────────────
+
 
 class TestMatchIdConvention:
     """Match IDs must follow: TEAM1_vs_TEAM2_YYYY-MM-DD (lowercase/underscores)."""
@@ -47,6 +47,7 @@ class TestMatchIdConvention:
 
 # ── Win probability constraints ───────────────────────────────────────────────
 
+
 class TestWinProbabilityConstraints:
     """team1_win_prob + team2_win_prob must equal 1.0."""
 
@@ -67,6 +68,7 @@ class TestWinProbabilityConstraints:
 
 # ── Cache round-trip ──────────────────────────────────────────────────────────
 
+
 class TestCacheRoundTrip:
     """Cache files must survive a write → read cycle without data loss."""
 
@@ -86,6 +88,7 @@ class TestCacheRoundTrip:
 
 
 # ── Feature engineering helpers ───────────────────────────────────────────────
+
 
 class TestFeatureEngineering:
     """Sanity checks for feature values used in the model."""
@@ -126,6 +129,7 @@ class TestFeatureEngineering:
 
 # ── Model output schema ───────────────────────────────────────────────────────
 
+
 class TestCricsheetFallbacks:
     """Cricsheet download should fall back to cached parquet data when the remote fetch fails."""
 
@@ -154,7 +158,7 @@ class TestWeatherFallbacks:
     def test_fetch_venue_weather_returns_defaults_on_timeout(self, monkeypatch):
         # Reset the module-level session to ensure clean test state
         fetch_weather._reset_session()
-        
+
         class _FailingSession:
             def __init__(self):
                 self.headers = {}
@@ -199,8 +203,13 @@ class TestModelOutputSchema:
     """The pipeline's prediction output must conform to the cache schema."""
 
     REQUIRED_KEYS = {
-        "match_id", "team1", "team2", "venue", "match_date",
-        "team1_win_prob", "team2_win_prob",
+        "match_id",
+        "team1",
+        "team2",
+        "venue",
+        "match_date",
+        "team1_win_prob",
+        "team2_win_prob",
     }
 
     def test_required_keys_present(self, sample_match):

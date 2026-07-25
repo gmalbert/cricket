@@ -1,4 +1,5 @@
 """Cache-only fixture research view combining model and historical evidence."""
+
 from __future__ import annotations
 
 import pandas as pd
@@ -45,7 +46,10 @@ def render() -> None:
     st.subheader("Recent team form")
     form = hub.get("team_form", {})
     left, right = st.columns(2)
-    for column, team_key, team_name in ((left, "team1", match.get("team1", "Team 1")), (right, "team2", match.get("team2", "Team 2"))):
+    for column, team_key, team_name in (
+        (left, "team1", match.get("team1", "Team 1")),
+        (right, "team2", match.get("team2", "Team 2")),
+    ):
         with column:
             st.markdown(f"**{team_name}**")
             rows = pd.DataFrame(form.get(team_key, []))
@@ -60,7 +64,11 @@ def render() -> None:
     if rivalries.empty:
         st.info("No confirmed historical player pairings are available for this fixture.")
     else:
-        columns = [key for key in ("batter", "bowler", "legal_balls", "runs_off_bat", "dismissals", "score_label", "sample_tier") if key in rivalries]
+        columns = [
+            key
+            for key in ("batter", "bowler", "legal_balls", "runs_off_bat", "dismissals", "score_label", "sample_tier")
+            if key in rivalries
+        ]
         st.dataframe(rivalries[columns], hide_index=True, width="stretch")
 
     st.subheader("Top model-vs-market props")

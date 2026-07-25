@@ -1,7 +1,8 @@
 """Build fixture-specific, cache-first research views for the Match Hub."""
+
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 
@@ -15,7 +16,8 @@ def top_rivalries(
 ) -> list[dict[str, Any]]:
     """Choose deterministic, well-sampled cross-team historical matchups."""
     cross_team = [
-        rivalry for rivalry in rivalries
+        rivalry
+        for rivalry in rivalries
         if (rivalry.get("batter") in team1_players and rivalry.get("bowler") in team2_players)
         or (rivalry.get("batter") in team2_players and rivalry.get("bowler") in team1_players)
     ]
@@ -58,7 +60,10 @@ def build_match_hubs(
         )[:5]
         hubs[match_id] = {
             "match": {key: match.get(key) for key in ("match_id", "team1", "team2", "venue", "time", "status")},
-            "prediction": {key: match.get(key) for key in ("team1_win_prob", "team2_win_prob", "predicted_total", "predicted_first_innings")},
+            "prediction": {
+                key: match.get(key)
+                for key in ("team1_win_prob", "team2_win_prob", "predicted_total", "predicted_first_innings")
+            },
             "market": {
                 "team1_implied_prob": match.get("dk_implied_prob_team1"),
                 "team2_implied_prob": match.get("dk_implied_prob_team2"),
@@ -78,6 +83,6 @@ def build_match_hubs(
         }
     return {
         "schema_version": 1,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "matches": hubs,
     }

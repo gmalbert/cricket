@@ -1,10 +1,8 @@
 """Tests for production status and competition tracking."""
-import pytest
-from datetime import datetime, timezone
 
 from pipeline.status import (
-    ProductionStatus,
     CompetitionStatus,
+    ProductionStatus,
     determine_status,
     plain_language_status,
 )
@@ -194,13 +192,13 @@ def test_competition_status_serialization():
         draftkings_event_count=5,
         qualifying_bet_count=3,
     )
-    
+
     # Serialize
     data = status.to_dict()
     assert data["competition_slug"] == "ipl_male"
     assert data["status"] == "ready"
     assert data["fixture_count"] == 5
-    
+
     # Deserialize
     status2 = CompetitionStatus.from_dict(data)
     assert status2.competition_slug == "ipl_male"

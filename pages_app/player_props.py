@@ -1,7 +1,8 @@
-import streamlit as st
 import pandas as pd
-from utils.data import get_todays_matches, get_player_props
+import streamlit as st
+
 from utils.cache import load_cache_data_only
+from utils.data import get_player_props, get_todays_matches
 
 
 def _rivalry_note(player: str, rivalries: list[dict]) -> str:
@@ -11,6 +12,7 @@ def _rivalry_note(player: str, rivalries: list[dict]) -> str:
     rivalry = relevant[0]
     opponent = rivalry["bowler"] if rivalry["batter"] == player else rivalry["batter"]
     return f"vs {opponent}: {rivalry['score_label']} ({rivalry['sample_tier']} sample)"
+
 
 def render():
     st.title("🎯 Player Props")
@@ -33,10 +35,8 @@ def render():
     required_cols = {"role", "confidence", "recommendation", "edge"}
     missing_cols = required_cols - set(df.columns)
     if missing_cols:
-        st.warning(
-            "The cached player-prop data has an unexpected schema. "
-            f"Missing columns: {", ".join(sorted(missing_cols))}."
-        )
+        missing_cols_str = ", ".join(sorted(missing_cols))
+        st.warning(f"The cached player-prop data has an unexpected schema. Missing columns: {missing_cols_str}.")
         return
 
     hub = ((load_cache_data_only("match_hubs") or {}).get("matches", {})).get(selected_match.get("match_id", ""), {})
@@ -62,7 +62,7 @@ def render():
     st.divider()
 
     for _, row in df.iterrows():
-        edge_color = "green" if row["edge"] > 0 else "red"
+        "green" if row["edge"] > 0 else "red"
         conf_icon = {"High": "🔴", "Medium": "🟡", "Low": "⚪"}.get(row["confidence"], "")
         rec_icon = "⬆️" if row["recommendation"] == "OVER" else "⬇️"
 

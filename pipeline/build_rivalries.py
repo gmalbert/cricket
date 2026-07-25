@@ -1,18 +1,23 @@
 """Build cacheable historical batter-versus-bowler rivalry summaries."""
+
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 import pandas as pd
 
 from pipeline.normalization import audit_player_names, canonical_player
 
-
 SCHEMA_VERSION = 1
 PHASES = ("powerplay", "middle", "death")
 BOWLER_CREDITED_WICKETS = {
-    "bowled", "caught", "caught and bowled", "lbw", "stumped", "hit wicket",
+    "bowled",
+    "caught",
+    "caught and bowled",
+    "lbw",
+    "stumped",
+    "hit wicket",
 }
 
 
@@ -27,7 +32,7 @@ def phase_for_over(over: int) -> str:
 def _empty_payload(error: str | None = None) -> dict[str, Any]:
     payload: dict[str, Any] = {
         "schema_version": SCHEMA_VERSION,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "competition": "ipl_male",
         "source": {"provider": "Cricsheet", "dataset": "ipl_male_csv2"},
         "rivalries": [],
@@ -156,7 +161,9 @@ def build_rivalries(
 
     date_column = _source_column(df, "start_date", "date")
     encounter_agg = df.groupby(keys + ["match_id"], sort=False).agg(
-        runs=("runs_off_bat", "sum"), dismissed=("credited_dismissal", "max"), date=(date_column, "first") if date_column else ("match_id", "first")
+        runs=("runs_off_bat", "sum"),
+        dismissed=("credited_dismissal", "max"),
+        date=(date_column, "first") if date_column else ("match_id", "first"),
     )
     encounter_legal = legal.groupby(keys + ["match_id"], sort=False).size().rename("balls")
     encounter_agg = encounter_agg.join(encounter_legal, how="left").fillna({"balls": 0})
@@ -165,8 +172,11 @@ def build_rivalries(
     for (batter, bowler), encounters in encounter_agg.groupby(level=[0, 1], sort=False):
         recent_map[(batter, bowler)] = [
             {
-                "match_id": str(match_id), "date": str(row["date"]) if date_column else None,
-                "balls": int(row["balls"]), "runs": int(row["runs"]), "dismissed": bool(row["dismissed"]),
+                "match_id": str(match_id),
+                "date": str(row["date"]) if date_column else None,
+                "balls": int(row["balls"]),
+                "runs": int(row["runs"]),
+                "dismissed": bool(row["dismissed"]),
             }
             for (_, _, match_id), row in encounters.head(5).iterrows()
         ]
@@ -178,20 +188,28 @@ def build_rivalries(
         phases = phase_map.get((batter, bowler), {})
         for phase in PHASES:
             phases.setdefault(phase, {"legal_balls": 0, "runs_off_bat": 0, "dismissals": 0})
-        records.append({
-            "key": f"{batter.lower().replace(' ', '_')}__{bowler.lower().replace(' ', '_')}",
-            "batter": batter, "bowler": bowler, "balls": int(row["balls"]), "legal_balls": legal_balls,
-            "runs_off_bat": runs, "dismissals": dismissals,
-            "strike_rate": round(100 * runs / legal_balls, 1) if legal_balls else None,
-            "runs_per_ball": round(runs / legal_balls, 3) if legal_balls else None,
-            "dot_ball_pct": round(100 * int(row["dots"]) / legal_balls, 1) if legal_balls else None,
-            "boundary_count": int(row["boundaries"]),
-            "boundary_pct": round(100 * int(row["boundaries"]) / legal_balls, 1) if legal_balls else None,
-            "dismissal_types": dismissal_types.get((batter, bowler), {}), "phase_splits": phases,
-            "recent_encounters": recent_map.get((batter, bowler), []), "sample_tier": _sample_tier(legal_balls, dismissals),
-            "matchup_score": score,
-            "score_label": "Batter advantage" if score >= 62 else "Bowler advantage" if score <= 38 else "Neutral",
-        })
+        records.append(
+            {
+                "key": f"{batter.lower().replace(' ', '_')}__{bowler.lower().replace(' ', '_')}",
+                "batter": batter,
+                "bowler": bowler,
+                "balls": int(row["balls"]),
+                "legal_balls": legal_balls,
+                "runs_off_bat": runs,
+                "dismissals": dismissals,
+                "strike_rate": round(100 * runs / legal_balls, 1) if legal_balls else None,
+                "runs_per_ball": round(runs / legal_balls, 3) if legal_balls else None,
+                "dot_ball_pct": round(100 * int(row["dots"]) / legal_balls, 1) if legal_balls else None,
+                "boundary_count": int(row["boundaries"]),
+                "boundary_pct": round(100 * int(row["boundaries"]) / legal_balls, 1) if legal_balls else None,
+                "dismissal_types": dismissal_types.get((batter, bowler), {}),
+                "phase_splits": phases,
+                "recent_encounters": recent_map.get((batter, bowler), []),
+                "sample_tier": _sample_tier(legal_balls, dismissals),
+                "matchup_score": score,
+                "score_label": "Batter advantage" if score >= 62 else "Bowler advantage" if score <= 38 else "Neutral",
+            }
+        )
 
     records.sort(key=lambda record: (record["legal_balls"], record["dismissals"]), reverse=True)
     payload = _empty_payload()

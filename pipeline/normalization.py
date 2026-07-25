@@ -1,9 +1,9 @@
 """Canonical identifiers used when joining historical and live cricket data."""
+
 from __future__ import annotations
 
 import re
 import unicodedata
-
 
 TEAM_ALIASES = {
     "Delhi Daredevils": "Delhi Capitals",

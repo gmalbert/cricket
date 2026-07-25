@@ -3,14 +3,15 @@
 This module provides functions to build, update, and publish competition
 status information based on pipeline execution results.
 """
+
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
+from pipeline.competitions import COMPETITIONS
 from pipeline.status import CompetitionStatus, ProductionStatus, determine_status
-from pipeline.competitions import COMPETITIONS, enabled_competitions
 
 logger = logging.getLogger(__name__)
 
@@ -21,12 +22,12 @@ def build_competition_status(
     run_timestamp: str | None = None,
 ) -> CompetitionStatus:
     """Build a CompetitionStatus from pipeline results.
-    
+
     Args:
         competition_slug: Competition identifier
         pipeline_result: Dictionary containing pipeline execution results
         run_timestamp: ISO timestamp of the pipeline run
-        
+
     Returns:
         CompetitionStatus with all fields populated from pipeline evidence
     """
@@ -37,7 +38,7 @@ def build_competition_status(
             status=ProductionStatus.NOT_ENABLED,
             error_details={"error": f"Unknown competition: {competition_slug}"},
         )
-    
+
     # Extract pipeline results
     fixtures = pipeline_result.get("fixtures", [])
     odds = pipeline_result.get("odds", [])
@@ -45,22 +46,22 @@ def build_competition_status(
     model_info = pipeline_result.get("model_info", {}).get(competition_slug, {})
     bets = pipeline_result.get("value_bets", [])
     errors = pipeline_result.get("errors", {}).get(competition_slug, {})
-    
+
     # Filter to this competition
     comp_fixtures = [f for f in fixtures if f.get("competition") == competition_slug]
     comp_odds = [o for o in odds if o.get("competition") == competition_slug]
     comp_bets = [b for b in bets if b.get("competition") == competition_slug]
-    
+
     # Calculate data age
     data_age_hours = None
     if run_timestamp:
         try:
             run_dt = datetime.fromisoformat(run_timestamp.replace("Z", "+00:00"))
-            age = (datetime.now(timezone.utc) - run_dt).total_seconds() / 3600
+            age = (datetime.now(UTC) - run_dt).total_seconds() / 3600
             data_age_hours = age
         except (ValueError, AttributeError):
             pass
-    
+
     # Determine status
     status = determine_status(
         enabled=competition.enabled,
@@ -73,7 +74,7 @@ def build_competition_status(
         data_age_hours=data_age_hours,
         errors=errors,
     )
-    
+
     # Build the status object
     return CompetitionStatus(
         competition_slug=competition_slug,
@@ -99,11 +100,11 @@ def build_all_competition_statuses(
     run_timestamp: str | None = None,
 ) -> list[CompetitionStatus]:
     """Build status for all competitions in the registry.
-    
+
     Args:
         pipeline_result: Dictionary containing pipeline execution results
         run_timestamp: ISO timestamp of the pipeline run
-        
+
     Returns:
         List of CompetitionStatus objects for all competitions
     """
@@ -120,30 +121,30 @@ def build_all_competition_statuses(
 
 def serialize_statuses(statuses: list[CompetitionStatus]) -> dict[str, Any]:
     """Serialize competition statuses for JSON cache.
-    
+
     Args:
         statuses: List of CompetitionStatus objects
-        
+
     Returns:
         Dictionary ready for JSON serialization
     """
     return {
         "schema_version": 1,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "competitions": [status.to_dict() for status in statuses],
     }
 
 
 def load_competition_status(data: dict[str, Any]) -> list[CompetitionStatus]:
     """Deserialize competition statuses from JSON cache.
-    
+
     Args:
         data: Dictionary from JSON cache
-        
+
     Returns:
         List of CompetitionStatus objects
     """
     if not data or "competitions" not in data:
         return []
-    
+
     return [CompetitionStatus.from_dict(comp) for comp in data["competitions"]]
