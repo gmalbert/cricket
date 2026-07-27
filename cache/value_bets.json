@@ -1,30 +1,19 @@
 {
-  "generated_at": "2026-07-26T07:04:08.573700+00:00",
-  "source_run_id": "675d8b7c-d1a5-4bd9-9b3f-64aaa2745697",
+  "generated_at": "2026-07-27T07:19:18.782340+00:00",
+  "source_run_id": "f0f3248e-ddc3-4b2d-909d-ead0fef23351",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "Zimbabwe vs India",
-      "bet": "Zimbabwe ML",
+      "match": "Namibia vs Nepal",
+      "bet": "Namibia ML",
       "type": "Match Winner",
-      "model_prob": 0.4846,
-      "implied_prob": 0.105,
-      "edge": 0.3796,
-      "dk_odds": "+800",
-      "kelly_stake": "1.1%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "Zimbabwe vs India",
-      "bet": "Zimbabwe ML",
-      "type": "Match Winner",
-      "model_prob": 0.4846,
-      "implied_prob": 0.105,
-      "edge": 0.3796,
-      "dk_odds": "+800",
-      "kelly_stake": "1.1%",
+      "model_prob": 0.9856,
+      "implied_prob": 0.4948,
+      "edge": 0.4908,
+      "dk_odds": "-110",
+      "kelly_stake": "12.0%",
       "tier": "Elite Pick"
     }
   ]
