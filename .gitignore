@@ -7,6 +7,21 @@ __pycache__/
 *.code-workspace
 .local/
 
+# Local development and tool output
+.commandcode/
+.playwright-cli/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+pipeline_output.txt
+logs_*.zip
+
+# Pipeline audit history and rollback copies — generated locally; only the
+# top-level cache/*.json files are published and committed by nightly CI.
+cache/runs/
+cache/backup/
+
 # Large raw data files — downloaded nightly by the pipeline, not committed
 cache/raw/
 
