@@ -1,9 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-07-29T00:11:54.955894+00:00",
+    "generated_at": "2026-07-29T07:04:57.110287+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
-  "bets": []
+  "bets": [
+    {
+      "game_date": "2026-07-29",
+      "game": "Nepal vs Netherlands",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Nepal ML",
+      "confidence": 0.9854,
+      "edge": 0.641,
+      "odds": 175,
+      "tier": "Elite",
+      "notes": "Kelly stake: 8.4%"
+    }
+  ]
 }
