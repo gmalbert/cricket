@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-27T07:19:18.782340+00:00",
-  "source_run_id": "f0f3248e-ddc3-4b2d-909d-ead0fef23351",
-  "source_status": "ready",
+  "generated_at": "2026-07-29T00:39:22.955300+00:00",
+  "source_run_id": "043a3aeb-c2c0-4ffd-a02e-7de348d07af2",
+  "source_status": "partial",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "Namibia vs Nepal",
-      "bet": "Namibia ML",
+      "match": "Nepal vs Netherlands",
+      "bet": "Nepal ML",
       "type": "Match Winner",
-      "model_prob": 0.9856,
-      "implied_prob": 0.4948,
-      "edge": 0.4908,
-      "dk_odds": "-110",
-      "kelly_stake": "12.0%",
+      "model_prob": 0.5376,
+      "implied_prob": 0.3791,
+      "edge": 0.1585,
+      "dk_odds": "+150",
+      "kelly_stake": "2.4%",
       "tier": "Elite Pick"
     }
   ]

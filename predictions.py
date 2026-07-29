@@ -1,6 +1,8 @@
 """Wicket Oracle Streamlit entry point and grouped application navigation."""
 
 import streamlit as st
+from datetime import UTC, datetime
+from zoneinfo import ZoneInfo
 
 from pages_app import (
     fixtures_table,
@@ -14,7 +16,19 @@ from pages_app import (
     value_bets,
 )
 from pipeline.status import ProductionStatus, plain_language_status
-from utils.browser_time import browser_time
+try:
+    from utils.browser_time import format_eastern_timestamp
+except ImportError:  # Compatibility with deployments using an older utility module.
+    def format_eastern_timestamp(value):
+        try:
+            timestamp = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+            if timestamp.tzinfo is None:
+                timestamp = timestamp.replace(tzinfo=UTC)
+            return timestamp.astimezone(ZoneInfo("America/New_York")).strftime(
+                "%B %-d, %Y at %-I:%M %p ET"
+            )
+        except (TypeError, ValueError):
+            return str(value or "Unknown")
 from utils.cache import (
     APP_ENV,
     get_cache_metadata,
@@ -66,7 +80,7 @@ def _status_rows() -> list[dict]:
 
 
 def status_page() -> None:
-    """Default landing page: one calm, useful health/status view."""
+    """System health and competition coverage view."""
     st.title("Wicket Oracle")
     st.markdown('<div class="wo-kicker">Cricket betting analytics · system status</div>', unsafe_allow_html=True)
     st.write("")
@@ -77,19 +91,13 @@ def status_page() -> None:
     status_label = (
         "Simulated data" if simulated and APP_ENV == "development" else ("Needs refresh" if stale else "Live")
     )
-    status_color = "#b45309" if stale or simulated else "#15803d"
     a, b, c = st.columns(3)
     a.metric("System", status_label, help="Status reflects the most recent cached pipeline output.")
     b.metric("Environment", APP_ENV.title())
     c.metric("Model", "h2h-v1" if load_cache_data_only("todays_matches") else "Not available")
 
-    st.markdown(
-        f'<div class="wo-status"><strong style="color:{status_color}">{status_label}</strong> '
-        "· The sidebar is now navigation only. Detailed health checks live here.</div>",
-        unsafe_allow_html=True,
-    )
     if metadata.get("generated_at"):
-        st.markdown(browser_time(metadata["generated_at"], "Last pipeline update"), unsafe_allow_html=True)
+        st.markdown(f"**Last pipeline update:** {format_eastern_timestamp(metadata['generated_at'])}")
 
     st.subheader("Competition coverage")
     rows = _status_rows()
@@ -117,9 +125,9 @@ _sidebar_brand()
 
 pg = st.navigation(
     {
-        "": [st.Page(status_page, title="Status", icon="🏠", url_path="status", default=True)],
+        "": [st.Page(status_page, title="Status", icon="🏠", url_path="status")],
         "Live": [
-            st.Page(todays_matches.render, title="Today's Matches", icon="📅", url_path="todays-matches"),
+            st.Page(todays_matches.render, title="Today's Matches", icon="📅", url_path="todays-matches", default=True),
             st.Page(match_hub.render, title="Match Hub", icon="🧭", url_path="match-hub"),
         ],
         "Markets": [

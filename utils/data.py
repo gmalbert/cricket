@@ -1,5 +1,6 @@
 import random
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -156,16 +157,58 @@ def get_todays_matches():
     In production mode, returns None if no cache exists.
     In development mode, falls back to mock data.
     """
-    cached = load_cache_data_only("todays_matches")
-    if cached:
+    cached = _filter_to_current_fixtures(load_cache_data_only("todays_matches"))
+    if cached is not None:
         return cached
     # A no-fixture refresh must not blank the last usable production board.
-    backup = load_backup_cache_data_only("todays_matches")
-    if backup:
+    backup = _filter_to_current_fixtures(load_backup_cache_data_only("todays_matches"))
+    if backup is not None:
         return backup
     if IS_PRODUCTION:
         return None
     return _mock_todays_matches()
+
+
+def _filter_to_current_fixtures(matches):
+    """Remove completed fixtures from legacy today's-match caches.
+
+    Older prediction records did not preserve ``scheduled_start``. In that
+    case, use the schedule cache to identify records that have already
+    happened. Unknown IDs are retained for compatibility with fresh caches.
+    """
+    if not isinstance(matches, list):
+        return matches
+
+    today = datetime.now(ZoneInfo("America/New_York")).date()
+    schedule = load_cache_data_only("schedule")
+    schedule_dates = {}
+    if isinstance(schedule, list):
+        for fixture in schedule:
+            match_id = fixture.get("match_id")
+            scheduled_start = fixture.get("scheduled_start")
+            if not match_id or not scheduled_start:
+                continue
+            try:
+                schedule_dates[match_id] = datetime.fromisoformat(
+                    scheduled_start.replace("Z", "+00:00")
+                ).date()
+            except (TypeError, ValueError):
+                continue
+
+    current = []
+    for match in matches:
+        scheduled_start = match.get("scheduled_start")
+        scheduled_date = None
+        if scheduled_start:
+            try:
+                scheduled_date = datetime.fromisoformat(scheduled_start.replace("Z", "+00:00")).date()
+            except (TypeError, ValueError):
+                pass
+        if scheduled_date is None:
+            scheduled_date = schedule_dates.get(match.get("match_id"))
+        if scheduled_date is None or scheduled_date >= today:
+            current.append(match)
+    return current
 
 
 def get_player_props(match):

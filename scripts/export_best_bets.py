@@ -40,21 +40,34 @@ def _edge_to_decimal(edge: float | None) -> float | None:
     return edge
 
 
-def load_value_bets() -> list[dict]:
+def _records(payload: object, source: Path) -> list[dict]:
+    """Return records from either a legacy list or the pipeline cache envelope."""
+    if isinstance(payload, dict):
+        payload = payload.get("data", [])
+    if not isinstance(payload, list) or not all(isinstance(item, dict) for item in payload):
+        raise TypeError(f"{source} must contain a list or an object with a list-valued 'data' field")
+    return payload
+
+
+def load_value_bets() -> tuple[list[dict], str | None]:
     if not VALUE_BETS_PATH.exists():
         print(f"[cricket export] {VALUE_BETS_PATH} not found — writing empty output")
-        return []
+        return [], None
     with open(VALUE_BETS_PATH, encoding="utf-8") as f:
-        return json.load(f)
+        payload = json.load(f)
+    source_run_id = payload.get("source_run_id") if isinstance(payload, dict) else None
+    return _records(payload, VALUE_BETS_PATH), source_run_id
 
 
-def load_todays_matches() -> dict[str, dict]:
+def load_todays_matches() -> tuple[dict[str, dict], str | None]:
     """Return a lookup dict keyed by match_id."""
     if not TODAYS_MATCHES_PATH.exists():
-        return {}
+        return {}, None
     with open(TODAYS_MATCHES_PATH, encoding="utf-8") as f:
-        matches = json.load(f)
-    return {m["match_id"]: m for m in matches}
+        payload = json.load(f)
+    source_run_id = payload.get("source_run_id") if isinstance(payload, dict) else None
+    matches = _records(payload, TODAYS_MATCHES_PATH)
+    return {m["match_id"]: m for m in matches}, source_run_id
 
 
 def build_bets(value_bets: list[dict], matches: dict[str, dict]) -> list[dict]:
@@ -93,8 +106,14 @@ def build_bets(value_bets: list[dict], matches: dict[str, dict]) -> list[dict]:
 
 
 def main() -> None:
-    value_bets = load_value_bets()
-    matches = load_todays_matches()
+    value_bets, value_bets_run_id = load_value_bets()
+    matches, matches_run_id = load_todays_matches()
+    if value_bets_run_id and matches_run_id and value_bets_run_id != matches_run_id:
+        print(
+            "[cricket export] value_bets and todays_matches come from different pipeline runs — "
+            "excluding stale bets"
+        )
+        value_bets = []
     bets = build_bets(value_bets, matches)
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -113,24 +132,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as exc:
-        print(f"[cricket export] Unhandled error: {exc} — writing empty fallback output")
-        import traceback
-
-        traceback.print_exc()
-        OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-        fallback = {
-            "meta": {
-                "sport": "Cricket",
-                "generated_at": datetime.now(UTC).isoformat(),
-                "model_version": "1.0.0",
-                "season": str(datetime.now(UTC).year),
-                "notes": f"Export failed: {exc}",
-            },
-            "bets": [],
-        }
-        with open(OUT_PATH, "w", encoding="utf-8") as f:
-            json.dump(fallback, f, indent=2)
-        print(f"[cricket export] Wrote fallback (0 bets) → {OUT_PATH}")
+    main()

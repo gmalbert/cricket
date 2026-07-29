@@ -1,52 +1,54 @@
 {
-  "run_id": "7a41dae3-137c-4331-8a47-d53159a35438",
-  "start_time": "2026-07-28T07:00:40.874954+00:00",
-  "end_time": "2026-07-28T07:02:35.813726+00:00",
-  "duration_seconds": 114.938772,
+  "run_id": "043a3aeb-c2c0-4ffd-a02e-7de348d07af2",
+  "start_time": "2026-07-29T00:39:20.997401+00:00",
+  "end_time": "2026-07-29T00:39:23.356898+00:00",
+  "duration_seconds": 2.359497,
   "success": true,
   "skip_cricsheet": true,
   "dry_run": false,
-  "git_commit": "57149bfccf31d45498845703f18ec3a5087ec57f",
+  "git_commit": "7a1979a001aef57a957443f64a6450b858191361",
   "environment": "production",
   "counts": {
     "prediction_log_records": 0,
     "new_settlements": 0,
-    "historical_competitions": 13,
-    "rivalry_records": 3150,
-    "fixtures_fetched": 14,
-    "odds_events": 0,
-    "fixtures_after_odds": 14,
-    "match_features": 14,
+    "rivalry_records": 0,
+    "fixtures_fetched": 3,
+    "odds_events": 2,
+    "fixtures_after_odds": 4,
+    "match_features": 4,
     "player_features": 0,
-    "matches_predicted": 14,
+    "matches_predicted": 4,
     "player_props": 0,
-    "value_bets": 0,
-    "match_hubs": 14,
+    "value_bets": 1,
+    "match_hubs": 4,
     "monte_carlo_sims": 0,
     "matchup_bets_analysed": 0
   },
-  "errors": {},
-  "warnings": {
-    "validation": [
-      "value_bets is empty"
+  "errors": {
+    "cricsheet": [
+      {
+        "error": "Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.\nA suitable version of pyarrow or fastparquet is required for parquet support.\nTrying to import the above resulted in these errors:\n - `Import pyarrow` failed. pyarrow is required for parquet support. Use pip or conda to install the pyarrow package.\n - `Import fastparquet` failed. fastparquet is required for parquet support. Use pip or conda to install the fastparquet package.",
+        "traceback": "Traceback (most recent call last):\n  File \"/Volumes/Users/gmalb/Downloads/cricket/pipeline/run_pipeline.py\", line 594, in run\n    cricsheet = step_cricsheet(skip=skip_cricsheet)\n  File \"/Volumes/Users/gmalb/Downloads/cricket/pipeline/run_pipeline.py\", line 91, in step_cricsheet\n    bbb = pd.read_parquet(CACHE_DIR / \"raw\" / \"ipl_ball_by_ball.parquet\")\n  File \"/opt/homebrew/lib/python3.14/site-packages/pandas/io/parquet.py\", line 668, in read_parquet\n    impl = get_engine(engine)\n  File \"/opt/homebrew/lib/python3.14/site-packages/pandas/io/parquet.py\", line 68, in get_engine\n    raise ImportError(\n    ...<7 lines>...\n    )\nImportError: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.\nA suitable version of pyarrow or fastparquet is required for parquet support.\nTrying to import the above resulted in these errors:\n - `Import pyarrow` failed. pyarrow is required for parquet support. Use pip or conda to install the pyarrow package.\n - `Import fastparquet` failed. fastparquet is required for parquet support. Use pip or conda to install the fastparquet package.\n"
+      }
     ]
   },
+  "warnings": {},
   "output_hashes": {
-    "todays_matches": "c3bc28a263318e3e",
-    "player_props": "35ea33bb38086051",
-    "team_form": "605347cade4b4cf4",
-    "player_stats": "37539cc7a2de03cd",
-    "venue_stats": "17bb7a59503de3b9",
-    "value_bets": "287f48e7950e6737",
-    "competition_status": "15fcae5050b623c8",
-    "odds_history": "b225b4042743ccd1",
-    "playoff_probabilities": "d8d3cf6b0da75801",
-    "matchup_edge_history": "408fcd263c68cae9",
-    "schedule": "22d7bb264731d136",
-    "points_table": "93c4d3252ef40952",
-    "rivalries": "b8166845a8937bcb",
-    "match_hubs": "1923aee8bb5b29a1",
-    "shot_locations": "6296cada046273d4",
-    "last_updated": "4355c8c2eab66e1b"
+    "todays_matches": "e4cfa4ad7db3b74c",
+    "player_props": "f95062f6af1137e3",
+    "team_form": "a469c5065f1e7bd9",
+    "player_stats": "6fca3aa95e974b79",
+    "venue_stats": "756c9ba239ab9016",
+    "value_bets": "9a602b904c5d6c6b",
+    "competition_status": "f8b216c9a3ed091c",
+    "odds_history": "71265fde89ce79ca",
+    "playoff_probabilities": "73d49061f7588a5b",
+    "matchup_edge_history": "308d396baadea69f",
+    "schedule": "268cf36a15f8878d",
+    "points_table": "94d90414f73b60fa",
+    "rivalries": "4101b78cfe049b9a",
+    "match_hubs": "e589221c85290a04",
+    "shot_locations": "6e8f4eb9da09318a",
+    "last_updated": "490b0434ff459545"
   }
 }
