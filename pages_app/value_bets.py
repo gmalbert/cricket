@@ -3,6 +3,22 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from utils.cache import APP_ENV, get_cache_metadata, is_mock_data
+try:
+    from utils.browser_time import format_eastern_timestamp
+except ImportError:  # Compatibility with deployments using an older utility module.
+    from datetime import UTC, datetime
+    from zoneinfo import ZoneInfo
+
+    def format_eastern_timestamp(value):
+        try:
+            timestamp = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+            if timestamp.tzinfo is None:
+                timestamp = timestamp.replace(tzinfo=UTC)
+            return timestamp.astimezone(ZoneInfo("America/New_York")).strftime(
+                "%B %-d, %Y at %-I:%M %p ET"
+            )
+        except (TypeError, ValueError):
+            return str(value or "Unknown")
 from utils.data import get_competition_status, get_todays_matches, get_value_bets
 
 
@@ -19,7 +35,7 @@ def render():
             "⚠️ **SIMULATED DATA** - Development mode is showing mock bets. Set APP_ENV=production to hide simulated data."
         )
     elif metadata:
-        st.info(f"📊 Last updated: {metadata.get('generated_at', 'Unknown')}")
+        st.info(f"📊 Last updated: {format_eastern_timestamp(metadata.get('generated_at'))}")
 
     matches = get_todays_matches()
 

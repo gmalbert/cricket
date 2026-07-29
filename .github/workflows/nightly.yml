@@ -107,7 +107,6 @@ jobs:
         run: |
           mkdir -p scripts
           python scripts/export_best_bets.py
-        continue-on-error: true
 
       - name: Commit best_bets_today.json
         if: ${{ github.event.inputs.dry_run != 'true' }}

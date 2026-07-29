@@ -7,6 +7,7 @@ Requires CRICKET_DATA_API_KEY environment variable.
 import logging
 import os
 from datetime import UTC, datetime
+from zoneinfo import ZoneInfo
 
 import requests
 from dotenv import load_dotenv
@@ -163,6 +164,35 @@ def parse_fixtures(raw_matches: list[dict]) -> list[dict]:
     return fixtures
 
 
+def filter_current_fixtures(fixtures: list[dict], reference_date=None) -> list[dict]:
+    """Keep fixtures scheduled for today or later.
+
+    CricketData's ``currentMatches`` response can include recently completed
+    matches. Those records are valid fixtures, but they do not belong on the
+    Today's Matches board. Fixtures without a parseable date are retained so
+    an upstream schema change does not silently hide a match.
+    """
+    today = reference_date or datetime.now(ZoneInfo("America/New_York")).date()
+    current = []
+    for fixture in fixtures:
+        scheduled_start = fixture.get("scheduled_start") or ""
+        try:
+            scheduled_date = datetime.fromisoformat(scheduled_start.replace("Z", "+00:00")).date()
+        except (TypeError, ValueError):
+            current.append(fixture)
+            continue
+        if scheduled_date >= today:
+            current.append(fixture)
+        else:
+            logger.info(
+                "Skipping past fixture from Today's Matches: %s vs %s (%s)",
+                fixture.get("team1"),
+                fixture.get("team2"),
+                scheduled_start,
+            )
+    return current
+
+
 def add_odds_provisional_fixtures(fixtures: list[dict], odds: list[dict]) -> list[dict]:
     """Add DraftKings-backed events absent from the schedule provider.
 
@@ -219,7 +249,7 @@ def run() -> list[dict]:
                 annotated = dict(match)
                 annotated.update({key: series[key] for key in ("competition", "competition_name", "format", "gender")})
                 raw.append(annotated)
-    fixtures = parse_fixtures(raw)
+    fixtures = filter_current_fixtures(parse_fixtures(raw))
     logger.info("Parsed %d registered fixtures", len(fixtures))
     return fixtures
 

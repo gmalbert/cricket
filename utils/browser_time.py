@@ -1,6 +1,20 @@
 """Small helpers for displaying UTC timestamps in the viewer's browser timezone."""
 
 from html import escape
+from datetime import UTC, datetime
+from zoneinfo import ZoneInfo
+
+
+def format_eastern_timestamp(value: str | None) -> str:
+    """Format an ISO timestamp as a readable US Eastern Time value."""
+    try:
+        timestamp = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        if timestamp.tzinfo is None:
+            timestamp = timestamp.replace(tzinfo=UTC)
+        eastern = timestamp.astimezone(ZoneInfo("America/New_York"))
+        return eastern.strftime("%B %-d, %Y at %-I:%M %p ET")
+    except (TypeError, ValueError):
+        return str(value or "Unknown")
 
 
 def browser_time(value: str | None, label: str = "Local time") -> str:

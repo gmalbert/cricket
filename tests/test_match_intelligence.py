@@ -11,7 +11,7 @@ from pipeline.build_rivalries import build_rivalries
 from pipeline.competitions import get_competition
 from pipeline.coverage import competition_status
 from pipeline.fetch_cricsheet import historical_coverage
-from pipeline.fetch_fixtures import add_odds_provisional_fixtures
+from pipeline.fetch_fixtures import add_odds_provisional_fixtures, filter_current_fixtures
 from pipeline.fetch_odds import match_odds_for_fixture, parse_odds
 from pipeline.normalization import canonical_team
 from pipeline.shot_locations import ShotLocation, empty_shot_locations, serialize_locations
@@ -238,6 +238,16 @@ def test_draftkings_event_becomes_provisional_fixture_when_schedule_is_missing()
     assert fixtures[0]["match_id"] == "dk-zimbabwe-india"
     assert fixtures[0]["fixture_source"] == "odds_api"
     assert fixtures[0]["fixture_status"] == "provisional"
+
+
+def test_current_fixture_filter_removes_past_matches_but_keeps_same_teams_on_different_dates():
+    fixtures = [
+        {"match_id": "past", "team1": "Zimbabwe", "team2": "India", "scheduled_start": "2026-07-26T11:00:00"},
+        {"match_id": "today", "team1": "Zimbabwe", "team2": "India", "scheduled_start": "2026-07-28T11:00:00"},
+        {"match_id": "future", "team1": "Zimbabwe", "team2": "India", "scheduled_start": "2026-07-29T11:00:00Z"},
+    ]
+    result = filter_current_fixtures(fixtures, reference_date=pd.Timestamp("2026-07-28").date())
+    assert [fixture["match_id"] for fixture in result] == ["today", "future"]
 
 
 def test_shot_location_contract_is_explicit_when_no_provider_is_configured():
