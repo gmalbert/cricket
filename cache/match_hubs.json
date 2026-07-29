@@ -1,133 +1,13 @@
 {
-  "generated_at": "2026-07-29T00:39:23.246048+00:00",
-  "source_run_id": "043a3aeb-c2c0-4ffd-a02e-7de348d07af2",
-  "source_status": "partial",
+  "generated_at": "2026-07-29T07:04:55.090632+00:00",
+  "source_run_id": "7f4f3856-f372-40de-a1c7-133270f055f9",
+  "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-07-29T00:39:22.738997+00:00",
+    "generated_at": "2026-07-29T07:04:54.664339+00:00",
     "matches": {
-      "1fa3bd8a-4bac-4ebb-b022-aba8281467e3": {
-        "match": {
-          "match_id": "1fa3bd8a-4bac-4ebb-b022-aba8281467e3",
-          "team1": "Tanzania Women",
-          "team2": "Uganda Women",
-          "venue": "Namibia Cricket Ground, Windhoek",
-          "time": "04:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.5122,
-          "team2_win_prob": 0.4878,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
-      "2ede8246-e8e5-414b-98ac-72ae89232467": {
-        "match": {
-          "match_id": "2ede8246-e8e5-414b-98ac-72ae89232467",
-          "team1": "Namibia Women",
-          "team2": "Hong Kong",
-          "venue": "Namibia Cricket Ground, Windhoek",
-          "time": "04:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.4584,
-          "team2_win_prob": 0.5416,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
-      "9d937fde-f5b9-4ca1-8050-f3db3e39a1e6": {
-        "match": {
-          "match_id": "9d937fde-f5b9-4ca1-8050-f3db3e39a1e6",
-          "team1": "Colombo Kaps",
-          "team2": "Jaffna Kings",
-          "venue": "Pallekele International Cricket Stadium, Pallekele",
-          "time": "04:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.53,
-          "team2_win_prob": 0.47,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
       "f88a45270d09c1ba75bc160ea210da04": {
         "match": {
           "match_id": "f88a45270d09c1ba75bc160ea210da04",
@@ -138,14 +18,14 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.5376,
-          "team2_win_prob": 0.4624,
+          "team1_win_prob": 0.9854,
+          "team2_win_prob": 0.0146,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.3791,
-          "team2_implied_prob": 0.6209,
+          "team1_implied_prob": 0.3444,
+          "team2_implied_prob": 0.6556,
           "total_line": null
         },
         "venue": {},
@@ -156,8 +36,130 @@
           "windspeed": null
         },
         "team_form": {
-          "team1": [],
-          "team2": []
+          "team1": [
+            {
+              "match_id": 1544127,
+              "date": "2026-07-27",
+              "innings": 2,
+              "opponent": "Namibia",
+              "result": "L",
+              "score": 208,
+              "opp_score": 211,
+              "wickets": 6,
+              "powerplay_runs": 25,
+              "death_economy": 3.75
+            },
+            {
+              "match_id": 1544125,
+              "date": "2026-07-23",
+              "innings": 1,
+              "opponent": "Netherlands",
+              "result": "L",
+              "score": 157,
+              "opp_score": 158,
+              "wickets": 10,
+              "powerplay_runs": 23,
+              "death_economy": 3.75
+            },
+            {
+              "match_id": 1544124,
+              "date": "2026-07-21",
+              "innings": 1,
+              "opponent": "Namibia",
+              "result": "L",
+              "score": 157,
+              "opp_score": 159,
+              "wickets": 10,
+              "powerplay_runs": 10,
+              "death_economy": 2.75
+            },
+            {
+              "match_id": 1531707,
+              "date": "2026-05-22",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "W",
+              "score": 317,
+              "opp_score": 195,
+              "wickets": 8,
+              "powerplay_runs": 33,
+              "death_economy": 5.0
+            },
+            {
+              "match_id": 1531705,
+              "date": "2026-05-18",
+              "innings": 2,
+              "opponent": "Scotland",
+              "result": "W",
+              "score": 199,
+              "opp_score": 194,
+              "wickets": 4,
+              "powerplay_runs": 46,
+              "death_economy": 8.5
+            }
+          ],
+          "team2": [
+            {
+              "match_id": 1544126,
+              "date": "2026-07-25",
+              "innings": 1,
+              "opponent": "Namibia",
+              "result": "W",
+              "score": 251,
+              "opp_score": 193,
+              "wickets": 6,
+              "powerplay_runs": 17,
+              "death_economy": 4.5
+            },
+            {
+              "match_id": 1544125,
+              "date": "2026-07-23",
+              "innings": 2,
+              "opponent": "Nepal",
+              "result": "W",
+              "score": 158,
+              "opp_score": 157,
+              "wickets": 4,
+              "powerplay_runs": 14,
+              "death_economy": 4.5
+            },
+            {
+              "match_id": 1538430,
+              "date": "2026-06-16",
+              "innings": 1,
+              "opponent": null,
+              "result": null,
+              "score": 15,
+              "opp_score": null,
+              "wickets": 1,
+              "powerplay_runs": 14,
+              "death_economy": null
+            },
+            {
+              "match_id": 1538427,
+              "date": "2026-06-10",
+              "innings": 1,
+              "opponent": "Canada",
+              "result": "L",
+              "score": 214,
+              "opp_score": 218,
+              "wickets": 10,
+              "powerplay_runs": 21,
+              "death_economy": 3.0
+            },
+            {
+              "match_id": 1538426,
+              "date": "2026-06-08",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "W",
+              "score": 196,
+              "opp_score": 175,
+              "wickets": 8,
+              "powerplay_runs": 23,
+              "death_economy": 5.0
+            }
+          ]
         },
         "key_rivalries": [],
         "top_props": [],
