@@ -1,13 +1,13 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-07-29T07:04:57.110287+00:00",
+    "generated_at": "2026-07-30T07:03:43.226172+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-07-29",
+      "game_date": "2026-07-30",
       "game": "Nepal vs Netherlands",
       "game_time": "",
       "bet_type": "Match Winner",
