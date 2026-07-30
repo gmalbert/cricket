@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-29T07:04:54.860240+00:00",
-  "source_run_id": "7f4f3856-f372-40de-a1c7-133270f055f9",
+  "generated_at": "2026-07-30T07:03:41.041695+00:00",
+  "source_run_id": "90f6b2f3-1a17-4375-b84b-976c47bd5b93",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -220,6 +220,30 @@
       "closing_price_team2": -225,
       "event_status": "draftkings_available",
       "observed_at": "2026-07-29T07:04:54.860219+00:00"
+    },
+    {
+      "event_id": "86a2fa46d2499bc11e50bb59717f770f",
+      "team1": "Romania",
+      "team2": "Australia",
+      "commence_time": "2026-07-30T06:00:00Z",
+      "dk_implied_prob_team1": null,
+      "dk_implied_prob_team2": null,
+      "dk_odds_team1": null,
+      "dk_odds_team2": null,
+      "sport_key": "cricket_international_t20",
+      "competition": "international_t20",
+      "competition_name": "International T20",
+      "format": "T20",
+      "gender": "male",
+      "bookmaker": null,
+      "market": "h2h",
+      "odds_timestamp": "2026-07-30T07:03:36.146046",
+      "first_observed_price_team1": null,
+      "first_observed_price_team2": null,
+      "closing_price_team1": null,
+      "closing_price_team2": null,
+      "event_status": "no_draftkings_market",
+      "observed_at": "2026-07-30T07:03:41.041672+00:00"
     }
   ]
 }

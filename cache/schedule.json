@@ -1,27 +1,8 @@
 {
-  "generated_at": "2026-07-29T07:04:54.860808+00:00",
-  "source_run_id": "7f4f3856-f372-40de-a1c7-133270f055f9",
+  "generated_at": "2026-07-30T07:03:41.042302+00:00",
+  "source_run_id": "90f6b2f3-1a17-4375-b84b-976c47bd5b93",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
-  "data": [
-    {
-      "match_id": "f88a45270d09c1ba75bc160ea210da04",
-      "team1": "Nepal",
-      "team2": "Netherlands",
-      "venue": "",
-      "city": "",
-      "time": "2026-07-29T09:00:00Z",
-      "scheduled_start": "2026-07-29T09:00:00Z",
-      "status": "Scheduled from DraftKings market",
-      "matchStarted": false,
-      "matchEnded": false,
-      "competition": "odi_internationals",
-      "competition_name": "ODI internationals",
-      "format": "ODI",
-      "gender": "male",
-      "fixture_source": "odds_api",
-      "fixture_status": "provisional"
-    }
-  ]
+  "data": []
 }
