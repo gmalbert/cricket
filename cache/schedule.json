@@ -1,27 +1,8 @@
 {
-  "generated_at": "2026-07-31T07:09:25.057513+00:00",
-  "source_run_id": "5ec97310-a49e-4764-8b14-d02b677a0fbb",
+  "generated_at": "2026-08-01T06:59:55.997000+00:00",
+  "source_run_id": "b36c3897-62d9-4a67-9d50-fc3e69feca7f",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
-  "data": [
-    {
-      "match_id": "4146e7051cc4818e962a66c33c48e3f6",
-      "team1": "Netherlands",
-      "team2": "Namibia",
-      "venue": "",
-      "city": "",
-      "time": "2026-07-31T09:00:00Z",
-      "scheduled_start": "2026-07-31T09:00:00Z",
-      "status": "Scheduled from DraftKings market",
-      "matchStarted": false,
-      "matchEnded": false,
-      "competition": "odi_internationals",
-      "competition_name": "ODI internationals",
-      "format": "ODI",
-      "gender": "male",
-      "fixture_source": "odds_api",
-      "fixture_status": "provisional"
-    }
-  ]
+  "data": []
 }
