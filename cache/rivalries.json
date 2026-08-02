@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-01T06:59:55.997190+00:00",
-  "source_run_id": "b36c3897-62d9-4a67-9d50-fc3e69feca7f",
+  "generated_at": "2026-08-02T07:01:20.192632+00:00",
+  "source_run_id": "f28100bd-fb42-4af2-8272-a63ae0dd3121",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-08-01T06:59:47.894058+00:00",
+    "generated_at": "2026-08-02T07:01:13.211687+00:00",
     "competition": "ipl_male",
     "source": {
       "provider": "Cricsheet",
