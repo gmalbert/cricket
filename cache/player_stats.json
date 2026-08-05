@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-04T07:02:18.759117+00:00",
-  "source_run_id": "f10c7895-a1c4-40e0-ba2b-573c2739f939",
+  "generated_at": "2026-08-05T07:03:58.796403+00:00",
+  "source_run_id": "3bc97c3b-21a0-496a-9411-630d93b59f4e",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -7458,8 +7458,8 @@
           51,
           20,
           5,
-          19,
-          12
+          12,
+          19
         ],
         "recent_avg": 19.0,
         "recent_sr": 78.2
@@ -9967,8 +9967,8 @@
       "A Dhabe": {
         "recent_scores": [
           0,
-          11,
           0,
+          11,
           0,
           3,
           21,
@@ -10109,8 +10109,8 @@
       "A Emch": {
         "recent_scores": [
           19,
-          17,
           4,
+          17,
           0
         ],
         "recent_avg": 10.0,
@@ -10160,8 +10160,8 @@
         "recent_scores": [
           9,
           9,
-          2,
           19,
+          2,
           0,
           1,
           0,
@@ -11291,8 +11291,8 @@
       },
       "A Mundra": {
         "recent_scores": [
-          9,
           4,
+          9,
           62,
           24,
           3,
@@ -11621,10 +11621,10 @@
       },
       "A Perera": {
         "recent_scores": [
-          9,
           0,
-          5,
+          9,
           12,
+          5,
           45,
           11,
           39,
@@ -12030,8 +12030,8 @@
       },
       "A Stoilova": {
         "recent_scores": [
-          0,
           20,
+          0,
           4,
           0,
           0,
@@ -12373,8 +12373,8 @@
           4,
           0,
           0,
-          2,
           9,
+          2,
           3
         ],
         "recent_avg": 3.0,
@@ -12759,8 +12759,8 @@
       },
       "AC Dei Castelli": {
         "recent_scores": [
-          5,
           0,
+          5,
           6
         ],
         "recent_avg": 3.7,
@@ -14876,8 +14876,8 @@
       "Aanvi Kishore": {
         "recent_scores": [
           3,
-          16,
-          52
+          52,
+          16
         ],
         "recent_avg": 23.7,
         "recent_sr": 102.9
@@ -15006,12 +15006,12 @@
       },
       "Abbas Ghani": {
         "recent_scores": [
-          8,
           15,
+          8,
           56,
           18,
-          8,
           90,
+          8,
           22,
           49,
           41,
@@ -15880,10 +15880,10 @@
       },
       "Ahmad Khalid Ahmadzai": {
         "recent_scores": [
+          8,
           2,
           8,
           0,
-          8,
           30,
           0,
           1,
@@ -16613,8 +16613,8 @@
           2,
           11,
           28,
-          41,
           19,
+          41,
           5
         ],
         "recent_avg": 15.1,
@@ -17974,8 +17974,8 @@
         "recent_scores": [
           9,
           35,
-          9,
-          88
+          88,
+          9
         ],
         "recent_avg": 35.2,
         "recent_sr": 207.4
@@ -18411,8 +18411,8 @@
       },
       "Avishka Iroshan": {
         "recent_scores": [
-          46,
           16,
+          46,
           6,
           38,
           0,
@@ -18513,8 +18513,8 @@
       "Ayesha Hasan": {
         "recent_scores": [
           18,
-          23,
           35,
+          23,
           5,
           6,
           28,
@@ -19315,8 +19315,8 @@
           10,
           5,
           1,
-          71,
           34,
+          71,
           10,
           1,
           34,
@@ -19474,8 +19474,8 @@
       "B Shotorova": {
         "recent_scores": [
           0,
-          3,
           15,
+          3,
           13,
           3,
           6,
@@ -20031,8 +20031,8 @@
       "BJ Lazarus": {
         "recent_scores": [
           32,
-          7,
           21,
+          7,
           24
         ],
         "recent_avg": 21.0,
@@ -20535,8 +20535,8 @@
       "Baseer Khan": {
         "recent_scores": [
           6,
-          14,
           15,
+          14,
           8,
           3,
           31,
@@ -20690,8 +20690,8 @@
       "Bijeyata Kumari": {
         "recent_scores": [
           27,
-          22,
           68,
+          22,
           5,
           2,
           22,
@@ -21744,8 +21744,8 @@
       "C Potgieter": {
         "recent_scores": [
           8,
-          42,
           10,
+          42,
           3,
           0,
           52,
@@ -23873,8 +23873,8 @@
       "D Demic": {
         "recent_scores": [
           40,
-          0,
           108,
+          0,
           8,
           8,
           4
@@ -24029,8 +24029,8 @@
       },
       "D Gaikwad": {
         "recent_scores": [
-          20,
-          12
+          12,
+          20
         ],
         "recent_avg": 16.0,
         "recent_sr": 123.1
@@ -24043,8 +24043,8 @@
           1,
           0,
           1,
-          0,
-          1
+          1,
+          0
         ],
         "recent_avg": 7.2,
         "recent_sr": 69.0
@@ -24217,8 +24217,8 @@
         "recent_scores": [
           27,
           5,
-          22,
           0,
+          22,
           13,
           0,
           10,
@@ -24321,8 +24321,8 @@
       "D Koralalage": {
         "recent_scores": [
           1,
-          6,
           3,
+          6,
           6,
           6,
           20,
@@ -24439,10 +24439,10 @@
       "D Medagoda": {
         "recent_scores": [
           4,
-          3,
           7,
           3,
           22,
+          3,
           6
         ],
         "recent_avg": 7.5,
@@ -24773,8 +24773,8 @@
           11,
           1,
           1,
-          37,
-          1
+          1,
+          37
         ],
         "recent_avg": 12.0,
         "recent_sr": 96.0
@@ -26555,8 +26555,8 @@
         "recent_scores": [
           4,
           4,
-          12,
           4,
+          12,
           1,
           8,
           2,
@@ -27142,8 +27142,8 @@
       },
       "E Kuncova": {
         "recent_scores": [
-          37,
           28,
+          37,
           16,
           0,
           3,
@@ -27227,8 +27227,8 @@
       },
       "E Millington": {
         "recent_scores": [
-          1,
           19,
+          1,
           2
         ],
         "recent_avg": 7.3,
@@ -28269,8 +28269,8 @@
       },
       "Elina Rama": {
         "recent_scores": [
-          29,
-          4
+          4,
+          29
         ],
         "recent_avg": 16.5,
         "recent_sr": 94.3
@@ -28777,8 +28777,8 @@
       "F Kuenburg": {
         "recent_scores": [
           40,
-          3,
           6,
+          3,
           32,
           0,
           28,
@@ -29661,8 +29661,8 @@
       },
       "Farwa Baber": {
         "recent_scores": [
-          18,
           28,
+          18,
           19
         ],
         "recent_avg": 21.7,
@@ -29760,8 +29760,8 @@
       "Fayaz Khan": {
         "recent_scores": [
           3,
-          2,
           11,
+          2,
           21,
           22,
           41,
@@ -30390,8 +30390,8 @@
       },
       "G Madanayake": {
         "recent_scores": [
-          2,
           5,
+          2,
           17,
           4,
           21,
@@ -30504,8 +30504,8 @@
         "recent_scores": [
           6,
           34,
-          10,
-          18
+          18,
+          10
         ],
         "recent_avg": 17.0,
         "recent_sr": 64.2
@@ -30584,8 +30584,8 @@
       },
       "G Sanjeewa": {
         "recent_scores": [
-          0,
-          10
+          10,
+          0
         ],
         "recent_avg": 5.0,
         "recent_sr": 83.3
@@ -31173,8 +31173,8 @@
       "GJ Hilkowitz": {
         "recent_scores": [
           0,
-          0,
           3,
+          0,
           16
         ],
         "recent_avg": 4.8,
@@ -32046,8 +32046,8 @@
         "recent_scores": [
           0,
           7,
-          56,
           46,
+          56,
           36,
           15,
           15,
@@ -32617,10 +32617,10 @@
       },
       "H Santhoshkumar": {
         "recent_scores": [
-          2,
           0,
           2,
           7,
+          2,
           0
         ],
         "recent_avg": 2.2,
@@ -33546,8 +33546,8 @@
       },
       "Hadisullah Tarakhel": {
         "recent_scores": [
-          23,
           19,
+          23,
           24,
           12,
           78,
@@ -33881,8 +33881,8 @@
       },
       "Harper Chalmers": {
         "recent_scores": [
-          21,
           0,
+          21,
           10,
           19,
           6,
@@ -34231,8 +34231,8 @@
       },
       "Huang Junjie": {
         "recent_scores": [
-          0,
           19,
+          0,
           4,
           10,
           1
@@ -34409,8 +34409,8 @@
       "I Chathurani": {
         "recent_scores": [
           30,
-          69,
           17,
+          69,
           7,
           24,
           19,
@@ -34771,8 +34771,8 @@
         "recent_scores": [
           12,
           27,
-          5,
           9,
+          5,
           3,
           14
         ],
@@ -35474,8 +35474,8 @@
       },
       "Ibrar Ahmad": {
         "recent_scores": [
-          16,
           9,
+          16,
           9,
           16,
           2,
@@ -35488,8 +35488,8 @@
       "Idan Varsulkar": {
         "recent_scores": [
           11,
-          2,
           4,
+          2,
           1
         ],
         "recent_avg": 4.5,
@@ -35666,8 +35666,8 @@
       "Imal Zuwak": {
         "recent_scores": [
           10,
-          32,
           20,
+          32,
           6,
           0,
           0,
@@ -35701,8 +35701,8 @@
           11,
           0,
           1,
-          0,
-          7
+          7,
+          0
         ],
         "recent_avg": 3.2,
         "recent_sr": 33.9
@@ -36046,8 +36046,8 @@
           15,
           0,
           4,
-          18,
           0,
+          18,
           18,
           20,
           16,
@@ -36310,8 +36310,8 @@
       },
       "J Andujar": {
         "recent_scores": [
-          31,
           0,
+          31,
           3,
           1,
           8
@@ -36742,8 +36742,8 @@
           7,
           9,
           38,
-          7,
           21,
+          7,
           12,
           30,
           31,
@@ -37535,8 +37535,8 @@
       },
       "J Reb": {
         "recent_scores": [
-          5,
           7,
+          5,
           8,
           11,
           19
@@ -37827,8 +37827,8 @@
       "J van Heerden": {
         "recent_scores": [
           13,
-          49,
           67,
+          49,
           0,
           35,
           19,
@@ -37971,8 +37971,8 @@
       "JA Rymer": {
         "recent_scores": [
           1,
-          0,
           4,
+          0,
           1,
           11,
           51,
@@ -38121,8 +38121,8 @@
       },
       "JC Cullen": {
         "recent_scores": [
-          8,
           24,
+          8,
           14,
           20,
           19,
@@ -38311,8 +38311,8 @@
       "JE Marks": {
         "recent_scores": [
           8,
-          28,
           6,
+          28,
           21
         ],
         "recent_avg": 15.8,
@@ -39350,8 +39350,8 @@
       "JS Bangera": {
         "recent_scores": [
           11,
-          21,
           0,
+          21,
           0
         ],
         "recent_avg": 8.0,
@@ -41037,8 +41037,8 @@
       },
       "K Marinkova": {
         "recent_scores": [
-          0,
           4,
+          0,
           10
         ],
         "recent_avg": 4.7,
@@ -41423,8 +41423,8 @@
       },
       "K Robert": {
         "recent_scores": [
-          18,
-          6
+          6,
+          18
         ],
         "recent_avg": 12.0,
         "recent_sr": 61.5
@@ -41609,8 +41609,8 @@
       },
       "K Tesarikova": {
         "recent_scores": [
-          2,
           4,
+          2,
           33,
           36,
           0,
@@ -43151,12 +43151,12 @@
       "Karanbir Singh": {
         "recent_scores": [
           7,
-          15,
           27,
+          15,
           16,
           18,
-          85,
           164,
+          85,
           11,
           47,
           0
@@ -43884,8 +43884,8 @@
           33,
           5,
           46,
-          41,
           0,
+          41,
           21
         ],
         "recent_avg": 16.3,
@@ -44297,8 +44297,8 @@
       },
       "L Greig": {
         "recent_scores": [
-          1,
           14,
+          1,
           21,
           3,
           1,
@@ -44789,8 +44789,8 @@
       "L Pickard": {
         "recent_scores": [
           13,
-          30,
           1,
+          30,
           15,
           8,
           14,
@@ -46661,8 +46661,8 @@
         "recent_scores": [
           31,
           2,
-          0,
           21,
+          0,
           19,
           7,
           3,
@@ -46678,8 +46678,8 @@
           81,
           11,
           9,
-          3,
           16,
+          3,
           5
         ],
         "recent_avg": 17.0,
@@ -46798,8 +46798,8 @@
         "recent_scores": [
           2,
           4,
-          32,
           8,
+          32,
           1,
           10,
           5,
@@ -47465,8 +47465,8 @@
       },
       "M Khojbariya": {
         "recent_scores": [
-          6,
           7,
+          6,
           13,
           15,
           14,
@@ -47643,8 +47643,8 @@
         "recent_scores": [
           8,
           9,
-          4,
           15,
+          4,
           17,
           8,
           9,
@@ -48211,8 +48211,8 @@
       "M Perisic": {
         "recent_scores": [
           3,
-          0,
           1,
+          0,
           2,
           11,
           4,
@@ -48374,8 +48374,8 @@
       },
       "M Robinson": {
         "recent_scores": [
-          17,
           5,
+          17,
           40,
           7,
           7
@@ -48633,8 +48633,8 @@
       "M Stevanovic": {
         "recent_scores": [
           0,
-          9,
           17,
+          9,
           11
         ],
         "recent_avg": 9.2,
@@ -49541,8 +49541,8 @@
       },
       "MD Rocha": {
         "recent_scores": [
-          11,
           6,
+          11,
           7,
           7,
           5,
@@ -51888,8 +51888,8 @@
           7,
           10,
           32,
-          1,
-          93
+          93,
+          1
         ],
         "recent_avg": 21.6,
         "recent_sr": 149.0
@@ -51949,8 +51949,8 @@
       "Meghna Rajan": {
         "recent_scores": [
           14,
-          3,
           38,
+          3,
           32,
           23,
           26,
@@ -53275,8 +53275,8 @@
       },
       "Muhammad Babar": {
         "recent_scores": [
-          15,
-          46
+          46,
+          15
         ],
         "recent_avg": 30.5,
         "recent_sr": 169.4
@@ -53577,8 +53577,8 @@
           0,
           2,
           28,
-          1,
           33,
+          1,
           57
         ],
         "recent_avg": 21.0,
@@ -53662,8 +53662,8 @@
           1,
           5,
           0,
-          16,
           34,
+          16,
           28,
           17,
           13,
@@ -54052,8 +54052,8 @@
       "Mustafa Omer": {
         "recent_scores": [
           44,
-          3,
           24,
+          3,
           0,
           108,
           25,
@@ -54916,8 +54916,8 @@
       "N Nojic": {
         "recent_scores": [
           0,
-          35,
           22,
+          35,
           29,
           4,
           2,
@@ -56588,8 +56588,8 @@
         "recent_scores": [
           44,
           24,
-          17,
-          29
+          29,
+          17
         ],
         "recent_avg": 28.5,
         "recent_sr": 137.3
@@ -56894,8 +56894,8 @@
       "Natim Hassam": {
         "recent_scores": [
           17,
-          18,
           12,
+          18,
           26,
           1,
           52,
@@ -57042,8 +57042,8 @@
       "Nayab Razwan": {
         "recent_scores": [
           9,
-          13,
           6,
+          13,
           4,
           5,
           4,
@@ -57567,8 +57567,8 @@
         "recent_scores": [
           8,
           13,
-          36,
           12,
+          36,
           28
         ],
         "recent_avg": 19.4,
@@ -58045,8 +58045,8 @@
       },
       "O Morgan": {
         "recent_scores": [
-          2,
-          1
+          1,
+          2
         ],
         "recent_avg": 1.5,
         "recent_sr": 23.1
@@ -58558,8 +58558,8 @@
           22,
           39,
           28,
-          43,
           59,
+          43,
           31,
           21,
           50,
@@ -58571,8 +58571,8 @@
       },
       "Omid Rahimi": {
         "recent_scores": [
-          10,
           55,
+          10,
           10
         ],
         "recent_avg": 25.0,
@@ -59018,8 +59018,8 @@
         "recent_scores": [
           4,
           2,
-          2,
           11,
+          2,
           3,
           13,
           22,
@@ -59964,8 +59964,8 @@
           2,
           1,
           21,
-          48,
-          52
+          52,
+          48
         ],
         "recent_avg": 32.8,
         "recent_sr": 158.5
@@ -60869,8 +60869,8 @@
           0,
           0,
           5,
-          8,
-          1
+          1,
+          8
         ],
         "recent_avg": 2.8,
         "recent_sr": 48.3
@@ -62308,8 +62308,8 @@
       },
       "R Pavlickova": {
         "recent_scores": [
-          1,
           22,
+          1,
           30,
           0,
           0,
@@ -62485,11 +62485,11 @@
       },
       "R Satheesan": {
         "recent_scores": [
+          0,
           19,
           0,
-          0,
-          16,
           10,
+          16,
           54,
           65,
           23,
@@ -63136,12 +63136,12 @@
           0,
           3,
           1,
-          25,
           51,
+          25,
           2,
           15,
-          27,
           0,
+          27,
           0
         ],
         "recent_avg": 12.4,
@@ -63963,8 +63963,8 @@
         "recent_scores": [
           0,
           5,
-          0,
-          1
+          1,
+          0
         ],
         "recent_avg": 1.5,
         "recent_sr": 18.8
@@ -64119,8 +64119,8 @@
       },
       "Rabbjyot Rajput": {
         "recent_scores": [
-          16,
           1,
+          16,
           4,
           0,
           3,
@@ -64254,8 +64254,8 @@
       },
       "Ragne Hallik": {
         "recent_scores": [
-          11,
           12,
+          11,
           16,
           10,
           32,
@@ -64388,8 +64388,8 @@
         "recent_scores": [
           51,
           23,
-          0,
-          8
+          8,
+          0
         ],
         "recent_avg": 20.5,
         "recent_sr": 151.9
@@ -64471,8 +64471,8 @@
       "Rameesha Shahid": {
         "recent_scores": [
           5,
-          8,
           0,
+          8,
           18,
           36,
           6,
@@ -65108,8 +65108,8 @@
       "Rohit Kumar": {
         "recent_scores": [
           47,
-          19,
           29,
+          19,
           3,
           21,
           14,
@@ -66747,10 +66747,11 @@
       },
       "S Kavindi": {
         "recent_scores": [
+          20,
           46
         ],
-        "recent_avg": 46.0,
-        "recent_sr": 191.7
+        "recent_avg": 33.0,
+        "recent_sr": 157.1
       },
       "S Kemigisha": {
         "recent_scores": [
@@ -67719,8 +67720,8 @@
           1,
           4,
           9,
-          0,
-          19
+          19,
+          0
         ],
         "recent_avg": 13.0,
         "recent_sr": 65.0
@@ -67877,10 +67878,10 @@
           4,
           6,
           52,
-          2
+          4
         ],
-        "recent_avg": 11.8,
-        "recent_sr": 59.6
+        "recent_avg": 12.0,
+        "recent_sr": 61.9
       },
       "S Ravoka": {
         "recent_scores": [
@@ -68889,8 +68890,8 @@
           52,
           40,
           6,
-          1,
           6,
+          1,
           17,
           25,
           0
@@ -69158,8 +69159,8 @@
           30,
           13,
           3,
-          31,
-          0
+          0,
+          31
         ],
         "recent_avg": 14.0,
         "recent_sr": 106.9
@@ -69556,8 +69557,8 @@
         "recent_scores": [
           13,
           23,
-          4,
           8,
+          4,
           16,
           7,
           3,
@@ -70054,8 +70055,8 @@
         "recent_scores": [
           4,
           32,
-          19,
           15,
+          19,
           33,
           67,
           7,
@@ -71515,8 +71516,8 @@
         "recent_scores": [
           1,
           57,
-          9,
-          11
+          11,
+          9
         ],
         "recent_avg": 19.5,
         "recent_sr": 121.9
@@ -71625,6 +71626,7 @@
       },
       "Saira Jabeen": {
         "recent_scores": [
+          12,
           16,
           13,
           5,
@@ -71633,11 +71635,10 @@
           2,
           7,
           36,
-          30,
-          50
+          30
         ],
-        "recent_avg": 16.4,
-        "recent_sr": 123.3
+        "recent_avg": 12.6,
+        "recent_sr": 110.5
       },
       "Sajaa Fathimath": {
         "recent_scores": [
@@ -73636,8 +73637,8 @@
         "recent_scores": [
           0,
           3,
-          7,
-          1
+          1,
+          7
         ],
         "recent_avg": 2.8,
         "recent_sr": 28.2
@@ -74126,8 +74127,8 @@
       },
       "Sufyan Naseeb": {
         "recent_scores": [
-          0,
           11,
+          0,
           2,
           4
         ],
@@ -74795,8 +74796,8 @@
         "recent_scores": [
           0,
           0,
-          1,
           3,
+          1,
           2,
           5,
           0,
@@ -75613,8 +75614,8 @@
           13,
           3,
           31,
-          3,
           0,
+          3,
           9,
           9
         ],
@@ -75623,8 +75624,8 @@
       },
       "T Sandeep": {
         "recent_scores": [
-          57,
           38,
+          57,
           16,
           7,
           25,
@@ -75718,8 +75719,8 @@
       },
       "T Smith": {
         "recent_scores": [
-          4,
           11,
+          4,
           8,
           44,
           4,
@@ -76140,8 +76141,8 @@
         "recent_scores": [
           0,
           21,
-          9,
           20,
+          9,
           12,
           29,
           7,
@@ -76716,8 +76717,8 @@
         "recent_scores": [
           1,
           0,
-          0,
           4,
+          0,
           8,
           6,
           3
@@ -77149,8 +77150,8 @@
           38,
           16,
           41,
-          11,
           60,
+          11,
           83,
           54,
           0,
@@ -78594,10 +78595,10 @@
           13,
           28,
           36,
-          17
+          49
         ],
-        "recent_avg": 23.9,
-        "recent_sr": 107.7
+        "recent_avg": 27.1,
+        "recent_sr": 108.8
       },
       "V Shaw": {
         "recent_scores": [
@@ -79187,8 +79188,8 @@
           20,
           9,
           19,
-          12,
           39,
+          12,
           0,
           3,
           3
@@ -79377,8 +79378,8 @@
       },
       "Vritti Dahiya": {
         "recent_scores": [
-          13,
           15,
+          13,
           4,
           9,
           9,
@@ -79458,8 +79459,8 @@
           0,
           22,
           31,
-          36,
           51,
+          36,
           50,
           13,
           11,
@@ -80868,8 +80869,8 @@
         "recent_scores": [
           1,
           16,
-          1,
           2,
+          1,
           8,
           1,
           0,
@@ -81611,8 +81612,8 @@
       "Zabiullah Zahid": {
         "recent_scores": [
           7,
-          14,
           25,
+          14,
           1,
           6,
           7,
@@ -82234,8 +82235,8 @@
       },
       "Zhuang Zelin": {
         "recent_scores": [
-          4,
           2,
+          4,
           1,
           1,
           0,
@@ -82386,8 +82387,8 @@
       },
       "Zou Kui": {
         "recent_scores": [
-          2,
           0,
+          2,
           10,
           0
         ],
@@ -105485,8 +105486,8 @@
       "A Andrews": {
         "wickets_last5": [
           0,
-          3,
-          2
+          2,
+          3
         ],
         "recent_economy": 5.71,
         "recent_wickets_per_match": 1.67
@@ -105967,10 +105968,10 @@
       },
       "A Emch": {
         "wickets_last5": [
+          0,
           2,
-          0,
-          0,
           3,
+          0,
           0
         ],
         "recent_economy": 3.69,
@@ -106000,8 +106001,8 @@
       },
       "A Galan": {
         "wickets_last5": [
-          1,
           2,
+          1,
           2,
           0,
           0
@@ -106195,8 +106196,8 @@
       "A Kanukuntla": {
         "wickets_last5": [
           0,
-          1,
           3,
+          1,
           2,
           0
         ],
@@ -106299,8 +106300,8 @@
         "wickets_last5": [
           0,
           2,
-          1,
           0,
+          1,
           0
         ],
         "recent_economy": 7.33,
@@ -106344,8 +106345,8 @@
           0,
           1,
           1,
-          1,
-          0
+          0,
+          1
         ],
         "recent_economy": 5.84,
         "recent_wickets_per_match": 0.6
@@ -106588,8 +106589,8 @@
       "A Meyenborg": {
         "wickets_last5": [
           2,
-          3,
           2,
+          3,
           2,
           2
         ],
@@ -106620,8 +106621,8 @@
       },
       "A Mokgotlhe": {
         "wickets_last5": [
-          2,
           0,
+          2,
           0,
           2,
           2
@@ -107349,8 +107350,8 @@
       "AA Wagh": {
         "wickets_last5": [
           0,
-          5,
           1,
+          5,
           0,
           1
         ],
@@ -107508,8 +107509,8 @@
       },
       "AC Dei Castelli": {
         "wickets_last5": [
-          2,
           0,
+          2,
           0,
           0,
           1
@@ -107727,10 +107728,10 @@
           0,
           0,
           1,
-          3
+          1
         ],
-        "recent_economy": 8.37,
-        "recent_wickets_per_match": 1.0
+        "recent_economy": 8.19,
+        "recent_wickets_per_match": 0.6
       },
       "AH Maqsood": {
         "wickets_last5": [
@@ -108064,8 +108065,8 @@
       "AM Healey": {
         "wickets_last5": [
           0,
-          1,
           2,
+          1,
           0,
           1
         ],
@@ -108227,8 +108228,8 @@
           0,
           1,
           1,
-          0,
-          1
+          1,
+          0
         ],
         "recent_economy": 7.54,
         "recent_wickets_per_match": 0.6
@@ -108467,8 +108468,8 @@
       "AS Gorad": {
         "wickets_last5": [
           1,
-          0,
           1,
+          0,
           1
         ],
         "recent_economy": 5.01,
@@ -109488,7 +109489,7 @@
           1,
           0
         ],
-        "recent_economy": 7.89,
+        "recent_economy": 7.92,
         "recent_wickets_per_match": 0.6
       },
       "Ahsan Malik": {
@@ -109598,10 +109599,10 @@
           0,
           0,
           3,
-          2
+          0
         ],
-        "recent_economy": 7.67,
-        "recent_wickets_per_match": 1.0
+        "recent_economy": 7.82,
+        "recent_wickets_per_match": 0.6
       },
       "Akash Babu": {
         "wickets_last5": [
@@ -110391,8 +110392,8 @@
       "Anoop Orsu": {
         "wickets_last5": [
           0,
-          0,
-          1
+          1,
+          0
         ],
         "recent_economy": 8.65,
         "recent_wickets_per_match": 0.33
@@ -110497,8 +110498,8 @@
       "Aqib Iqbal": {
         "wickets_last5": [
           2,
-          0,
           1,
+          0,
           1,
           2
         ],
@@ -111565,10 +111566,10 @@
           1,
           1,
           2,
-          1
+          0
         ],
-        "recent_economy": 3.76,
-        "recent_wickets_per_match": 1.0
+        "recent_economy": 2.97,
+        "recent_wickets_per_match": 0.8
       },
       "B Pondani": {
         "wickets_last5": [
@@ -111630,8 +111631,8 @@
       "B Shotorova": {
         "wickets_last5": [
           3,
-          0,
           2,
+          0,
           1,
           0
         ],
@@ -112033,8 +112034,8 @@
       "BP Adapaka": {
         "wickets_last5": [
           0,
-          0,
           2,
+          0,
           0,
           0
         ],
@@ -112134,8 +112135,8 @@
       "Baseer Khan": {
         "wickets_last5": [
           2,
-          1,
           2,
+          1,
           0,
           2
         ],
@@ -112562,8 +112563,8 @@
       },
       "C Cirlig": {
         "wickets_last5": [
-          1,
-          0
+          0,
+          1
         ],
         "recent_economy": 5.11,
         "recent_wickets_per_match": 0.5
@@ -112867,11 +112868,12 @@
       },
       "C Praboda": {
         "wickets_last5": [
+          0,
           2,
           1
         ],
-        "recent_economy": 6.73,
-        "recent_wickets_per_match": 1.5
+        "recent_economy": 6.82,
+        "recent_wickets_per_match": 1.0
       },
       "C Prasad": {
         "wickets_last5": [
@@ -113097,8 +113099,8 @@
           1,
           0,
           0,
-          0,
-          1
+          1,
+          0
         ],
         "recent_economy": 6.89,
         "recent_wickets_per_match": 0.4
@@ -113379,8 +113381,8 @@
       },
       "CJ Ana": {
         "wickets_last5": [
-          1,
           0,
+          1,
           0
         ],
         "recent_economy": 3.46,
@@ -114209,8 +114211,8 @@
       },
       "D Gaikwad": {
         "wickets_last5": [
-          0,
-          1
+          1,
+          0
         ],
         "recent_economy": 14.1,
         "recent_wickets_per_match": 0.5
@@ -115200,8 +115202,8 @@
         "wickets_last5": [
           0,
           0,
-          3,
           0,
+          3,
           0
         ],
         "recent_economy": 8.43,
@@ -115982,8 +115984,8 @@
       },
       "E Jabarkhel": {
         "wickets_last5": [
-          1,
           2,
+          1,
           0,
           0,
           1
@@ -116256,8 +116258,8 @@
       "E Prokic": {
         "wickets_last5": [
           0,
-          0,
           1,
+          0,
           2,
           0
         ],
@@ -116465,10 +116467,10 @@
           1,
           0,
           1,
-          1
+          0
         ],
-        "recent_economy": 5.28,
-        "recent_wickets_per_match": 1.0
+        "recent_economy": 5.79,
+        "recent_wickets_per_match": 0.8
       },
       "EC Rainsford": {
         "wickets_last5": [
@@ -117029,8 +117031,8 @@
       },
       "F Choudary": {
         "wickets_last5": [
-          0,
-          1
+          1,
+          0
         ],
         "recent_economy": 10.33,
         "recent_wickets_per_match": 0.5
@@ -117038,8 +117040,8 @@
       "F Clarke": {
         "wickets_last5": [
           1,
-          0,
           2,
+          0,
           1
         ],
         "recent_economy": 5.79,
@@ -117962,8 +117964,8 @@
       "G Ilarionova": {
         "wickets_last5": [
           0,
-          2,
           1,
+          2,
           1,
           0
         ],
@@ -118973,8 +118975,8 @@
           0,
           0,
           0,
-          1,
-          0
+          0,
+          1
         ],
         "recent_economy": 4.61,
         "recent_wickets_per_match": 0.2
@@ -119506,8 +119508,8 @@
         "wickets_last5": [
           0,
           0,
-          0,
-          2
+          2,
+          0
         ],
         "recent_economy": 7.09,
         "recent_wickets_per_match": 0.5
@@ -120114,10 +120116,10 @@
           0,
           0,
           4,
-          0
+          6
         ],
-        "recent_economy": 6.17,
-        "recent_wickets_per_match": 1.0
+        "recent_economy": 5.14,
+        "recent_wickets_per_match": 2.2
       },
       "Hamza Dar": {
         "wickets_last5": [
@@ -120207,10 +120209,10 @@
       },
       "Harper Chalmers": {
         "wickets_last5": [
-          0,
           1,
-          2,
           0,
+          0,
+          2,
           2
         ],
         "recent_economy": 3.85,
@@ -120300,8 +120302,8 @@
       },
       "Hassan Mehmood": {
         "wickets_last5": [
-          1,
           0,
+          1,
           3,
           2
         ],
@@ -120557,8 +120559,8 @@
       "I Chathurani": {
         "wickets_last5": [
           2,
-          3,
           1,
+          3,
           3,
           0
         ],
@@ -120586,8 +120588,8 @@
       "I Edwards": {
         "wickets_last5": [
           1,
-          1,
           0,
+          1,
           2,
           1
         ],
@@ -120687,7 +120689,7 @@
           0,
           0
         ],
-        "recent_economy": 3.5,
+        "recent_economy": 3.15,
         "recent_wickets_per_match": 1.4
       },
       "I Mustafoev": {
@@ -121218,8 +121220,8 @@
       },
       "Ibrar Ahmad": {
         "wickets_last5": [
-          0,
           2,
+          0,
           1,
           1,
           0
@@ -121570,8 +121572,8 @@
         "wickets_last5": [
           2,
           2,
-          3,
           2,
+          3,
           1
         ],
         "recent_economy": 5.03,
@@ -121718,8 +121720,8 @@
         "wickets_last5": [
           0,
           1,
-          2,
           1,
+          2,
           2
         ],
         "recent_economy": 3.03,
@@ -122020,8 +122022,8 @@
       },
       "J Ghadiyali": {
         "wickets_last5": [
-          3,
           0,
+          3,
           0,
           1
         ],
@@ -122136,8 +122138,8 @@
       },
       "J Jagroo": {
         "wickets_last5": [
-          1,
           0,
+          1,
           0,
           0
         ],
@@ -122184,8 +122186,8 @@
       },
       "J Khadka": {
         "wickets_last5": [
-          0,
           2,
+          0,
           1,
           0,
           1
@@ -122656,8 +122658,8 @@
       },
       "J Wilson": {
         "wickets_last5": [
-          1,
           2,
+          1,
           0,
           0,
           1
@@ -122867,8 +122869,8 @@
       },
       "JC Darji": {
         "wickets_last5": [
-          0,
           5,
+          0,
           2,
           5,
           0
@@ -122969,8 +122971,8 @@
       "JE Marks": {
         "wickets_last5": [
           1,
-          0,
           1,
+          0,
           2
         ],
         "recent_economy": 6.9,
@@ -123587,13 +123589,13 @@
       },
       "JO Adedeji": {
         "wickets_last5": [
-          0,
           2,
           0,
           1,
+          0,
           0
         ],
-        "recent_economy": 5.79,
+        "recent_economy": 6.15,
         "recent_wickets_per_match": 0.6
       },
       "JO Ngoche": {
@@ -123976,7 +123978,7 @@
           1,
           0
         ],
-        "recent_economy": 9.73,
+        "recent_economy": 10.76,
         "recent_wickets_per_match": 0.2
       },
       "Jakob Gul": {
@@ -124671,8 +124673,8 @@
       },
       "K Kapadia": {
         "wickets_last5": [
-          3,
           0,
+          3,
           0,
           0,
           0
@@ -125546,8 +125548,8 @@
       "KJ Young": {
         "wickets_last5": [
           1,
-          0,
-          2
+          2,
+          0
         ],
         "recent_economy": 7.56,
         "recent_wickets_per_match": 1.0
@@ -125792,8 +125794,8 @@
       },
       "KR Jha": {
         "wickets_last5": [
-          1,
           0,
+          1,
           1,
           2,
           0
@@ -126026,10 +126028,10 @@
           1,
           2,
           3,
-          1
+          0
         ],
-        "recent_economy": 7.66,
-        "recent_wickets_per_match": 1.4
+        "recent_economy": 8.76,
+        "recent_wickets_per_match": 1.2
       },
       "Kanchan Rana": {
         "wickets_last5": [
@@ -126059,10 +126061,10 @@
           0,
           1,
           0,
-          0
+          2
         ],
-        "recent_economy": 7.52,
-        "recent_wickets_per_match": 0.2
+        "recent_economy": 7.16,
+        "recent_wickets_per_match": 0.6
       },
       "Karanbir Singh": {
         "wickets_last5": [
@@ -126617,14 +126619,14 @@
       },
       "L Chipanga": {
         "wickets_last5": [
+          1,
           0,
           1,
           1,
-          1,
-          4
+          0
         ],
-        "recent_economy": 3.56,
-        "recent_wickets_per_match": 1.4
+        "recent_economy": 3.35,
+        "recent_wickets_per_match": 0.6
       },
       "L Dalbina": {
         "wickets_last5": [
@@ -127868,10 +127870,10 @@
           0,
           1,
           1,
-          0
+          1
         ],
-        "recent_economy": 10.29,
-        "recent_wickets_per_match": 0.4
+        "recent_economy": 8.48,
+        "recent_wickets_per_match": 0.6
       },
       "Lata Mondal": {
         "wickets_last5": [
@@ -128280,8 +128282,8 @@
           1,
           2,
           1,
-          3,
-          1
+          1,
+          3
         ],
         "recent_economy": 4.35,
         "recent_wickets_per_match": 1.6
@@ -128315,8 +128317,8 @@
       },
       "M Chereches": {
         "wickets_last5": [
-          1,
-          0
+          0,
+          1
         ],
         "recent_economy": 5.28,
         "recent_wickets_per_match": 0.5
@@ -128683,7 +128685,7 @@
           0,
           2
         ],
-        "recent_economy": 7.0,
+        "recent_economy": 6.51,
         "recent_wickets_per_match": 0.4
       },
       "M Kaitaranta": {
@@ -128796,8 +128798,8 @@
       },
       "M Koli": {
         "wickets_last5": [
-          1,
           2,
+          1,
           3,
           1,
           1
@@ -128869,8 +128871,8 @@
       },
       "M Lollo": {
         "wickets_last5": [
-          4,
           1,
+          4,
           0,
           0
         ],
@@ -129209,8 +129211,8 @@
       },
       "M Prasanna": {
         "wickets_last5": [
-          1,
           2,
+          1,
           1,
           0
         ],
@@ -129444,8 +129446,8 @@
         "wickets_last5": [
           0,
           1,
-          1,
           3,
+          1,
           0
         ],
         "recent_economy": 4.08,
@@ -129573,8 +129575,8 @@
       "M Vervitsioti": {
         "wickets_last5": [
           0,
-          0,
           2,
+          0,
           1,
           1
         ],
@@ -130786,8 +130788,8 @@
       },
       "MS Graham": {
         "wickets_last5": [
-          1,
           0,
+          1,
           0,
           2
         ],
@@ -131172,8 +131174,8 @@
       "Maiwand Momand": {
         "wickets_last5": [
           0,
-          3,
           0,
+          3,
           1,
           0
         ],
@@ -131221,8 +131223,8 @@
       "Manish Sharma": {
         "wickets_last5": [
           1,
-          2,
-          0
+          0,
+          2
         ],
         "recent_economy": 7.71,
         "recent_wickets_per_match": 1.0
@@ -131401,10 +131403,10 @@
           1,
           1,
           2,
-          1
+          2
         ],
-        "recent_economy": 5.76,
-        "recent_wickets_per_match": 1.0
+        "recent_economy": 5.01,
+        "recent_wickets_per_match": 1.2
       },
       "Mashael Waqas": {
         "wickets_last5": [
@@ -131505,10 +131507,10 @@
       "Meghna Rajan": {
         "wickets_last5": [
           0,
+          0,
           3,
           0,
-          2,
-          0
+          2
         ],
         "recent_economy": 3.97,
         "recent_wickets_per_match": 1.0
@@ -131642,8 +131644,8 @@
       "Mirab Razwan": {
         "wickets_last5": [
           0,
-          2,
           1,
+          2,
           1,
           0
         ],
@@ -132308,10 +132310,10 @@
           4,
           1,
           1,
-          1
+          0
         ],
-        "recent_economy": 4.93,
-        "recent_wickets_per_match": 1.4
+        "recent_economy": 5.24,
+        "recent_wickets_per_match": 1.2
       },
       "Muhammad Akram": {
         "wickets_last5": [
@@ -132840,8 +132842,8 @@
       "Mustapha Yusuf": {
         "wickets_last5": [
           1,
-          1,
           0,
+          1,
           0,
           1
         ],
@@ -134097,8 +134099,8 @@
           3,
           1,
           2,
-          0,
-          3
+          3,
+          0
         ],
         "recent_economy": 3.61,
         "recent_wickets_per_match": 1.8
@@ -134117,8 +134119,8 @@
       "NR Johns-Wickberg": {
         "wickets_last5": [
           1,
-          3,
           1,
+          3,
           3,
           1
         ],
@@ -134329,10 +134331,10 @@
       "Naina Saju": {
         "wickets_last5": [
           0,
-          0,
           2,
-          4,
-          0
+          0,
+          0,
+          4
         ],
         "recent_economy": 4.81,
         "recent_wickets_per_match": 1.2
@@ -134644,8 +134646,8 @@
         "wickets_last5": [
           2,
           1,
-          3,
           2,
+          3,
           1
         ],
         "recent_economy": 5.07,
@@ -134965,8 +134967,8 @@
       "Nurin Imanina": {
         "wickets_last5": [
           0,
-          0,
-          5
+          5,
+          0
         ],
         "recent_economy": 4.85,
         "recent_wickets_per_match": 1.67
@@ -135077,8 +135079,8 @@
       },
       "O Gholami": {
         "wickets_last5": [
-          2,
           0,
+          2,
           0,
           1
         ],
@@ -135635,8 +135637,8 @@
       },
       "P Cuinica": {
         "wickets_last5": [
-          0,
           3,
+          0,
           0,
           0,
           3
@@ -135770,8 +135772,8 @@
       "P Kaveao": {
         "wickets_last5": [
           1,
-          1,
           0,
+          1,
           0,
           1
         ],
@@ -135884,8 +135886,8 @@
         "wickets_last5": [
           2,
           0,
-          0,
           2,
+          0,
           0
         ],
         "recent_economy": 3.05,
@@ -136170,8 +136172,8 @@
       "P Taylor": {
         "wickets_last5": [
           2,
-          2,
           1,
+          2,
           2
         ],
         "recent_economy": 7.91,
@@ -136318,7 +136320,7 @@
           1,
           0
         ],
-        "recent_economy": 4.05,
+        "recent_economy": 3.92,
         "recent_wickets_per_match": 0.6
       },
       "PC de Silva": {
@@ -138330,8 +138332,8 @@
       "RL Blake": {
         "wickets_last5": [
           0,
-          1,
           0,
+          1,
           0
         ],
         "recent_economy": 5.33,
@@ -138567,8 +138569,8 @@
       },
       "RP Mitchell": {
         "wickets_last5": [
-          1,
           0,
+          1,
           2,
           0
         ],
@@ -138797,10 +138799,10 @@
           0,
           1,
           2,
-          1
+          2
         ],
-        "recent_economy": 6.91,
-        "recent_wickets_per_match": 0.8
+        "recent_economy": 5.61,
+        "recent_wickets_per_match": 1.0
       },
       "RV Scholes": {
         "wickets_last5": [
@@ -138845,8 +138847,8 @@
       "Rabbjyot Rajput": {
         "wickets_last5": [
           1,
-          1,
           0,
+          1,
           0,
           0
         ],
@@ -139262,8 +139264,8 @@
       "Riaz Afridi": {
         "wickets_last5": [
           2,
-          3,
-          0
+          0,
+          3
         ],
         "recent_economy": 6.94,
         "recent_wickets_per_match": 1.67
@@ -140128,10 +140130,10 @@
       },
       "S Georgota": {
         "wickets_last5": [
-          0,
-          1,
           1,
           0,
+          0,
+          1,
           4
         ],
         "recent_economy": 4.2,
@@ -140774,8 +140776,8 @@
       "S Matijevic": {
         "wickets_last5": [
           1,
-          0,
           2,
+          0,
           1,
           1
         ],
@@ -141456,8 +141458,8 @@
       },
       "S Talamarla": {
         "wickets_last5": [
-          0,
           1,
+          0,
           2,
           2,
           1
@@ -141576,8 +141578,8 @@
       "S Vaia": {
         "wickets_last5": [
           0,
-          1,
           0,
+          1,
           0,
           2
         ],
@@ -141590,10 +141592,10 @@
           0,
           1,
           2,
-          0
+          4
         ],
-        "recent_economy": 6.14,
-        "recent_wickets_per_match": 0.6
+        "recent_economy": 6.25,
+        "recent_wickets_per_match": 1.4
       },
       "S Vasilakis": {
         "wickets_last5": [
@@ -143436,8 +143438,8 @@
       },
       "Sahir Naqash": {
         "wickets_last5": [
-          2,
           1,
+          2,
           0,
           3,
           1
@@ -143602,8 +143604,8 @@
         "wickets_last5": [
           1,
           1,
-          2,
           1,
+          2,
           1
         ],
         "recent_economy": 9.21,
@@ -143684,8 +143686,8 @@
         "wickets_last5": [
           1,
           1,
-          3,
           1,
+          3,
           2
         ],
         "recent_economy": 5.94,
@@ -143694,10 +143696,10 @@
       "Samiha Konuganti": {
         "wickets_last5": [
           2,
-          1,
           0,
           1,
-          0
+          0,
+          1
         ],
         "recent_economy": 4.42,
         "recent_wickets_per_match": 0.8
@@ -144089,8 +144091,8 @@
       "Sejal Vinod": {
         "wickets_last5": [
           3,
-          2,
           0,
+          2,
           0,
           1
         ],
@@ -144842,8 +144844,8 @@
           0,
           1,
           0,
-          2,
-          0
+          0,
+          2
         ],
         "recent_economy": 7.05,
         "recent_wickets_per_match": 0.6
@@ -144883,8 +144885,8 @@
         "wickets_last5": [
           1,
           1,
-          4,
           3,
+          4,
           3
         ],
         "recent_economy": 3.14,
@@ -145585,8 +145587,8 @@
       },
       "T Filer": {
         "wickets_last5": [
-          0,
-          4
+          4,
+          0
         ],
         "recent_economy": 5.77,
         "recent_wickets_per_match": 2.0
@@ -146044,8 +146046,8 @@
       },
       "T Sandaruwan": {
         "wickets_last5": [
-          2,
           3,
+          2,
           1,
           1,
           0
@@ -146087,8 +146089,8 @@
           4,
           4,
           1,
-          1,
-          3
+          3,
+          1
         ],
         "recent_economy": 1.69,
         "recent_wickets_per_match": 2.6
@@ -146540,10 +146542,10 @@
           0,
           1,
           2,
-          1
+          2
         ],
-        "recent_economy": 5.23,
-        "recent_wickets_per_match": 1.2
+        "recent_economy": 5.12,
+        "recent_wickets_per_match": 1.4
       },
       "TK Patel": {
         "wickets_last5": [
@@ -146744,8 +146746,8 @@
       },
       "TRR Sharfudheen": {
         "wickets_last5": [
-          2,
           0,
+          2,
           1,
           1
         ],
@@ -147032,8 +147034,8 @@
       },
       "Tarun Yadav": {
         "wickets_last5": [
-          0,
           2,
+          0,
           0
         ],
         "recent_economy": 5.48,
@@ -147041,8 +147043,8 @@
       },
       "Tasaduq Hussain": {
         "wickets_last5": [
-          2,
           0,
+          2,
           1
         ],
         "recent_economy": 6.0,
@@ -148211,10 +148213,10 @@
       "Vani Dhanuka": {
         "wickets_last5": [
           3,
+          2,
           3,
-          2,
-          2,
-          0
+          0,
+          2
         ],
         "recent_economy": 4.05,
         "recent_wickets_per_match": 2.0
@@ -148286,8 +148288,8 @@
       },
       "Viola Komeda": {
         "wickets_last5": [
-          3,
           0,
+          3,
           4,
           0
         ],
@@ -148381,10 +148383,10 @@
           3,
           2,
           0,
-          1
+          3
         ],
-        "recent_economy": 6.64,
-        "recent_wickets_per_match": 1.2
+        "recent_economy": 6.4,
+        "recent_wickets_per_match": 1.6
       },
       "W Ginindza": {
         "wickets_last5": [
@@ -148399,8 +148401,8 @@
       },
       "W Hornero-Garcia": {
         "wickets_last5": [
-          0,
           1,
+          0,
           1,
           0,
           0
@@ -148930,8 +148932,8 @@
         "wickets_last5": [
           0,
           0,
-          2,
           3,
+          2,
           3
         ],
         "recent_economy": 6.88,
@@ -149946,8 +149948,8 @@
       "Zaid Ahmad": {
         "wickets_last5": [
           2,
-          0,
           1,
+          0,
           4,
           0
         ],
@@ -149976,8 +149978,8 @@
       "Zain Muzaffar": {
         "wickets_last5": [
           0,
-          3,
           0,
+          3,
           0,
           1
         ],
@@ -150123,8 +150125,8 @@
       "Zeeshan Goraya": {
         "wickets_last5": [
           1,
-          0,
           1,
+          0,
           1,
           0
         ],
@@ -150136,8 +150138,8 @@
           1,
           0,
           1,
-          0,
-          2
+          2,
+          0
         ],
         "recent_economy": 8.39,
         "recent_wickets_per_match": 0.8
@@ -150321,8 +150323,8 @@
           2,
           1,
           0,
-          3,
-          1
+          1,
+          3
         ],
         "recent_economy": 5.46,
         "recent_wickets_per_match": 1.4

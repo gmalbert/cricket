@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-04T07:02:19.200372+00:00",
-  "source_run_id": "f10c7895-a1c4-40e0-ba2b-573c2739f939",
+  "generated_at": "2026-08-05T07:03:59.220467+00:00",
+  "source_run_id": "3bc97c3b-21a0-496a-9411-630d93b59f4e",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-08-04T07:02:18.732394+00:00",
+    "generated_at": "2026-08-05T07:03:58.771228+00:00",
     "matches": {
       "bc9058c539f7a33d0486f355c74ea915": {
         "match": {
@@ -18,14 +18,14 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.9885,
-          "team2_win_prob": 0.0115,
+          "team1_win_prob": 0.9843,
+          "team2_win_prob": 0.0157,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.3658,
-          "team2_implied_prob": 0.6342,
+          "team1_implied_prob": 0.4112,
+          "team2_implied_prob": 0.5888,
           "total_line": null
         },
         "venue": {},
@@ -99,6 +99,107 @@
             }
           ],
           "team2": []
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "unavailable",
+          "rivalries": "unavailable"
+        }
+      },
+      "2ec0b698b50fac8532dbd34e9aca4dc5": {
+        "match": {
+          "match_id": "2ec0b698b50fac8532dbd34e9aca4dc5",
+          "team1": "UAE",
+          "team2": "Canada",
+          "venue": "",
+          "time": "2026-08-05T10:00:00Z",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.9843,
+          "team2_win_prob": 0.0157,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": 0.5157,
+          "team2_implied_prob": 0.4843,
+          "total_line": null
+        },
+        "venue": {},
+        "weather": {
+          "temperature": null,
+          "humidity": null,
+          "dew_flag": false,
+          "windspeed": null
+        },
+        "team_form": {
+          "team1": [],
+          "team2": [
+            {
+              "match_id": 1538428,
+              "date": "2026-06-12",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "L",
+              "score": 275,
+              "opp_score": 276,
+              "wickets": 8,
+              "powerplay_runs": 31,
+              "death_economy": 6.25
+            },
+            {
+              "match_id": 1538427,
+              "date": "2026-06-10",
+              "innings": 2,
+              "opponent": "Netherlands",
+              "result": "W",
+              "score": 218,
+              "opp_score": 214,
+              "wickets": 8,
+              "powerplay_runs": 22,
+              "death_economy": 6.5
+            },
+            {
+              "match_id": 1538425,
+              "date": "2026-06-06",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "L",
+              "score": 231,
+              "opp_score": 235,
+              "wickets": 8,
+              "powerplay_runs": 18,
+              "death_economy": 9.25
+            },
+            {
+              "match_id": 1498184,
+              "date": "2025-09-02",
+              "innings": 2,
+              "opponent": "Namibia",
+              "result": "L",
+              "score": 237,
+              "opp_score": 261,
+              "wickets": 10,
+              "powerplay_runs": 18,
+              "death_economy": 3.0
+            },
+            {
+              "match_id": 1498183,
+              "date": "2025-08-31",
+              "innings": 1,
+              "opponent": "Scotland",
+              "result": "L",
+              "score": 184,
+              "opp_score": 187,
+              "wickets": 10,
+              "powerplay_runs": 13,
+              "death_economy": 6.75
+            }
+          ]
         },
         "key_rivalries": [],
         "top_props": [],
