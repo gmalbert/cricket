@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-05T07:03:58.977560+00:00",
-  "source_run_id": "3bc97c3b-21a0-496a-9411-630d93b59f4e",
+  "generated_at": "2026-08-06T07:02:20.820729+00:00",
+  "source_run_id": "57dbb90a-45d6-45fa-806a-232bbc3c781f",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -9,22 +9,11 @@
       "match": "Ireland vs Afghanistan",
       "bet": "Ireland ML",
       "type": "Match Winner",
-      "model_prob": 0.9843,
+      "model_prob": 0.9856,
       "implied_prob": 0.4112,
-      "edge": 0.5731,
+      "edge": 0.5744,
       "dk_odds": "+130",
       "kelly_stake": "10.0%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "UAE vs Canada",
-      "bet": "UAE ML",
-      "type": "Match Winner",
-      "model_prob": 0.9843,
-      "implied_prob": 0.5157,
-      "edge": 0.4686,
-      "dk_odds": "-120",
-      "kelly_stake": "12.5%",
       "tier": "Elite Pick"
     }
   ]
