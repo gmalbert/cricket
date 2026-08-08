@@ -1,22 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-08-07T06:32:14.831504+00:00",
+    "generated_at": "2026-08-08T06:23:01.965639+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-08-07",
+      "game_date": "2026-08-08",
       "game": "Ireland vs Afghanistan",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Ireland ML",
       "confidence": 0.9885,
-      "edge": 0.5773,
-      "odds": 130,
+      "edge": 0.6094,
+      "odds": 150,
       "tier": "Elite",
-      "notes": "Kelly stake: 10.1%"
+      "notes": "Kelly stake: 9.3%"
     }
   ]
 }
