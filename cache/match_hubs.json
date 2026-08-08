@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-08-07T06:32:12.700810+00:00",
-  "source_run_id": "fe199da6-6444-42c6-85a2-fca565968cd9",
+  "generated_at": "2026-08-08T06:22:59.864692+00:00",
+  "source_run_id": "8c967a91-4ecd-4732-8ce3-9e73160742b6",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-08-07T06:32:12.343896+00:00",
+    "generated_at": "2026-08-08T06:22:59.430069+00:00",
     "matches": {
-      "9ae3854f2706f8ae4fbd0afb9aa769be": {
+      "f6371667f9790170cb0a1f33e92bc4c3": {
         "match": {
-          "match_id": "9ae3854f2706f8ae4fbd0afb9aa769be",
+          "match_id": "f6371667f9790170cb0a1f33e92bc4c3",
           "team1": "Ireland",
           "team2": "Afghanistan",
           "venue": "",
-          "time": "2026-08-07T09:45:00Z",
+          "time": "2026-08-10T09:45:00Z",
           "status": null
         },
         "prediction": {
@@ -24,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.4112,
-          "team2_implied_prob": 0.5888,
+          "team1_implied_prob": 0.3791,
+          "team2_implied_prob": 0.6209,
           "total_line": null
         },
         "venue": {},
