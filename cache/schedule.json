@@ -1,10 +1,28 @@
 {
-  "generated_at": "2026-08-08T06:22:59.629967+00:00",
-  "source_run_id": "8c967a91-4ecd-4732-8ce3-9e73160742b6",
+  "generated_at": "2026-08-09T06:23:13.104579+00:00",
+  "source_run_id": "95203ee3-b04f-4c11-b9e4-ba3f11f7b04a",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
+    {
+      "match_id": "734211d4a99f9a79be6e34686ace0a1c",
+      "team1": "Scotland",
+      "team2": "UAE",
+      "venue": "",
+      "city": "",
+      "time": "2026-08-09T10:00:00Z",
+      "scheduled_start": "2026-08-09T10:00:00Z",
+      "status": "Scheduled from DraftKings market",
+      "matchStarted": false,
+      "matchEnded": false,
+      "competition": "odi_internationals",
+      "competition_name": "ODI internationals",
+      "format": "ODI",
+      "gender": "male",
+      "fixture_source": "odds_api",
+      "fixture_status": "provisional"
+    },
     {
       "match_id": "f6371667f9790170cb0a1f33e92bc4c3",
       "team1": "Ireland",

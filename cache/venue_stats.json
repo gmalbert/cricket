@@ -1,2089 +1,1869 @@
 {
-  "generated_at": "2026-08-08T06:22:59.623905+00:00",
-  "source_run_id": "8c967a91-4ecd-4732-8ce3-9e73160742b6",
+  "generated_at": "2026-08-09T06:23:13.098539+00:00",
+  "source_run_id": "95203ee3-b04f-4c11-b9e4-ba3f11f7b04a",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
-    "Zayed Cricket Stadium, Abu Dhabi": {
-      "avg_first_innings": 299.3,
+    "Punjab Cricket Association Stadium, Mohali": {
+      "avg_first_innings": 391.8,
+      "chase_win_rate": 0.2
+    },
+    "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnam": {
+      "avg_first_innings": 396.0,
       "chase_win_rate": 0.0
     },
-    "Brabourne Stadium": {
-      "avg_first_innings": 393.0,
-      "chase_win_rate": 1.0
-    },
-    "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow": {
-      "avg_first_innings": 252.0,
-      "chase_win_rate": 0.4
-    },
-    "Green Park": {
-      "avg_first_innings": 433.8,
-      "chase_win_rate": 0.25
-    },
-    "M Chinnaswamy Stadium": {
-      "avg_first_innings": 335.2,
-      "chase_win_rate": 0.4
-    },
-    "Himachal Pradesh Cricket Association Stadium, Dharamsala": {
-      "avg_first_innings": 218.0,
-      "chase_win_rate": 1.0
-    },
-    "JSCA International Stadium Complex": {
-      "avg_first_innings": 474.0,
+    "Sardar Patel Stadium, Motera": {
+      "avg_first_innings": 377.5,
       "chase_win_rate": 0.5
     },
-    "Barabati Stadium": {
-      "avg_first_innings": 296.5,
-      "chase_win_rate": 0.667
+    "Shaheed Veer Narayan Singh International Stadium, Raipur": {
+      "avg_first_innings": 233.0,
+      "chase_win_rate": 1.0
     },
-    "MA Chidambaram Stadium, Chepauk, Chennai": {
-      "avg_first_innings": 489.5,
+    "OUTsurance Oval": {
+      "avg_first_innings": 441.0,
       "chase_win_rate": 0.0
     },
     "Newlands": {
       "avg_first_innings": 322.9,
       "chase_win_rate": 0.409
     },
-    "Buffalo Park": {
-      "avg_first_innings": 233.9,
-      "chase_win_rate": 0.375
+    "New Wanderers Stadium": {
+      "avg_first_innings": 312.0,
+      "chase_win_rate": 0.429
+    },
+    "Subrata Roy Sahara Stadium": {
+      "avg_first_innings": 157.0,
+      "chase_win_rate": 1.0
+    },
+    "SuperSport Park": {
+      "avg_first_innings": 326.7,
+      "chase_win_rate": 0.5
+    },
+    "Arun Jaitley Stadium": {
+      "avg_first_innings": 383.5,
+      "chase_win_rate": 0.5
+    },
+    "Eden Gardens": {
+      "avg_first_innings": 332.4,
+      "chase_win_rate": 0.667
+    },
+    "Feroz Shah Kotla": {
+      "avg_first_innings": 378.2,
+      "chase_win_rate": 0.25
+    },
+    "Himachal Pradesh Cricket Association Stadium, Dharamsala": {
+      "avg_first_innings": 218.0,
+      "chase_win_rate": 1.0
+    },
+    "Holkar Cricket Stadium": {
+      "avg_first_innings": 353.5,
+      "chase_win_rate": 0.5
+    },
+    "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium": {
+      "avg_first_innings": 478.5,
+      "chase_win_rate": 0.0
+    },
+    "JSCA International Stadium Complex": {
+      "avg_first_innings": 474.0,
+      "chase_win_rate": 0.5
+    },
+    "M.Chinnaswamy Stadium": {
+      "avg_first_innings": 626.0,
+      "chase_win_rate": 0.0
+    },
+    "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur": {
+      "avg_first_innings": 326.0,
+      "chase_win_rate": 0.5
     },
     "M Chinnaswamy Stadium, Bengaluru": {
       "avg_first_innings": 149.0,
       "chase_win_rate": 0.5
     },
-    "Sardar Patel Stadium, Motera": {
-      "avg_first_innings": 377.5,
+    "Rajiv Gandhi International Stadium, Uppal, Hyderabad": {
+      "avg_first_innings": 246.0,
+      "chase_win_rate": 1.0
+    },
+    "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow": {
+      "avg_first_innings": 252.0,
+      "chase_win_rate": 0.4
+    },
+    "Rajiv Gandhi International Stadium, Uppal": {
+      "avg_first_innings": 404.6,
+      "chase_win_rate": 0.6
+    },
+    "Brabourne Stadium, Mumbai": {
+      "avg_first_innings": 185.3,
+      "chase_win_rate": 0.0
+    },
+    "Punjab Cricket Association IS Bindra Stadium": {
+      "avg_first_innings": 351.2,
+      "chase_win_rate": 0.6
+    },
+    "Vidarbha Cricket Association Stadium, Jamtha": {
+      "avg_first_innings": 323.7,
+      "chase_win_rate": 0.333
+    },
+    "Maharashtra Cricket Association Stadium, Pune": {
+      "avg_first_innings": 259.0,
+      "chase_win_rate": 0.0
+    },
+    "Narendra Modi Stadium, Ahmedabad": {
+      "avg_first_innings": 321.0,
+      "chase_win_rate": 1.0
+    },
+    "De Beers Diamond Oval": {
+      "avg_first_innings": 289.0,
       "chase_win_rate": 0.5
     },
-    "OUTsurance Oval": {
-      "avg_first_innings": 441.0,
+    "Himachal Pradesh Cricket Association Stadium": {
+      "avg_first_innings": 300.0,
+      "chase_win_rate": 1.0
+    },
+    "Kingsmead": {
+      "avg_first_innings": 296.7,
+      "chase_win_rate": 0.25
+    },
+    "Green Park": {
+      "avg_first_innings": 433.8,
+      "chase_win_rate": 0.25
+    },
+    "Dubai International Cricket Stadium": {
+      "avg_first_innings": 336.2,
+      "chase_win_rate": 0.385
+    },
+    "Buffalo Park": {
+      "avg_first_innings": 233.9,
+      "chase_win_rate": 0.375
+    },
+    "Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh": {
+      "avg_first_innings": 574.0,
       "chase_win_rate": 0.0
     },
     "MA Chidambaram Stadium": {
       "avg_first_innings": 380.7,
       "chase_win_rate": 0.333
     },
-    "Sheikh Zayed Stadium": {
-      "avg_first_innings": 363.8,
-      "chase_win_rate": 0.615
-    },
-    "Shaheed Veer Narayan Singh International Stadium, Raipur": {
-      "avg_first_innings": 233.0,
-      "chase_win_rate": 1.0
-    },
-    "Subrata Roy Sahara Stadium": {
-      "avg_first_innings": 157.0,
-      "chase_win_rate": 1.0
-    },
-    "Vidarbha Cricket Association Stadium, Jamtha": {
-      "avg_first_innings": 323.7,
-      "chase_win_rate": 0.333
-    },
-    "Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh": {
-      "avg_first_innings": 574.0,
+    "Zayed Cricket Stadium, Abu Dhabi": {
+      "avg_first_innings": 299.3,
       "chase_win_rate": 0.0
-    },
-    "Saurashtra Cricket Association Stadium": {
-      "avg_first_innings": 593.0,
-      "chase_win_rate": 0.0
-    },
-    "Wankhede Stadium, Mumbai": {
-      "avg_first_innings": 259.7,
-      "chase_win_rate": 0.667
-    },
-    "Dr DY Patil Sports Academy": {
-      "avg_first_innings": 293.3,
-      "chase_win_rate": 0.588
-    },
-    "Punjab Cricket Association Stadium, Mohali": {
-      "avg_first_innings": 391.8,
-      "chase_win_rate": 0.2
-    },
-    "Narendra Modi Stadium, Ahmedabad": {
-      "avg_first_innings": 321.0,
-      "chase_win_rate": 1.0
-    },
-    "Eden Gardens": {
-      "avg_first_innings": 332.4,
-      "chase_win_rate": 0.667
-    },
-    "Holkar Cricket Stadium": {
-      "avg_first_innings": 353.5,
-      "chase_win_rate": 0.5
-    },
-    "Maharashtra Cricket Association Stadium": {
-      "avg_first_innings": 430.5,
-      "chase_win_rate": 0.0
-    },
-    "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium": {
-      "avg_first_innings": 478.5,
-      "chase_win_rate": 0.0
-    },
-    "Kingsmead": {
-      "avg_first_innings": 296.7,
-      "chase_win_rate": 0.25
-    },
-    "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnam": {
-      "avg_first_innings": 396.0,
-      "chase_win_rate": 0.0
-    },
-    "De Beers Diamond Oval": {
-      "avg_first_innings": 289.0,
-      "chase_win_rate": 0.5
-    },
-    "Maharashtra Cricket Association Stadium, Pune": {
-      "avg_first_innings": 259.0,
-      "chase_win_rate": 0.0
-    },
-    "Dubai International Cricket Stadium": {
-      "avg_first_innings": 336.2,
-      "chase_win_rate": 0.385
-    },
-    "Shaheed Veer Narayan Singh International Stadium": {
-      "avg_first_innings": 292.7,
-      "chase_win_rate": 0.667
-    },
-    "Sharjah Cricket Stadium": {
-      "avg_first_innings": 341.4,
-      "chase_win_rate": 0.6
-    },
-    "Sawai Mansingh Stadium, Jaipur": {
-      "avg_first_innings": 164.0,
-      "chase_win_rate": 1.0
-    },
-    "Arun Jaitley Stadium": {
-      "avg_first_innings": 383.5,
-      "chase_win_rate": 0.5
-    },
-    "Wankhede Stadium": {
-      "avg_first_innings": 320.6,
-      "chase_win_rate": 0.8
-    },
-    "St George's Park": {
-      "avg_first_innings": 349.7,
-      "chase_win_rate": 0.222
-    },
-    "Punjab Cricket Association IS Bindra Stadium, Mohali": {
-      "avg_first_innings": 291.5,
-      "chase_win_rate": 1.0
-    },
-    "Maharaja Yadavindra Singh International Cricket Stadium, New Chandigarh": {
-      "avg_first_innings": 286.5,
-      "chase_win_rate": 0.5
-    },
-    "Brabourne Stadium, Mumbai": {
-      "avg_first_innings": 185.3,
-      "chase_win_rate": 0.0
-    },
-    "Sawai Mansingh Stadium": {
-      "avg_first_innings": 241.8,
-      "chase_win_rate": 0.7
-    },
-    "Rajiv Gandhi International Stadium, Uppal, Hyderabad": {
-      "avg_first_innings": 246.0,
-      "chase_win_rate": 1.0
-    },
-    "Punjab Cricket Association IS Bindra Stadium": {
-      "avg_first_innings": 351.2,
-      "chase_win_rate": 0.6
-    },
-    "Rajiv Gandhi International Stadium, Uppal": {
-      "avg_first_innings": 404.6,
-      "chase_win_rate": 0.6
-    },
-    "MA Chidambaram Stadium, Chepauk": {
-      "avg_first_innings": 428.2,
-      "chase_win_rate": 0.75
-    },
-    "Feroz Shah Kotla": {
-      "avg_first_innings": 378.2,
-      "chase_win_rate": 0.25
-    },
-    "Nehru Stadium": {
-      "avg_first_innings": 258.6,
-      "chase_win_rate": 0.5
-    },
-    "Rajiv Gandhi International Stadium": {
-      "avg_first_innings": 325.2,
-      "chase_win_rate": 0.467
-    },
-    "Himachal Pradesh Cricket Association Stadium": {
-      "avg_first_innings": 300.0,
-      "chase_win_rate": 1.0
-    },
-    "M.Chinnaswamy Stadium": {
-      "avg_first_innings": 626.0,
-      "chase_win_rate": 0.0
-    },
-    "SuperSport Park": {
-      "avg_first_innings": 326.7,
-      "chase_win_rate": 0.5
-    },
-    "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur": {
-      "avg_first_innings": 326.0,
-      "chase_win_rate": 0.5
-    },
-    "Barsapara Cricket Stadium, Guwahati": {
-      "avg_first_innings": 489.0,
-      "chase_win_rate": 0.0
-    },
-    "Dr DY Patil Sports Academy, Mumbai": {
-      "avg_first_innings": 428.0,
-      "chase_win_rate": 0.0
-    },
-    "New Wanderers Stadium": {
-      "avg_first_innings": 312.0,
-      "chase_win_rate": 0.429
-    },
-    "Eden Gardens, Kolkata": {
-      "avg_first_innings": 159.0,
-      "chase_win_rate": 1.0
     },
     "Arun Jaitley Stadium, Delhi": {
       "avg_first_innings": 390.5,
       "chase_win_rate": 0.0
     },
-    "Grainville, St Saviour, Jersey": {
-      "avg_first_innings": 109.4,
-      "chase_win_rate": 0.75
+    "Rajiv Gandhi International Stadium": {
+      "avg_first_innings": 325.2,
+      "chase_win_rate": 0.467
     },
-    "High Performance Oval, Windhoek": {
-      "avg_first_innings": 123.7,
-      "chase_win_rate": 0.348
-    },
-    "Sportpark Westvliet, The Hague": {
-      "avg_first_innings": 230.0,
-      "chase_win_rate": 0.5
-    },
-    "St Albans Club, Buenos Aires": {
-      "avg_first_innings": 108.1,
-      "chase_win_rate": 0.37
-    },
-    "Ballpark Ground, Graz": {
-      "avg_first_innings": 167.5,
-      "chase_win_rate": 0.5
-    },
-    "Lisicji Jarak Cricket Ground": {
-      "avg_first_innings": 145.4,
-      "chase_win_rate": 0.6
-    },
-    "National Stadium, Hamilton": {
+    "Sawai Mansingh Stadium, Jaipur": {
       "avg_first_innings": 164.0,
-      "chase_win_rate": 0.2
-    },
-    "Clontarf Cricket Club Ground, Dublin": {
-      "avg_first_innings": 219.0,
-      "chase_win_rate": 0.0
-    },
-    "Botswana Cricket Association Oval 1": {
-      "avg_first_innings": 125.3,
-      "chase_win_rate": 0.571
-    },
-    "Reforma Athletic Club, Naucalpan": {
-      "avg_first_innings": 97.4,
-      "chase_win_rate": 0.636
-    },
-    "Perth Stadium": {
-      "avg_first_innings": 358.2,
-      "chase_win_rate": 0.0
-    },
-    "Wanderers Cricket Ground": {
-      "avg_first_innings": 226.0,
-      "chase_win_rate": 0.0
-    },
-    "Sydney Showground Stadium": {
-      "avg_first_innings": 311.5,
-      "chase_win_rate": 0.39
-    },
-    "Prairie View Cricket Complex": {
-      "avg_first_innings": 155.7,
-      "chase_win_rate": 0.571
-    },
-    "Old Hararians": {
-      "avg_first_innings": 267.5,
-      "chase_win_rate": 0.25
-    },
-    "ICC Global Cricket Academy": {
-      "avg_first_innings": 233.0,
-      "chase_win_rate": 0.667
-    },
-    "County Ground, Hove": {
-      "avg_first_innings": 227.0,
       "chase_win_rate": 1.0
     },
-    "Seddon Park, Hamilton": {
-      "avg_first_innings": 294.5,
+    "MA Chidambaram Stadium, Chepauk, Chennai": {
+      "avg_first_innings": 489.5,
       "chase_win_rate": 0.0
     },
-    "National Stadium, Karachi": {
-      "avg_first_innings": 436.8,
+    "Nehru Stadium": {
+      "avg_first_innings": 258.6,
       "chase_win_rate": 0.5
     },
-    "Rangiri Dambulla International Stadium": {
-      "avg_first_innings": 382.2,
-      "chase_win_rate": 0.389
+    "Maharaja Yadavindra Singh International Cricket Stadium, New Chandigarh": {
+      "avg_first_innings": 286.5,
+      "chase_win_rate": 0.5
     },
-    "Sportpark Het Schootsveld": {
-      "avg_first_innings": 247.5,
+    "Eden Gardens, Kolkata": {
+      "avg_first_innings": 159.0,
       "chase_win_rate": 1.0
     },
-    "Eden Park": {
-      "avg_first_innings": 315.0,
+    "Saurashtra Cricket Association Stadium": {
+      "avg_first_innings": 593.0,
+      "chase_win_rate": 0.0
+    },
+    "St George's Park": {
+      "avg_first_innings": 349.7,
+      "chase_win_rate": 0.222
+    },
+    "Sawai Mansingh Stadium": {
+      "avg_first_innings": 241.8,
+      "chase_win_rate": 0.7
+    },
+    "M Chinnaswamy Stadium": {
+      "avg_first_innings": 335.2,
       "chase_win_rate": 0.4
     },
-    "Old Trafford": {
-      "avg_first_innings": 381.7,
-      "chase_win_rate": 0.167
-    },
-    "Manuka Oval": {
-      "avg_first_innings": 534.0,
-      "chase_win_rate": 0.0
-    },
-    "Seddon Park": {
-      "avg_first_innings": 338.4,
-      "chase_win_rate": 0.5
-    },
-    "Beausejour Stadium, Gros Islet": {
-      "avg_first_innings": 380.0,
-      "chase_win_rate": 0.0
-    },
-    "Sikh Union Club Ground, Nairobi": {
-      "avg_first_innings": 140.1,
-      "chase_win_rate": 0.5
-    },
-    "Westpac Stadium": {
-      "avg_first_innings": 236.4,
-      "chase_win_rate": 0.474
-    },
-    "College Field, St Peter Port": {
-      "avg_first_innings": 178.0,
-      "chase_win_rate": 0.0
-    },
-    "College Field": {
-      "avg_first_innings": 120.6,
+    "Sharjah Cricket Stadium": {
+      "avg_first_innings": 341.4,
       "chase_win_rate": 0.6
     },
-    "Jimmy Powell Oval, Cayman Islands": {
-      "avg_first_innings": 129.3,
-      "chase_win_rate": 0.56
-    },
-    "La Manga Club Bottom Ground": {
-      "avg_first_innings": 91.4,
-      "chase_win_rate": 0.857
-    },
-    "Warner Park, St Kitts": {
-      "avg_first_innings": 134.5,
-      "chase_win_rate": 0.5
-    },
-    "Galle International Stadium": {
-      "avg_first_innings": 381.1,
-      "chase_win_rate": 0.41
-    },
-    "Sportpark Harga, Schiedam": {
-      "avg_first_innings": 116.3,
-      "chase_win_rate": 0.333
-    },
-    "Willowmoore Park": {
-      "avg_first_innings": 233.6,
-      "chase_win_rate": 0.462
-    },
-    "Ekeberg Cricket Ground 2, Oslo": {
-      "avg_first_innings": 64.0,
-      "chase_win_rate": 1.0
-    },
-    "Nondescripts Cricket Club Ground": {
-      "avg_first_innings": 212.2,
-      "chase_win_rate": 0.4
-    },
-    "Mission Road Ground, Mong Kok, Hong Kong": {
-      "avg_first_innings": 140.4,
-      "chase_win_rate": 0.378
-    },
-    "Shere Bangla National Stadium, Mirpur": {
-      "avg_first_innings": 332.9,
-      "chase_win_rate": 0.429
-    },
-    "Lugogo Cricket Oval, Kampala": {
-      "avg_first_innings": 92.6,
-      "chase_win_rate": 0.4
-    },
-    "Jade Stadium": {
-      "avg_first_innings": 214.3,
-      "chase_win_rate": 0.333
-    },
-    "Tolerance Oval": {
-      "avg_first_innings": 126.8,
-      "chase_win_rate": 0.556
-    },
-    "Ruaraka Sports Club Ground, Nairobi": {
-      "avg_first_innings": 195.0,
-      "chase_win_rate": 0.333
-    },
-    "Brisbane Cricket Ground, Woolloongabba": {
-      "avg_first_innings": 373.3,
-      "chase_win_rate": 0.5
-    },
-    "White Hill Field, Sandys Parish": {
-      "avg_first_innings": 123.6,
-      "chase_win_rate": 0.6
-    },
-    "Pembroke Cricket Club, Sandymount": {
-      "avg_first_innings": 151.0,
-      "chase_win_rate": 1.0
-    },
-    "Wanderers": {
-      "avg_first_innings": 134.0,
-      "chase_win_rate": 1.0
-    },
-    "Bready": {
-      "avg_first_innings": 171.0,
-      "chase_win_rate": 1.0
-    },
-    "Banks Field, Vinor": {
-      "avg_first_innings": 123.7,
-      "chase_win_rate": 0.5
-    },
-    "Coolidge Cricket Ground": {
-      "avg_first_innings": 154.0,
-      "chase_win_rate": 0.0
-    },
-    "The Cooper Associates County Ground": {
-      "avg_first_innings": 420.0,
-      "chase_win_rate": 0.0
-    },
-    "YSD-UKM Cricket Oval, Bangi": {
-      "avg_first_innings": 110.8,
-      "chase_win_rate": 0.432
-    },
-    "Tony Ireland Stadium": {
-      "avg_first_innings": 106.0,
-      "chase_win_rate": 0.0
-    },
-    "Western Australia Cricket Association Ground": {
-      "avg_first_innings": 340.6,
-      "chase_win_rate": 0.333
-    },
-    "Clayton Panama, Panama City": {
-      "avg_first_innings": 117.4,
-      "chase_win_rate": 0.429
-    },
-    "County Ground": {
-      "avg_first_innings": 233.0,
-      "chase_win_rate": 0.439
-    },
-    "Gucherre Cricket Ground": {
-      "avg_first_innings": 187.7,
-      "chase_win_rate": 0.333
-    },
-    "Mercantile Cricket Association Ground": {
-      "avg_first_innings": 132.0,
-      "chase_win_rate": 1.0
-    },
-    "Willowmoore Park, Benoni": {
-      "avg_first_innings": 236.2,
-      "chase_win_rate": 0.5
-    },
-    "Arnos Vale Ground, Kingstown, St Vincent": {
-      "avg_first_innings": 191.0,
-      "chase_win_rate": 0.0
-    },
-    "Ground 1, Independence Park": {
-      "avg_first_innings": 76.5,
-      "chase_win_rate": 0.833
-    },
-    "Sophia Gardens, Cardiff": {
-      "avg_first_innings": 230.8,
+    "Wankhede Stadium": {
+      "avg_first_innings": 320.6,
       "chase_win_rate": 0.8
     },
-    "Entebbe Cricket Oval": {
-      "avg_first_innings": 110.2,
-      "chase_win_rate": 0.426
-    },
-    "Takashinga Sports Club": {
-      "avg_first_innings": 110.3,
-      "chase_win_rate": 0.333
-    },
-    "Moara Vlasiei Cricket Ground, Ilfov County": {
-      "avg_first_innings": 150.0,
+    "Brabourne Stadium": {
+      "avg_first_innings": 393.0,
       "chase_win_rate": 1.0
     },
-    "Albert Park 1, Suva": {
-      "avg_first_innings": 140.9,
-      "chase_win_rate": 0.333
-    },
-    "The Wanderers Stadium, Johannesburg": {
-      "avg_first_innings": 261.0,
-      "chase_win_rate": 0.5
-    },
-    "Boland Park": {
-      "avg_first_innings": 242.9,
-      "chase_win_rate": 0.444
-    },
-    "Las Caballerizas": {
-      "avg_first_innings": 110.0,
+    "Barsapara Cricket Stadium, Guwahati": {
+      "avg_first_innings": 489.0,
       "chase_win_rate": 0.0
     },
-    "National Sports Academy, Sofia": {
-      "avg_first_innings": 154.9,
-      "chase_win_rate": 0.75
+    "Dr DY Patil Sports Academy": {
+      "avg_first_innings": 293.3,
+      "chase_win_rate": 0.588
     },
-    "Zahur Ahmed Chowdhury Stadium": {
-      "avg_first_innings": 364.7,
-      "chase_win_rate": 0.429
-    },
-    "GB Oval, Szodliget": {
-      "avg_first_innings": 174.2,
-      "chase_win_rate": 0.467
-    },
-    "Woodley Cricket Field, Los Angeles": {
-      "avg_first_innings": 108.6,
-      "chase_win_rate": 0.167
-    },
-    "Royal Selangor Club": {
-      "avg_first_innings": 115.3,
-      "chase_win_rate": 0.5
-    },
-    "Civil Service Cricket Club, Stormont": {
-      "avg_first_innings": 178.5,
-      "chase_win_rate": 0.5
-    },
-    "Multan Cricket Stadium": {
-      "avg_first_innings": 313.5,
-      "chase_win_rate": 0.375
-    },
-    "ICC Academy Ground No 2": {
-      "avg_first_innings": 146.2,
-      "chase_win_rate": 0.5
-    },
-    "Ground 2, Independence Park": {
-      "avg_first_innings": 84.0,
-      "chase_win_rate": 0.75
-    },
-    "Kensington Oval, Bridgetown, Barbados": {
-      "avg_first_innings": 343.5,
-      "chase_win_rate": 0.5
-    },
-    "Wanderers Cricket Ground, Windhoek": {
-      "avg_first_innings": 211.6,
-      "chase_win_rate": 0.45
-    },
-    "Lochlands": {
-      "avg_first_innings": 98.4,
-      "chase_win_rate": 0.714
-    },
-    "Harare Sports Club": {
-      "avg_first_innings": 366.7,
-      "chase_win_rate": 0.333
-    },
-    "County Ground, Northampton": {
-      "avg_first_innings": 162.0,
-      "chase_win_rate": 1.0
-    },
-    "Seebarn Cricket Centre, Lower Austria": {
-      "avg_first_innings": 165.0,
+    "Dr DY Patil Sports Academy, Mumbai": {
+      "avg_first_innings": 428.0,
       "chase_win_rate": 0.0
     },
-    "University of Lagos Cricket Oval": {
-      "avg_first_innings": 125.5,
-      "chase_win_rate": 0.375
-    },
-    "Guernsey Rovers Athletic Club Ground, Port Soif": {
-      "avg_first_innings": 128.0,
+    "Sheikh Zayed Stadium": {
+      "avg_first_innings": 363.8,
       "chase_win_rate": 0.615
     },
-    "North Sydney Oval": {
-      "avg_first_innings": 241.3,
+    "Barabati Stadium": {
+      "avg_first_innings": 296.5,
       "chase_win_rate": 0.667
     },
-    "The Wanderers Stadium": {
-      "avg_first_innings": 265.7,
-      "chase_win_rate": 0.333
-    },
-    "Sano International Cricket Ground": {
-      "avg_first_innings": 80.1,
-      "chase_win_rate": 0.818
-    },
-    "Zhejiang University of Technology Cricket Field": {
-      "avg_first_innings": 103.2,
-      "chase_win_rate": 0.6
-    },
-    "Hagley Oval": {
-      "avg_first_innings": 282.1,
-      "chase_win_rate": 0.5
-    },
-    "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium": {
-      "avg_first_innings": 174.0,
-      "chase_win_rate": 1.0
-    },
-    "Sylhet International Cricket Stadium, Academy Ground": {
-      "avg_first_innings": 119.0,
-      "chase_win_rate": 0.444
-    },
-    "Vanuatu Cricket Ground (Oval 2)": {
-      "avg_first_innings": 81.8,
-      "chase_win_rate": 0.625
-    },
-    "Newlands, Cape Town": {
-      "avg_first_innings": 378.2,
-      "chase_win_rate": 0.25
-    },
-    "Tribhuvan University International Cricket Ground": {
-      "avg_first_innings": 193.3,
-      "chase_win_rate": 0.5
-    },
-    "Grand Prairie Stadium, Dallas": {
-      "avg_first_innings": 363.0,
-      "chase_win_rate": 0.587
-    },
-    "Sportpark Maarschalkerweerd": {
-      "avg_first_innings": 146.5,
-      "chase_win_rate": 0.0
-    },
-    "Kennington Oval, London": {
-      "avg_first_innings": 317.6,
-      "chase_win_rate": 0.556
-    },
-    "Asian Institute of Technology Ground": {
-      "avg_first_innings": 89.9,
-      "chase_win_rate": 0.6
-    },
-    "Bready Cricket Club, Magheramason": {
-      "avg_first_innings": 254.0,
-      "chase_win_rate": 1.0
-    },
-    "National Cricket Stadium, St George's, Grenada": {
-      "avg_first_innings": 245.0,
-      "chase_win_rate": 0.5
-    },
-    "New Farnley CC, Leeds": {
-      "avg_first_innings": 99.0,
+    "Wankhede Stadium, Mumbai": {
+      "avg_first_innings": 259.7,
       "chase_win_rate": 0.667
     },
-    "Royal Brussels Cricket Club Ground, Waterloo": {
-      "avg_first_innings": 154.9,
-      "chase_win_rate": 0.6
-    },
-    "Happy Valley Ground": {
-      "avg_first_innings": 133.7,
-      "chase_win_rate": 0.568
-    },
-    "Bellerive Oval": {
-      "avg_first_innings": 354.0,
-      "chase_win_rate": 0.286
-    },
-    "Marrara Stadium, Darwin": {
-      "avg_first_innings": 198.0,
-      "chase_win_rate": 0.0
-    },
-    "Botswana Cricket Association Oval 1, Gaborone": {
-      "avg_first_innings": 109.9,
-      "chase_win_rate": 0.443
-    },
-    "Daren Sammy National Cricket Stadium, Gros Islet": {
-      "avg_first_innings": 420.5,
-      "chase_win_rate": 0.5
-    },
-    "Bellerive Oval, Hobart": {
-      "avg_first_innings": 303.0,
-      "chase_win_rate": 0.0
-    },
-    "Sky Stadium": {
-      "avg_first_innings": 135.0,
-      "chase_win_rate": 0.5
-    },
-    "Kensington Oval, Barbados": {
-      "avg_first_innings": 289.0,
-      "chase_win_rate": 0.0
-    },
-    "Maple Leaf North-West Ground": {
-      "avg_first_innings": 131.0,
-      "chase_win_rate": 0.5
-    },
-    "Sportpark Maarschalkerweerd, Utrecht": {
-      "avg_first_innings": 203.6,
-      "chase_win_rate": 0.571
-    },
-    "St Georges Quilmes": {
-      "avg_first_innings": 82.7,
-      "chase_win_rate": 1.0
-    },
-    "Koge Cricket Club 2": {
-      "avg_first_innings": 147.5,
-      "chase_win_rate": 0.0
-    },
-    "The Rose Bowl": {
-      "avg_first_innings": 337.0,
-      "chase_win_rate": 0.5
-    },
-    "Barabati Stadium, Cuttack": {
-      "avg_first_innings": 275.0,
-      "chase_win_rate": 1.0
-    },
-    "Botswana Cricket Association Oval 2": {
-      "avg_first_innings": 147.4,
-      "chase_win_rate": 0.375
-    },
-    "Windsor Park, Roseau, Dominica": {
-      "avg_first_innings": 150.0,
-      "chase_win_rate": 1.0
-    },
-    "Sydney Parade": {
-      "avg_first_innings": 172.5,
-      "chase_win_rate": 0.0
-    },
-    "Boland Park, Paarl": {
-      "avg_first_innings": 279.5,
-      "chase_win_rate": 0.5
-    },
-    "Kinrara Academy Oval": {
-      "avg_first_innings": 235.6,
-      "chase_win_rate": 0.154
-    },
-    "Lord's": {
-      "avg_first_innings": 369.2,
-      "chase_win_rate": 0.31
-    },
-    "Central Broward Regional Park Stadium Turf Ground, Lauderhill": {
-      "avg_first_innings": 294.2,
-      "chase_win_rate": 0.444
-    },
-    "Lugogo Cricket Oval": {
-      "avg_first_innings": 135.3,
-      "chase_win_rate": 0.0
-    },
-    "AMI Stadium": {
-      "avg_first_innings": 293.5,
-      "chase_win_rate": 0.5
-    },
-    "County Ground, Bristol": {
-      "avg_first_innings": 396.0,
-      "chase_win_rate": 0.0
-    },
-    "JSCA International Stadium Complex, Ranchi": {
-      "avg_first_innings": 353.0,
-      "chase_win_rate": 0.0
-    },
-    "St Lawrence Ground": {
-      "avg_first_innings": 274.0,
-      "chase_win_rate": 0.0
-    },
-    "Integrated Polytechnic Regional Centre": {
-      "avg_first_innings": 126.5,
-      "chase_win_rate": 0.421
-    },
-    "King George V Sports Ground": {
-      "avg_first_innings": 125.4,
-      "chase_win_rate": 0.375
-    },
-    "Koge Cricket Club": {
-      "avg_first_innings": 136.5,
-      "chase_win_rate": 0.6
-    },
-    "Sydney Cricket Ground": {
-      "avg_first_innings": 382.4,
-      "chase_win_rate": 0.4
-    },
-    "Bermuda National Stadium": {
-      "avg_first_innings": 141.0,
-      "chase_win_rate": 1.0
-    },
-    "Botkyrka Cricket Center, Stockholm": {
-      "avg_first_innings": 141.0,
-      "chase_win_rate": 0.529
-    },
-    "Achimota Senior Secondary School B Field, Accra": {
-      "avg_first_innings": 134.4,
-      "chase_win_rate": 0.357
-    },
-    "Diamond Oval, Kimberley": {
-      "avg_first_innings": 253.7,
+    "Shaheed Veer Narayan Singh International Stadium": {
+      "avg_first_innings": 292.7,
       "chase_win_rate": 0.667
     },
-    "Castle Avenue, Dublin": {
-      "avg_first_innings": 267.2,
-      "chase_win_rate": 0.429
-    },
-    "Shrimant Madhavrao Scindia Cricket Stadium, Gwalior": {
-      "avg_first_innings": 127.0,
+    "Punjab Cricket Association IS Bindra Stadium, Mohali": {
+      "avg_first_innings": 291.5,
       "chase_win_rate": 1.0
     },
-    "McLean Park, Napier": {
-      "avg_first_innings": 207.8,
-      "chase_win_rate": 0.4
-    },
-    "Singapore National Cricket Ground": {
-      "avg_first_innings": 138.3,
-      "chase_win_rate": 0.483
-    },
-    "Manuka Oval, Canberra": {
-      "avg_first_innings": 337.0,
-      "chase_win_rate": 0.0
-    },
-    "M Chinnaswamy Stadium, Bangalore": {
-      "avg_first_innings": 336.0,
-      "chase_win_rate": 0.0
-    },
-    "P Sara Oval, Colombo": {
-      "avg_first_innings": 152.0,
-      "chase_win_rate": null
-    },
-    "Vanuatu Cricket Ground": {
-      "avg_first_innings": 99.7,
-      "chase_win_rate": 0.5
-    },
-    "Dr DY Patil Sports Academy, Navi Mumbai": {
-      "avg_first_innings": 259.4,
-      "chase_win_rate": 0.2
-    },
-    "Lalabhai Contractor Stadium": {
-      "avg_first_innings": 135.8,
-      "chase_win_rate": 0.25
-    },
-    "Maple Leaf North-West Ground, King City": {
-      "avg_first_innings": 206.2,
-      "chase_win_rate": 0.615
-    },
-    "Warner Park, Basseterre, St Kitts": {
-      "avg_first_innings": 232.0,
-      "chase_win_rate": 0.667
-    },
-    "Edgbaston": {
-      "avg_first_innings": 286.8,
-      "chase_win_rate": 0.667
-    },
-    "Basin Reserve, Wellington": {
-      "avg_first_innings": 351.7,
-      "chase_win_rate": 0.429
-    },
-    "ICC Academy, Dubai": {
-      "avg_first_innings": 224.9,
-      "chase_win_rate": 0.5
-    },
-    "Grange Cricket Club Ground, Raeburn Place": {
-      "avg_first_innings": 241.6,
-      "chase_win_rate": 0.286
-    },
-    "UKM-YSD Cricket Oval, Bangi": {
-      "avg_first_innings": 104.4,
-      "chase_win_rate": 0.595
-    },
-    "Happy Valley Ground 2": {
-      "avg_first_innings": 137.7,
-      "chase_win_rate": 0.462
-    },
-    "Mombasa Sports Club Ground": {
-      "avg_first_innings": 218.5,
-      "chase_win_rate": 0.5
-    },
-    "Meersen, Gent": {
-      "avg_first_innings": 124.0,
-      "chase_win_rate": 0.6
-    },
-    "Forthill": {
-      "avg_first_innings": 94.5,
-      "chase_win_rate": 0.3
-    },
-    "Kerrydale Oval": {
-      "avg_first_innings": 116.0,
-      "chase_win_rate": 0.5
-    },
-    "National Cricket Stadium, Grenada": {
-      "avg_first_innings": 310.5,
-      "chase_win_rate": 0.0
-    },
-    "ICC Academy": {
-      "avg_first_innings": 245.1,
-      "chase_win_rate": 0.467
-    },
-    "R Premadasa Stadium": {
-      "avg_first_innings": 313.5,
-      "chase_win_rate": 0.5
-    },
-    "Southend Club Cricket Stadium, Karachi": {
-      "avg_first_innings": 227.3,
-      "chase_win_rate": 0.333
-    },
-    "Tikkurila Cricket Ground": {
-      "avg_first_innings": 130.1,
-      "chase_win_rate": 0.364
-    },
-    "Greenfield International Stadium, Thiruvananthapuram": {
-      "avg_first_innings": 390.0,
-      "chase_win_rate": 0.0
-    },
-    "Mission Road Ground, Mong Kok": {
-      "avg_first_innings": 238.0,
-      "chase_win_rate": 0.0
-    },
-    "Belgrano Athletic Club Ground, Buenos Aires": {
-      "avg_first_innings": 151.4,
-      "chase_win_rate": 0.4
-    },
-    "United Cricket Club Ground, Windhoek": {
-      "avg_first_innings": 229.8,
-      "chase_win_rate": 0.562
-    },
-    "Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota": {
-      "avg_first_innings": 329.2,
-      "chase_win_rate": 0.452
-    },
-    "Civil Service Cricket Club, Stormont, Belfast": {
-      "avg_first_innings": 350.0,
-      "chase_win_rate": 0.5
-    },
-    "Brian Lara Stadium, Tarouba, Trinidad": {
-      "avg_first_innings": 311.0,
-      "chase_win_rate": 0.0
-    },
-    "Arundel Castle Cricket Club Ground": {
-      "avg_first_innings": 139.0,
-      "chase_win_rate": 1.0
-    },
-    "Grange Cricket Club Ground, Raeburn Place, Edinburgh": {
-      "avg_first_innings": 306.0,
-      "chase_win_rate": 1.0
-    },
-    "University Oval": {
-      "avg_first_innings": 331.3,
-      "chase_win_rate": 0.571
-    },
-    "Nigeria Cricket Federation Oval 1, Abuja": {
-      "avg_first_innings": 128.5,
-      "chase_win_rate": 0.417
-    },
-    "Indian Association Ground": {
-      "avg_first_innings": 145.1,
-      "chase_win_rate": 0.529
-    },
-    "Pierre Werner Cricket Ground": {
-      "avg_first_innings": 142.6,
-      "chase_win_rate": 0.4
-    },
-    "YMCA Cricket Club": {
-      "avg_first_innings": 248.0,
-      "chase_win_rate": 0.0
-    },
-    "University of Dar-es-Salaam Ground": {
-      "avg_first_innings": 67.9,
-      "chase_win_rate": 0.714
-    },
-    "North Sydney Oval, Sydney": {
-      "avg_first_innings": 280.0,
-      "chase_win_rate": 1.0
-    },
-    "Marina Ground, Corfu": {
-      "avg_first_innings": 110.5,
-      "chase_win_rate": 0.538
-    },
-    "Korogi Sports Park, Nisshin": {
-      "avg_first_innings": 135.7,
-      "chase_win_rate": 0.333
-    },
-    "Carrara Oval": {
-      "avg_first_innings": 377.0,
-      "chase_win_rate": 0.0
-    },
-    "Adelaide Oval": {
-      "avg_first_innings": 408.0,
-      "chase_win_rate": 0.333
-    },
-    "Allan Border Field, Brisbane": {
-      "avg_first_innings": 175.5,
-      "chase_win_rate": 0.667
-    },
-    "Udayana Cricket Ground": {
-      "avg_first_innings": 124.5,
-      "chase_win_rate": 0.557
-    },
-    "Pukekura Park": {
-      "avg_first_innings": 134.0,
-      "chase_win_rate": 0.0
-    },
-    "Pembroke Cricket Club, Sandymount, Dublin": {
-      "avg_first_innings": 143.0,
-      "chase_win_rate": 0.5
-    },
-    "Velden Cricket Ground, Latschach": {
-      "avg_first_innings": 171.2,
-      "chase_win_rate": 0.444
-    },
-    "LC de Villiers Oval": {
-      "avg_first_innings": 119.0,
-      "chase_win_rate": 1.0
-    },
-    "Kyambogo Cricket Oval": {
-      "avg_first_innings": 115.5,
-      "chase_win_rate": 0.5
-    },
-    "County Ground, Chelmsford": {
-      "avg_first_innings": 285.2,
-      "chase_win_rate": 0.25
-    },
-    "Edgbaston, Birmingham": {
-      "avg_first_innings": 426.0,
-      "chase_win_rate": 0.286
-    },
-    "Sao Fernando Polo and Cricket Club, Campo Sede": {
-      "avg_first_innings": 40.0,
-      "chase_win_rate": null
-    },
-    "Bay Oval": {
-      "avg_first_innings": 392.0,
-      "chase_win_rate": 0.5
-    },
-    "Terdthai Cricket Ground, Bangkok": {
-      "avg_first_innings": 161.0,
-      "chase_win_rate": 0.333
-    },
-    "Daren Sammy National Cricket Stadium, Gros Islet, St Lucia": {
-      "avg_first_innings": 209.7,
-      "chase_win_rate": 0.667
-    },
-    "The Rose Bowl, Southampton": {
-      "avg_first_innings": 217.0,
-      "chase_win_rate": 1.0
-    },
-    "Royal Selangor Club, Kuala Lumpur": {
-      "avg_first_innings": 113.2,
-      "chase_win_rate": 0.5
-    },
-    "St Lawrence Ground, Canterbury": {
-      "avg_first_innings": 317.3,
-      "chase_win_rate": 0.0
-    },
-    "Gahanga International Cricket Stadium, Rwanda": {
-      "avg_first_innings": 129.9,
-      "chase_win_rate": 0.369
-    },
-    "Bayer Uerdingen Cricket Ground": {
-      "avg_first_innings": 139.1,
-      "chase_win_rate": 0.449
-    },
-    "Centre for Cricket Development Ground, Windhoek": {
-      "avg_first_innings": 96.1,
-      "chase_win_rate": 0.4
-    },
-    "Dreux Sport Cricket Club": {
-      "avg_first_innings": 143.4,
-      "chase_win_rate": 0.286
-    },
-    "Sir Vivian Richards Stadium, North Sound, Antigua": {
-      "avg_first_innings": 344.2,
-      "chase_win_rate": 0.6
-    },
-    "Cazaly's Stadium, Cairns": {
-      "avg_first_innings": 247.5,
-      "chase_win_rate": 0.25
-    },
-    "Roma Cricket Ground": {
-      "avg_first_innings": 134.4,
-      "chase_win_rate": 0.5
-    },
-    "Sinhalese Sports Club Ground, Colombo": {
-      "avg_first_innings": 226.0,
-      "chase_win_rate": 1.0
-    },
-    "Vassil Levski National Sports Academy, Sofia": {
-      "avg_first_innings": 164.2,
-      "chase_win_rate": 0.579
-    },
-    "W.A.C.A. Ground": {
-      "avg_first_innings": 342.7,
-      "chase_win_rate": 0.333
-    },
-    "Gymkhana Club Ground, Dar-es-Salaam": {
-      "avg_first_innings": 86.0,
-      "chase_win_rate": 0.444
-    },
-    "Pallekele International Cricket Stadium": {
-      "avg_first_innings": 322.7,
-      "chase_win_rate": 0.625
-    },
-    "The Village, Malahide, Dublin": {
-      "avg_first_innings": 284.5,
-      "chase_win_rate": 0.4
-    },
-    "Kensington Oval, Bridgetown": {
-      "avg_first_innings": 300.9,
-      "chase_win_rate": 0.5
-    },
-    "Guttsta Wicked Cricket Club": {
-      "avg_first_innings": 52.0,
-      "chase_win_rate": 1.0
-    },
-    "Turf City B Cricket Ground": {
-      "avg_first_innings": 51.0,
-      "chase_win_rate": 1.0
-    },
-    "Hagley Oval, Christchurch": {
-      "avg_first_innings": 296.6,
-      "chase_win_rate": 0.571
-    },
-    "Santarem Cricket Ground": {
-      "avg_first_innings": 152.3,
-      "chase_win_rate": 0.444
-    },
-    "Arnos Vale Ground, Kingstown": {
-      "avg_first_innings": 361.0,
-      "chase_win_rate": 0.5
-    },
-    "Gelephu International Cricket Ground": {
-      "avg_first_innings": 130.3,
-      "chase_win_rate": 0.433
-    },
-    "Holkar Cricket Stadium, Indore": {
-      "avg_first_innings": 109.0,
-      "chase_win_rate": 1.0
-    },
-    "Eden Park, Auckland": {
-      "avg_first_innings": 270.0,
-      "chase_win_rate": 0.6
-    },
-    "Stadium Australia": {
-      "avg_first_innings": 300.3,
-      "chase_win_rate": 0.462
-    },
-    "Ishoj Cricket Club, Vejledalen": {
-      "avg_first_innings": 140.0,
-      "chase_win_rate": 0.3
-    },
-    "Khan Shaheb Osman Ali Stadium": {
-      "avg_first_innings": 444.5,
-      "chase_win_rate": 0.0
-    },
-    "Tribhuvan University International Cricket Ground, Kirtipur": {
-      "avg_first_innings": 230.4,
-      "chase_win_rate": 0.5
-    },
-    "ICC Academy Ground No 2, Dubai": {
-      "avg_first_innings": 102.8,
-      "chase_win_rate": 0.6
-    },
-    "Nigeria Cricket Federation Oval 2, Abuja": {
-      "avg_first_innings": 109.8,
-      "chase_win_rate": 0.4
-    },
-    "Los Reyes Polo Club": {
-      "avg_first_innings": 91.7,
-      "chase_win_rate": 0.333
-    },
-    "Warner Park, Basseterre": {
-      "avg_first_innings": 465.3,
-      "chase_win_rate": 0.333
-    },
-    "St George's College Ground, Buenos Aires": {
-      "avg_first_innings": 88.8,
-      "chase_win_rate": 0.4
-    },
-    "Sheikh Zayed Stadium, Abu Dhabi": {
-      "avg_first_innings": 342.8,
-      "chase_win_rate": 0.4
-    },
-    "Melbourne Cricket Ground": {
-      "avg_first_innings": 327.9,
-      "chase_win_rate": 0.435
-    },
-    "Guanggong International Cricket Stadium": {
-      "avg_first_innings": 79.5,
-      "chase_win_rate": 0.5
-    },
-    "Narendra Modi Stadium": {
-      "avg_first_innings": 158.5,
-      "chase_win_rate": 1.0
-    },
-    "Trent Bridge": {
-      "avg_first_innings": 284.9,
-      "chase_win_rate": 0.545
-    },
-    "Yeonhui Cricket Ground": {
-      "avg_first_innings": 85.7,
-      "chase_win_rate": 0.526
-    },
-    "Albertslund Cricket Club": {
-      "avg_first_innings": 119.8,
-      "chase_win_rate": 0.333
-    },
-    "Hong Kong Cricket Club": {
-      "avg_first_innings": 158.0,
-      "chase_win_rate": 0.0
-    },
-    "Asian Institute of Technology Ground, Bangkok": {
-      "avg_first_innings": 86.2,
+    "MA Chidambaram Stadium, Chepauk": {
+      "avg_first_innings": 428.2,
       "chase_win_rate": 0.75
     },
-    "R.Premadasa Stadium, Khettarama": {
-      "avg_first_innings": 356.0,
-      "chase_win_rate": 0.0
-    },
-    "Kolej Tuanku Jaafar Cricket Oval, Mantin": {
-      "avg_first_innings": 115.7,
-      "chase_win_rate": 0.333
-    },
-    "City Oval": {
-      "avg_first_innings": 133.0,
-      "chase_win_rate": 1.0
-    },
-    "Pokhara Rangasala": {
-      "avg_first_innings": 82.2,
-      "chase_win_rate": 0.75
-    },
-    "Vidarbha Cricket Association Stadium, Jamtha, Nagpur": {
-      "avg_first_innings": 177.0,
-      "chase_win_rate": 1.0
-    },
-    "Darren Sammy National Cricket Stadium, St Lucia": {
-      "avg_first_innings": 113.0,
-      "chase_win_rate": 1.0
-    },
-    "Kinrara Academy Oval, Kuala Lumpur": {
-      "avg_first_innings": 105.1,
-      "chase_win_rate": 0.5
-    },
-    "Brisbane Cricket Ground, Woolloongabba, Brisbane": {
-      "avg_first_innings": 285.3,
-      "chase_win_rate": 0.667
-    },
-    "Gymkhana Club Ground": {
-      "avg_first_innings": 197.2,
-      "chase_win_rate": 0.75
-    },
-    "San Albano": {
-      "avg_first_innings": 316.5,
-      "chase_win_rate": 0.0
-    },
-    "Riverside Ground, Chester-le-Street": {
-      "avg_first_innings": 230.3,
-      "chase_win_rate": 0.571
-    },
-    "Brian Lara Stadium, Tarouba": {
-      "avg_first_innings": 277.2,
-      "chase_win_rate": 0.552
-    },
-    "Desert Springs Cricket Ground, Almeria": {
-      "avg_first_innings": 240.0,
-      "chase_win_rate": 0.0
-    },
-    "Grainville, St Saviour": {
-      "avg_first_innings": 142.0,
-      "chase_win_rate": 0.143
-    },
-    "Saxton Oval": {
-      "avg_first_innings": 256.2,
-      "chase_win_rate": 0.636
-    },
-    "SuperSport Park, Centurion": {
-      "avg_first_innings": 281.2,
-      "chase_win_rate": 0.5
-    },
-    "Takashinga Sports Club, Highfield, Harare": {
-      "avg_first_innings": 245.4,
-      "chase_win_rate": 0.667
-    },
-    "Senwes Park, Potchefstroom": {
-      "avg_first_innings": 250.2,
-      "chase_win_rate": 0.8
-    },
-    "Gahanga B Ground, Rwanda": {
-      "avg_first_innings": 103.1,
-      "chase_win_rate": 0.396
-    },
-    "Hazelaarweg": {
-      "avg_first_innings": 116.7,
-      "chase_win_rate": 0.333
-    },
-    "Simar Cricket Ground, Rome": {
-      "avg_first_innings": 138.5,
-      "chase_win_rate": 0.474
-    },
-    "Titwood, Glasgow": {
-      "avg_first_innings": 162.3,
-      "chase_win_rate": 1.0
-    },
-    "John Davies Oval, Queenstown": {
-      "avg_first_innings": 271.8,
-      "chase_win_rate": 0.5
-    },
-    "Kaizuka Cricket Ground": {
-      "avg_first_innings": 106.0,
-      "chase_win_rate": 0.5
-    },
-    "Moses Mabhida Stadium": {
-      "avg_first_innings": 168.0,
+    "Maharashtra Cricket Association Stadium": {
+      "avg_first_innings": 430.5,
       "chase_win_rate": 0.0
     },
     "Coolidge Cricket Ground, Antigua": {
       "avg_first_innings": 179.0,
       "chase_win_rate": 0.714
     },
-    "Mladost Cricket Ground, Zagreb": {
-      "avg_first_innings": 148.0,
-      "chase_win_rate": 0.556
+    "Lochlands": {
+      "avg_first_innings": 98.4,
+      "chase_win_rate": 0.714
     },
-    "West End Park International Cricket Stadium": {
-      "avg_first_innings": 87.0,
-      "chase_win_rate": 0.75
+    "Botswana Cricket Association Oval 2": {
+      "avg_first_innings": 147.4,
+      "chase_win_rate": 0.375
+    },
+    "The Wanderers Stadium": {
+      "avg_first_innings": 265.7,
+      "chase_win_rate": 0.333
+    },
+    "AMI Stadium": {
+      "avg_first_innings": 293.5,
+      "chase_win_rate": 0.5
+    },
+    "Eden Park": {
+      "avg_first_innings": 315.0,
+      "chase_win_rate": 0.4
+    },
+    "Ballpark Ground, Graz": {
+      "avg_first_innings": 167.5,
+      "chase_win_rate": 0.5
+    },
+    "Warner Park, St Kitts": {
+      "avg_first_innings": 134.5,
+      "chase_win_rate": 0.5
     },
     "Providence Stadium": {
       "avg_first_innings": 351.0,
       "chase_win_rate": 0.0
     },
+    "White Hill Field, Sandys Parish": {
+      "avg_first_innings": 123.6,
+      "chase_win_rate": 0.6
+    },
     "Bulawayo Athletic Club": {
       "avg_first_innings": 258.3,
       "chase_win_rate": 0.5
     },
-    "West End Park International Cricket Stadium, Doha": {
-      "avg_first_innings": 144.6,
-      "chase_win_rate": 0.483
+    "Guanggong International Cricket Stadium": {
+      "avg_first_innings": 79.5,
+      "chase_win_rate": 0.5
     },
-    "Bay Oval, Mount Maunganui": {
-      "avg_first_innings": 434.8,
-      "chase_win_rate": 0.25
+    "Botswana Cricket Association Oval 1, Gaborone": {
+      "avg_first_innings": 109.9,
+      "chase_win_rate": 0.443
     },
-    "Europa Sports Complex": {
-      "avg_first_innings": 134.8,
-      "chase_win_rate": 0.545
+    "Westpac Stadium": {
+      "avg_first_innings": 236.4,
+      "chase_win_rate": 0.474
     },
-    "Al Amerat Cricket Ground Oman Cricket (Ministry Turf 2)": {
-      "avg_first_innings": 229.8,
-      "chase_win_rate": 0.4
-    },
-    "Basin Reserve": {
-      "avg_first_innings": 323.9,
-      "chase_win_rate": 0.476
-    },
-    "Scott Page Field, Vinor": {
-      "avg_first_innings": 145.9,
-      "chase_win_rate": 0.541
-    },
-    "Sportpark Het Schootsveld, Deventer": {
-      "avg_first_innings": 133.8,
-      "chase_win_rate": 0.8
-    },
-    "Queen's Park Oval, Port of Spain": {
-      "avg_first_innings": 312.0,
-      "chase_win_rate": 0.333
-    },
-    "Trent Bridge, Nottingham": {
-      "avg_first_innings": 443.8,
-      "chase_win_rate": 0.25
-    },
-    "National Stadium": {
-      "avg_first_innings": 350.0,
-      "chase_win_rate": 0.6
-    },
-    "Sir Vivian Richards Stadium, North Sound": {
-      "avg_first_innings": 360.4,
-      "chase_win_rate": 0.25
-    },
-    "Shere Bangla National Stadium": {
-      "avg_first_innings": 322.3,
-      "chase_win_rate": 0.615
+    "Mombasa Sports Club Ground": {
+      "avg_first_innings": 218.5,
+      "chase_win_rate": 0.5
     },
     "Queens Sports Club": {
       "avg_first_innings": 329.9,
       "chase_win_rate": 0.625
     },
-    "Simonds Stadium, South Geelong": {
-      "avg_first_innings": 137.0,
-      "chase_win_rate": 0.5
-    },
-    "Malkerns Country Club oval": {
-      "avg_first_innings": 169.7,
-      "chase_win_rate": 0.333
-    },
-    "TCA Oval, Blantyre": {
-      "avg_first_innings": 138.7,
-      "chase_win_rate": 0.786
-    },
-    "Saurashtra Cricket Association Stadium, Rajkot": {
-      "avg_first_innings": 445.0,
-      "chase_win_rate": 0.0
-    },
-    "Senwes Park": {
-      "avg_first_innings": 496.0,
-      "chase_win_rate": 0.0
-    },
-    "Selangor Turf Club, Kuala Lumpur": {
-      "avg_first_innings": 91.6,
-      "chase_win_rate": 0.714
-    },
-    "Marsa Sports Club": {
-      "avg_first_innings": 157.6,
-      "chase_win_rate": 0.565
-    },
-    "Zahur Ahmed Chowdhury Stadium, Chattogram": {
-      "avg_first_innings": 410.7,
-      "chase_win_rate": 0.333
-    },
-    "University of Doha for Science and Technology": {
-      "avg_first_innings": 157.4,
-      "chase_win_rate": 0.462
-    },
-    "7he Sevens Stadium, Dubai": {
-      "avg_first_innings": 135.2,
-      "chase_win_rate": 0.75
-    },
-    "Gymkhana Club Ground, Nairobi": {
-      "avg_first_innings": 210.0,
-      "chase_win_rate": 0.0
-    },
-    "Amini Park, Port Moresby": {
-      "avg_first_innings": 198.3,
-      "chase_win_rate": 0.2
-    },
-    "Saxton Oval, Nelson": {
-      "avg_first_innings": 272.0,
-      "chase_win_rate": 0.333
-    },
-    "Terdthai Cricket Ground": {
-      "avg_first_innings": 70.1,
-      "chase_win_rate": 0.5
-    },
-    "SSC Karlsruhe": {
-      "avg_first_innings": 113.6,
-      "chase_win_rate": 0.2
-    },
-    "Moara Vlasiei Cricket Ground": {
-      "avg_first_innings": 112.0,
-      "chase_win_rate": 0.333
-    },
-    "Colombo Cricket Club Ground": {
-      "avg_first_innings": 193.7,
-      "chase_win_rate": 0.333
-    },
-    "Hurlingham Club Ground, Buenos Aires": {
-      "avg_first_innings": 122.3,
-      "chase_win_rate": 0.333
-    },
-    "Sophia Gardens": {
-      "avg_first_innings": 421.7,
-      "chase_win_rate": 0.667
-    },
-    "Morodok Techo National Stadium": {
-      "avg_first_innings": 51.0,
-      "chase_win_rate": 0.75
-    },
-    "Old Trafford, Manchester": {
-      "avg_first_innings": 265.5,
-      "chase_win_rate": 1.0
-    },
-    "The Cooper Associates County Ground, Taunton": {
-      "avg_first_innings": 284.0,
-      "chase_win_rate": 1.0
-    },
-    "Gaddafi Stadium, Lahore": {
-      "avg_first_innings": 363.0,
-      "chase_win_rate": 0.333
-    },
-    "King George V Sports Ground, Castel": {
-      "avg_first_innings": 146.8,
-      "chase_win_rate": 0.529
-    },
-    "County Ground, New Road, Worcester": {
-      "avg_first_innings": 220.0,
-      "chase_win_rate": 0.5
-    },
-    "Goldenacre, Edinburgh": {
-      "avg_first_innings": 153.0,
-      "chase_win_rate": 0.375
-    },
-    "Jinja Cricket Ground": {
-      "avg_first_innings": 93.0,
-      "chase_win_rate": 0.5
-    },
-    "Malek Cricket Ground, Ajman": {
-      "avg_first_innings": 108.0,
-      "chase_win_rate": 0.5
-    },
-    "United Cricket Club Ground": {
-      "avg_first_innings": 142.9,
-      "chase_win_rate": 0.333
-    },
-    "FB Fields, St Clement": {
-      "avg_first_innings": 121.6,
-      "chase_win_rate": 0.2
-    },
-    "Desert Springs Cricket Ground": {
-      "avg_first_innings": 159.5,
-      "chase_win_rate": 0.5
-    },
-    "Estonian National Cricket and Rugby Field": {
-      "avg_first_innings": 116.6,
-      "chase_win_rate": 0.667
-    },
-    "Tafawa Balewa Square (TBS) Cricket Oval": {
-      "avg_first_innings": 158.0,
-      "chase_win_rate": 0.0
-    },
-    "Sano International Cricket Ground 2": {
-      "avg_first_innings": 118.3,
-      "chase_win_rate": 0.833
-    },
-    "Southend Club Cricket Stadium": {
-      "avg_first_innings": 123.0,
-      "chase_win_rate": 1.0
-    },
-    "Sportpark Westvliet": {
-      "avg_first_innings": 124.0,
-      "chase_win_rate": 0.5
-    },
-    "Buffalo Park, East London": {
-      "avg_first_innings": 245.1,
-      "chase_win_rate": 0.286
-    },
-    "Hazelaarweg, Rotterdam": {
-      "avg_first_innings": 217.6,
-      "chase_win_rate": 0.25
-    },
-    "Lord's, London": {
-      "avg_first_innings": 260.7,
-      "chase_win_rate": 0.385
-    },
-    "Tafawa Balewa Square Cricket Oval, Lagos": {
-      "avg_first_innings": 119.8,
-      "chase_win_rate": 0.346
-    },
-    "Svanholm Park, Brondby": {
-      "avg_first_innings": 145.6,
-      "chase_win_rate": 0.583
-    },
-    "Boland Bank Park": {
-      "avg_first_innings": 160.0,
-      "chase_win_rate": 1.0
-    },
-    "Mulpani Cricket Ground": {
-      "avg_first_innings": 236.0,
-      "chase_win_rate": 0.0
-    },
-    "Achimota Senior Secondary School A Field, Accra": {
-      "avg_first_innings": 114.5,
-      "chase_win_rate": 0.591
-    },
-    "Sao Fernando Polo and Cricket Club": {
-      "avg_first_innings": 116.5,
-      "chase_win_rate": 0.5
-    },
-    "Bayuemas Oval, Kuala Lumpur": {
-      "avg_first_innings": 111.9,
-      "chase_win_rate": 0.477
-    },
-    "Junction Oval": {
-      "avg_first_innings": 231.0,
-      "chase_win_rate": 1.0
-    },
-    "P Sara Oval": {
-      "avg_first_innings": 282.9,
-      "chase_win_rate": 0.583
-    },
-    "Kerava National Cricket Ground": {
-      "avg_first_innings": 133.2,
-      "chase_win_rate": 0.5
-    },
-    "Stars Arena Hofstade, Zemst": {
-      "avg_first_innings": 130.1,
-      "chase_win_rate": 0.727
-    },
-    "Bready Cricket Club, Magheramason, Bready": {
-      "avg_first_innings": 255.7,
-      "chase_win_rate": 0.667
-    },
-    "Sinhalese Sports Club Ground": {
-      "avg_first_innings": 383.6,
-      "chase_win_rate": 0.438
-    },
-    "Sportpark Westvliet, Voorburg": {
-      "avg_first_innings": 136.9,
-      "chase_win_rate": 0.455
-    },
-    "Tolerance Oval, Abu Dhabi": {
-      "avg_first_innings": 123.4,
-      "chase_win_rate": 0.5
-    },
-    "Gaddafi Stadium": {
-      "avg_first_innings": 389.7,
-      "chase_win_rate": 0.333
-    },
-    "University Oval, Dunedin": {
-      "avg_first_innings": 224.3,
-      "chase_win_rate": 0.286
-    },
-    "Barsapara Cricket Stadium": {
-      "avg_first_innings": 322.0,
-      "chase_win_rate": 1.0
-    },
-    "Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa": {
-      "avg_first_innings": 251.2,
-      "chase_win_rate": 0.333
-    },
-    "Sabina Park, Kingston, Jamaica": {
-      "avg_first_innings": 227.0,
-      "chase_win_rate": 0.25
-    },
-    "Nassau County International Cricket Stadium, New York": {
-      "avg_first_innings": 107.6,
-      "chase_win_rate": 0.625
-    },
-    "Indian Association Ground, Singapore": {
-      "avg_first_innings": 132.6,
-      "chase_win_rate": 0.6
-    },
-    "Sabina Park, Kingston": {
-      "avg_first_innings": 319.8,
-      "chase_win_rate": 0.3
-    },
-    "Chilaw Marians Cricket Club Ground": {
-      "avg_first_innings": 253.0,
-      "chase_win_rate": 1.0
-    },
-    "Malahide, Dublin": {
-      "avg_first_innings": 162.0,
-      "chase_win_rate": 0.0
-    },
-    "Rawalpindi Cricket Stadium": {
-      "avg_first_innings": 349.2,
-      "chase_win_rate": 0.5
-    },
-    "Sylhet International Cricket Stadium": {
-      "avg_first_innings": 271.2,
-      "chase_win_rate": 0.5
-    },
-    "GMHBA Stadium, South Geelong, Victoria": {
-      "avg_first_innings": 265.8,
-      "chase_win_rate": 0.625
-    },
-    "Three Ws Oval, Cave Hill, Barbados": {
-      "avg_first_innings": 273.0,
-      "chase_win_rate": 0.0
-    },
-    "Windsor Park, Roseau": {
-      "avg_first_innings": 246.2,
-      "chase_win_rate": 0.6
-    },
-    "Kingsmead, Durban": {
-      "avg_first_innings": 308.7,
-      "chase_win_rate": 0.0
-    },
-    "Queens Sports Club, Bulawayo": {
-      "avg_first_innings": 327.6,
-      "chase_win_rate": 0.5
-    },
-    "Maple Leaf North-East Ground, King City": {
-      "avg_first_innings": 197.5,
-      "chase_win_rate": 0.0
-    },
-    "Grange Cricket Club, Raeburn Place": {
-      "avg_first_innings": 322.0,
-      "chase_win_rate": 0.0
-    },
-    "Riverside Ground": {
-      "avg_first_innings": 339.2,
-      "chase_win_rate": 0.6
-    },
-    "Royal Chiangmai Golf Club": {
-      "avg_first_innings": 197.8,
-      "chase_win_rate": 0.25
-    },
-    "Namibia Cricket Ground, Windhoek": {
-      "avg_first_innings": 207.2,
-      "chase_win_rate": 0.75
-    },
-    "St George's Park, Gqeberha": {
-      "avg_first_innings": 358.0,
-      "chase_win_rate": 0.0
-    },
-    "Haslegrave Ground": {
-      "avg_first_innings": 156.0,
-      "chase_win_rate": 1.0
-    },
-    "Ekeberg Cricket Ground 1, Oslo": {
-      "avg_first_innings": 132.7,
-      "chase_win_rate": 0.333
-    },
-    "Yeonhui Cricket Ground, Incheon": {
-      "avg_first_innings": 120.9,
-      "chase_win_rate": 0.222
-    },
-    "Solvangs Park, Glostrup": {
-      "avg_first_innings": 99.0,
-      "chase_win_rate": 0.5
-    },
-    "Sylhet Stadium": {
-      "avg_first_innings": 132.6,
-      "chase_win_rate": 0.414
-    },
-    "Johor Cricket Academy Oval": {
-      "avg_first_innings": 132.0,
-      "chase_win_rate": 0.333
-    },
-    "Seebarn Cricket Centre": {
-      "avg_first_innings": 143.0,
-      "chase_win_rate": 0.25
-    },
-    "Allan Border Field": {
-      "avg_first_innings": 249.0,
-      "chase_win_rate": 0.571
-    },
-    "Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium, Chattogram": {
-      "avg_first_innings": 265.0,
-      "chase_win_rate": 0.0
-    },
-    "Sky Stadium, Wellington": {
-      "avg_first_innings": 222.0,
-      "chase_win_rate": 1.0
-    },
-    "Faleata Oval No 2, Apia": {
-      "avg_first_innings": 147.9,
-      "chase_win_rate": 0.5
-    },
-    "Amini Park": {
-      "avg_first_innings": 133.8,
+    "Albert Park 1, Suva": {
+      "avg_first_innings": 140.9,
       "chase_win_rate": 0.333
     },
     "Headingley, Leeds": {
       "avg_first_innings": 296.6,
       "chase_win_rate": 0.4
     },
-    "McLean Park": {
-      "avg_first_innings": 397.5,
+    "Manuka Oval, Canberra": {
+      "avg_first_innings": 337.0,
+      "chase_win_rate": 0.0
+    },
+    "St Georges Quilmes": {
+      "avg_first_innings": 82.7,
+      "chase_win_rate": 1.0
+    },
+    "Old Hararians": {
+      "avg_first_innings": 267.5,
       "chase_win_rate": 0.25
     },
-    "Central Broward Regional Park Stadium Turf Ground": {
-      "avg_first_innings": 205.6,
+    "Sky Stadium": {
+      "avg_first_innings": 135.0,
+      "chase_win_rate": 0.5
+    },
+    "Sportpark Harga, Schiedam": {
+      "avg_first_innings": 116.3,
+      "chase_win_rate": 0.333
+    },
+    "Achimota Senior Secondary School A Field, Accra": {
+      "avg_first_innings": 114.5,
+      "chase_win_rate": 0.591
+    },
+    "Bermuda National Stadium": {
+      "avg_first_innings": 141.0,
+      "chase_win_rate": 1.0
+    },
+    "Korogi Sports Park, Nisshin": {
+      "avg_first_innings": 135.7,
+      "chase_win_rate": 0.333
+    },
+    "The Wanderers Stadium, Johannesburg": {
+      "avg_first_innings": 261.0,
+      "chase_win_rate": 0.5
+    },
+    "Clontarf Cricket Club Ground, Dublin": {
+      "avg_first_innings": 219.0,
+      "chase_win_rate": 0.0
+    },
+    "GMHBA Stadium, South Geelong, Victoria": {
+      "avg_first_innings": 265.8,
+      "chase_win_rate": 0.625
+    },
+    "County Ground, Bristol": {
+      "avg_first_innings": 396.0,
+      "chase_win_rate": 0.0
+    },
+    "Seddon Park, Hamilton": {
+      "avg_first_innings": 294.5,
+      "chase_win_rate": 0.0
+    },
+    "Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa": {
+      "avg_first_innings": 251.2,
+      "chase_win_rate": 0.333
+    },
+    "Happy Valley Ground": {
+      "avg_first_innings": 133.7,
+      "chase_win_rate": 0.568
+    },
+    "Royal Selangor Club, Kuala Lumpur": {
+      "avg_first_innings": 113.2,
+      "chase_win_rate": 0.5
+    },
+    "Takashinga Sports Club": {
+      "avg_first_innings": 110.3,
+      "chase_win_rate": 0.333
+    },
+    "Senwes Park, Potchefstroom": {
+      "avg_first_innings": 250.2,
+      "chase_win_rate": 0.8
+    },
+    "Arundel Castle Cricket Club Ground": {
+      "avg_first_innings": 139.0,
+      "chase_win_rate": 1.0
+    },
+    "Clayton Panama, Panama City": {
+      "avg_first_innings": 117.4,
+      "chase_win_rate": 0.429
+    },
+    "Carrara Oval": {
+      "avg_first_innings": 377.0,
+      "chase_win_rate": 0.0
+    },
+    "Old Trafford, Manchester": {
+      "avg_first_innings": 265.5,
+      "chase_win_rate": 1.0
+    },
+    "Gelephu International Cricket Ground": {
+      "avg_first_innings": 130.3,
+      "chase_win_rate": 0.433
+    },
+    "Gucherre Cricket Ground": {
+      "avg_first_innings": 187.7,
+      "chase_win_rate": 0.333
+    },
+    "Barsapara Cricket Stadium": {
+      "avg_first_innings": 322.0,
+      "chase_win_rate": 1.0
+    },
+    "Kinrara Academy Oval, Kuala Lumpur": {
+      "avg_first_innings": 105.1,
+      "chase_win_rate": 0.5
+    },
+    "The Cooper Associates County Ground": {
+      "avg_first_innings": 420.0,
+      "chase_win_rate": 0.0
+    },
+    "Riverside Ground": {
+      "avg_first_innings": 339.2,
+      "chase_win_rate": 0.6
+    },
+    "National Cricket Stadium, Grenada": {
+      "avg_first_innings": 310.5,
+      "chase_win_rate": 0.0
+    },
+    "ICC Academy, Dubai": {
+      "avg_first_innings": 224.9,
+      "chase_win_rate": 0.5
+    },
+    "National Cricket Stadium, St George's, Grenada": {
+      "avg_first_innings": 245.0,
+      "chase_win_rate": 0.5
+    },
+    "Sophia Gardens": {
+      "avg_first_innings": 421.7,
+      "chase_win_rate": 0.667
+    },
+    "Gymkhana Club Ground, Nairobi": {
+      "avg_first_innings": 210.0,
+      "chase_win_rate": 0.0
+    },
+    "Sano International Cricket Ground": {
+      "avg_first_innings": 80.1,
+      "chase_win_rate": 0.818
+    },
+    "Senwes Park": {
+      "avg_first_innings": 496.0,
+      "chase_win_rate": 0.0
+    },
+    "Boland Park, Paarl": {
+      "avg_first_innings": 279.5,
+      "chase_win_rate": 0.5
+    },
+    "Namibia Cricket Ground, Windhoek": {
+      "avg_first_innings": 207.2,
+      "chase_win_rate": 0.75
+    },
+    "Lugogo Cricket Oval, Kampala": {
+      "avg_first_innings": 92.6,
       "chase_win_rate": 0.4
     },
-    "Botswana Cricket Association Oval 2, Gaborone": {
-      "avg_first_innings": 119.4,
-      "chase_win_rate": 0.396
+    "Sheikh Zayed Stadium, Abu Dhabi": {
+      "avg_first_innings": 342.8,
+      "chase_win_rate": 0.4
     },
-    "Gahanga International Cricket Stadium. Rwanda": {
-      "avg_first_innings": 191.6,
-      "chase_win_rate": 0.455
+    "University of Dar-es-Salaam Ground": {
+      "avg_first_innings": 67.9,
+      "chase_win_rate": 0.714
     },
-    "R Premadasa Stadium, Colombo": {
-      "avg_first_innings": 304.1,
-      "chase_win_rate": 0.448
+    "ICC Academy Ground No 2": {
+      "avg_first_innings": 146.2,
+      "chase_win_rate": 0.5
     },
-    "Providence Stadium, Guyana": {
-      "avg_first_innings": 160.0,
-      "chase_win_rate": 0.0
+    "Nassau County International Cricket Stadium, New York": {
+      "avg_first_innings": 107.6,
+      "chase_win_rate": 0.625
+    },
+    "Hazelaarweg": {
+      "avg_first_innings": 116.7,
+      "chase_win_rate": 0.333
+    },
+    "W.A.C.A. Ground": {
+      "avg_first_innings": 342.7,
+      "chase_win_rate": 0.333
     },
     "La Manga Club Top Ground": {
       "avg_first_innings": 126.3,
       "chase_win_rate": 0.562
     },
-    "Kennington Oval": {
-      "avg_first_innings": 364.7,
+    "Adelaide Oval": {
+      "avg_first_innings": 408.0,
+      "chase_win_rate": 0.333
+    },
+    "Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium, Chattogram": {
+      "avg_first_innings": 265.0,
+      "chase_win_rate": 0.0
+    },
+    "Boland Bank Park": {
+      "avg_first_innings": 160.0,
+      "chase_win_rate": 1.0
+    },
+    "Turf City B Cricket Ground": {
+      "avg_first_innings": 51.0,
+      "chase_win_rate": 1.0
+    },
+    "Tony Ireland Stadium": {
+      "avg_first_innings": 106.0,
+      "chase_win_rate": 0.0
+    },
+    "Haslegrave Ground": {
+      "avg_first_innings": 156.0,
+      "chase_win_rate": 1.0
+    },
+    "Sydney Cricket Ground": {
+      "avg_first_innings": 382.4,
       "chase_win_rate": 0.4
     },
-    "Colts Cricket Club Ground": {
-      "avg_first_innings": 75.3,
+    "Yeonhui Cricket Ground, Incheon": {
+      "avg_first_innings": 120.9,
+      "chase_win_rate": 0.222
+    },
+    "Central Broward Regional Park Stadium Turf Ground, Lauderhill": {
+      "avg_first_innings": 294.2,
+      "chase_win_rate": 0.444
+    },
+    "Grainville, St Saviour, Jersey": {
+      "avg_first_innings": 109.4,
+      "chase_win_rate": 0.75
+    },
+    "Vanuatu Cricket Ground": {
+      "avg_first_innings": 99.7,
       "chase_win_rate": 0.5
+    },
+    "Svanholm Park, Brondby": {
+      "avg_first_innings": 145.6,
+      "chase_win_rate": 0.583
+    },
+    "Saurashtra Cricket Association Stadium, Rajkot": {
+      "avg_first_innings": 445.0,
+      "chase_win_rate": 0.0
+    },
+    "Bay Oval": {
+      "avg_first_innings": 392.0,
+      "chase_win_rate": 0.5
+    },
+    "Guttsta Wicked Cricket Club": {
+      "avg_first_innings": 52.0,
+      "chase_win_rate": 1.0
     },
     "VRA Ground": {
       "avg_first_innings": 195.0,
       "chase_win_rate": 0.5
     },
+    "LC de Villiers Oval": {
+      "avg_first_innings": 119.0,
+      "chase_win_rate": 1.0
+    },
+    "Lugogo Cricket Oval": {
+      "avg_first_innings": 135.3,
+      "chase_win_rate": 0.0
+    },
+    "Maple Leaf North-West Ground, King City": {
+      "avg_first_innings": 206.2,
+      "chase_win_rate": 0.615
+    },
+    "Colombo Cricket Club Ground": {
+      "avg_first_innings": 193.7,
+      "chase_win_rate": 0.333
+    },
+    "TCA Oval, Blantyre": {
+      "avg_first_innings": 138.7,
+      "chase_win_rate": 0.786
+    },
+    "Grange Cricket Club, Raeburn Place": {
+      "avg_first_innings": 322.0,
+      "chase_win_rate": 0.0
+    },
+    "Sylhet Stadium": {
+      "avg_first_innings": 132.6,
+      "chase_win_rate": 0.414
+    },
+    "Wanderers Cricket Ground": {
+      "avg_first_innings": 226.0,
+      "chase_win_rate": 0.0
+    },
     "Independence Park, Port Vila": {
       "avg_first_innings": 143.1,
       "chase_win_rate": 0.7
     },
-    "Greenfield International Stadium": {
-      "avg_first_innings": 104.0,
+    "R Premadasa Stadium, Colombo": {
+      "avg_first_innings": 304.1,
+      "chase_win_rate": 0.448
+    },
+    "Three Ws Oval, Cave Hill, Barbados": {
+      "avg_first_innings": 273.0,
+      "chase_win_rate": 0.0
+    },
+    "Bay Oval, Mount Maunganui": {
+      "avg_first_innings": 434.8,
+      "chase_win_rate": 0.25
+    },
+    "Warner Park, Basseterre, St Kitts": {
+      "avg_first_innings": 232.0,
+      "chase_win_rate": 0.667
+    },
+    "St Lawrence Ground": {
+      "avg_first_innings": 274.0,
+      "chase_win_rate": 0.0
+    },
+    "County Ground, New Road, Worcester": {
+      "avg_first_innings": 220.0,
+      "chase_win_rate": 0.5
+    },
+    "Melbourne Cricket Ground": {
+      "avg_first_innings": 327.9,
+      "chase_win_rate": 0.435
+    },
+    "Scott Page Field, Vinor": {
+      "avg_first_innings": 145.9,
+      "chase_win_rate": 0.541
+    },
+    "Daren Sammy National Cricket Stadium, Gros Islet, St Lucia": {
+      "avg_first_innings": 209.7,
+      "chase_win_rate": 0.667
+    },
+    "North Sydney Oval": {
+      "avg_first_innings": 241.3,
+      "chase_win_rate": 0.667
+    },
+    "Chilaw Marians Cricket Club Ground": {
+      "avg_first_innings": 253.0,
       "chase_win_rate": 1.0
+    },
+    "Sabina Park, Kingston, Jamaica": {
+      "avg_first_innings": 227.0,
+      "chase_win_rate": 0.25
+    },
+    "Colts Cricket Club Ground": {
+      "avg_first_innings": 75.3,
+      "chase_win_rate": 0.5
+    },
+    "The Rose Bowl": {
+      "avg_first_innings": 337.0,
+      "chase_win_rate": 0.5
+    },
+    "Pierre Werner Cricket Ground": {
+      "avg_first_innings": 142.6,
+      "chase_win_rate": 0.4
+    },
+    "High Performance Oval, Windhoek": {
+      "avg_first_innings": 123.7,
+      "chase_win_rate": 0.348
+    },
+    "Basin Reserve": {
+      "avg_first_innings": 323.9,
+      "chase_win_rate": 0.476
+    },
+    "Lisicji Jarak Cricket Ground": {
+      "avg_first_innings": 145.4,
+      "chase_win_rate": 0.6
+    },
+    "Koge Cricket Club": {
+      "avg_first_innings": 136.5,
+      "chase_win_rate": 0.6
+    },
+    "Meersen, Gent": {
+      "avg_first_innings": 124.0,
+      "chase_win_rate": 0.6
+    },
+    "Prairie View Cricket Complex": {
+      "avg_first_innings": 155.7,
+      "chase_win_rate": 0.571
+    },
+    "United Cricket Club Ground, Windhoek": {
+      "avg_first_innings": 229.8,
+      "chase_win_rate": 0.562
+    },
+    "Brian Lara Stadium, Tarouba": {
+      "avg_first_innings": 277.2,
+      "chase_win_rate": 0.552
+    },
+    "Stadium Australia": {
+      "avg_first_innings": 300.3,
+      "chase_win_rate": 0.462
+    },
+    "Morodok Techo National Stadium": {
+      "avg_first_innings": 51.0,
+      "chase_win_rate": 0.75
+    },
+    "R Premadasa Stadium": {
+      "avg_first_innings": 313.5,
+      "chase_win_rate": 0.5
+    },
+    "Royal Brussels Cricket Club Ground, Waterloo": {
+      "avg_first_innings": 154.9,
+      "chase_win_rate": 0.6
+    },
+    "Sportpark Maarschalkerweerd, Utrecht": {
+      "avg_first_innings": 203.6,
+      "chase_win_rate": 0.571
+    },
+    "Seddon Park": {
+      "avg_first_innings": 338.4,
+      "chase_win_rate": 0.5
+    },
+    "Windsor Park, Roseau": {
+      "avg_first_innings": 246.2,
+      "chase_win_rate": 0.6
+    },
+    "College Field": {
+      "avg_first_innings": 120.6,
+      "chase_win_rate": 0.6
+    },
+    "Pallekele International Cricket Stadium": {
+      "avg_first_innings": 322.7,
+      "chase_win_rate": 0.625
+    },
+    "Gahanga B Ground, Rwanda": {
+      "avg_first_innings": 103.1,
+      "chase_win_rate": 0.396
+    },
+    "Kensington Oval, Bridgetown": {
+      "avg_first_innings": 300.9,
+      "chase_win_rate": 0.5
+    },
+    "Grainville, St Saviour": {
+      "avg_first_innings": 142.0,
+      "chase_win_rate": 0.143
+    },
+    "Goldenacre, Edinburgh": {
+      "avg_first_innings": 153.0,
+      "chase_win_rate": 0.375
+    },
+    "Terdthai Cricket Ground, Bangkok": {
+      "avg_first_innings": 161.0,
+      "chase_win_rate": 0.333
+    },
+    "Southend Club Cricket Stadium": {
+      "avg_first_innings": 123.0,
+      "chase_win_rate": 1.0
+    },
+    "County Ground, Northampton": {
+      "avg_first_innings": 162.0,
+      "chase_win_rate": 1.0
+    },
+    "Trent Bridge, Nottingham": {
+      "avg_first_innings": 443.8,
+      "chase_win_rate": 0.25
+    },
+    "Grand Prairie Stadium, Dallas": {
+      "avg_first_innings": 363.0,
+      "chase_win_rate": 0.587
+    },
+    "Sir Vivian Richards Stadium, North Sound": {
+      "avg_first_innings": 360.4,
+      "chase_win_rate": 0.25
+    },
+    "Mladost Cricket Ground, Zagreb": {
+      "avg_first_innings": 148.0,
+      "chase_win_rate": 0.556
+    },
+    "Riverside Ground, Chester-le-Street": {
+      "avg_first_innings": 230.3,
+      "chase_win_rate": 0.571
+    },
+    "Pembroke Cricket Club, Sandymount, Dublin": {
+      "avg_first_innings": 143.0,
+      "chase_win_rate": 0.5
+    },
+    "University of Doha for Science and Technology": {
+      "avg_first_innings": 157.4,
+      "chase_win_rate": 0.462
+    },
+    "Bayuemas Oval, Kuala Lumpur": {
+      "avg_first_innings": 111.9,
+      "chase_win_rate": 0.477
+    },
+    "Udayana Cricket Ground": {
+      "avg_first_innings": 124.5,
+      "chase_win_rate": 0.557
+    },
+    "Amini Park, Port Moresby": {
+      "avg_first_innings": 198.3,
+      "chase_win_rate": 0.2
+    },
+    "Botswana Cricket Association Oval 2, Gaborone": {
+      "avg_first_innings": 119.4,
+      "chase_win_rate": 0.396
+    },
+    "Sportpark Westvliet, Voorburg": {
+      "avg_first_innings": 136.9,
+      "chase_win_rate": 0.455
+    },
+    "Shere Bangla National Stadium": {
+      "avg_first_innings": 322.3,
+      "chase_win_rate": 0.615
+    },
+    "Gymkhana Club Ground, Dar-es-Salaam": {
+      "avg_first_innings": 86.0,
+      "chase_win_rate": 0.444
+    },
+    "R.Premadasa Stadium, Khettarama": {
+      "avg_first_innings": 356.0,
+      "chase_win_rate": 0.0
+    },
+    "Civil Service Cricket Club, Stormont, Belfast": {
+      "avg_first_innings": 350.0,
+      "chase_win_rate": 0.5
+    },
+    "YMCA Cricket Club": {
+      "avg_first_innings": 248.0,
+      "chase_win_rate": 0.0
+    },
+    "Velden Cricket Ground, Latschach": {
+      "avg_first_innings": 171.2,
+      "chase_win_rate": 0.444
+    },
+    "Vidarbha Cricket Association Stadium, Jamtha, Nagpur": {
+      "avg_first_innings": 177.0,
+      "chase_win_rate": 1.0
+    },
+    "Moara Vlasiei Cricket Ground, Ilfov County": {
+      "avg_first_innings": 150.0,
+      "chase_win_rate": 1.0
+    },
+    "Sikh Union Club Ground, Nairobi": {
+      "avg_first_innings": 140.1,
+      "chase_win_rate": 0.5
+    },
+    "Simar Cricket Ground, Rome": {
+      "avg_first_innings": 138.5,
+      "chase_win_rate": 0.474
+    },
+    "SSC Karlsruhe": {
+      "avg_first_innings": 113.6,
+      "chase_win_rate": 0.2
+    },
+    "Windsor Park, Roseau, Dominica": {
+      "avg_first_innings": 150.0,
+      "chase_win_rate": 1.0
+    },
+    "King George V Sports Ground": {
+      "avg_first_innings": 125.4,
+      "chase_win_rate": 0.375
+    },
+    "Forthill": {
+      "avg_first_innings": 94.5,
+      "chase_win_rate": 0.3
+    },
+    "Santarem Cricket Ground": {
+      "avg_first_innings": 152.3,
+      "chase_win_rate": 0.444
+    },
+    "Simonds Stadium, South Geelong": {
+      "avg_first_innings": 137.0,
+      "chase_win_rate": 0.5
+    },
+    "Solvangs Park, Glostrup": {
+      "avg_first_innings": 99.0,
+      "chase_win_rate": 0.5
+    },
+    "Kyambogo Cricket Oval": {
+      "avg_first_innings": 115.5,
+      "chase_win_rate": 0.5
+    },
+    "Botswana Cricket Association Oval 1": {
+      "avg_first_innings": 125.3,
+      "chase_win_rate": 0.571
+    },
+    "Terdthai Cricket Ground": {
+      "avg_first_innings": 70.1,
+      "chase_win_rate": 0.5
+    },
+    "Seebarn Cricket Centre, Lower Austria": {
+      "avg_first_innings": 165.0,
+      "chase_win_rate": 0.0
+    },
+    "Malek Cricket Ground, Ajman": {
+      "avg_first_innings": 108.0,
+      "chase_win_rate": 0.5
+    },
+    "The Village, Malahide, Dublin": {
+      "avg_first_innings": 284.5,
+      "chase_win_rate": 0.4
+    },
+    "Lord's, London": {
+      "avg_first_innings": 260.7,
+      "chase_win_rate": 0.385
+    },
+    "Sportpark Westvliet": {
+      "avg_first_innings": 124.0,
+      "chase_win_rate": 0.5
+    },
+    "Shrimant Madhavrao Scindia Cricket Stadium, Gwalior": {
+      "avg_first_innings": 127.0,
+      "chase_win_rate": 1.0
+    },
+    "Kaizuka Cricket Ground": {
+      "avg_first_innings": 106.0,
+      "chase_win_rate": 0.5
+    },
+    "P Sara Oval": {
+      "avg_first_innings": 282.9,
+      "chase_win_rate": 0.583
+    },
+    "Royal Chiangmai Golf Club": {
+      "avg_first_innings": 197.8,
+      "chase_win_rate": 0.25
+    },
+    "New Farnley CC, Leeds": {
+      "avg_first_innings": 99.0,
+      "chase_win_rate": 0.667
+    },
+    "Willowmoore Park": {
+      "avg_first_innings": 233.6,
+      "chase_win_rate": 0.462
+    },
+    "Mercantile Cricket Association Ground": {
+      "avg_first_innings": 132.0,
+      "chase_win_rate": 1.0
+    },
+    "Hong Kong Cricket Club": {
+      "avg_first_innings": 158.0,
+      "chase_win_rate": 0.0
+    },
+    "Beausejour Stadium, Gros Islet": {
+      "avg_first_innings": 380.0,
+      "chase_win_rate": 0.0
+    },
+    "Estonian National Cricket and Rugby Field": {
+      "avg_first_innings": 116.6,
+      "chase_win_rate": 0.667
+    },
+    "Bready Cricket Club, Magheramason": {
+      "avg_first_innings": 254.0,
+      "chase_win_rate": 1.0
+    },
+    "Dreux Sport Cricket Club": {
+      "avg_first_innings": 143.4,
+      "chase_win_rate": 0.286
+    },
+    "Harare Sports Club": {
+      "avg_first_innings": 366.7,
+      "chase_win_rate": 0.333
+    },
+    "Old Trafford": {
+      "avg_first_innings": 381.7,
+      "chase_win_rate": 0.167
+    },
+    "Tribhuvan University International Cricket Ground, Kirtipur": {
+      "avg_first_innings": 230.4,
+      "chase_win_rate": 0.5
+    },
+    "Hagley Oval": {
+      "avg_first_innings": 282.1,
+      "chase_win_rate": 0.5
+    },
+    "Kerava National Cricket Ground": {
+      "avg_first_innings": 133.2,
+      "chase_win_rate": 0.5
+    },
+    "Ground 1, Independence Park": {
+      "avg_first_innings": 76.5,
+      "chase_win_rate": 0.833
+    },
+    "P Sara Oval, Colombo": {
+      "avg_first_innings": 152.0,
+      "chase_win_rate": null
+    },
+    "Desert Springs Cricket Ground, Almeria": {
+      "avg_first_innings": 240.0,
+      "chase_win_rate": 0.0
+    },
+    "Saxton Oval": {
+      "avg_first_innings": 256.2,
+      "chase_win_rate": 0.636
+    },
+    "Seebarn Cricket Centre": {
+      "avg_first_innings": 143.0,
+      "chase_win_rate": 0.25
+    },
+    "Kensington Oval, Barbados": {
+      "avg_first_innings": 289.0,
+      "chase_win_rate": 0.0
+    },
+    "Bready": {
+      "avg_first_innings": 171.0,
+      "chase_win_rate": 1.0
+    },
+    "Hurlingham Club Ground, Buenos Aires": {
+      "avg_first_innings": 122.3,
+      "chase_win_rate": 0.333
+    },
+    "Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota": {
+      "avg_first_innings": 329.2,
+      "chase_win_rate": 0.452
+    },
+    "Reforma Athletic Club, Naucalpan": {
+      "avg_first_innings": 97.4,
+      "chase_win_rate": 0.636
+    },
+    "Jimmy Powell Oval, Cayman Islands": {
+      "avg_first_innings": 129.3,
+      "chase_win_rate": 0.56
+    },
+    "Los Reyes Polo Club": {
+      "avg_first_innings": 91.7,
+      "chase_win_rate": 0.333
+    },
+    "ICC Academy Ground No 2, Dubai": {
+      "avg_first_innings": 102.8,
+      "chase_win_rate": 0.6
+    },
+    "Tafawa Balewa Square (TBS) Cricket Oval": {
+      "avg_first_innings": 158.0,
+      "chase_win_rate": 0.0
+    },
+    "Malahide, Dublin": {
+      "avg_first_innings": 162.0,
+      "chase_win_rate": 0.0
+    },
+    "Sao Fernando Polo and Cricket Club, Campo Sede": {
+      "avg_first_innings": 40.0,
+      "chase_win_rate": null
+    },
+    "Al Amerat Cricket Ground Oman Cricket (Ministry Turf 2)": {
+      "avg_first_innings": 229.8,
+      "chase_win_rate": 0.4
+    },
+    "Diamond Oval, Kimberley": {
+      "avg_first_innings": 253.7,
+      "chase_win_rate": 0.667
+    },
+    "Albertslund Cricket Club": {
+      "avg_first_innings": 119.8,
+      "chase_win_rate": 0.333
+    },
+    "National Stadium": {
+      "avg_first_innings": 350.0,
+      "chase_win_rate": 0.6
+    },
+    "Lord's": {
+      "avg_first_innings": 369.2,
+      "chase_win_rate": 0.31
+    },
+    "Guernsey Rovers Athletic Club Ground, Port Soif": {
+      "avg_first_innings": 128.0,
+      "chase_win_rate": 0.615
+    },
+    "7he Sevens Stadium, Dubai": {
+      "avg_first_innings": 135.2,
+      "chase_win_rate": 0.75
+    },
+    "Mission Road Ground, Mong Kok": {
+      "avg_first_innings": 238.0,
+      "chase_win_rate": 0.0
+    },
+    "Multan Cricket Stadium": {
+      "avg_first_innings": 313.5,
+      "chase_win_rate": 0.375
+    },
+    "Vanuatu Cricket Ground (Oval 2)": {
+      "avg_first_innings": 81.8,
+      "chase_win_rate": 0.625
+    },
+    "Selangor Turf Club, Kuala Lumpur": {
+      "avg_first_innings": 91.6,
+      "chase_win_rate": 0.714
+    },
+    "Europa Sports Complex": {
+      "avg_first_innings": 134.8,
+      "chase_win_rate": 0.545
+    },
+    "Ground 2, Independence Park": {
+      "avg_first_innings": 84.0,
+      "chase_win_rate": 0.75
+    },
+    "Johor Cricket Academy Oval": {
+      "avg_first_innings": 132.0,
+      "chase_win_rate": 0.333
+    },
+    "Sylhet International Cricket Stadium, Academy Ground": {
+      "avg_first_innings": 119.0,
+      "chase_win_rate": 0.444
+    },
+    "County Ground, Derby": {
+      "avg_first_innings": 277.3,
+      "chase_win_rate": 0.333
+    },
+    "Shere Bangla National Stadium, Mirpur": {
+      "avg_first_innings": 332.9,
+      "chase_win_rate": 0.429
+    },
+    "San Albano": {
+      "avg_first_innings": 316.5,
+      "chase_win_rate": 0.0
+    },
+    "VRA Ground, Amstelveen": {
+      "avg_first_innings": 239.8,
+      "chase_win_rate": 0.5
+    },
+    "Sano International Cricket Ground 2": {
+      "avg_first_innings": 118.3,
+      "chase_win_rate": 0.833
+    },
+    "Moara Vlasiei Cricket Ground": {
+      "avg_first_innings": 112.0,
+      "chase_win_rate": 0.333
+    },
+    "Darren Sammy National Cricket Stadium, St Lucia": {
+      "avg_first_innings": 113.0,
+      "chase_win_rate": 1.0
+    },
+    "Koge Cricket Club 2": {
+      "avg_first_innings": 147.5,
+      "chase_win_rate": 0.0
+    },
+    "Southend Club Cricket Stadium, Karachi": {
+      "avg_first_innings": 227.3,
+      "chase_win_rate": 0.333
+    },
+    "Gaddafi Stadium, Lahore": {
+      "avg_first_innings": 363.0,
+      "chase_win_rate": 0.333
+    },
+    "FB Fields, St Clement": {
+      "avg_first_innings": 121.6,
+      "chase_win_rate": 0.2
+    },
+    "Marsa Sports Club": {
+      "avg_first_innings": 157.6,
+      "chase_win_rate": 0.565
+    },
+    "Kensington Oval, Bridgetown, Barbados": {
+      "avg_first_innings": 343.5,
+      "chase_win_rate": 0.5
+    },
+    "Zahur Ahmed Chowdhury Stadium": {
+      "avg_first_innings": 364.7,
+      "chase_win_rate": 0.429
+    },
+    "Sophia Gardens, Cardiff": {
+      "avg_first_innings": 230.8,
+      "chase_win_rate": 0.8
+    },
+    "Nondescripts Cricket Club Ground": {
+      "avg_first_innings": 212.2,
+      "chase_win_rate": 0.4
+    },
+    "Rawalpindi Cricket Stadium": {
+      "avg_first_innings": 349.2,
+      "chase_win_rate": 0.5
+    },
+    "Sydney Showground Stadium": {
+      "avg_first_innings": 311.5,
+      "chase_win_rate": 0.39
+    },
+    "Bellerive Oval, Hobart": {
+      "avg_first_innings": 303.0,
+      "chase_win_rate": 0.0
+    },
+    "St Lawrence Ground, Canterbury": {
+      "avg_first_innings": 317.3,
+      "chase_win_rate": 0.0
+    },
+    "Gymkhana Club Ground": {
+      "avg_first_innings": 197.2,
+      "chase_win_rate": 0.75
+    },
+    "Nigeria Cricket Federation Oval 2, Abuja": {
+      "avg_first_innings": 109.8,
+      "chase_win_rate": 0.4
+    },
+    "Singapore National Cricket Ground": {
+      "avg_first_innings": 138.3,
+      "chase_win_rate": 0.483
+    },
+    "Gahanga International Cricket Stadium, Rwanda": {
+      "avg_first_innings": 129.9,
+      "chase_win_rate": 0.369
+    },
+    "Manuka Oval": {
+      "avg_first_innings": 534.0,
+      "chase_win_rate": 0.0
+    },
+    "National Sports Academy, Sofia": {
+      "avg_first_innings": 154.9,
+      "chase_win_rate": 0.75
+    },
+    "United Cricket Club Ground": {
+      "avg_first_innings": 142.9,
+      "chase_win_rate": 0.333
+    },
+    "Edgbaston": {
+      "avg_first_innings": 286.8,
+      "chase_win_rate": 0.667
+    },
+    "Trent Bridge": {
+      "avg_first_innings": 284.9,
+      "chase_win_rate": 0.545
+    },
+    "Botkyrka Cricket Center, Stockholm": {
+      "avg_first_innings": 141.0,
+      "chase_win_rate": 0.529
+    },
+    "Saxton Oval, Nelson": {
+      "avg_first_innings": 272.0,
+      "chase_win_rate": 0.333
+    },
+    "McLean Park": {
+      "avg_first_innings": 397.5,
+      "chase_win_rate": 0.25
+    },
+    "Maple Leaf North-West Ground": {
+      "avg_first_innings": 131.0,
+      "chase_win_rate": 0.5
+    },
+    "Rangiri Dambulla International Stadium": {
+      "avg_first_innings": 382.2,
+      "chase_win_rate": 0.389
+    },
+    "Royal Selangor Club": {
+      "avg_first_innings": 115.3,
+      "chase_win_rate": 0.5
+    },
+    "Ishoj Cricket Club, Vejledalen": {
+      "avg_first_innings": 140.0,
+      "chase_win_rate": 0.3
+    },
+    "Civil Service Cricket Club, Stormont": {
+      "avg_first_innings": 178.5,
+      "chase_win_rate": 0.5
     },
     "Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1)": {
       "avg_first_innings": 184.5,
       "chase_win_rate": 0.593
     },
+    "Banks Field, Vinor": {
+      "avg_first_innings": 123.7,
+      "chase_win_rate": 0.5
+    },
+    "University Oval": {
+      "avg_first_innings": 331.3,
+      "chase_win_rate": 0.571
+    },
+    "Central Broward Regional Park Stadium Turf Ground": {
+      "avg_first_innings": 205.6,
+      "chase_win_rate": 0.4
+    },
+    "Sportpark Het Schootsveld, Deventer": {
+      "avg_first_innings": 133.8,
+      "chase_win_rate": 0.8
+    },
+    "Ekeberg Cricket Ground 2, Oslo": {
+      "avg_first_innings": 64.0,
+      "chase_win_rate": 1.0
+    },
+    "Tafawa Balewa Square Cricket Oval, Lagos": {
+      "avg_first_innings": 119.8,
+      "chase_win_rate": 0.346
+    },
+    "Brian Lara Stadium, Tarouba, Trinidad": {
+      "avg_first_innings": 311.0,
+      "chase_win_rate": 0.0
+    },
+    "Las Caballerizas": {
+      "avg_first_innings": 110.0,
+      "chase_win_rate": 0.0
+    },
+    "North Sydney Oval, Sydney": {
+      "avg_first_innings": 280.0,
+      "chase_win_rate": 1.0
+    },
+    "Sir Vivian Richards Stadium, North Sound, Antigua": {
+      "avg_first_innings": 344.2,
+      "chase_win_rate": 0.6
+    },
+    "Integrated Polytechnic Regional Centre": {
+      "avg_first_innings": 126.5,
+      "chase_win_rate": 0.421
+    },
+    "Wanderers": {
+      "avg_first_innings": 134.0,
+      "chase_win_rate": 1.0
+    },
+    "Kennington Oval, London": {
+      "avg_first_innings": 317.6,
+      "chase_win_rate": 0.556
+    },
+    "Sinhalese Sports Club Ground, Colombo": {
+      "avg_first_innings": 226.0,
+      "chase_win_rate": 1.0
+    },
+    "Galle International Stadium": {
+      "avg_first_innings": 381.1,
+      "chase_win_rate": 0.41
+    },
+    "Grange Cricket Club Ground, Raeburn Place": {
+      "avg_first_innings": 241.6,
+      "chase_win_rate": 0.286
+    },
+    "Gahanga International Cricket Stadium. Rwanda": {
+      "avg_first_innings": 191.6,
+      "chase_win_rate": 0.455
+    },
+    "Arnos Vale Ground, Kingstown, St Vincent": {
+      "avg_first_innings": 191.0,
+      "chase_win_rate": 0.0
+    },
+    "Jinja Cricket Ground": {
+      "avg_first_innings": 93.0,
+      "chase_win_rate": 0.5
+    },
+    "Mangaung Oval": {
+      "avg_first_innings": 573.0,
+      "chase_win_rate": 0.0
+    },
+    "County Ground, Chelmsford": {
+      "avg_first_innings": 285.2,
+      "chase_win_rate": 0.25
+    },
+    "National Stadium, Karachi": {
+      "avg_first_innings": 436.8,
+      "chase_win_rate": 0.5
+    },
+    "Sylhet International Cricket Stadium": {
+      "avg_first_innings": 271.2,
+      "chase_win_rate": 0.5
+    },
+    "Bellerive Oval": {
+      "avg_first_innings": 354.0,
+      "chase_win_rate": 0.286
+    },
+    "Tikkurila Cricket Ground": {
+      "avg_first_innings": 130.1,
+      "chase_win_rate": 0.364
+    },
+    "Sportpark Het Schootsveld": {
+      "avg_first_innings": 247.5,
+      "chase_win_rate": 1.0
+    },
+    "Woodley Cricket Field, Los Angeles": {
+      "avg_first_innings": 108.6,
+      "chase_win_rate": 0.167
+    },
+    "National Cricket Stadium, St George's": {
+      "avg_first_innings": 268.0,
+      "chase_win_rate": 0.5
+    },
+    "Wanderers Cricket Ground, Windhoek": {
+      "avg_first_innings": 211.6,
+      "chase_win_rate": 0.45
+    },
+    "Titwood, Glasgow": {
+      "avg_first_innings": 162.3,
+      "chase_win_rate": 1.0
+    },
+    "Yeonhui Cricket Ground": {
+      "avg_first_innings": 85.7,
+      "chase_win_rate": 0.526
+    },
+    "Queen's Park Oval, Port of Spain": {
+      "avg_first_innings": 312.0,
+      "chase_win_rate": 0.333
+    },
+    "Sabina Park, Kingston": {
+      "avg_first_innings": 319.8,
+      "chase_win_rate": 0.3
+    },
+    "Sportpark Westvliet, The Hague": {
+      "avg_first_innings": 230.0,
+      "chase_win_rate": 0.5
+    },
+    "Indian Association Ground, Singapore": {
+      "avg_first_innings": 132.6,
+      "chase_win_rate": 0.6
+    },
+    "McLean Park, Napier": {
+      "avg_first_innings": 207.8,
+      "chase_win_rate": 0.4
+    },
+    "Entebbe Cricket Oval": {
+      "avg_first_innings": 110.2,
+      "chase_win_rate": 0.426
+    },
+    "Gaddafi Stadium": {
+      "avg_first_innings": 389.7,
+      "chase_win_rate": 0.333
+    },
+    "Western Australia Cricket Association Ground": {
+      "avg_first_innings": 340.6,
+      "chase_win_rate": 0.333
+    },
+    "Khan Shaheb Osman Ali Stadium": {
+      "avg_first_innings": 444.5,
+      "chase_win_rate": 0.0
+    },
+    "Jade Stadium": {
+      "avg_first_innings": 214.3,
+      "chase_win_rate": 0.333
+    },
+    "La Manga Club Bottom Ground": {
+      "avg_first_innings": 91.4,
+      "chase_win_rate": 0.857
+    },
+    "Greenfield International Stadium, Thiruvananthapuram": {
+      "avg_first_innings": 390.0,
+      "chase_win_rate": 0.0
+    },
+    "Tolerance Oval": {
+      "avg_first_innings": 126.8,
+      "chase_win_rate": 0.556
+    },
+    "Kennington Oval": {
+      "avg_first_innings": 364.7,
+      "chase_win_rate": 0.4
+    },
+    "Grange Cricket Club Ground, Raeburn Place, Edinburgh": {
+      "avg_first_innings": 306.0,
+      "chase_win_rate": 1.0
+    },
+    "Ekeberg Cricket Ground 1, Oslo": {
+      "avg_first_innings": 132.7,
+      "chase_win_rate": 0.333
+    },
+    "Zhejiang University of Technology Cricket Field": {
+      "avg_first_innings": 103.2,
+      "chase_win_rate": 0.6
+    },
+    "Lalabhai Contractor Stadium": {
+      "avg_first_innings": 135.8,
+      "chase_win_rate": 0.25
+    },
+    "Kingsmead, Durban": {
+      "avg_first_innings": 308.7,
+      "chase_win_rate": 0.0
+    },
+    "Kerrydale Oval": {
+      "avg_first_innings": 116.0,
+      "chase_win_rate": 0.5
+    },
+    "Coolidge Cricket Ground": {
+      "avg_first_innings": 154.0,
+      "chase_win_rate": 0.0
+    },
+    "Eden Park, Auckland": {
+      "avg_first_innings": 270.0,
+      "chase_win_rate": 0.6
+    },
+    "Edgbaston, Birmingham": {
+      "avg_first_innings": 426.0,
+      "chase_win_rate": 0.286
+    },
+    "ICC Global Cricket Academy": {
+      "avg_first_innings": 233.0,
+      "chase_win_rate": 0.667
+    },
+    "Kolej Tuanku Jaafar Cricket Oval, Mantin": {
+      "avg_first_innings": 115.7,
+      "chase_win_rate": 0.333
+    },
+    "Pokhara Rangasala": {
+      "avg_first_innings": 82.2,
+      "chase_win_rate": 0.75
+    },
+    "Arnos Vale Ground, Kingstown": {
+      "avg_first_innings": 361.0,
+      "chase_win_rate": 0.5
+    },
+    "Nigeria Cricket Federation Oval 1, Abuja": {
+      "avg_first_innings": 128.5,
+      "chase_win_rate": 0.417
+    },
+    "Desert Springs Cricket Ground": {
+      "avg_first_innings": 159.5,
+      "chase_win_rate": 0.5
+    },
+    "Indian Association Ground": {
+      "avg_first_innings": 145.1,
+      "chase_win_rate": 0.529
+    },
+    "Stars Arena Hofstade, Zemst": {
+      "avg_first_innings": 130.1,
+      "chase_win_rate": 0.727
+    },
+    "West End Park International Cricket Stadium, Doha": {
+      "avg_first_innings": 144.6,
+      "chase_win_rate": 0.483
+    },
+    "Amini Park": {
+      "avg_first_innings": 133.8,
+      "chase_win_rate": 0.333
+    },
+    "John Davies Oval, Queenstown": {
+      "avg_first_innings": 271.8,
+      "chase_win_rate": 0.5
+    },
+    "Mission Road Ground, Mong Kok, Hong Kong": {
+      "avg_first_innings": 140.4,
+      "chase_win_rate": 0.378
+    },
+    "Happy Valley Ground 2": {
+      "avg_first_innings": 137.7,
+      "chase_win_rate": 0.462
+    },
+    "City Oval": {
+      "avg_first_innings": 133.0,
+      "chase_win_rate": 1.0
+    },
+    "SuperSport Park, Centurion": {
+      "avg_first_innings": 281.2,
+      "chase_win_rate": 0.5
+    },
+    "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium": {
+      "avg_first_innings": 174.0,
+      "chase_win_rate": 1.0
+    },
+    "Centre for Cricket Development Ground, Windhoek": {
+      "avg_first_innings": 96.1,
+      "chase_win_rate": 0.4
+    },
+    "University of Lagos Cricket Oval": {
+      "avg_first_innings": 125.5,
+      "chase_win_rate": 0.375
+    },
+    "UKM-YSD Cricket Oval, Bangi": {
+      "avg_first_innings": 104.4,
+      "chase_win_rate": 0.595
+    },
+    "Marina Ground, Corfu": {
+      "avg_first_innings": 110.5,
+      "chase_win_rate": 0.538
+    },
+    "Boland Park": {
+      "avg_first_innings": 242.9,
+      "chase_win_rate": 0.444
+    },
+    "Tolerance Oval, Abu Dhabi": {
+      "avg_first_innings": 123.4,
+      "chase_win_rate": 0.5
+    },
+    "Queens Sports Club, Bulawayo": {
+      "avg_first_innings": 327.6,
+      "chase_win_rate": 0.5
+    },
+    "Hazelaarweg, Rotterdam": {
+      "avg_first_innings": 217.6,
+      "chase_win_rate": 0.25
+    },
+    "Bayer Uerdingen Cricket Ground": {
+      "avg_first_innings": 139.1,
+      "chase_win_rate": 0.449
+    },
+    "Hagley Oval, Christchurch": {
+      "avg_first_innings": 296.6,
+      "chase_win_rate": 0.571
+    },
+    "Malkerns Country Club oval": {
+      "avg_first_innings": 169.7,
+      "chase_win_rate": 0.333
+    },
+    "Daren Sammy National Cricket Stadium, Gros Islet": {
+      "avg_first_innings": 420.5,
+      "chase_win_rate": 0.5
+    },
+    "Faleata Oval No 2, Apia": {
+      "avg_first_innings": 147.9,
+      "chase_win_rate": 0.5
+    },
+    "Roma Cricket Ground": {
+      "avg_first_innings": 134.4,
+      "chase_win_rate": 0.5
+    },
+    "Maple Leaf North-East Ground, King City": {
+      "avg_first_innings": 197.5,
+      "chase_win_rate": 0.0
+    },
+    "Tribhuvan University International Cricket Ground": {
+      "avg_first_innings": 193.3,
+      "chase_win_rate": 0.5
+    },
+    "Sao Fernando Polo and Cricket Club": {
+      "avg_first_innings": 116.5,
+      "chase_win_rate": 0.5
+    },
+    "Warner Park, Basseterre": {
+      "avg_first_innings": 465.3,
+      "chase_win_rate": 0.333
+    },
+    "Castle Avenue, Dublin": {
+      "avg_first_innings": 267.2,
+      "chase_win_rate": 0.429
+    },
+    "University Oval, Dunedin": {
+      "avg_first_innings": 224.3,
+      "chase_win_rate": 0.286
+    },
+    "Dr DY Patil Sports Academy, Navi Mumbai": {
+      "avg_first_innings": 259.4,
+      "chase_win_rate": 0.2
+    },
+    "Cazaly's Stadium, Cairns": {
+      "avg_first_innings": 247.5,
+      "chase_win_rate": 0.25
+    },
+    "National Stadium, Hamilton": {
+      "avg_first_innings": 164.0,
+      "chase_win_rate": 0.2
+    },
+    "Sportpark Maarschalkerweerd": {
+      "avg_first_innings": 146.5,
+      "chase_win_rate": 0.0
+    },
+    "Sky Stadium, Wellington": {
+      "avg_first_innings": 222.0,
+      "chase_win_rate": 1.0
+    },
+    "Barabati Stadium, Cuttack": {
+      "avg_first_innings": 275.0,
+      "chase_win_rate": 1.0
+    },
+    "Bready Cricket Club, Magheramason, Bready": {
+      "avg_first_innings": 255.7,
+      "chase_win_rate": 0.667
+    },
+    "Takashinga Sports Club, Highfield, Harare": {
+      "avg_first_innings": 245.4,
+      "chase_win_rate": 0.667
+    },
+    "Greenfield International Stadium": {
+      "avg_first_innings": 104.0,
+      "chase_win_rate": 1.0
+    },
+    "Newlands, Cape Town": {
+      "avg_first_innings": 378.2,
+      "chase_win_rate": 0.25
+    },
+    "St Albans Club, Buenos Aires": {
+      "avg_first_innings": 108.1,
+      "chase_win_rate": 0.37
+    },
+    "Asian Institute of Technology Ground": {
+      "avg_first_innings": 89.9,
+      "chase_win_rate": 0.6
+    },
+    "Willowmoore Park, Benoni": {
+      "avg_first_innings": 236.2,
+      "chase_win_rate": 0.5
+    },
+    "Buffalo Park, East London": {
+      "avg_first_innings": 245.1,
+      "chase_win_rate": 0.286
+    },
+    "Asian Institute of Technology Ground, Bangkok": {
+      "avg_first_innings": 86.2,
+      "chase_win_rate": 0.75
+    },
+    "Ruaraka Sports Club Ground, Nairobi": {
+      "avg_first_innings": 195.0,
+      "chase_win_rate": 0.333
+    },
+    "West End Park International Cricket Stadium": {
+      "avg_first_innings": 87.0,
+      "chase_win_rate": 0.75
+    },
+    "Holkar Cricket Stadium, Indore": {
+      "avg_first_innings": 109.0,
+      "chase_win_rate": 1.0
+    },
+    "Brisbane Cricket Ground, Woolloongabba": {
+      "avg_first_innings": 373.3,
+      "chase_win_rate": 0.5
+    },
     "Stubberudmyra Cricket Ground, Oslo": {
       "avg_first_innings": 170.7,
       "chase_win_rate": 0.333
     },
-    "Mangaung Oval": {
-      "avg_first_innings": 573.0,
+    "Mulpani Cricket Ground": {
+      "avg_first_innings": 236.0,
       "chase_win_rate": 0.0
     },
     "The Village, Malahide": {
       "avg_first_innings": 310.0,
       "chase_win_rate": 0.0
     },
-    "Sheikh Abu Naser Stadium": {
-      "avg_first_innings": 384.0,
+    "County Ground": {
+      "avg_first_innings": 233.0,
+      "chase_win_rate": 0.439
+    },
+    "County Ground, Hove": {
+      "avg_first_innings": 227.0,
+      "chase_win_rate": 1.0
+    },
+    "Allan Border Field, Brisbane": {
+      "avg_first_innings": 175.5,
       "chase_win_rate": 0.667
-    },
-    "N'Du Stadium, Noumea, New Caledonia": {
-      "avg_first_innings": 92.5,
-      "chase_win_rate": 0.333
-    },
-    "County Ground, Derby": {
-      "avg_first_innings": 277.3,
-      "chase_win_rate": 0.333
-    },
-    "VRA Ground, Amstelveen": {
-      "avg_first_innings": 239.8,
-      "chase_win_rate": 0.5
-    },
-    "National Cricket Stadium, St George's": {
-      "avg_first_innings": 268.0,
-      "chase_win_rate": 0.5
-    },
-    "Albert Park 2, Suva": {
-      "avg_first_innings": 114.0,
-      "chase_win_rate": 0.556
     },
     "Great Barrier Reef Arena, Mackay": {
       "avg_first_innings": 354.0,
       "chase_win_rate": 0.0
     },
-    "Madhavrao Scindia Cricket Ground": {
-      "avg_first_innings": 313.5,
-      "chase_win_rate": 0.25
+    "Moses Mabhida Stadium": {
+      "avg_first_innings": 168.0,
+      "chase_win_rate": 0.0
     },
-    "Queen's Park (New), St George's, Grenada": {
-      "avg_first_innings": 249.5,
+    "Sinhalese Sports Club Ground": {
+      "avg_first_innings": 383.6,
+      "chase_win_rate": 0.438
+    },
+    "The Cooper Associates County Ground, Taunton": {
+      "avg_first_innings": 284.0,
       "chase_win_rate": 1.0
+    },
+    "Achimota Senior Secondary School B Field, Accra": {
+      "avg_first_innings": 134.4,
+      "chase_win_rate": 0.357
+    },
+    "Belgrano Athletic Club Ground, Buenos Aires": {
+      "avg_first_innings": 151.4,
+      "chase_win_rate": 0.4
+    },
+    "Allan Border Field": {
+      "avg_first_innings": 249.0,
+      "chase_win_rate": 0.571
+    },
+    "Basin Reserve, Wellington": {
+      "avg_first_innings": 351.7,
+      "chase_win_rate": 0.429
+    },
+    "Junction Oval": {
+      "avg_first_innings": 231.0,
+      "chase_win_rate": 1.0
+    },
+    "Sydney Parade": {
+      "avg_first_innings": 172.5,
+      "chase_win_rate": 0.0
+    },
+    "N'Du Stadium, Noumea, New Caledonia": {
+      "avg_first_innings": 92.5,
+      "chase_win_rate": 0.333
+    },
+    "Marrara Stadium, Darwin": {
+      "avg_first_innings": 198.0,
+      "chase_win_rate": 0.0
+    },
+    "Vassil Levski National Sports Academy, Sofia": {
+      "avg_first_innings": 164.2,
+      "chase_win_rate": 0.579
+    },
+    "ICC Academy": {
+      "avg_first_innings": 245.1,
+      "chase_win_rate": 0.467
+    },
+    "Perth Stadium": {
+      "avg_first_innings": 358.2,
+      "chase_win_rate": 0.0
+    },
+    "Brisbane Cricket Ground, Woolloongabba, Brisbane": {
+      "avg_first_innings": 285.3,
+      "chase_win_rate": 0.667
+    },
+    "Providence Stadium, Guyana": {
+      "avg_first_innings": 160.0,
+      "chase_win_rate": 0.0
+    },
+    "Narendra Modi Stadium": {
+      "avg_first_innings": 158.5,
+      "chase_win_rate": 1.0
+    },
+    "GB Oval, Szodliget": {
+      "avg_first_innings": 174.2,
+      "chase_win_rate": 0.467
+    },
+    "Albert Park 2, Suva": {
+      "avg_first_innings": 114.0,
+      "chase_win_rate": 0.556
+    },
+    "JSCA International Stadium Complex, Ranchi": {
+      "avg_first_innings": 353.0,
+      "chase_win_rate": 0.0
+    },
+    "Sheikh Abu Naser Stadium": {
+      "avg_first_innings": 384.0,
+      "chase_win_rate": 0.667
+    },
+    "St George's Park, Gqeberha": {
+      "avg_first_innings": 358.0,
+      "chase_win_rate": 0.0
+    },
+    "Zahur Ahmed Chowdhury Stadium, Chattogram": {
+      "avg_first_innings": 410.7,
+      "chase_win_rate": 0.333
+    },
+    "Pembroke Cricket Club, Sandymount": {
+      "avg_first_innings": 151.0,
+      "chase_win_rate": 1.0
+    },
+    "The Rose Bowl, Southampton": {
+      "avg_first_innings": 217.0,
+      "chase_win_rate": 1.0
+    },
+    "Pukekura Park": {
+      "avg_first_innings": 134.0,
+      "chase_win_rate": 0.0
+    },
+    "King George V Sports Ground, Castel": {
+      "avg_first_innings": 146.8,
+      "chase_win_rate": 0.529
+    },
+    "College Field, St Peter Port": {
+      "avg_first_innings": 178.0,
+      "chase_win_rate": 0.0
+    },
+    "Kinrara Academy Oval": {
+      "avg_first_innings": 235.6,
+      "chase_win_rate": 0.154
+    },
+    "St George's College Ground, Buenos Aires": {
+      "avg_first_innings": 88.8,
+      "chase_win_rate": 0.4
+    },
+    "YSD-UKM Cricket Oval, Bangi": {
+      "avg_first_innings": 110.8,
+      "chase_win_rate": 0.432
+    },
+    "M Chinnaswamy Stadium, Bangalore": {
+      "avg_first_innings": 336.0,
+      "chase_win_rate": 0.0
+    },
+    "Arbab Niaz Stadium": {
+      "avg_first_innings": 274.7,
+      "chase_win_rate": 0.667
     },
     "Welagedara Stadium": {
       "avg_first_innings": 191.5,
       "chase_win_rate": 0.5
     },
-    "International Sports Stadium": {
-      "avg_first_innings": 278.0,
-      "chase_win_rate": 0.0
-    },
-    "Forthill, Dundee": {
-      "avg_first_innings": 245.4,
-      "chase_win_rate": 0.5
-    },
-    "P Saravanamuttu Stadium": {
-      "avg_first_innings": 249.0,
-      "chase_win_rate": 1.0
-    },
-    "Goodyear Park": {
-      "avg_first_innings": 201.0,
-      "chase_win_rate": 1.0
-    },
-    "Narayanganj Osmani Stadium": {
-      "avg_first_innings": 187.0,
-      "chase_win_rate": 0.5
-    },
-    "Riverway Stadium, Townsville": {
-      "avg_first_innings": 141.0,
-      "chase_win_rate": 1.0
-    },
-    "Sedgars Park, Potchefstroom": {
-      "avg_first_innings": 338.0,
-      "chase_win_rate": 0.0
-    },
-    "Vidarbha Cricket Association Ground": {
-      "avg_first_innings": 317.0,
-      "chase_win_rate": 0.0
-    },
-    "Clontarf Cricket Club Ground": {
-      "avg_first_innings": 209.1,
-      "chase_win_rate": 0.545
-    },
-    "Sinovich Park, Sinoville": {
-      "avg_first_innings": 156.0,
-      "chase_win_rate": 1.0
-    },
-    "Toronto Cricket, Skating and Curling Club": {
-      "avg_first_innings": 175.0,
-      "chase_win_rate": 0.0
-    },
-    "North-West University No1 Ground": {
-      "avg_first_innings": 179.3,
-      "chase_win_rate": 0.667
-    },
-    "The Royal & Sun Alliance County Ground, Bristol": {
-      "avg_first_innings": 92.0,
-      "chase_win_rate": 1.0
-    },
-    "Brisbane Cricket Ground": {
-      "avg_first_innings": 361.0,
-      "chase_win_rate": 0.5
-    },
-    "Shahid Kamruzzaman Stadium, Rajshahi": {
-      "avg_first_innings": 194.3,
-      "chase_win_rate": 1.0
-    },
-    "Nahar Singh Stadium": {
-      "avg_first_innings": 226.0,
-      "chase_win_rate": 1.0
-    },
-    "Sector 16 Stadium": {
-      "avg_first_innings": 291.0,
-      "chase_win_rate": 0.0
-    },
-    "Mannofield Park, Aberdeen": {
-      "avg_first_innings": 262.6,
-      "chase_win_rate": 0.6
-    },
-    "Castle Avenue": {
-      "avg_first_innings": 311.3,
-      "chase_win_rate": 0.667
-    },
-    "Carisbrook": {
-      "avg_first_innings": 259.0,
-      "chase_win_rate": 1.0
-    },
-    "Zohur Ahmed Chowdhury Stadium": {
-      "avg_first_innings": 599.0,
-      "chase_win_rate": 0.0
-    },
-    "Choice Moosa Stadium, Pearland": {
-      "avg_first_innings": 305.0,
-      "chase_win_rate": 0.0
-    },
-    "The Vineyard": {
-      "avg_first_innings": 418.0,
-      "chase_win_rate": 0.0
-    },
-    "Old Hararians, Harare": {
-      "avg_first_innings": 201.0,
-      "chase_win_rate": 1.0
-    },
-    "MA Aziz Stadium": {
-      "avg_first_innings": 545.0,
-      "chase_win_rate": 0.0
-    },
-    "Louth Cricket Club": {
-      "avg_first_innings": 227.0,
-      "chase_win_rate": 0.0
-    },
-    "Stellenbosch University 2": {
-      "avg_first_innings": 162.0,
-      "chase_win_rate": 0.0
-    },
-    "Titwood": {
-      "avg_first_innings": 203.0,
-      "chase_win_rate": 1.0
-    },
-    "Davies Park, Queenstown": {
-      "avg_first_innings": 122.0,
-      "chase_win_rate": 1.0
-    },
-    "Jade Stadium, Christchurch": {
-      "avg_first_innings": 108.0,
-      "chase_win_rate": 1.0
-    },
-    "VRA Cricket Ground": {
-      "avg_first_innings": 183.5,
-      "chase_win_rate": 0.0
-    },
-    "Westpac Stadium, Wellington": {
-      "avg_first_innings": 168.0,
-      "chase_win_rate": 1.0
-    },
-    "Queen's Park Oval": {
-      "avg_first_innings": 57.0,
-      "chase_win_rate": null
-    },
-    "Harlequins": {
-      "avg_first_innings": 226.0,
-      "chase_win_rate": 0.0
-    },
-    "The Hills Cricket Club Ground": {
-      "avg_first_innings": 143.0,
-      "chase_win_rate": 1.0
-    },
-    "North West Cricket Stadium, Potchefstroom": {
-      "avg_first_innings": 220.5,
-      "chase_win_rate": 0.5
-    },
-    "Sinhalese Sports Club": {
-      "avg_first_innings": 282.5,
-      "chase_win_rate": 0.0
-    },
-    "MA Aziz Stadium, Chittagong": {
-      "avg_first_innings": 326.0,
-      "chase_win_rate": 0.0
-    },
-    "Eden Park No 2": {
-      "avg_first_innings": 275.0,
+    "Bangabandhu National Stadium": {
+      "avg_first_innings": 184.0,
       "chase_win_rate": 1.0
     },
     "Moosa Cricket Stadium, Pearland": {
       "avg_first_innings": 228.3,
       "chase_win_rate": 0.5
     },
-    "Niranjan Shah Stadium, Rajkot": {
-      "avg_first_innings": 284.0,
-      "chase_win_rate": 1.0
-    },
-    "Diamond Oval": {
-      "avg_first_innings": 203.3,
-      "chase_win_rate": 0.667
-    },
-    "Bradman Oval": {
-      "avg_first_innings": 247.5,
-      "chase_win_rate": 0.5
-    },
-    "Bundaberg Rum Stadium, Cairns": {
-      "avg_first_innings": 126.0,
-      "chase_win_rate": 1.0
-    },
-    "Sharjah Cricket Association Stadium": {
-      "avg_first_innings": 232.7,
-      "chase_win_rate": 0.571
-    },
-    "Bert Sutcliffe Oval": {
-      "avg_first_innings": 245.4,
-      "chase_win_rate": 0.571
-    },
-    "Maharani Usharaje Trust Cricket Ground": {
-      "avg_first_innings": 290.0,
-      "chase_win_rate": 0.5
-    },
-    "North Marine Road Ground": {
-      "avg_first_innings": 203.5,
-      "chase_win_rate": 0.0
-    },
-    "Indian Petrochemicals Corporation Limited Sports Complex Ground": {
-      "avg_first_innings": 341.0,
-      "chase_win_rate": 0.0
-    },
-    "Sunrise Sports Club, Harare": {
-      "avg_first_innings": 195.0,
-      "chase_win_rate": 0.0
-    },
-    "Grace Road, Leicester": {
-      "avg_first_innings": 223.0,
-      "chase_win_rate": 1.0
-    },
-    "Marrara Cricket Ground": {
-      "avg_first_innings": 189.7,
+    "Queen's Park Oval, Port of Spain, Trinidad": {
+      "avg_first_innings": 379.7,
       "chase_win_rate": 0.333
     },
-    "Westpac Park, Hamilton": {
-      "avg_first_innings": 122.0,
-      "chase_win_rate": 1.0
+    "Sir Vivian Richards Stadium, Antigua": {
+      "avg_first_innings": 242.0,
+      "chase_win_rate": 0.5
     },
-    "R.Premadasa Stadium": {
-      "avg_first_innings": 188.0,
-      "chase_win_rate": 1.0
-    },
-    "Iqbal Stadium, Faisalabad": {
-      "avg_first_innings": 278.0,
-      "chase_win_rate": 1.0
-    },
-    "Chittagong Divisional Stadium": {
-      "avg_first_innings": 483.5,
+    "Zohur Ahmed Chowdhury Stadium": {
+      "avg_first_innings": 599.0,
       "chase_win_rate": 0.0
-    },
-    "Iqbal Stadium": {
-      "avg_first_innings": 525.0,
-      "chase_win_rate": 0.5
-    },
-    "Sedgars Park": {
-      "avg_first_innings": 326.5,
-      "chase_win_rate": 0.5
-    },
-    "Sheikh Kamal International Cricket Stadium": {
-      "avg_first_innings": 159.5,
-      "chase_win_rate": 0.5
     },
     "Sheikhupura Stadium": {
       "avg_first_innings": 181.0,
@@ -2093,172 +1873,184 @@
       "avg_first_innings": 250.0,
       "chase_win_rate": 0.0
     },
+    "Brisbane Cricket Ground": {
+      "avg_first_innings": 361.0,
+      "chase_win_rate": 0.5
+    },
+    "Vidarbha Cricket Association Ground": {
+      "avg_first_innings": 317.0,
+      "chase_win_rate": 0.0
+    },
+    "John Davies Oval": {
+      "avg_first_innings": 164.0,
+      "chase_win_rate": 1.0
+    },
+    "Bert Sutcliffe Oval": {
+      "avg_first_innings": 245.4,
+      "chase_win_rate": 0.571
+    },
     "Kotambi Stadium, Vadodara": {
       "avg_first_innings": 283.5,
       "chase_win_rate": 0.5
-    },
-    "Nehru Stadium, Poona": {
-      "avg_first_innings": 258.0,
-      "chase_win_rate": 1.0
-    },
-    "Western Australia Cricket Association Ground, Perth": {
-      "avg_first_innings": 336.3,
-      "chase_win_rate": 0.667
-    },
-    "FTZ Sports Complex (BOI)": {
-      "avg_first_innings": 174.0,
-      "chase_win_rate": 1.0
-    },
-    "Mangaung Oval, Bloemfontein": {
-      "avg_first_innings": 395.0,
-      "chase_win_rate": 0.0
-    },
-    "Sir Paul Getty's Ground": {
-      "avg_first_innings": 211.5,
-      "chase_win_rate": 0.5
-    },
-    "Bharat Ratna Shri Atal Bihari Vajpai Ekana Cricket Stadium": {
-      "avg_first_innings": 257.0,
-      "chase_win_rate": 0.5
-    },
-    "St George's Park, Port Elizabeth": {
-      "avg_first_innings": 381.0,
-      "chase_win_rate": 0.0
-    },
-    "Headingley": {
-      "avg_first_innings": 289.8,
-      "chase_win_rate": 0.615
-    },
-    "Andhra Cricket Association-Visakhapatnam District Cricket Association Stadium": {
-      "avg_first_innings": 259.0,
-      "chase_win_rate": 1.0
-    },
-    "Shaheed Chandu Stadium": {
-      "avg_first_innings": 234.0,
-      "chase_win_rate": 1.0
-    },
-    "Queen's Park Oval, Trinidad": {
-      "avg_first_innings": 259.5,
-      "chase_win_rate": 0.5
-    },
-    "Ray Mitchell Oval, Harrup Park, Mackay": {
-      "avg_first_innings": 254.3,
-      "chase_win_rate": 1.0
-    },
-    "Tony Ireland Stadium, Townsville": {
-      "avg_first_innings": 148.0,
-      "chase_win_rate": 1.0
-    },
-    "Lahore City Cricket Association Ground": {
-      "avg_first_innings": 231.0,
-      "chase_win_rate": 0.429
-    },
-    "Arbab Niaz Stadium": {
-      "avg_first_innings": 274.7,
-      "chase_win_rate": 0.667
-    },
-    "Marrara Cricket Ground, Darwin": {
-      "avg_first_innings": 97.0,
-      "chase_win_rate": 1.0
-    },
-    "Sir Vivian Richards Stadium, Antigua": {
-      "avg_first_innings": 242.0,
-      "chase_win_rate": 0.5
-    },
-    "Nahar Singh Stadium, Faridabad": {
-      "avg_first_innings": 97.0,
-      "chase_win_rate": 1.0
-    },
-    "Malahide": {
-      "avg_first_innings": 242.8,
-      "chase_win_rate": 0.333
     },
     "Sir Vivian Richards Stadium": {
       "avg_first_innings": 188.7,
       "chase_win_rate": 0.667
     },
-    "Niaz Stadium, Hyderabad": {
-      "avg_first_innings": 238.0,
-      "chase_win_rate": 1.0
-    },
-    "Sher-e-Bangla National Cricket Stadium": {
-      "avg_first_innings": 246.0,
+    "Sunrise Sports Club, Harare": {
+      "avg_first_innings": 195.0,
       "chase_win_rate": 0.0
     },
-    "Peter Burge Oval": {
-      "avg_first_innings": 155.0,
+    "Eden Park No 2": {
+      "avg_first_innings": 275.0,
       "chase_win_rate": 1.0
     },
-    "Captain Roop Singh Stadium": {
-      "avg_first_innings": 328.0,
-      "chase_win_rate": 0.5
+    "Bangabandhu National Stadium, Dhaka": {
+      "avg_first_innings": 203.0,
+      "chase_win_rate": 1.0
     },
-    "County Ground, New Road": {
-      "avg_first_innings": 260.2,
-      "chase_win_rate": 0.25
+    "Sharjah Cricket Association Stadium": {
+      "avg_first_innings": 232.7,
+      "chase_win_rate": 0.571
     },
-    "De Beers Diamond Oval, Kimberley": {
-      "avg_first_innings": 226.5,
-      "chase_win_rate": 0.5
+    "Docklands Stadium": {
+      "avg_first_innings": 278.6,
+      "chase_win_rate": 0.2
     },
-    "New Wanderers Stadium, Johannesburg": {
-      "avg_first_innings": 561.0,
+    "Mannofield Park, Aberdeen": {
+      "avg_first_innings": 262.6,
+      "chase_win_rate": 0.6
+    },
+    "Chevrolet Park": {
+      "avg_first_innings": 290.5,
       "chase_win_rate": 0.0
     },
-    "Vidarbha C.A. Ground": {
-      "avg_first_innings": 393.0,
+    "R.Premadasa Stadium": {
+      "avg_first_innings": 188.0,
+      "chase_win_rate": 1.0
+    },
+    "Bradman Oval": {
+      "avg_first_innings": 247.5,
+      "chase_win_rate": 0.5
+    },
+    "Lal Bahadur Shastri Stadium, Hyderabad, Deccan": {
+      "avg_first_innings": 353.0,
       "chase_win_rate": 0.0
     },
     "Eden Park Outer Oval": {
       "avg_first_innings": 187.0,
       "chase_win_rate": 1.0
     },
-    "Boland Bank Park, Paarl": {
-      "avg_first_innings": 164.3,
-      "chase_win_rate": 0.333
-    },
-    "City Oval, Pietermaritzburg": {
-      "avg_first_innings": 282.0,
-      "chase_win_rate": 0.5
-    },
-    "Queenstown Events Centre": {
-      "avg_first_innings": 147.2,
-      "chase_win_rate": 0.667
-    },
-    "Reliance Stadium": {
-      "avg_first_innings": 216.9,
-      "chase_win_rate": 0.667
-    },
-    "Antigua Recreation Ground, St John's": {
-      "avg_first_innings": 403.5,
-      "chase_win_rate": 0.5
-    },
-    "Docklands Stadium": {
-      "avg_first_innings": 278.6,
-      "chase_win_rate": 0.2
-    },
-    "Khettarama Stadium": {
-      "avg_first_innings": 268.0,
-      "chase_win_rate": 0.0
-    },
-    "Bangabandhu National Stadium, Dhaka": {
-      "avg_first_innings": 203.0,
+    "Jade Stadium, Christchurch": {
+      "avg_first_innings": 108.0,
       "chase_win_rate": 1.0
     },
-    "Nehru Stadium, Fatorda": {
-      "avg_first_innings": 262.0,
-      "chase_win_rate": 0.5
+    "North Marine Road Ground": {
+      "avg_first_innings": 203.5,
+      "chase_win_rate": 0.0
     },
-    "Cobham Oval (New)": {
-      "avg_first_innings": 310.0,
+    "P Saravanamuttu Stadium": {
+      "avg_first_innings": 249.0,
+      "chase_win_rate": 1.0
+    },
+    "Carisbrook": {
+      "avg_first_innings": 259.0,
+      "chase_win_rate": 1.0
+    },
+    "Queen's Park (New), St George's, Grenada": {
+      "avg_first_innings": 249.5,
+      "chase_win_rate": 1.0
+    },
+    "County Ground, New Road": {
+      "avg_first_innings": 260.2,
+      "chase_win_rate": 0.25
+    },
+    "Sir Paul Getty's Ground": {
+      "avg_first_innings": 211.5,
       "chase_win_rate": 0.5
     },
     "Goodyear Park, Bloemfontein": {
       "avg_first_innings": 215.8,
       "chase_win_rate": 0.6
     },
-    "Chevrolet Park": {
-      "avg_first_innings": 290.5,
+    "Mannofield Park": {
+      "avg_first_innings": 202.5,
+      "chase_win_rate": 0.5
+    },
+    "Shaheed Chandu Stadium": {
+      "avg_first_innings": 234.0,
+      "chase_win_rate": 1.0
+    },
+    "MA Aziz Stadium, Chittagong": {
+      "avg_first_innings": 326.0,
+      "chase_win_rate": 0.0
+    },
+    "Sinovich Park, Sinoville": {
+      "avg_first_innings": 156.0,
+      "chase_win_rate": 1.0
+    },
+    "Cambusdoon New Ground, Ayr": {
+      "avg_first_innings": 209.5,
+      "chase_win_rate": 0.0
+    },
+    "Stellenbosch University 2": {
+      "avg_first_innings": 162.0,
+      "chase_win_rate": 0.0
+    },
+    "Toronto Cricket, Skating and Curling Club": {
+      "avg_first_innings": 175.0,
+      "chase_win_rate": 0.0
+    },
+    "Sedgars Park, Potchefstroom": {
+      "avg_first_innings": 338.0,
+      "chase_win_rate": 0.0
+    },
+    "Tony Ireland Stadium, Townsville": {
+      "avg_first_innings": 148.0,
+      "chase_win_rate": 1.0
+    },
+    "Nahar Singh Stadium, Faridabad": {
+      "avg_first_innings": 97.0,
+      "chase_win_rate": 1.0
+    },
+    "Hurstville Oval": {
+      "avg_first_innings": 248.0,
+      "chase_win_rate": 0.5
+    },
+    "VRA Cricket Ground": {
+      "avg_first_innings": 183.5,
+      "chase_win_rate": 0.0
+    },
+    "Junction Oval, Melbourne": {
+      "avg_first_innings": 136.4,
+      "chase_win_rate": 0.75
+    },
+    "Antigua Recreation Ground, St John's": {
+      "avg_first_innings": 403.5,
+      "chase_win_rate": 0.5
+    },
+    "Diamond Oval": {
+      "avg_first_innings": 203.3,
+      "chase_win_rate": 0.667
+    },
+    "Castle Avenue": {
+      "avg_first_innings": 311.3,
+      "chase_win_rate": 0.667
+    },
+    "Queen's Park Oval": {
+      "avg_first_innings": 57.0,
+      "chase_win_rate": null
+    },
+    "Bharat Ratna Shri Atal Bihari Vajpai Ekana Cricket Stadium": {
+      "avg_first_innings": 257.0,
+      "chase_win_rate": 0.5
+    },
+    "Daren Sammy National Cricket Stadium": {
+      "avg_first_innings": 280.0,
+      "chase_win_rate": 1.0
+    },
+    "St George's Park, Port Elizabeth": {
+      "avg_first_innings": 381.0,
       "chase_win_rate": 0.0
     },
     "Affies Park": {
@@ -2269,101 +2061,309 @@
       "avg_first_innings": 283.0,
       "chase_win_rate": 0.0
     },
-    "John Davies Oval": {
-      "avg_first_innings": 164.0,
+    "Narayanganj Osmani Stadium": {
+      "avg_first_innings": 187.0,
+      "chase_win_rate": 0.5
+    },
+    "Keenan Stadium": {
+      "avg_first_innings": 223.0,
+      "chase_win_rate": 1.0
+    },
+    "FTZ Sports Complex (BOI)": {
+      "avg_first_innings": 174.0,
+      "chase_win_rate": 1.0
+    },
+    "North-West University No1 Ground": {
+      "avg_first_innings": 179.3,
+      "chase_win_rate": 0.667
+    },
+    "MA Aziz Stadium": {
+      "avg_first_innings": 545.0,
+      "chase_win_rate": 0.0
+    },
+    "Harlequins": {
+      "avg_first_innings": 226.0,
+      "chase_win_rate": 0.0
+    },
+    "Andhra Cricket Association-Visakhapatnam District Cricket Association Stadium": {
+      "avg_first_innings": 259.0,
+      "chase_win_rate": 1.0
+    },
+    "Cobham Oval (New)": {
+      "avg_first_innings": 310.0,
+      "chase_win_rate": 0.5
+    },
+    "Observatory Lane, Rathmines": {
+      "avg_first_innings": 280.0,
+      "chase_win_rate": 0.0
+    },
+    "Sinhalese Sports Club": {
+      "avg_first_innings": 282.5,
+      "chase_win_rate": 0.0
+    },
+    "Bundaberg Rum Stadium, Cairns": {
+      "avg_first_innings": 126.0,
+      "chase_win_rate": 1.0
+    },
+    "Malahide": {
+      "avg_first_innings": 242.8,
+      "chase_win_rate": 0.333
+    },
+    "The Royal & Sun Alliance County Ground, Bristol": {
+      "avg_first_innings": 92.0,
       "chase_win_rate": 1.0
     },
     "Ruaraka Sports Club Ground": {
       "avg_first_innings": 194.0,
       "chase_win_rate": 1.0
     },
-    "Keenan Stadium": {
-      "avg_first_innings": 223.0,
+    "Niaz Stadium, Hyderabad": {
+      "avg_first_innings": 238.0,
+      "chase_win_rate": 1.0
+    },
+    "New Wanderers Stadium, Johannesburg": {
+      "avg_first_innings": 561.0,
+      "chase_win_rate": 0.0
+    },
+    "Nehru Stadium, Poona": {
+      "avg_first_innings": 258.0,
+      "chase_win_rate": 1.0
+    },
+    "Boland Bank Park, Paarl": {
+      "avg_first_innings": 164.3,
+      "chase_win_rate": 0.333
+    },
+    "The Vineyard": {
+      "avg_first_innings": 418.0,
+      "chase_win_rate": 0.0
+    },
+    "Niranjan Shah Stadium, Rajkot": {
+      "avg_first_innings": 284.0,
+      "chase_win_rate": 1.0
+    },
+    "De Beers Diamond Oval, Kimberley": {
+      "avg_first_innings": 226.5,
+      "chase_win_rate": 0.5
+    },
+    "Stellenbosch University 1": {
+      "avg_first_innings": 192.0,
+      "chase_win_rate": 0.5
+    },
+    "Old Hararians, Harare": {
+      "avg_first_innings": 201.0,
       "chase_win_rate": 1.0
     },
     "National Cricket Stadium": {
       "avg_first_innings": 118.0,
       "chase_win_rate": 1.0
     },
-    "Daren Sammy National Cricket Stadium": {
-      "avg_first_innings": 280.0,
-      "chase_win_rate": 1.0
-    },
-    "Lal Bahadur Shastri Stadium, Hyderabad, Deccan": {
-      "avg_first_innings": 353.0,
+    "Vidarbha C.A. Ground": {
+      "avg_first_innings": 393.0,
       "chase_win_rate": 0.0
-    },
-    "Dubai Sports City Cricket Stadium": {
-      "avg_first_innings": 187.5,
-      "chase_win_rate": 1.0
-    },
-    "Cambusdoon New Ground": {
-      "avg_first_innings": 141.0,
-      "chase_win_rate": 0.0
-    },
-    "Cambusdoon New Ground, Ayr": {
-      "avg_first_innings": 209.5,
-      "chase_win_rate": 0.0
-    },
-    "Queen's Park Oval, Port of Spain, Trinidad": {
-      "avg_first_innings": 379.7,
-      "chase_win_rate": 0.333
-    },
-    "Arnos Vale Ground": {
-      "avg_first_innings": 134.0,
-      "chase_win_rate": 0.5
-    },
-    "Junction Oval, Melbourne": {
-      "avg_first_innings": 136.4,
-      "chase_win_rate": 0.75
-    },
-    "Stellenbosch University 1": {
-      "avg_first_innings": 192.0,
-      "chase_win_rate": 0.5
-    },
-    "Sardar Patel (Gujarat) Stadium, Motera": {
-      "avg_first_innings": 300.0,
-      "chase_win_rate": 1.0
-    },
-    "Bangabandhu National Stadium": {
-      "avg_first_innings": 184.0,
-      "chase_win_rate": 1.0
-    },
-    "Observatory Lane, Rathmines": {
-      "avg_first_innings": 280.0,
-      "chase_win_rate": 0.0
-    },
-    "Mannofield Park": {
-      "avg_first_innings": 202.5,
-      "chase_win_rate": 0.5
-    },
-    "Grace Road": {
-      "avg_first_innings": 233.0,
-      "chase_win_rate": 0.5
-    },
-    "Hurstville Oval": {
-      "avg_first_innings": 248.0,
-      "chase_win_rate": 0.5
     },
     "Karen Rolton Oval": {
       "avg_first_innings": 247.0,
       "chase_win_rate": 0.0
     },
-    "University of Tasmania Stadium, Launceston": {
-      "avg_first_innings": 284.7,
+    "Sheikh Kamal International Cricket Stadium": {
+      "avg_first_innings": 159.5,
+      "chase_win_rate": 0.5
+    },
+    "Marrara Cricket Ground": {
+      "avg_first_innings": 189.7,
       "chase_win_rate": 0.333
     },
-    "Docklands Stadium, Melbourne": {
-      "avg_first_innings": 335.4,
-      "chase_win_rate": 0.607
+    "City Oval, Pietermaritzburg": {
+      "avg_first_innings": 282.0,
+      "chase_win_rate": 0.5
+    },
+    "Marrara Cricket Ground, Darwin": {
+      "avg_first_innings": 97.0,
+      "chase_win_rate": 1.0
+    },
+    "Riverway Stadium, Townsville": {
+      "avg_first_innings": 141.0,
+      "chase_win_rate": 1.0
+    },
+    "Western Australia Cricket Association Ground, Perth": {
+      "avg_first_innings": 336.3,
+      "chase_win_rate": 0.667
+    },
+    "Nehru Stadium, Fatorda": {
+      "avg_first_innings": 262.0,
+      "chase_win_rate": 0.5
+    },
+    "Cambusdoon New Ground": {
+      "avg_first_innings": 141.0,
+      "chase_win_rate": 0.0
+    },
+    "Clontarf Cricket Club Ground": {
+      "avg_first_innings": 209.1,
+      "chase_win_rate": 0.545
+    },
+    "Mangaung Oval, Bloemfontein": {
+      "avg_first_innings": 395.0,
+      "chase_win_rate": 0.0
+    },
+    "Arnos Vale Ground": {
+      "avg_first_innings": 134.0,
+      "chase_win_rate": 0.5
+    },
+    "Davies Park, Queenstown": {
+      "avg_first_innings": 122.0,
+      "chase_win_rate": 1.0
+    },
+    "Sardar Patel (Gujarat) Stadium, Motera": {
+      "avg_first_innings": 300.0,
+      "chase_win_rate": 1.0
+    },
+    "International Sports Stadium": {
+      "avg_first_innings": 278.0,
+      "chase_win_rate": 0.0
+    },
+    "Grace Road, Leicester": {
+      "avg_first_innings": 223.0,
+      "chase_win_rate": 1.0
+    },
+    "Shahid Kamruzzaman Stadium, Rajshahi": {
+      "avg_first_innings": 194.3,
+      "chase_win_rate": 1.0
+    },
+    "Reliance Stadium": {
+      "avg_first_innings": 216.9,
+      "chase_win_rate": 0.667
+    },
+    "Queenstown Events Centre": {
+      "avg_first_innings": 147.2,
+      "chase_win_rate": 0.667
+    },
+    "Sedgars Park": {
+      "avg_first_innings": 326.5,
+      "chase_win_rate": 0.5
+    },
+    "Sher-e-Bangla National Cricket Stadium": {
+      "avg_first_innings": 246.0,
+      "chase_win_rate": 0.0
+    },
+    "Indian Petrochemicals Corporation Limited Sports Complex Ground": {
+      "avg_first_innings": 341.0,
+      "chase_win_rate": 0.0
+    },
+    "Forthill, Dundee": {
+      "avg_first_innings": 245.4,
+      "chase_win_rate": 0.5
+    },
+    "Queen's Park Oval, Trinidad": {
+      "avg_first_innings": 259.5,
+      "chase_win_rate": 0.5
+    },
+    "Maharani Usharaje Trust Cricket Ground": {
+      "avg_first_innings": 290.0,
+      "chase_win_rate": 0.5
+    },
+    "The Hills Cricket Club Ground": {
+      "avg_first_innings": 143.0,
+      "chase_win_rate": 1.0
+    },
+    "Iqbal Stadium": {
+      "avg_first_innings": 525.0,
+      "chase_win_rate": 0.5
+    },
+    "Chittagong Divisional Stadium": {
+      "avg_first_innings": 483.5,
+      "chase_win_rate": 0.0
+    },
+    "Madhavrao Scindia Cricket Ground": {
+      "avg_first_innings": 313.5,
+      "chase_win_rate": 0.25
+    },
+    "Peter Burge Oval": {
+      "avg_first_innings": 155.0,
+      "chase_win_rate": 1.0
+    },
+    "Westpac Stadium, Wellington": {
+      "avg_first_innings": 168.0,
+      "chase_win_rate": 1.0
+    },
+    "Choice Moosa Stadium, Pearland": {
+      "avg_first_innings": 305.0,
+      "chase_win_rate": 0.0
+    },
+    "Goodyear Park": {
+      "avg_first_innings": 201.0,
+      "chase_win_rate": 1.0
+    },
+    "Titwood": {
+      "avg_first_innings": 203.0,
+      "chase_win_rate": 1.0
+    },
+    "Dubai Sports City Cricket Stadium": {
+      "avg_first_innings": 187.5,
+      "chase_win_rate": 1.0
+    },
+    "Ray Mitchell Oval, Harrup Park, Mackay": {
+      "avg_first_innings": 254.3,
+      "chase_win_rate": 1.0
+    },
+    "Lahore City Cricket Association Ground": {
+      "avg_first_innings": 231.0,
+      "chase_win_rate": 0.429
+    },
+    "Nahar Singh Stadium": {
+      "avg_first_innings": 226.0,
+      "chase_win_rate": 1.0
+    },
+    "Iqbal Stadium, Faisalabad": {
+      "avg_first_innings": 278.0,
+      "chase_win_rate": 1.0
+    },
+    "Khettarama Stadium": {
+      "avg_first_innings": 268.0,
+      "chase_win_rate": 0.0
+    },
+    "Louth Cricket Club": {
+      "avg_first_innings": 227.0,
+      "chase_win_rate": 0.0
+    },
+    "Sector 16 Stadium": {
+      "avg_first_innings": 291.0,
+      "chase_win_rate": 0.0
+    },
+    "Headingley": {
+      "avg_first_innings": 289.8,
+      "chase_win_rate": 0.615
+    },
+    "Grace Road": {
+      "avg_first_innings": 233.0,
+      "chase_win_rate": 0.5
+    },
+    "Westpac Park, Hamilton": {
+      "avg_first_innings": 122.0,
+      "chase_win_rate": 1.0
+    },
+    "Captain Roop Singh Stadium": {
+      "avg_first_innings": 328.0,
+      "chase_win_rate": 0.5
+    },
+    "North West Cricket Stadium, Potchefstroom": {
+      "avg_first_innings": 220.5,
+      "chase_win_rate": 0.5
     },
     "Geelong Cricket Ground": {
       "avg_first_innings": 384.0,
       "chase_win_rate": 0.0
     },
+    "Lavington Sports Oval, Albury": {
+      "avg_first_innings": 400.0,
+      "chase_win_rate": 0.5
+    },
     "Aurora Stadium": {
       "avg_first_innings": 286.0,
       "chase_win_rate": 0.429
+    },
+    "Traeger Park": {
+      "avg_first_innings": 241.0,
+      "chase_win_rate": 0.5
     },
     "Aurora Stadium, Launceston": {
       "avg_first_innings": 288.0,
@@ -2377,125 +2377,125 @@
       "avg_first_innings": 330.0,
       "chase_win_rate": 0.0
     },
-    "Traeger Park": {
-      "avg_first_innings": 241.0,
-      "chase_win_rate": 0.5
-    },
     "Simonds Stadium, South Geelong, Victoria": {
       "avg_first_innings": 306.5,
       "chase_win_rate": 0.75
     },
-    "Lavington Sports Oval, Albury": {
-      "avg_first_innings": 400.0,
-      "chase_win_rate": 0.5
+    "University of Tasmania Stadium, Launceston": {
+      "avg_first_innings": 284.7,
+      "chase_win_rate": 0.333
     },
-    "Al Dhaid Cricket Village": {
-      "avg_first_innings": 171.0,
-      "chase_win_rate": 0.0
+    "Docklands Stadium, Melbourne": {
+      "avg_first_innings": 335.4,
+      "chase_win_rate": 0.607
     },
     "Sportpark Thurlede": {
       "avg_first_innings": 123.8,
       "chase_win_rate": 0.4
     },
-    "Zayed Cricket Stadium": {
-      "avg_first_innings": 153.5,
-      "chase_win_rate": 0.5
+    "Thailand Cricket Ground": {
+      "avg_first_innings": 105.0,
+      "chase_win_rate": 0.0
     },
     "Sheikh Zayed Stadium Nursery 1": {
       "avg_first_innings": 126.2,
       "chase_win_rate": 0.667
     },
-    "ICC Academy Oval 2": {
-      "avg_first_innings": 130.5,
-      "chase_win_rate": 1.0
-    },
-    "Goldenacre": {
-      "avg_first_innings": 156.8,
-      "chase_win_rate": 0.5
-    },
-    "Sportpark Het Schootsveld 2": {
-      "avg_first_innings": 176.0,
-      "chase_win_rate": 0.0
-    },
-    "Myreside": {
-      "avg_first_innings": 129.5,
-      "chase_win_rate": 0.75
+    "Merrion Cricket Club Ground": {
+      "avg_first_innings": 79.7,
+      "chase_win_rate": 0.333
     },
     "Sea Breeze Oval": {
       "avg_first_innings": 183.0,
       "chase_win_rate": 1.0
     },
-    "Sheikh Zayed Stadium Nursery 2": {
-      "avg_first_innings": 140.0,
-      "chase_win_rate": 0.6
+    "Tafawa Balewa Square Cricket Oval": {
+      "avg_first_innings": 134.4,
+      "chase_win_rate": 0.2
     },
-    "Skarpnack 2": {
-      "avg_first_innings": 124.5,
-      "chase_win_rate": 0.5
-    },
-    "ICC Academy Oval 1": {
-      "avg_first_innings": 111.0,
-      "chase_win_rate": 1.0
-    },
-    "Tack-Tec Ground": {
-      "avg_first_innings": 133.3,
-      "chase_win_rate": 0.556
+    "Sportpark Het Schootsveld 2": {
+      "avg_first_innings": 176.0,
+      "chase_win_rate": 0.0
     },
     "Skarpnack 1": {
       "avg_first_innings": 82.5,
       "chase_win_rate": 1.0
     },
-    "UKM-YSD Cricket Oval": {
-      "avg_first_innings": 87.7,
-      "chase_win_rate": 0.6
+    "Bayuemas Oval": {
+      "avg_first_innings": 82.3,
+      "chase_win_rate": 0.636
     },
-    "Friendship Oval": {
-      "avg_first_innings": 127.8,
-      "chase_win_rate": 0.364
-    },
-    "New Williamfield No1 Oval": {
-      "avg_first_innings": 139.2,
+    "Skarpnack 2": {
+      "avg_first_innings": 124.5,
       "chase_win_rate": 0.5
     },
     "Albert Park 1": {
       "avg_first_innings": 136.6,
       "chase_win_rate": 0.6
     },
-    "Abu Dhabi Oval 1": {
-      "avg_first_innings": 136.5,
-      "chase_win_rate": 0.5
-    },
-    "Bayuemas Oval": {
-      "avg_first_innings": 82.3,
-      "chase_win_rate": 0.636
+    "Tack-Tec Ground": {
+      "avg_first_innings": 133.3,
+      "chase_win_rate": 0.556
     },
     "Church Street Park": {
       "avg_first_innings": 94.9,
       "chase_win_rate": 0.8
     },
-    "Albert Park 2": {
-      "avg_first_innings": 157.3,
-      "chase_win_rate": 0.333
-    },
     "Sulabiya Ground": {
       "avg_first_innings": 139.5,
       "chase_win_rate": 0.375
     },
-    "Merrion Cricket Club Ground": {
-      "avg_first_innings": 79.7,
+    "Zayed Cricket Stadium": {
+      "avg_first_innings": 153.5,
+      "chase_win_rate": 0.5
+    },
+    "New Williamfield No1 Oval": {
+      "avg_first_innings": 139.2,
+      "chase_win_rate": 0.5
+    },
+    "ICC Academy Oval 2": {
+      "avg_first_innings": 130.5,
+      "chase_win_rate": 1.0
+    },
+    "Friendship Oval": {
+      "avg_first_innings": 127.8,
+      "chase_win_rate": 0.364
+    },
+    "UKM-YSD Cricket Oval": {
+      "avg_first_innings": 87.7,
+      "chase_win_rate": 0.6
+    },
+    "Abu Dhabi Oval 1": {
+      "avg_first_innings": 136.5,
+      "chase_win_rate": 0.5
+    },
+    "Goldenacre": {
+      "avg_first_innings": 156.8,
+      "chase_win_rate": 0.5
+    },
+    "ICC Academy Oval 1": {
+      "avg_first_innings": 111.0,
+      "chase_win_rate": 1.0
+    },
+    "Albert Park 2": {
+      "avg_first_innings": 157.3,
       "chase_win_rate": 0.333
-    },
-    "Thailand Cricket Ground": {
-      "avg_first_innings": 105.0,
-      "chase_win_rate": 0.0
-    },
-    "Tafawa Balewa Square Cricket Oval": {
-      "avg_first_innings": 134.4,
-      "chase_win_rate": 0.2
     },
     "Abu Dhabi Oval 2": {
       "avg_first_innings": 153.5,
       "chase_win_rate": 0.0
+    },
+    "Myreside": {
+      "avg_first_innings": 129.5,
+      "chase_win_rate": 0.75
+    },
+    "Al Dhaid Cricket Village": {
+      "avg_first_innings": 171.0,
+      "chase_win_rate": 0.0
+    },
+    "Sheikh Zayed Stadium Nursery 2": {
+      "avg_first_innings": 140.0,
+      "chase_win_rate": 0.6
     },
     "Knight Riders Cricket Ground, Pomona": {
       "avg_first_innings": 265.4,
@@ -2505,61 +2505,61 @@
       "avg_first_innings": 308.3,
       "chase_win_rate": 0.714
     },
-    "Oakland Coliseum,Oakland": {
-      "avg_first_innings": 378.7,
-      "chase_win_rate": 0.381
-    },
     "Grand Prairie Stadium": {
       "avg_first_innings": 334.8,
       "chase_win_rate": 0.333
     },
-    "Green Park, Kanpur": {
-      "avg_first_innings": 289.0,
-      "chase_win_rate": 0.5
-    },
-    "Bankstown Oval, Sydney": {
-      "avg_first_innings": 170.5,
-      "chase_win_rate": 0.5
-    },
-    "Darren Sammy National Cricket Stadium, Gros Islet": {
-      "avg_first_innings": 353.0,
-      "chase_win_rate": 0.0
+    "Oakland Coliseum,Oakland": {
+      "avg_first_innings": 378.7,
+      "chase_win_rate": 0.381
     },
     "Antigua Recreation Ground, St John's, Antigua": {
       "avg_first_innings": 240.0,
-      "chase_win_rate": 0.0
-    },
-    "Daren Sammy National Cricket Stadium, St Lucia": {
-      "avg_first_innings": 277.0,
-      "chase_win_rate": 0.0
-    },
-    "Asgiriya Stadium": {
-      "avg_first_innings": 199.3,
-      "chase_win_rate": 0.667
-    },
-    "Sardar Patel Stadium": {
-      "avg_first_innings": 398.0,
       "chase_win_rate": 0.0
     },
     "Bradman Oval, Bowral": {
       "avg_first_innings": 154.0,
       "chase_win_rate": 1.0
     },
-    "Antigua Recreation Ground": {
-      "avg_first_innings": 669.5,
-      "chase_win_rate": 0.5
+    "Asgiriya Stadium": {
+      "avg_first_innings": 199.3,
+      "chase_win_rate": 0.667
     },
-    "Punjab Cricket Association Stadium, Mohali, Chandigarh": {
-      "avg_first_innings": 630.0,
-      "chase_win_rate": 0.0
+    "Bankstown Oval, Sydney": {
+      "avg_first_innings": 170.5,
+      "chase_win_rate": 0.5
     },
     "Sabina Park, Jamaica": {
       "avg_first_innings": 416.0,
       "chase_win_rate": 0.0
     },
+    "Darren Sammy National Cricket Stadium, Gros Islet": {
+      "avg_first_innings": 353.0,
+      "chase_win_rate": 0.0
+    },
+    "Daren Sammy National Cricket Stadium, St Lucia": {
+      "avg_first_innings": 277.0,
+      "chase_win_rate": 0.0
+    },
     "Kensington Oval": {
       "avg_first_innings": 296.0,
       "chase_win_rate": 1.0
+    },
+    "Sardar Patel Stadium": {
+      "avg_first_innings": 398.0,
+      "chase_win_rate": 0.0
+    },
+    "Punjab Cricket Association Stadium, Mohali, Chandigarh": {
+      "avg_first_innings": 630.0,
+      "chase_win_rate": 0.0
+    },
+    "Green Park, Kanpur": {
+      "avg_first_innings": 289.0,
+      "chase_win_rate": 0.5
+    },
+    "Antigua Recreation Ground": {
+      "avg_first_innings": 669.5,
+      "chase_win_rate": 0.5
     }
   }
 }
