@@ -1,34 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-08-09T06:23:15.479930+00:00",
+    "generated_at": "2026-08-10T06:37:21.412024+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-08-09",
+      "game_date": "2026-08-10",
       "game": "Ireland vs Afghanistan",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Ireland ML",
-      "confidence": 0.9885,
-      "edge": 0.6094,
-      "odds": 150,
+      "confidence": 0.9856,
+      "edge": 0.6152,
+      "odds": 155,
       "tier": "Elite",
-      "notes": "Kelly stake: 9.3%"
-    },
-    {
-      "game_date": "2026-08-09",
-      "game": "Scotland vs UAE",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "Scotland ML",
-      "confidence": 0.9879,
-      "edge": 0.3252,
-      "odds": -235,
-      "tier": "Elite",
-      "notes": "Kelly stake: 16.0%"
+      "notes": "Kelly stake: 9.0%"
     }
   ]
 }
