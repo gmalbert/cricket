@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-09T06:23:13.102418+00:00",
-  "source_run_id": "95203ee3-b04f-4c11-b9e4-ba3f11f7b04a",
+  "generated_at": "2026-08-10T06:37:19.326450+00:00",
+  "source_run_id": "97487ba1-b28d-4fbb-bfb7-1f6dec00c0e8",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -9,22 +9,11 @@
       "match": "Ireland vs Afghanistan",
       "bet": "Ireland ML",
       "type": "Match Winner",
-      "model_prob": 0.9885,
-      "implied_prob": 0.3791,
-      "edge": 0.6094,
-      "dk_odds": "+150",
-      "kelly_stake": "9.3%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "Scotland vs UAE",
-      "bet": "Scotland ML",
-      "type": "Match Winner",
-      "model_prob": 0.9879,
-      "implied_prob": 0.6627,
-      "edge": 0.3252,
-      "dk_odds": "-235",
-      "kelly_stake": "16.0%",
+      "model_prob": 0.9856,
+      "implied_prob": 0.3704,
+      "edge": 0.6152,
+      "dk_odds": "+155",
+      "kelly_stake": "9.0%",
       "tier": "Elite Pick"
     }
   ]

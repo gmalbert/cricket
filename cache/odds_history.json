@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-09T06:23:13.103525+00:00",
-  "source_run_id": "95203ee3-b04f-4c11-b9e4-ba3f11f7b04a",
+  "generated_at": "2026-08-10T06:37:19.327336+00:00",
+  "source_run_id": "97487ba1-b28d-4fbb-bfb7-1f6dec00c0e8",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -700,6 +700,30 @@
       "closing_price_team2": -190,
       "event_status": "draftkings_available",
       "observed_at": "2026-08-09T06:23:13.103495+00:00"
+    },
+    {
+      "event_id": "f6371667f9790170cb0a1f33e92bc4c3",
+      "team1": "Ireland",
+      "team2": "Afghanistan",
+      "commence_time": "2026-08-10T09:45:00Z",
+      "dk_implied_prob_team1": 0.3704,
+      "dk_implied_prob_team2": 0.6296,
+      "dk_odds_team1": 155,
+      "dk_odds_team2": -200,
+      "sport_key": "cricket_odi",
+      "competition": "odi_internationals",
+      "competition_name": "ODI internationals",
+      "format": "ODI",
+      "gender": "male",
+      "bookmaker": "draftkings",
+      "market": "h2h",
+      "odds_timestamp": "2026-08-10T06:36:30Z",
+      "first_observed_price_team1": 155,
+      "first_observed_price_team2": -200,
+      "closing_price_team1": 155,
+      "closing_price_team2": -200,
+      "event_status": "draftkings_available",
+      "observed_at": "2026-08-10T06:37:19.327310+00:00"
     }
   ]
 }
