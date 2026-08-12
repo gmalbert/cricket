@@ -1,28 +1,10 @@
 {
-  "generated_at": "2026-08-11T06:25:14.113705+00:00",
-  "source_run_id": "488739aa-30d9-4b9d-ab3a-0087d954934b",
+  "generated_at": "2026-08-12T06:35:50.171584+00:00",
+  "source_run_id": "ba2be3dc-cdae-4a90-8865-d01e2d65514e",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
-    {
-      "match_id": "977c19c3e375c9b8e94f099d35f223f3",
-      "team1": "UAE",
-      "team2": "Canada",
-      "venue": "",
-      "city": "",
-      "time": "2026-08-11T10:00:00Z",
-      "scheduled_start": "2026-08-11T10:00:00Z",
-      "status": "Scheduled from DraftKings market",
-      "matchStarted": false,
-      "matchEnded": false,
-      "competition": "odi_internationals",
-      "competition_name": "ODI internationals",
-      "format": "ODI",
-      "gender": "male",
-      "fixture_source": "odds_api",
-      "fixture_status": "provisional"
-    },
     {
       "match_id": "ec2e13b18b8a401358810e7617fb5299",
       "team1": "Ireland",
