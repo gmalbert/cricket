@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-08-12T06:35:50.409284+00:00",
-  "source_run_id": "ba2be3dc-cdae-4a90-8865-d01e2d65514e",
+  "generated_at": "2026-08-13T06:39:18.832792+00:00",
+  "source_run_id": "099c4616-73c9-4182-9d20-ec8b2771940d",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-08-12T06:35:50.146590+00:00",
+    "generated_at": "2026-08-13T06:39:18.406167+00:00",
     "matches": {
-      "ec2e13b18b8a401358810e7617fb5299": {
+      "d58774586259a69fb5c937487067b3e9": {
         "match": {
-          "match_id": "ec2e13b18b8a401358810e7617fb5299",
-          "team1": "Ireland",
-          "team2": "Afghanistan",
+          "match_id": "d58774586259a69fb5c937487067b3e9",
+          "team1": "Scotland",
+          "team2": "Canada",
           "venue": "",
-          "time": "2026-08-12T09:45:00Z",
+          "time": "2026-08-13T10:00:00Z",
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.9856,
-          "team2_win_prob": 0.0144,
+          "team1_win_prob": 0.9819,
+          "team2_win_prob": 0.0181,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.3206,
-          "team2_implied_prob": 0.6794,
+          "team1_implied_prob": 0.69,
+          "team2_implied_prob": 0.31,
           "total_line": null
         },
         "venue": {},
@@ -36,7 +36,230 @@
           "windspeed": null
         },
         "team_form": {
-          "team1": [],
+          "team1": [
+            {
+              "match_id": 1531706,
+              "date": "2026-05-20",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "L",
+              "score": 169,
+              "opp_score": 170,
+              "wickets": 10,
+              "powerplay_runs": 34,
+              "death_economy": 4.75
+            },
+            {
+              "match_id": 1531705,
+              "date": "2026-05-18",
+              "innings": 1,
+              "opponent": "Nepal",
+              "result": "L",
+              "score": 194,
+              "opp_score": 199,
+              "wickets": 10,
+              "powerplay_runs": 42,
+              "death_economy": 5.75
+            },
+            {
+              "match_id": 1531703,
+              "date": "2026-05-14",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "W",
+              "score": 321,
+              "opp_score": 246,
+              "wickets": 6,
+              "powerplay_runs": 29,
+              "death_economy": 6.75
+            },
+            {
+              "match_id": 1531702,
+              "date": "2026-05-12",
+              "innings": 1,
+              "opponent": "Nepal",
+              "result": "W",
+              "score": 243,
+              "opp_score": 218,
+              "wickets": 8,
+              "powerplay_runs": 32,
+              "death_economy": 6.5
+            },
+            {
+              "match_id": 1529144,
+              "date": "2026-04-12",
+              "innings": 2,
+              "opponent": "Namibia",
+              "result": "W",
+              "score": 199,
+              "opp_score": 198,
+              "wickets": 4,
+              "powerplay_runs": 16,
+              "death_economy": 4.5
+            }
+          ],
+          "team2": [
+            {
+              "match_id": 1538428,
+              "date": "2026-06-12",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "L",
+              "score": 275,
+              "opp_score": 276,
+              "wickets": 8,
+              "powerplay_runs": 31,
+              "death_economy": 6.25
+            },
+            {
+              "match_id": 1538427,
+              "date": "2026-06-10",
+              "innings": 2,
+              "opponent": "Netherlands",
+              "result": "W",
+              "score": 218,
+              "opp_score": 214,
+              "wickets": 8,
+              "powerplay_runs": 22,
+              "death_economy": 6.5
+            },
+            {
+              "match_id": 1538425,
+              "date": "2026-06-06",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "L",
+              "score": 231,
+              "opp_score": 235,
+              "wickets": 8,
+              "powerplay_runs": 18,
+              "death_economy": 9.25
+            },
+            {
+              "match_id": 1498184,
+              "date": "2025-09-02",
+              "innings": 2,
+              "opponent": "Namibia",
+              "result": "L",
+              "score": 237,
+              "opp_score": 261,
+              "wickets": 10,
+              "powerplay_runs": 18,
+              "death_economy": 3.0
+            },
+            {
+              "match_id": 1498183,
+              "date": "2025-08-31",
+              "innings": 1,
+              "opponent": "Scotland",
+              "result": "L",
+              "score": 184,
+              "opp_score": 187,
+              "wickets": 10,
+              "powerplay_runs": 13,
+              "death_economy": 6.75
+            }
+          ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "unavailable",
+          "rivalries": "unavailable"
+        }
+      },
+      "bec5bcc7314404aadc586104dc7330cf": {
+        "match": {
+          "match_id": "bec5bcc7314404aadc586104dc7330cf",
+          "team1": "Ireland",
+          "team2": "Afghanistan",
+          "venue": "",
+          "time": "2026-08-15T09:45:00Z",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.9843,
+          "team2_win_prob": 0.0157,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": 0.3444,
+          "team2_implied_prob": 0.6556,
+          "total_line": null
+        },
+        "venue": {},
+        "weather": {
+          "temperature": null,
+          "humidity": null,
+          "dew_flag": false,
+          "windspeed": null
+        },
+        "team_form": {
+          "team1": [
+            {
+              "match_id": 1528547,
+              "date": "2026-05-27",
+              "innings": 3,
+              "opponent": "New Zealand",
+              "result": "L",
+              "score": 179,
+              "opp_score": 490,
+              "wickets": 10,
+              "powerplay_runs": 53,
+              "death_economy": 7.25
+            },
+            {
+              "match_id": 1528547,
+              "date": "2026-05-27",
+              "innings": 2,
+              "opponent": "New Zealand",
+              "result": "L",
+              "score": 179,
+              "opp_score": 490,
+              "wickets": 10,
+              "powerplay_runs": 53,
+              "death_economy": 7.25
+            },
+            {
+              "match_id": 1506013,
+              "date": "2025-11-19",
+              "innings": 4,
+              "opponent": "Bangladesh",
+              "result": "L",
+              "score": 265,
+              "opp_score": 476,
+              "wickets": 10,
+              "powerplay_runs": 38,
+              "death_economy": 5.5
+            },
+            {
+              "match_id": 1506013,
+              "date": "2025-11-19",
+              "innings": 2,
+              "opponent": "Bangladesh",
+              "result": "L",
+              "score": 265,
+              "opp_score": 476,
+              "wickets": 10,
+              "powerplay_runs": 38,
+              "death_economy": 5.5
+            },
+            {
+              "match_id": 1506012,
+              "date": "2025-11-11",
+              "innings": 3,
+              "opponent": "Bangladesh",
+              "result": "L",
+              "score": 286,
+              "opp_score": 587,
+              "wickets": 10,
+              "powerplay_runs": 54,
+              "death_economy": 8.0
+            }
+          ],
           "team2": []
         },
         "key_rivalries": [],
