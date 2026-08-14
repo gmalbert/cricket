@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-08-13T06:39:18.832792+00:00",
-  "source_run_id": "099c4616-73c9-4182-9d20-ec8b2771940d",
+  "generated_at": "2026-08-14T06:37:54.033407+00:00",
+  "source_run_id": "06a678e4-25ab-45a8-9389-07b0815e0671",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-08-13T06:39:18.406167+00:00",
+    "generated_at": "2026-08-14T06:37:53.677695+00:00",
     "matches": {
-      "d58774586259a69fb5c937487067b3e9": {
+      "08fa4c2f5b5d68e6d1ea1b22fcfab1fc": {
         "match": {
-          "match_id": "d58774586259a69fb5c937487067b3e9",
-          "team1": "Scotland",
-          "team2": "Canada",
+          "match_id": "08fa4c2f5b5d68e6d1ea1b22fcfab1fc",
+          "team1": "Malawi",
+          "team2": "Zambia",
           "venue": "",
-          "time": "2026-08-13T10:00:00Z",
+          "time": "2026-08-14T07:00:00Z",
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.9819,
-          "team2_win_prob": 0.0181,
+          "team1_win_prob": 0.9852,
+          "team2_win_prob": 0.0148,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.69,
-          "team2_implied_prob": 0.31,
+          "team1_implied_prob": 0.6666,
+          "team2_implied_prob": 0.3334,
           "total_line": null
         },
         "venue": {},
@@ -38,126 +38,126 @@
         "team_form": {
           "team1": [
             {
-              "match_id": 1531706,
-              "date": "2026-05-20",
+              "match_id": 1163059,
+              "date": "2018-11-01",
               "innings": 1,
-              "opponent": "United States of America",
+              "opponent": "Mozambique",
               "result": "L",
-              "score": 169,
-              "opp_score": 170,
-              "wickets": 10,
-              "powerplay_runs": 34,
-              "death_economy": 4.75
-            },
-            {
-              "match_id": 1531705,
-              "date": "2026-05-18",
-              "innings": 1,
-              "opponent": "Nepal",
-              "result": "L",
-              "score": 194,
-              "opp_score": 199,
-              "wickets": 10,
-              "powerplay_runs": 42,
-              "death_economy": 5.75
-            },
-            {
-              "match_id": 1531703,
-              "date": "2026-05-14",
-              "innings": 1,
-              "opponent": "United States of America",
-              "result": "W",
-              "score": 321,
-              "opp_score": 246,
+              "score": 104,
+              "opp_score": 108,
               "wickets": 6,
-              "powerplay_runs": 29,
-              "death_economy": 6.75
+              "powerplay_runs": 19,
+              "death_economy": 2.75
             },
             {
-              "match_id": 1531702,
-              "date": "2026-05-12",
+              "match_id": 1163062,
+              "date": "2018-11-01",
               "innings": 1,
-              "opponent": "Nepal",
+              "opponent": "Lesotho",
               "result": "W",
-              "score": 243,
-              "opp_score": 218,
+              "score": 128,
+              "opp_score": 124,
               "wickets": 8,
-              "powerplay_runs": 32,
-              "death_economy": 6.5
+              "powerplay_runs": 29,
+              "death_economy": 8.25
             },
             {
-              "match_id": 1529144,
-              "date": "2026-04-12",
+              "match_id": 1163056,
+              "date": "2018-10-30",
               "innings": 2,
-              "opponent": "Namibia",
+              "opponent": "Swaziland",
               "result": "W",
-              "score": 199,
-              "opp_score": 198,
-              "wickets": 4,
-              "powerplay_runs": 16,
-              "death_economy": 4.5
+              "score": 104,
+              "opp_score": 99,
+              "wickets": 2,
+              "powerplay_runs": 38,
+              "death_economy": 8.75
+            },
+            {
+              "match_id": 1163058,
+              "date": "2018-10-30",
+              "innings": 2,
+              "opponent": "Botswana",
+              "result": "L",
+              "score": 143,
+              "opp_score": 158,
+              "wickets": 7,
+              "powerplay_runs": 33,
+              "death_economy": 11.0
+            },
+            {
+              "match_id": 1163052,
+              "date": "2018-10-29",
+              "innings": 2,
+              "opponent": "St Helena",
+              "result": "L",
+              "score": 130,
+              "opp_score": 136,
+              "wickets": 5,
+              "powerplay_runs": 26,
+              "death_economy": 8.25
             }
           ],
           "team2": [
             {
-              "match_id": 1538428,
-              "date": "2026-06-12",
-              "innings": 1,
-              "opponent": "United States of America",
-              "result": "L",
-              "score": 275,
-              "opp_score": 276,
-              "wickets": 8,
-              "powerplay_runs": 31,
-              "death_economy": 6.25
-            },
-            {
-              "match_id": 1538427,
-              "date": "2026-06-10",
+              "match_id": 1528337,
+              "date": "2026-04-11",
               "innings": 2,
-              "opponent": "Netherlands",
-              "result": "W",
-              "score": 218,
-              "opp_score": 214,
-              "wickets": 8,
-              "powerplay_runs": 22,
-              "death_economy": 6.5
-            },
-            {
-              "match_id": 1538425,
-              "date": "2026-06-06",
-              "innings": 1,
-              "opponent": "United States of America",
+              "opponent": "Lesotho",
               "result": "L",
-              "score": 231,
-              "opp_score": 235,
-              "wickets": 8,
-              "powerplay_runs": 18,
+              "score": 48,
+              "opp_score": 96,
+              "wickets": 3,
+              "powerplay_runs": 8,
               "death_economy": 9.25
             },
             {
-              "match_id": 1498184,
-              "date": "2025-09-02",
+              "match_id": 1528335,
+              "date": "2026-04-10",
               "innings": 2,
-              "opponent": "Namibia",
+              "opponent": "Malawi",
               "result": "L",
-              "score": 237,
-              "opp_score": 261,
+              "score": 33,
+              "opp_score": 86,
               "wickets": 10,
-              "powerplay_runs": 18,
-              "death_economy": 3.0
+              "powerplay_runs": 9,
+              "death_economy": 5.0
             },
             {
-              "match_id": 1498183,
-              "date": "2025-08-31",
+              "match_id": 1528331,
+              "date": "2026-04-09",
               "innings": 1,
-              "opponent": "Scotland",
+              "opponent": "Malawi",
               "result": "L",
-              "score": 184,
-              "opp_score": 187,
+              "score": 54,
+              "opp_score": 55,
+              "wickets": 6,
+              "powerplay_runs": 10,
+              "death_economy": null
+            },
+            {
+              "match_id": 1528328,
+              "date": "2026-04-08",
+              "innings": 2,
+              "opponent": "Botswana",
+              "result": "L",
+              "score": 33,
+              "opp_score": 191,
+              "wickets": 8,
+              "powerplay_runs": 8,
+              "death_economy": 13.0
+            },
+            {
+              "match_id": 1528326,
+              "date": "2026-04-08",
+              "innings": 2,
+              "opponent": "Brazil",
+              "result": "L",
+              "score": 26,
+              "opp_score": 200,
               "wickets": 10,
-              "powerplay_runs": 13,
-              "death_economy": 6.75
+              "powerplay_runs": 6,
+              "death_economy": 12.0
             }
           ]
         },
@@ -180,14 +180,14 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.9843,
-          "team2_win_prob": 0.0157,
+          "team1_win_prob": 0.986,
+          "team2_win_prob": 0.014,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.3444,
-          "team2_implied_prob": 0.6556,
+          "team1_implied_prob": 0.3269,
+          "team2_implied_prob": 0.6731,
           "total_line": null
         },
         "venue": {},
