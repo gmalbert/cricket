@@ -1,34 +1,34 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-08-13T06:39:21.386716+00:00",
+    "generated_at": "2026-08-14T06:37:56.126827+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-08-13",
+      "game_date": "2026-08-14",
       "game": "Ireland vs Afghanistan",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Ireland ML",
-      "confidence": 0.9843,
-      "edge": 0.6399,
-      "odds": 175,
+      "confidence": 0.986,
+      "edge": 0.6591,
+      "odds": 190,
       "tier": "Elite",
-      "notes": "Kelly stake: 8.4%"
+      "notes": "Kelly stake: 8.0%"
     },
     {
-      "game_date": "2026-08-13",
-      "game": "Scotland vs Canada",
+      "game_date": "2026-08-14",
+      "game": "Malawi vs Zambia",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "Scotland ML",
-      "confidence": 0.9819,
-      "edge": 0.2919,
-      "odds": -270,
+      "pick": "Malawi ML",
+      "confidence": 0.9852,
+      "edge": 0.3186,
+      "odds": -235,
       "tier": "Elite",
-      "notes": "Kelly stake: 16.2%"
+      "notes": "Kelly stake: 15.9%"
     }
   ]
 }
