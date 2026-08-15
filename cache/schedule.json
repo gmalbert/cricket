@@ -1,28 +1,10 @@
 {
-  "generated_at": "2026-08-14T06:37:53.841416+00:00",
-  "source_run_id": "06a678e4-25ab-45a8-9389-07b0815e0671",
+  "generated_at": "2026-08-15T06:13:46.428207+00:00",
+  "source_run_id": "7284a90f-b390-49e8-a8dc-3fb92bd625dc",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
-    {
-      "match_id": "08fa4c2f5b5d68e6d1ea1b22fcfab1fc",
-      "team1": "Malawi",
-      "team2": "Zambia",
-      "venue": "",
-      "city": "",
-      "time": "2026-08-14T07:00:00Z",
-      "scheduled_start": "2026-08-14T07:00:00Z",
-      "status": "Scheduled from DraftKings market",
-      "matchStarted": false,
-      "matchEnded": false,
-      "competition": "international_t20",
-      "competition_name": "International T20",
-      "format": "T20",
-      "gender": "male",
-      "fixture_source": "odds_api",
-      "fixture_status": "provisional"
-    },
     {
       "match_id": "bec5bcc7314404aadc586104dc7330cf",
       "team1": "Ireland",
