@@ -1,114 +1,12 @@
 {
-  "generated_at": "2026-08-15T06:13:46.668660+00:00",
-  "source_run_id": "7284a90f-b390-49e8-a8dc-3fb92bd625dc",
+  "generated_at": "2026-08-16T06:14:56.050338+00:00",
+  "source_run_id": "c061b3e5-ae7b-4a42-be87-804b2279a07d",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-08-15T06:13:46.222692+00:00",
-    "matches": {
-      "bec5bcc7314404aadc586104dc7330cf": {
-        "match": {
-          "match_id": "bec5bcc7314404aadc586104dc7330cf",
-          "team1": "Ireland",
-          "team2": "Afghanistan",
-          "venue": "",
-          "time": "2026-08-15T09:45:00Z",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.9885,
-          "team2_win_prob": 0.0115,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": 0.2918,
-          "team2_implied_prob": 0.7082,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": null,
-          "humidity": null,
-          "dew_flag": false,
-          "windspeed": null
-        },
-        "team_form": {
-          "team1": [
-            {
-              "match_id": 1528547,
-              "date": "2026-05-27",
-              "innings": 3,
-              "opponent": "New Zealand",
-              "result": "L",
-              "score": 179,
-              "opp_score": 490,
-              "wickets": 10,
-              "powerplay_runs": 53,
-              "death_economy": 7.25
-            },
-            {
-              "match_id": 1528547,
-              "date": "2026-05-27",
-              "innings": 2,
-              "opponent": "New Zealand",
-              "result": "L",
-              "score": 179,
-              "opp_score": 490,
-              "wickets": 10,
-              "powerplay_runs": 53,
-              "death_economy": 7.25
-            },
-            {
-              "match_id": 1506013,
-              "date": "2025-11-19",
-              "innings": 4,
-              "opponent": "Bangladesh",
-              "result": "L",
-              "score": 265,
-              "opp_score": 476,
-              "wickets": 10,
-              "powerplay_runs": 38,
-              "death_economy": 5.5
-            },
-            {
-              "match_id": 1506013,
-              "date": "2025-11-19",
-              "innings": 2,
-              "opponent": "Bangladesh",
-              "result": "L",
-              "score": 265,
-              "opp_score": 476,
-              "wickets": 10,
-              "powerplay_runs": 38,
-              "death_economy": 5.5
-            },
-            {
-              "match_id": 1506012,
-              "date": "2025-11-11",
-              "innings": 3,
-              "opponent": "Bangladesh",
-              "result": "L",
-              "score": 286,
-              "opp_score": 587,
-              "wickets": 10,
-              "powerplay_runs": 54,
-              "death_economy": 8.0
-            }
-          ],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "unavailable",
-          "rivalries": "unavailable"
-        }
-      }
-    }
+    "generated_at": "2026-08-16T06:14:55.612395+00:00",
+    "matches": {}
   }
 }
