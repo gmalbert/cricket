@@ -1,13 +1,13 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-08-18T06:13:56.852342+00:00",
+    "generated_at": "2026-08-19T06:15:43.010565+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-08-18",
+      "game_date": "2026-08-19",
       "game": "Ireland vs Afghanistan",
       "game_time": "",
       "bet_type": "Match Winner",
