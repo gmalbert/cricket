@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-24T06:21:52.420755+00:00",
-  "source_run_id": "fbc92ad1-1e9b-4b0e-bb82-86d0eb8a4896",
+  "generated_at": "2026-08-25T06:16:02.790885+00:00",
+  "source_run_id": "ffe888a8-f917-4451-aa49-d0d7a651128a",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -1012,6 +1012,30 @@
       "closing_price_team2": null,
       "event_status": "no_draftkings_market",
       "observed_at": "2026-08-16T06:14:55.814501+00:00"
+    },
+    {
+      "event_id": "52bd27c669ddc236297eddd336f0b5ef",
+      "team1": "Namibia",
+      "team2": "South Africa",
+      "commence_time": "2026-08-28T12:00:00Z",
+      "dk_implied_prob_team1": null,
+      "dk_implied_prob_team2": null,
+      "dk_odds_team1": null,
+      "dk_odds_team2": null,
+      "sport_key": "cricket_international_t20",
+      "competition": "international_t20",
+      "competition_name": "International T20",
+      "format": "T20",
+      "gender": "male",
+      "bookmaker": null,
+      "market": "h2h",
+      "odds_timestamp": "2026-08-25T06:15:56.471603",
+      "first_observed_price_team1": null,
+      "first_observed_price_team2": null,
+      "closing_price_team1": null,
+      "closing_price_team2": null,
+      "event_status": "no_draftkings_market",
+      "observed_at": "2026-08-25T06:16:02.790860+00:00"
     }
   ]
 }
