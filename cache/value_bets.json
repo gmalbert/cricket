@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-15T06:13:46.425757+00:00",
-  "source_run_id": "7284a90f-b390-49e8-a8dc-3fb92bd625dc",
+  "generated_at": "2026-08-27T09:16:24.193730+00:00",
+  "source_run_id": "95332b1c-5972-4205-92ba-664d14291030",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "Ireland vs Afghanistan",
-      "bet": "Ireland ML",
+      "match": "Namibia vs South Africa",
+      "bet": "South Africa ML",
       "type": "Match Winner",
-      "model_prob": 0.9885,
-      "implied_prob": 0.2918,
-      "edge": 0.6967,
-      "dk_odds": "+225",
-      "kelly_stake": "7.2%",
+      "model_prob": 0.9077,
+      "implied_prob": 0.8025,
+      "edge": 0.1052,
+      "dk_odds": "-550",
+      "kelly_stake": "10.7%",
       "tier": "Elite Pick"
     }
   ]
