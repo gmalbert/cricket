@@ -1,22 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-08-26T06:17:54.157441+00:00",
+    "generated_at": "2026-08-27T09:16:27.064065+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-08-26",
-      "game": "Ireland vs Afghanistan",
+      "game_date": "2026-08-27",
+      "game": "Namibia vs South Africa",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "Ireland ML",
-      "confidence": 0.9885,
-      "edge": 0.6967,
-      "odds": 225,
+      "pick": "South Africa ML",
+      "confidence": 0.9077,
+      "edge": 0.1052,
+      "odds": -550,
       "tier": "Elite",
-      "notes": "Kelly stake: 7.2%"
+      "notes": "Kelly stake: 10.7%"
     }
   ]
 }
