@@ -1,22 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-08-28T09:18:48.165461+00:00",
+    "generated_at": "2026-08-29T06:26:09.615151+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-08-28",
-      "game": "Namibia vs South Africa",
+      "game_date": "2026-08-29",
+      "game": "South Africa vs Zimbabwe",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "Namibia ML",
-      "confidence": 0.9856,
-      "edge": 0.7964,
-      "odds": 400,
+      "pick": "South Africa ML",
+      "confidence": 0.9992,
+      "edge": 0.2853,
+      "odds": -310,
       "tier": "Elite",
-      "notes": "Kelly stake: 4.6%"
+      "notes": "Kelly stake: 17.8%"
     }
   ]
 }
