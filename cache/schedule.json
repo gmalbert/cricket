@@ -1,8 +1,27 @@
 {
-  "generated_at": "2026-08-30T06:27:11.167857+00:00",
-  "source_run_id": "ba707709-c71f-4923-9fe8-30d41c8fbf00",
+  "generated_at": "2026-08-31T06:37:07.843259+00:00",
+  "source_run_id": "0ae413a3-800c-42a4-9a78-e178675ebd05",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
-  "data": []
+  "data": [
+    {
+      "match_id": "4dceb640f762e197bbc06c82f4d7dc00",
+      "team1": "Namibia",
+      "team2": "Zimbabwe",
+      "venue": "",
+      "city": "",
+      "time": "2026-08-31T12:00:00Z",
+      "scheduled_start": "2026-08-31T12:00:00Z",
+      "status": "Scheduled from DraftKings market",
+      "matchStarted": false,
+      "matchEnded": false,
+      "competition": "international_t20",
+      "competition_name": "International T20",
+      "format": "T20",
+      "gender": "male",
+      "fixture_source": "odds_api",
+      "fixture_status": "provisional"
+    }
+  ]
 }
