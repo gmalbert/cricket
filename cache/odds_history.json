@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-31T06:37:07.842329+00:00",
-  "source_run_id": "0ae413a3-800c-42a4-9a78-e178675ebd05",
+  "generated_at": "2026-09-01T06:31:03.162592+00:00",
+  "source_run_id": "f37ebf1f-54c9-4f42-9c7e-84731b3d3c98",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -1180,6 +1180,30 @@
       "closing_price_team2": -200,
       "event_status": "draftkings_available",
       "observed_at": "2026-08-31T06:37:07.842305+00:00"
+    },
+    {
+      "event_id": "37d05acc5a27805ba96abbf126c30e74",
+      "team1": "Zimbabwe",
+      "team2": "South Africa",
+      "commence_time": "2026-09-01T12:00:00Z",
+      "dk_implied_prob_team1": 0.2632,
+      "dk_implied_prob_team2": 0.7368,
+      "dk_odds_team1": 260,
+      "dk_odds_team2": -350,
+      "sport_key": "cricket_international_t20",
+      "competition": "international_t20",
+      "competition_name": "International T20",
+      "format": "T20",
+      "gender": "male",
+      "bookmaker": "draftkings",
+      "market": "h2h",
+      "odds_timestamp": "2026-09-01T06:30:36Z",
+      "first_observed_price_team1": 260,
+      "first_observed_price_team2": -350,
+      "closing_price_team1": 260,
+      "closing_price_team2": -350,
+      "event_status": "draftkings_available",
+      "observed_at": "2026-09-01T06:31:03.162563+00:00"
     }
   ]
 }
