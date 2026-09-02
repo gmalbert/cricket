@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-09-01T06:31:03.353087+00:00",
-  "source_run_id": "f37ebf1f-54c9-4f42-9c7e-84731b3d3c98",
+  "generated_at": "2026-09-02T06:34:30.645353+00:00",
+  "source_run_id": "78d4319c-0295-4209-9b01-4b56749a2adb",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-09-01T06:31:03.002641+00:00",
+    "generated_at": "2026-09-02T06:34:30.139148+00:00",
     "matches": {
-      "37d05acc5a27805ba96abbf126c30e74": {
+      "bd050998affa5d3c9f4553e5c5d1ddfd": {
         "match": {
-          "match_id": "37d05acc5a27805ba96abbf126c30e74",
-          "team1": "Zimbabwe",
-          "team2": "South Africa",
+          "match_id": "bd050998affa5d3c9f4553e5c5d1ddfd",
+          "team1": "Namibia",
+          "team2": "Zimbabwe",
           "venue": "",
-          "time": "2026-09-01T12:00:00Z",
+          "time": "2026-09-03T12:00:00Z",
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.0923,
-          "team2_win_prob": 0.9077,
+          "team1_win_prob": 0.9831,
+          "team2_win_prob": 0.0169,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.2632,
-          "team2_implied_prob": 0.7368,
+          "team1_implied_prob": 0.377,
+          "team2_implied_prob": 0.623,
           "total_line": null
         },
         "venue": {},
@@ -37,6 +37,68 @@
         },
         "team_form": {
           "team1": [
+            {
+              "match_id": 1544129,
+              "date": "2026-07-31",
+              "innings": 2,
+              "opponent": "Netherlands",
+              "result": "W",
+              "score": 186,
+              "opp_score": 183,
+              "wickets": 4,
+              "powerplay_runs": 21,
+              "death_economy": 4.0
+            },
+            {
+              "match_id": 1544127,
+              "date": "2026-07-27",
+              "innings": 1,
+              "opponent": "Nepal",
+              "result": "W",
+              "score": 211,
+              "opp_score": 208,
+              "wickets": 7,
+              "powerplay_runs": 15,
+              "death_economy": 4.25
+            },
+            {
+              "match_id": 1544126,
+              "date": "2026-07-25",
+              "innings": 2,
+              "opponent": "Netherlands",
+              "result": "L",
+              "score": 193,
+              "opp_score": 251,
+              "wickets": 10,
+              "powerplay_runs": 21,
+              "death_economy": 2.75
+            },
+            {
+              "match_id": 1544124,
+              "date": "2026-07-21",
+              "innings": 2,
+              "opponent": "Nepal",
+              "result": "W",
+              "score": 159,
+              "opp_score": 157,
+              "wickets": 2,
+              "powerplay_runs": 20,
+              "death_economy": 3.25
+            },
+            {
+              "match_id": 1529144,
+              "date": "2026-04-12",
+              "innings": 1,
+              "opponent": "Scotland",
+              "result": "L",
+              "score": 198,
+              "opp_score": 199,
+              "wickets": 10,
+              "powerplay_runs": 25,
+              "death_economy": 6.75
+            }
+          ],
+          "team2": [
             {
               "match_id": 1538297,
               "date": "2026-06-28",
@@ -96,68 +158,6 @@
               "wickets": 10,
               "powerplay_runs": 39,
               "death_economy": 3.0
-            }
-          ],
-          "team2": [
-            {
-              "match_id": 1479572,
-              "date": "2025-11-22",
-              "innings": 3,
-              "opponent": "India",
-              "result": "W",
-              "score": 489,
-              "opp_score": 201,
-              "wickets": 5,
-              "powerplay_runs": 25,
-              "death_economy": 6.75
-            },
-            {
-              "match_id": 1479572,
-              "date": "2025-11-22",
-              "innings": 1,
-              "opponent": "India",
-              "result": "W",
-              "score": 489,
-              "opp_score": 201,
-              "wickets": 10,
-              "powerplay_runs": 25,
-              "death_economy": 6.75
-            },
-            {
-              "match_id": 1479571,
-              "date": "2025-11-14",
-              "innings": 3,
-              "opponent": "India",
-              "result": "L",
-              "score": 159,
-              "opp_score": 189,
-              "wickets": 10,
-              "powerplay_runs": 39,
-              "death_economy": 2.5
-            },
-            {
-              "match_id": 1479571,
-              "date": "2025-11-14",
-              "innings": 1,
-              "opponent": "India",
-              "result": "L",
-              "score": 159,
-              "opp_score": 189,
-              "wickets": 10,
-              "powerplay_runs": 39,
-              "death_economy": 2.5
-            },
-            {
-              "match_id": 1501894,
-              "date": "2025-10-20",
-              "innings": 4,
-              "opponent": "Pakistan",
-              "result": "W",
-              "score": 404,
-              "opp_score": 333,
-              "wickets": 2,
-              "powerplay_runs": 41,
-              "death_economy": 12.0
             }
           ]
         },
