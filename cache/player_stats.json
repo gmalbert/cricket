@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-02T06:34:30.165296+00:00",
-  "source_run_id": "78d4319c-0295-4209-9b01-4b56749a2adb",
+  "generated_at": "2026-09-03T06:30:26.081437+00:00",
+  "source_run_id": "7167ad13-c2a7-4829-af49-03fc625e8abe",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -22893,6 +22893,7 @@
       },
       "CJ Green": {
         "recent_scores": [
+          36,
           54,
           18,
           14,
@@ -22901,11 +22902,10 @@
           50,
           32,
           12,
-          8,
-          34
+          8
         ],
-        "recent_avg": 25.0,
-        "recent_sr": 145.3
+        "recent_avg": 25.2,
+        "recent_sr": 165.8
       },
       "CJ Langford": {
         "recent_scores": [
@@ -93553,6 +93553,7 @@
       },
       "RA Clarke": {
         "recent_scores": [
+          0,
           30,
           54,
           46,
@@ -93562,8 +93563,8 @@
           108,
           8
         ],
-        "recent_avg": 41.0,
-        "recent_sr": 101.9
+        "recent_avg": 36.4,
+        "recent_sr": 101.2
       },
       "RA Wiggins": {
         "recent_scores": [
@@ -93801,13 +93802,14 @@
       },
       "ZN Carter": {
         "recent_scores": [
+          114,
           56,
           34,
           4,
           54
         ],
-        "recent_avg": 37.0,
-        "recent_sr": 127.6
+        "recent_avg": 52.4,
+        "recent_sr": 137.9
       },
       "A Bonora": {
         "recent_scores": [
@@ -101820,14 +101822,14 @@
       },
       "CJ Green": {
         "wickets_last5": [
+          0,
           2,
           0,
           0,
-          4,
-          2
+          4
         ],
-        "recent_economy": 6.49,
-        "recent_wickets_per_match": 1.6
+        "recent_economy": 6.83,
+        "recent_wickets_per_match": 1.2
       },
       "CJ Jordan": {
         "wickets_last5": [
@@ -134361,12 +134363,12 @@
         "wickets_last5": [
           0,
           0,
+          0,
           4,
-          2,
           2
         ],
-        "recent_economy": 6.98,
-        "recent_wickets_per_match": 1.6
+        "recent_economy": 6.45,
+        "recent_wickets_per_match": 1.2
       },
       "N Boje": {
         "wickets_last5": [
@@ -140192,14 +140194,14 @@
       },
       "RR Simmonds": {
         "wickets_last5": [
+          0,
           2,
           2,
           2,
-          4,
-          2
+          4
         ],
-        "recent_economy": 9.03,
-        "recent_wickets_per_match": 2.4
+        "recent_economy": 9.74,
+        "recent_wickets_per_match": 2.0
       },
       "RR Watson": {
         "wickets_last5": [
@@ -158803,10 +158805,10 @@
           0,
           0,
           0,
-          4
+          0
         ],
-        "recent_economy": 9.33,
-        "recent_wickets_per_match": 0.8
+        "recent_economy": 10.59,
+        "recent_wickets_per_match": 0.0
       },
       "JU Goolie": {
         "wickets_last5": [

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-02T06:34:30.402920+00:00",
-  "source_run_id": "78d4319c-0295-4209-9b01-4b56749a2adb",
+  "generated_at": "2026-09-03T06:30:26.306747+00:00",
+  "source_run_id": "7167ad13-c2a7-4829-af49-03fc625e8abe",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,8 +10,8 @@
       "bet": "Namibia ML",
       "type": "Match Winner",
       "model_prob": 0.9831,
-      "implied_prob": 0.377,
-      "edge": 0.6061,
+      "implied_prob": 0.3791,
+      "edge": 0.604,
       "dk_odds": "+150",
       "kelly_stake": "9.2%",
       "tier": "Elite Pick"

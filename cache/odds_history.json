@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-02T06:34:30.404150+00:00",
-  "source_run_id": "78d4319c-0295-4209-9b01-4b56749a2adb",
+  "generated_at": "2026-09-03T06:30:26.307937+00:00",
+  "source_run_id": "7167ad13-c2a7-4829-af49-03fc625e8abe",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -1228,6 +1228,30 @@
       "closing_price_team2": -195,
       "event_status": "draftkings_available",
       "observed_at": "2026-09-02T06:34:30.404113+00:00"
+    },
+    {
+      "event_id": "bd050998affa5d3c9f4553e5c5d1ddfd",
+      "team1": "Namibia",
+      "team2": "Zimbabwe",
+      "commence_time": "2026-09-03T12:00:00Z",
+      "dk_implied_prob_team1": 0.3791,
+      "dk_implied_prob_team2": 0.6209,
+      "dk_odds_team1": 150,
+      "dk_odds_team2": -190,
+      "sport_key": "cricket_international_t20",
+      "competition": "international_t20",
+      "competition_name": "International T20",
+      "format": "T20",
+      "gender": "male",
+      "bookmaker": "draftkings",
+      "market": "h2h",
+      "odds_timestamp": "2026-09-03T06:29:25Z",
+      "first_observed_price_team1": 150,
+      "first_observed_price_team2": -190,
+      "closing_price_team1": 150,
+      "closing_price_team2": -190,
+      "event_status": "draftkings_available",
+      "observed_at": "2026-09-03T06:30:26.307903+00:00"
     }
   ]
 }
