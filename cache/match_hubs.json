@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-09-03T06:30:26.553537+00:00",
-  "source_run_id": "7167ad13-c2a7-4829-af49-03fc625e8abe",
+  "generated_at": "2026-09-04T06:29:18.085225+00:00",
+  "source_run_id": "79333c47-6098-4f19-a154-12a1333dec76",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-09-03T06:30:26.055391+00:00",
+    "generated_at": "2026-09-04T06:29:17.634072+00:00",
     "matches": {
-      "bd050998affa5d3c9f4553e5c5d1ddfd": {
+      "1e5502b6ab0588c7c4d098e010d502f0": {
         "match": {
-          "match_id": "bd050998affa5d3c9f4553e5c5d1ddfd",
+          "match_id": "1e5502b6ab0588c7c4d098e010d502f0",
           "team1": "Namibia",
-          "team2": "Zimbabwe",
+          "team2": "South Africa",
           "venue": "",
-          "time": "2026-09-03T12:00:00Z",
+          "time": "2026-09-04T12:00:00Z",
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.9831,
-          "team2_win_prob": 0.0169,
+          "team1_win_prob": 0.0923,
+          "team2_win_prob": 0.9077,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.3791,
-          "team2_implied_prob": 0.6209,
+          "team1_implied_prob": 0.1646,
+          "team2_implied_prob": 0.8354,
           "total_line": null
         },
         "venue": {},
@@ -100,64 +100,64 @@
           ],
           "team2": [
             {
-              "match_id": 1538297,
-              "date": "2026-06-28",
-              "innings": 2,
-              "opponent": "Bangladesh",
+              "match_id": 1479572,
+              "date": "2025-11-22",
+              "innings": 3,
+              "opponent": "India",
               "result": "W",
-              "score": 410,
-              "opp_score": 140,
-              "wickets": 10,
-              "powerplay_runs": 23,
-              "death_economy": 11.0
+              "score": 489,
+              "opp_score": 201,
+              "wickets": 5,
+              "powerplay_runs": 25,
+              "death_economy": 6.75
             },
             {
-              "match_id": 1478873,
-              "date": "2025-08-07",
-              "innings": 3,
-              "opponent": "New Zealand",
-              "result": "L",
-              "score": 125,
-              "opp_score": 601,
-              "wickets": 10,
-              "powerplay_runs": 32,
-              "death_economy": 7.0
-            },
-            {
-              "match_id": 1478873,
-              "date": "2025-08-07",
+              "match_id": 1479572,
+              "date": "2025-11-22",
               "innings": 1,
-              "opponent": "New Zealand",
-              "result": "L",
-              "score": 125,
-              "opp_score": 601,
+              "opponent": "India",
+              "result": "W",
+              "score": 489,
+              "opp_score": 201,
               "wickets": 10,
-              "powerplay_runs": 32,
-              "death_economy": 7.0
+              "powerplay_runs": 25,
+              "death_economy": 6.75
             },
             {
-              "match_id": 1478872,
-              "date": "2025-07-30",
+              "match_id": 1479571,
+              "date": "2025-11-14",
               "innings": 3,
-              "opponent": "New Zealand",
+              "opponent": "India",
               "result": "L",
-              "score": 149,
-              "opp_score": 307,
+              "score": 159,
+              "opp_score": 189,
               "wickets": 10,
               "powerplay_runs": 39,
-              "death_economy": 3.0
+              "death_economy": 2.5
             },
             {
-              "match_id": 1478872,
-              "date": "2025-07-30",
+              "match_id": 1479571,
+              "date": "2025-11-14",
               "innings": 1,
-              "opponent": "New Zealand",
+              "opponent": "India",
               "result": "L",
-              "score": 149,
-              "opp_score": 307,
+              "score": 159,
+              "opp_score": 189,
               "wickets": 10,
               "powerplay_runs": 39,
-              "death_economy": 3.0
+              "death_economy": 2.5
+            },
+            {
+              "match_id": 1501894,
+              "date": "2025-10-20",
+              "innings": 4,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 404,
+              "opp_score": 333,
+              "wickets": 2,
+              "powerplay_runs": 41,
+              "death_economy": 12.0
             }
           ]
         },
