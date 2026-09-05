@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-04T06:29:17.870247+00:00",
-  "source_run_id": "79333c47-6098-4f19-a154-12a1333dec76",
+  "generated_at": "2026-09-05T06:27:09.165658+00:00",
+  "source_run_id": "e9957f48-c403-482f-8110-8f5c34c1e265",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "Namibia vs South Africa",
+      "match": "South Africa vs Zimbabwe",
       "bet": "South Africa ML",
       "type": "Match Winner",
-      "model_prob": 0.9077,
-      "implied_prob": 0.8354,
-      "edge": 0.0723,
-      "dk_odds": "-750",
-      "kelly_stake": "9.2%",
-      "tier": "Strong"
+      "model_prob": 0.9992,
+      "implied_prob": 0.7258,
+      "edge": 0.2734,
+      "dk_odds": "-330",
+      "kelly_stake": "18.1%",
+      "tier": "Elite Pick"
     }
   ]
 }
