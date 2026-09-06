@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-05T06:27:09.165658+00:00",
-  "source_run_id": "e9957f48-c403-482f-8110-8f5c34c1e265",
+  "generated_at": "2026-09-06T06:26:33.730594+00:00",
+  "source_run_id": "6194fcfb-549a-4ceb-aad7-c8cc0b375c30",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,10 +10,10 @@
       "bet": "South Africa ML",
       "type": "Match Winner",
       "model_prob": 0.9992,
-      "implied_prob": 0.7258,
-      "edge": 0.2734,
-      "dk_odds": "-330",
-      "kelly_stake": "18.1%",
+      "implied_prob": 0.764,
+      "edge": 0.2352,
+      "dk_odds": "-425",
+      "kelly_stake": "19.0%",
       "tier": "Elite Pick"
     }
   ]

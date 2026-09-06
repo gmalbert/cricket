@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-05T06:27:09.418383+00:00",
-  "source_run_id": "e9957f48-c403-482f-8110-8f5c34c1e265",
+  "generated_at": "2026-09-06T06:26:33.923817+00:00",
+  "source_run_id": "6194fcfb-549a-4ceb-aad7-c8cc0b375c30",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-09-05T06:27:08.895845+00:00",
+    "generated_at": "2026-09-06T06:26:33.512368+00:00",
     "matches": {
       "23d2ef9bd33998bf6d47452e73882e17": {
         "match": {
@@ -24,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.7258,
-          "team2_implied_prob": 0.2742,
+          "team1_implied_prob": 0.764,
+          "team2_implied_prob": 0.236,
           "total_line": null
         },
         "venue": {},
