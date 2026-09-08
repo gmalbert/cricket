@@ -1,22 +1,9 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-09-07T06:37:50.342490+00:00",
+    "generated_at": "2026-09-08T06:29:41.456636+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
-  "bets": [
-    {
-      "game_date": "2026-09-07",
-      "game": "South Africa vs Zimbabwe",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "South Africa ML",
-      "confidence": 0.9992,
-      "edge": 0.2352,
-      "odds": -425,
-      "tier": "Elite",
-      "notes": "Kelly stake: 19.0%"
-    }
-  ]
+  "bets": []
 }
