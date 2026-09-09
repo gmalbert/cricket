@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T06:29:38.688790+00:00",
-  "source_run_id": "92eab9e3-4573-48e4-ae5d-b5df16dd21e7",
+  "generated_at": "2026-09-09T06:30:12.009502+00:00",
+  "source_run_id": "1f544139-a3fc-4154-be28-fecd03681fab",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -27,7 +27,7 @@
       "edge_team2": 0.0188,
       "dk_odds_team1": 750,
       "dk_odds_team2": -1600,
-      "odds_timestamp": "2026-09-08T06:27:51Z",
+      "odds_timestamp": "2026-09-09T06:29:35Z",
       "odds_event_id": "3882cf673374f8e108261461a2453788",
       "odds_bookmaker": "draftkings",
       "odds_market": "h2h",
