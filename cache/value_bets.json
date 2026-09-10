@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-09-06T06:26:33.730594+00:00",
-  "source_run_id": "6194fcfb-549a-4ceb-aad7-c8cc0b375c30",
+  "generated_at": "2026-09-10T06:30:22.892887+00:00",
+  "source_run_id": "279c8ee7-cffe-45bf-95ec-fe8dc8df75da",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "South Africa vs Zimbabwe",
-      "bet": "South Africa ML",
+      "match": "Afghanistan vs India",
+      "bet": "India ML",
       "type": "Match Winner",
-      "model_prob": 0.9992,
-      "implied_prob": 0.764,
-      "edge": 0.2352,
-      "dk_odds": "-425",
-      "kelly_stake": "19.0%",
+      "model_prob": 0.9813,
+      "implied_prob": 0.828,
+      "edge": 0.1533,
+      "dk_odds": "-700",
+      "kelly_stake": "18.4%",
       "tier": "Elite Pick"
     }
   ]

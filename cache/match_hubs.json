@@ -1,20 +1,121 @@
 {
-  "generated_at": "2026-09-09T06:30:12.508616+00:00",
-  "source_run_id": "1f544139-a3fc-4154-be28-fecd03681fab",
+  "generated_at": "2026-09-10T06:30:23.137608+00:00",
+  "source_run_id": "279c8ee7-cffe-45bf-95ec-fe8dc8df75da",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-09-09T06:30:12.005238+00:00",
+    "generated_at": "2026-09-10T06:30:22.633721+00:00",
     "matches": {
-      "3882cf673374f8e108261461a2453788": {
+      "ccd76f9c460f44116ab673dde74a35e5": {
         "match": {
-          "match_id": "3882cf673374f8e108261461a2453788",
+          "match_id": "ccd76f9c460f44116ab673dde74a35e5",
+          "team1": "Afghanistan",
+          "team2": "India",
+          "venue": "",
+          "time": "2026-09-13T13:30:00Z",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.0187,
+          "team2_win_prob": 0.9813,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": 0.172,
+          "team2_implied_prob": 0.828,
+          "total_line": null
+        },
+        "venue": {},
+        "weather": {
+          "temperature": null,
+          "humidity": null,
+          "dew_flag": false,
+          "windspeed": null
+        },
+        "team_form": {
+          "team1": [],
+          "team2": [
+            {
+              "match_id": 1544002,
+              "date": "2026-08-23",
+              "innings": 1,
+              "opponent": "Sri Lanka",
+              "result": "W",
+              "score": 503,
+              "opp_score": 290,
+              "wickets": 9,
+              "powerplay_runs": 18,
+              "death_economy": 10.0
+            },
+            {
+              "match_id": 1544001,
+              "date": "2026-08-15",
+              "innings": 3,
+              "opponent": "Sri Lanka",
+              "result": "W",
+              "score": 462,
+              "opp_score": 284,
+              "wickets": 10,
+              "powerplay_runs": 36,
+              "death_economy": 4.25
+            },
+            {
+              "match_id": 1544001,
+              "date": "2026-08-15",
+              "innings": 1,
+              "opponent": "Sri Lanka",
+              "result": "W",
+              "score": 462,
+              "opp_score": 284,
+              "wickets": 10,
+              "powerplay_runs": 36,
+              "death_economy": 4.25
+            },
+            {
+              "match_id": 1496551,
+              "date": "2026-07-10",
+              "innings": 3,
+              "opponent": "England",
+              "result": "W",
+              "score": 285,
+              "opp_score": 170,
+              "wickets": 7,
+              "powerplay_runs": 48,
+              "death_economy": 8.75
+            },
+            {
+              "match_id": 1496551,
+              "date": "2026-07-10",
+              "innings": 1,
+              "opponent": "England",
+              "result": "W",
+              "score": 285,
+              "opp_score": 170,
+              "wickets": 10,
+              "powerplay_runs": 48,
+              "death_economy": 8.75
+            }
+          ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "unavailable",
+          "rivalries": "unavailable"
+        }
+      },
+      "f7f32c3ae7d6912a9ab134e54a472029": {
+        "match": {
+          "match_id": "f7f32c3ae7d6912a9ab134e54a472029",
           "team1": "Namibia",
           "team2": "South Africa",
           "venue": "",
-          "time": "2026-09-09T07:30:00Z",
+          "time": "2026-09-11T07:30:00Z",
           "status": null
         },
         "prediction": {
@@ -24,8 +125,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.1111,
-          "team2_implied_prob": 0.8889,
+          "team1_implied_prob": 0.1181,
+          "team2_implied_prob": 0.8819,
           "total_line": null
         },
         "venue": {},
@@ -37,6 +138,18 @@
         },
         "team_form": {
           "team1": [
+            {
+              "match_id": 1549531,
+              "date": "2026-09-09",
+              "innings": 2,
+              "opponent": "South Africa",
+              "result": "L",
+              "score": 162,
+              "opp_score": 348,
+              "wickets": 8,
+              "powerplay_runs": 17,
+              "death_economy": 8.25
+            },
             {
               "match_id": 1544129,
               "date": "2026-07-31",
@@ -84,18 +197,6 @@
               "wickets": 2,
               "powerplay_runs": 20,
               "death_economy": 3.25
-            },
-            {
-              "match_id": 1529144,
-              "date": "2026-04-12",
-              "innings": 1,
-              "opponent": "Scotland",
-              "result": "L",
-              "score": 198,
-              "opp_score": 199,
-              "wickets": 10,
-              "powerplay_runs": 25,
-              "death_economy": 6.75
             }
           ],
           "team2": [
