@@ -1,22 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-09-10T06:30:25.576394+00:00",
+    "generated_at": "2026-09-11T06:29:44.943850+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-09-10",
+      "game_date": "2026-09-11",
       "game": "Afghanistan vs India",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.9813,
-      "edge": 0.1533,
-      "odds": -700,
+      "edge": 0.1171,
+      "odds": -1000,
       "tier": "Elite",
-      "notes": "Kelly stake: 18.4%"
+      "notes": "Kelly stake: 18.6%"
     }
   ]
 }
