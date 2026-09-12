@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-09-11T06:29:42.510300+00:00",
-  "source_run_id": "b0e8a96e-d9c6-4f30-9235-a7652cb7d2d0",
+  "generated_at": "2026-09-12T06:24:59.929777+00:00",
+  "source_run_id": "472456ca-4022-4ed2-bae8-c91540f6e49e",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
       "match": "Afghanistan vs India",
-      "bet": "India ML",
+      "bet": "Afghanistan ML",
       "type": "Match Winner",
-      "model_prob": 0.9813,
-      "implied_prob": 0.8642,
-      "edge": 0.1171,
-      "dk_odds": "-1000",
-      "kelly_stake": "18.6%",
+      "model_prob": 0.9856,
+      "implied_prob": 0.1358,
+      "edge": 0.8498,
+      "dk_odds": "+600",
+      "kelly_stake": "3.3%",
       "tier": "Elite Pick"
     }
   ]
