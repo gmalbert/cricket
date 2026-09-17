@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-16T06:30:16.823386+00:00",
-  "source_run_id": "eda916fb-5596-44a8-aa5e-7bb86579d8ac",
+  "generated_at": "2026-09-17T06:31:41.823450+00:00",
+  "source_run_id": "75fa8544-cae8-4d73-b46e-b11b5cd234d5",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-09-16T06:30:16.361606+00:00",
+    "generated_at": "2026-09-17T06:31:41.387112+00:00",
     "matches": {
       "aaf78ade292a366c267f2cef3208db05": {
         "match": {
@@ -24,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.1,
-          "team2_implied_prob": 0.9,
+          "team1_implied_prob": 0.125,
+          "team2_implied_prob": 0.875,
           "total_line": null
         },
         "venue": {},
@@ -125,8 +125,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.8025,
-          "team2_implied_prob": 0.1975,
+          "team1_implied_prob": 0.828,
+          "team2_implied_prob": 0.172,
           "total_line": null
         },
         "venue": {},
@@ -287,8 +287,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.1119,
-          "team2_implied_prob": 0.8881,
+          "team1_implied_prob": 0.1181,
+          "team2_implied_prob": 0.8819,
           "total_line": null
         },
         "venue": {},
