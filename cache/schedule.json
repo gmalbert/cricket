@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-18T06:29:16.275759+00:00",
-  "source_run_id": "c48f638a-fbff-4f7d-9837-553fd1fe292a",
+  "generated_at": "2026-09-19T06:27:04.892388+00:00",
+  "source_run_id": "6121aa31-bcd5-4f70-a54f-b611e34c24d5",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -24,13 +24,13 @@
       "fixture_status": "provisional"
     },
     {
-      "match_id": "d2a141799e6de3a4ab0e567477c99951",
+      "match_id": "a6c18a1b63b2a7fc8764242565f0e4a6",
       "team1": "Zimbabwe",
       "team2": "Australia",
       "venue": "",
       "city": "",
-      "time": "2026-09-18T07:30:00Z",
-      "scheduled_start": "2026-09-18T07:30:00Z",
+      "time": "2026-09-20T07:30:00Z",
+      "scheduled_start": "2026-09-20T07:30:00Z",
       "status": "Scheduled from DraftKings market",
       "matchStarted": false,
       "matchEnded": false,

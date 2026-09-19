@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-18T06:29:16.272755+00:00",
-  "source_run_id": "c48f638a-fbff-4f7d-9837-553fd1fe292a",
+  "generated_at": "2026-09-19T06:27:04.887913+00:00",
+  "source_run_id": "6121aa31-bcd5-4f70-a54f-b611e34c24d5",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,8 +10,8 @@
       "bet": "Zimbabwe ML",
       "type": "Match Winner",
       "model_prob": 0.9789,
-      "implied_prob": 0.1262,
-      "edge": 0.8527,
+      "implied_prob": 0.127,
+      "edge": 0.8519,
       "dk_odds": "+650",
       "kelly_stake": "3.1%",
       "tier": "Elite Pick"
