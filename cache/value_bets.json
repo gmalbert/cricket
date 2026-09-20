@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-19T06:27:04.887913+00:00",
-  "source_run_id": "6121aa31-bcd5-4f70-a54f-b611e34c24d5",
+  "generated_at": "2026-09-20T06:26:48.055634+00:00",
+  "source_run_id": "f72c8344-e3c7-48ba-8823-4ef22d1639e6",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,21 +10,10 @@
       "bet": "Zimbabwe ML",
       "type": "Match Winner",
       "model_prob": 0.9789,
-      "implied_prob": 0.127,
-      "edge": 0.8519,
-      "dk_odds": "+650",
-      "kelly_stake": "3.1%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "England vs Sri Lanka",
-      "bet": "England ML",
-      "type": "Match Winner",
-      "model_prob": 0.9917,
-      "implied_prob": 0.8541,
-      "edge": 0.1376,
-      "dk_odds": "-900",
-      "kelly_stake": "20.1%",
+      "implied_prob": 0.1181,
+      "edge": 0.8608,
+      "dk_odds": "+700",
+      "kelly_stake": "2.9%",
       "tier": "Elite Pick"
     }
   ]
