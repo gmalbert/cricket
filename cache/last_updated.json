@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-20T06:26:48.264495+00:00",
-  "source_run_id": "f72c8344-e3c7-48ba-8823-4ef22d1639e6",
+  "generated_at": "2026-09-21T06:39:40.087143+00:00",
+  "source_run_id": "98250342-a78c-4a9a-b0ea-aafeb4ca6779",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
-    "timestamp": "2026-09-20T06:26:48.264486+00:00",
-    "run_id": "f72c8344-e3c7-48ba-8823-4ef22d1639e6",
+    "timestamp": "2026-09-21T06:39:40.087132+00:00",
+    "run_id": "98250342-a78c-4a9a-b0ea-aafeb4ca6779",
     "matches_count": 1,
     "props_count": 0,
     "value_bets_count": 1,
@@ -18,7 +18,7 @@
     "errors": {},
     "competition_status": {
       "schema_version": 1,
-      "generated_at": "2026-09-20T06:26:47.785404+00:00",
+      "generated_at": "2026-09-21T06:39:39.487586+00:00",
       "competitions": {
         "ipl_male": {
           "competition": "ipl_male",
@@ -41,7 +41,7 @@
           "qualifying_bets": 1,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785290+00:00"
+          "updated_at": "2026-09-21T06:39:39.487446+00:00"
         },
         "international_t20": {
           "competition": "international_t20",
@@ -108,14 +108,14 @@
             "completed_matches": 5729,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:25:30.548054+00:00",
+            "last_update": "2026-09-21T06:37:47.538593+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785309+00:00"
+          "updated_at": "2026-09-21T06:39:39.487467+00:00"
         },
         "odi_internationals": {
           "competition": "odi_internationals",
@@ -189,14 +189,14 @@
             "completed_matches": 3187,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:25:47.711203+00:00",
+            "last_update": "2026-09-21T06:38:12.999360+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "model_not_ready",
           "status": "model_not_ready",
-          "updated_at": "2026-09-20T06:26:47.785320+00:00"
+          "updated_at": "2026-09-21T06:39:39.487482+00:00"
         },
         "big_bash": {
           "competition": "big_bash",
@@ -234,14 +234,14 @@
             "completed_matches": 662,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:25:52.418678+00:00",
+            "last_update": "2026-09-21T06:38:20.455350+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785327+00:00"
+          "updated_at": "2026-09-21T06:39:39.487492+00:00"
         },
         "psl": {
           "competition": "psl",
@@ -276,14 +276,14 @@
             "completed_matches": 357,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:25:55.502935+00:00",
+            "last_update": "2026-09-21T06:38:25.055172+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785334+00:00"
+          "updated_at": "2026-09-21T06:39:39.487501+00:00"
         },
         "cpl": {
           "competition": "cpl",
@@ -320,14 +320,14 @@
             "completed_matches": 442,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:25:59.830741+00:00",
+            "last_update": "2026-09-21T06:38:31.009331+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785343+00:00"
+          "updated_at": "2026-09-21T06:39:39.487510+00:00"
         },
         "t20_world_cup": {
           "competition": "t20_world_cup",
@@ -363,14 +363,14 @@
             "completed_matches": 320,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:26:03.090129+00:00",
+            "last_update": "2026-09-21T06:38:36.379542+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785352+00:00"
+          "updated_at": "2026-09-21T06:39:39.487522+00:00"
         },
         "odi_world_cup": {
           "competition": "odi_world_cup",
@@ -442,14 +442,14 @@
             "completed_matches": 3187,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:26:20.473365+00:00",
+            "last_update": "2026-09-21T06:39:01.798370+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785364+00:00"
+          "updated_at": "2026-09-21T06:39:39.487537+00:00"
         },
         "mlc": {
           "competition": "mlc",
@@ -476,14 +476,14 @@
             "completed_matches": 109,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:26:22.362001+00:00",
+            "last_update": "2026-09-21T06:39:04.928776+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785374+00:00"
+          "updated_at": "2026-09-21T06:39:39.487548+00:00"
         },
         "lanka_premier_league": {
           "competition": "lanka_premier_league",
@@ -512,14 +512,14 @@
             "completed_matches": 143,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:26:24.453342+00:00",
+            "last_update": "2026-09-21T06:39:07.711934+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785381+00:00"
+          "updated_at": "2026-09-21T06:39:39.487557+00:00"
         },
         "test_matches": {
           "competition": "test_matches",
@@ -591,14 +591,14 @@
             "completed_matches": 919,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-09-20T06:26:35.880329+00:00",
+            "last_update": "2026-09-21T06:39:22.555686+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785388+00:00"
+          "updated_at": "2026-09-21T06:39:39.487565+00:00"
         },
         "womens_bbl": {
           "competition": "womens_bbl",
@@ -620,14 +620,14 @@
             "completed_matches": 0,
             "team_identity_rate": 0.0,
             "player_identity_rate": 0.0,
-            "last_update": "2026-09-20T06:26:36.533134+00:00",
+            "last_update": "2026-09-21T06:39:23.036697+00:00",
             "ready": false
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785395+00:00"
+          "updated_at": "2026-09-21T06:39:39.487574+00:00"
         },
         "womens_international_t20": {
           "competition": "womens_international_t20",
@@ -649,14 +649,14 @@
             "completed_matches": 0,
             "team_identity_rate": 0.0,
             "player_identity_rate": 0.0,
-            "last_update": "2026-09-20T06:26:37.171328+00:00",
+            "last_update": "2026-09-21T06:39:23.495891+00:00",
             "ready": false
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-09-20T06:26:47.785401+00:00"
+          "updated_at": "2026-09-21T06:39:39.487583+00:00"
         }
       }
     }
