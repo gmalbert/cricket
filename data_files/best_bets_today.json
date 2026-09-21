@@ -1,22 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-09-20T06:26:50.438400+00:00",
+    "generated_at": "2026-09-21T06:39:42.337498+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-09-20",
-      "game": "Zimbabwe vs Australia",
+      "game_date": "2026-09-21",
+      "game": "England vs Sri Lanka",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "Zimbabwe ML",
-      "confidence": 0.9789,
-      "edge": 0.8608,
-      "odds": 700,
+      "pick": "England ML",
+      "confidence": 0.9917,
+      "edge": 0.1364,
+      "odds": -1000,
       "tier": "Elite",
-      "notes": "Kelly stake: 2.9%"
+      "notes": "Kelly stake: 20.2%"
     }
   ]
 }
