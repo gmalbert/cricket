@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-24T06:31:07.741168+00:00",
-  "source_run_id": "6a5f12cd-af7e-4ad8-ad70-bc57e8cbdc02",
+  "generated_at": "2026-09-25T06:31:46.353811+00:00",
+  "source_run_id": "736e08f0-e487-4b7b-8fb3-3068ed10cae8",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,10 +10,10 @@
       "bet": "South Africa ML",
       "type": "Match Winner",
       "model_prob": 0.9992,
-      "implied_prob": 0.4495,
-      "edge": 0.5497,
-      "dk_odds": "+110",
-      "kelly_stake": "11.2%",
+      "implied_prob": 0.4592,
+      "edge": 0.54,
+      "dk_odds": "+105",
+      "kelly_stake": "11.5%",
       "tier": "Elite Pick"
     },
     {
@@ -25,17 +25,6 @@
       "edge": 0.1384,
       "dk_odds": "-900",
       "kelly_stake": "20.3%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "England vs Sri Lanka",
-      "bet": "England ML",
-      "type": "Match Winner",
-      "model_prob": 0.9917,
-      "implied_prob": 0.8553,
-      "edge": 0.1364,
-      "dk_odds": "-1000",
-      "kelly_stake": "20.2%",
       "tier": "Elite Pick"
     }
   ]
