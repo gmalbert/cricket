@@ -1,32 +1,44 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-09-25T06:31:48.873143+00:00",
+    "generated_at": "2026-09-26T06:28:36.988448+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-09-25",
+      "game_date": "2026-09-26",
       "game": "South Africa vs Australia",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "South Africa ML",
       "confidence": 0.9992,
-      "edge": 0.54,
+      "edge": 0.536,
       "odds": 105,
       "tier": "Elite",
-      "notes": "Kelly stake: 11.5%"
+      "notes": "Kelly stake: 11.6%"
     },
     {
-      "game_date": "2026-09-25",
+      "game_date": "2026-09-26",
+      "game": "England vs Sri Lanka",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "England ML",
+      "confidence": 0.9917,
+      "edge": 0.185,
+      "odds": -575,
+      "tier": "Elite",
+      "notes": "Kelly stake: 19.3%"
+    },
+    {
+      "game_date": "2026-09-26",
       "game": "India vs West Indies",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.9925,
-      "edge": 0.1384,
-      "odds": -900,
+      "edge": 0.1372,
+      "odds": -1000,
       "tier": "Elite",
       "notes": "Kelly stake: 20.3%"
     }
