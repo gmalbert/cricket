@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-25T06:31:46.593638+00:00",
-  "source_run_id": "736e08f0-e487-4b7b-8fb3-3068ed10cae8",
+  "generated_at": "2026-09-26T06:28:34.863667+00:00",
+  "source_run_id": "6feff561-1357-4815-a8df-df97e9960592",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-09-25T06:31:46.099348+00:00",
+    "generated_at": "2026-09-26T06:28:34.419358+00:00",
     "matches": {
       "43d8f3ff97bf9de689301657fa3035c6": {
         "match": {
@@ -24,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.4592,
-          "team2_implied_prob": 0.5408,
+          "team1_implied_prob": 0.4632,
+          "team2_implied_prob": 0.5368,
           "total_line": null
         },
         "venue": {},
@@ -186,8 +186,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.8541,
-          "team2_implied_prob": 0.1459,
+          "team1_implied_prob": 0.8553,
+          "team2_implied_prob": 0.1447,
           "total_line": null
         },
         "venue": {},
@@ -320,6 +320,168 @@
               "wickets": 0,
               "powerplay_runs": 39,
               "death_economy": 11.75
+            }
+          ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "unavailable",
+          "rivalries": "unavailable"
+        }
+      },
+      "a2574bd8d7953211b36b0a0c44658987": {
+        "match": {
+          "match_id": "a2574bd8d7953211b36b0a0c44658987",
+          "team1": "England",
+          "team2": "Sri Lanka",
+          "venue": "",
+          "time": "2026-09-27T09:30:00Z",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.9917,
+          "team2_win_prob": 0.0083,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": 0.8067,
+          "team2_implied_prob": 0.1933,
+          "total_line": null
+        },
+        "venue": {},
+        "weather": {
+          "temperature": null,
+          "humidity": null,
+          "dew_flag": false,
+          "windspeed": null
+        },
+        "team_form": {
+          "team1": [
+            {
+              "match_id": 1496584,
+              "date": "2026-09-09",
+              "innings": 4,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 453,
+              "opp_score": 133,
+              "wickets": 2,
+              "powerplay_runs": 43,
+              "death_economy": 11.25
+            },
+            {
+              "match_id": 1496584,
+              "date": "2026-09-09",
+              "innings": 2,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 453,
+              "opp_score": 133,
+              "wickets": 10,
+              "powerplay_runs": 43,
+              "death_economy": 11.25
+            },
+            {
+              "match_id": 1496583,
+              "date": "2026-08-27",
+              "innings": 3,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 290,
+              "opp_score": 110,
+              "wickets": 10,
+              "powerplay_runs": 42,
+              "death_economy": 13.0
+            },
+            {
+              "match_id": 1496583,
+              "date": "2026-08-27",
+              "innings": 1,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 290,
+              "opp_score": 110,
+              "wickets": 10,
+              "powerplay_runs": 42,
+              "death_economy": 13.0
+            },
+            {
+              "match_id": 1496582,
+              "date": "2026-08-19",
+              "innings": 2,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 409,
+              "opp_score": 171,
+              "wickets": 10,
+              "powerplay_runs": 27,
+              "death_economy": 9.0
+            }
+          ],
+          "team2": [
+            {
+              "match_id": 1544002,
+              "date": "2026-08-23",
+              "innings": 3,
+              "opponent": "India",
+              "result": "L",
+              "score": 290,
+              "opp_score": 503,
+              "wickets": 9,
+              "powerplay_runs": 42,
+              "death_economy": 6.0
+            },
+            {
+              "match_id": 1544002,
+              "date": "2026-08-23",
+              "innings": 2,
+              "opponent": "India",
+              "result": "L",
+              "score": 290,
+              "opp_score": 503,
+              "wickets": 10,
+              "powerplay_runs": 42,
+              "death_economy": 6.0
+            },
+            {
+              "match_id": 1544001,
+              "date": "2026-08-15",
+              "innings": 4,
+              "opponent": "India",
+              "result": "L",
+              "score": 284,
+              "opp_score": 462,
+              "wickets": 10,
+              "powerplay_runs": 24,
+              "death_economy": 7.25
+            },
+            {
+              "match_id": 1544001,
+              "date": "2026-08-15",
+              "innings": 2,
+              "opponent": "India",
+              "result": "L",
+              "score": 284,
+              "opp_score": 462,
+              "wickets": 10,
+              "powerplay_runs": 24,
+              "death_economy": 7.25
+            },
+            {
+              "match_id": 1538312,
+              "date": "2026-07-03",
+              "innings": 3,
+              "opponent": "West Indies",
+              "result": "W",
+              "score": 549,
+              "opp_score": 499,
+              "wickets": 9,
+              "powerplay_runs": 30,
+              "death_economy": 5.0
             }
           ]
         },
