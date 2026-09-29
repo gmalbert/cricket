@@ -1,13 +1,13 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-09-28T06:42:28.031490+00:00",
+    "generated_at": "2026-09-29T06:32:34.782377+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-09-28",
+      "game_date": "2026-09-29",
       "game": "South Africa vs Australia",
       "game_time": "",
       "bet_type": "Match Winner",
@@ -19,16 +19,16 @@
       "notes": "Kelly stake: 11.8%"
     },
     {
-      "game_date": "2026-09-28",
+      "game_date": "2026-09-29",
       "game": "India vs West Indies",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.9925,
-      "edge": 0.1044,
+      "edge": 0.1106,
       "odds": -1400,
       "tier": "Elite",
-      "notes": "Kelly stake: 20.7%"
+      "notes": "Kelly stake: 20.6%"
     }
   ]
 }
