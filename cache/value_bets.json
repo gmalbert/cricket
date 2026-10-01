@@ -1,31 +1,20 @@
 {
-  "generated_at": "2026-09-30T06:32:11.274982+00:00",
-  "source_run_id": "ed7f2596-56b4-4a6a-b75b-555b9e8ba005",
+  "generated_at": "2026-10-01T06:33:24.524081+00:00",
+  "source_run_id": "76d2096e-4164-4699-a653-1d8f780f1d40",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "South Africa vs Australia",
-      "bet": "South Africa ML",
-      "type": "Match Winner",
-      "model_prob": 0.9992,
-      "implied_prob": 0.4592,
-      "edge": 0.54,
-      "dk_odds": "+105",
-      "kelly_stake": "11.5%",
-      "tier": "Elite Pick"
-    },
-    {
       "match": "India vs West Indies",
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.9925,
-      "implied_prob": 0.8642,
-      "edge": 0.1283,
-      "dk_odds": "-1000",
-      "kelly_stake": "20.4%",
-      "tier": "Elite Pick"
+      "implied_prob": 0.895,
+      "edge": 0.0975,
+      "dk_odds": "-1800",
+      "kelly_stake": "20.8%",
+      "tier": "Strong"
     }
   ]
 }
