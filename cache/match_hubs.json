@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-01T06:33:24.767523+00:00",
-  "source_run_id": "76d2096e-4164-4699-a653-1d8f780f1d40",
+  "generated_at": "2026-10-02T12:13:30.172944+00:00",
+  "source_run_id": "f2b75ed9-cf34-41f8-833c-753cda5b0494",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-10-01T06:33:24.263800+00:00",
+    "generated_at": "2026-10-02T12:13:29.730269+00:00",
     "matches": {
       "3fbdf5ef9e517e3250f7eda297024ef9": {
         "match": {
@@ -24,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.895,
-          "team2_implied_prob": 0.105,
+          "team1_implied_prob": 0.8553,
+          "team2_implied_prob": 0.1447,
           "total_line": null
         },
         "venue": {},
@@ -158,6 +158,107 @@
               "wickets": 0,
               "powerplay_runs": 39,
               "death_economy": 11.75
+            }
+          ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "unavailable",
+          "rivalries": "unavailable"
+        }
+      },
+      "281825e4fc2ec77254503ee49fd5a48b": {
+        "match": {
+          "match_id": "281825e4fc2ec77254503ee49fd5a48b",
+          "team1": "UAE",
+          "team2": "Namibia",
+          "venue": "",
+          "time": "2026-10-03T15:00:00Z",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.9995,
+          "team2_win_prob": 0.0005,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": 0.3933,
+          "team2_implied_prob": 0.6067,
+          "total_line": null
+        },
+        "venue": {},
+        "weather": {
+          "temperature": null,
+          "humidity": null,
+          "dew_flag": false,
+          "windspeed": null
+        },
+        "team_form": {
+          "team1": [],
+          "team2": [
+            {
+              "match_id": 1549533,
+              "date": "2026-09-13",
+              "innings": 1,
+              "opponent": "South Africa",
+              "result": "L",
+              "score": 156,
+              "opp_score": 157,
+              "wickets": 10,
+              "powerplay_runs": 15,
+              "death_economy": 10.5
+            },
+            {
+              "match_id": 1549532,
+              "date": "2026-09-11",
+              "innings": 2,
+              "opponent": "South Africa",
+              "result": "L",
+              "score": 178,
+              "opp_score": 335,
+              "wickets": 10,
+              "powerplay_runs": 7,
+              "death_economy": 7.25
+            },
+            {
+              "match_id": 1549531,
+              "date": "2026-09-09",
+              "innings": 2,
+              "opponent": "South Africa",
+              "result": "L",
+              "score": 162,
+              "opp_score": 348,
+              "wickets": 8,
+              "powerplay_runs": 17,
+              "death_economy": 8.25
+            },
+            {
+              "match_id": 1544129,
+              "date": "2026-07-31",
+              "innings": 2,
+              "opponent": "Netherlands",
+              "result": "W",
+              "score": 186,
+              "opp_score": 183,
+              "wickets": 4,
+              "powerplay_runs": 21,
+              "death_economy": 4.0
+            },
+            {
+              "match_id": 1544127,
+              "date": "2026-07-27",
+              "innings": 1,
+              "opponent": "Nepal",
+              "result": "W",
+              "score": 211,
+              "opp_score": 208,
+              "wickets": 7,
+              "powerplay_runs": 15,
+              "death_economy": 4.25
             }
           ]
         },
