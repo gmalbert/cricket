@@ -1,22 +1,34 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-01T06:33:27.093646+00:00",
+    "generated_at": "2026-10-02T12:13:32.559218+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-10-01",
+      "game_date": "2026-10-02",
+      "game": "UAE vs Namibia",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "UAE ML",
+      "confidence": 0.9995,
+      "edge": 0.6062,
+      "odds": 140,
+      "tier": "Elite",
+      "notes": "Kelly stake: 9.8%"
+    },
+    {
+      "game_date": "2026-10-02",
       "game": "India vs West Indies",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.9925,
-      "edge": 0.0975,
-      "odds": -1800,
-      "tier": "Strong",
-      "notes": "Kelly stake: 20.8%"
+      "edge": 0.1372,
+      "odds": -1000,
+      "tier": "Elite",
+      "notes": "Kelly stake: 20.3%"
     }
   ]
 }
