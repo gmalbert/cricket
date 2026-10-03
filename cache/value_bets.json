@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T12:13:29.932162+00:00",
-  "source_run_id": "f2b75ed9-cf34-41f8-833c-753cda5b0494",
+  "generated_at": "2026-10-03T11:23:27.166805+00:00",
+  "source_run_id": "946f0a45-009c-4a38-907c-b7eb7f0d43c8",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -21,10 +21,10 @@
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.9925,
-      "implied_prob": 0.8553,
-      "edge": 0.1372,
-      "dk_odds": "-1000",
-      "kelly_stake": "20.3%",
+      "implied_prob": 0.8198,
+      "edge": 0.1727,
+      "dk_odds": "-650",
+      "kelly_stake": "19.6%",
       "tier": "Elite Pick"
     }
   ]
