@@ -1,30 +1,19 @@
 {
-  "generated_at": "2026-10-03T11:23:27.166805+00:00",
-  "source_run_id": "946f0a45-009c-4a38-907c-b7eb7f0d43c8",
+  "generated_at": "2026-10-04T12:04:44.702775+00:00",
+  "source_run_id": "57d7d22b-d59b-4ce9-94d9-613725ed6f9d",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "UAE vs Namibia",
-      "bet": "UAE ML",
-      "type": "Match Winner",
-      "model_prob": 0.9995,
-      "implied_prob": 0.3933,
-      "edge": 0.6062,
-      "dk_odds": "+140",
-      "kelly_stake": "9.8%",
-      "tier": "Elite Pick"
-    },
-    {
       "match": "India vs West Indies",
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.9925,
-      "implied_prob": 0.8198,
-      "edge": 0.1727,
-      "dk_odds": "-650",
-      "kelly_stake": "19.6%",
+      "implied_prob": 0.7704,
+      "edge": 0.2221,
+      "dk_odds": "-450",
+      "kelly_stake": "18.6%",
       "tier": "Elite Pick"
     }
   ]

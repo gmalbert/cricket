@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-10-03T11:23:27.407419+00:00",
-  "source_run_id": "946f0a45-009c-4a38-907c-b7eb7f0d43c8",
+  "generated_at": "2026-10-04T12:04:44.947774+00:00",
+  "source_run_id": "57d7d22b-d59b-4ce9-94d9-613725ed6f9d",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-10-03T11:23:26.961426+00:00",
+    "generated_at": "2026-10-04T12:04:44.438248+00:00",
     "matches": {
-      "3fbdf5ef9e517e3250f7eda297024ef9": {
+      "e3cb10ced3e8190f557f9ac8ed99d966": {
         "match": {
-          "match_id": "3fbdf5ef9e517e3250f7eda297024ef9",
+          "match_id": "e3cb10ced3e8190f557f9ac8ed99d966",
           "team1": "India",
           "team2": "West Indies",
           "venue": "",
-          "time": "2026-10-03T08:30:00Z",
+          "time": "2026-10-06T13:30:00Z",
           "status": null
         },
         "prediction": {
@@ -24,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.8198,
-          "team2_implied_prob": 0.1802,
+          "team1_implied_prob": 0.7704,
+          "team2_implied_prob": 0.2296,
           "total_line": null
         },
         "venue": {},
@@ -158,107 +158,6 @@
               "wickets": 0,
               "powerplay_runs": 39,
               "death_economy": 11.75
-            }
-          ]
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "unavailable",
-          "rivalries": "unavailable"
-        }
-      },
-      "281825e4fc2ec77254503ee49fd5a48b": {
-        "match": {
-          "match_id": "281825e4fc2ec77254503ee49fd5a48b",
-          "team1": "UAE",
-          "team2": "Namibia",
-          "venue": "",
-          "time": "2026-10-03T15:00:00Z",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.9995,
-          "team2_win_prob": 0.0005,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": 0.3933,
-          "team2_implied_prob": 0.6067,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": null,
-          "humidity": null,
-          "dew_flag": false,
-          "windspeed": null
-        },
-        "team_form": {
-          "team1": [],
-          "team2": [
-            {
-              "match_id": 1549533,
-              "date": "2026-09-13",
-              "innings": 1,
-              "opponent": "South Africa",
-              "result": "L",
-              "score": 156,
-              "opp_score": 157,
-              "wickets": 10,
-              "powerplay_runs": 15,
-              "death_economy": 10.5
-            },
-            {
-              "match_id": 1549532,
-              "date": "2026-09-11",
-              "innings": 2,
-              "opponent": "South Africa",
-              "result": "L",
-              "score": 178,
-              "opp_score": 335,
-              "wickets": 10,
-              "powerplay_runs": 7,
-              "death_economy": 7.25
-            },
-            {
-              "match_id": 1549531,
-              "date": "2026-09-09",
-              "innings": 2,
-              "opponent": "South Africa",
-              "result": "L",
-              "score": 162,
-              "opp_score": 348,
-              "wickets": 8,
-              "powerplay_runs": 17,
-              "death_economy": 8.25
-            },
-            {
-              "match_id": 1544129,
-              "date": "2026-07-31",
-              "innings": 2,
-              "opponent": "Netherlands",
-              "result": "W",
-              "score": 186,
-              "opp_score": 183,
-              "wickets": 4,
-              "powerplay_runs": 21,
-              "death_economy": 4.0
-            },
-            {
-              "match_id": 1544127,
-              "date": "2026-07-27",
-              "innings": 1,
-              "opponent": "Nepal",
-              "result": "W",
-              "score": 211,
-              "opp_score": 208,
-              "wickets": 7,
-              "powerplay_runs": 15,
-              "death_economy": 4.25
             }
           ]
         },
