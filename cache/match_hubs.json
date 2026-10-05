@@ -1,13 +1,472 @@
 {
-  "generated_at": "2026-10-04T12:04:44.947774+00:00",
-  "source_run_id": "57d7d22b-d59b-4ce9-94d9-613725ed6f9d",
+  "generated_at": "2026-10-05T14:07:00.698492+00:00",
+  "source_run_id": "289eb10a-6a58-4a21-86ba-65bb7e5e3833",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-10-04T12:04:44.438248+00:00",
+    "generated_at": "2026-10-05T14:07:00.348917+00:00",
     "matches": {
+      "b2f6d99e-9c3a-4a99-8a3f-c7b166b27f88": {
+        "match": {
+          "match_id": "b2f6d99e-9c3a-4a99-8a3f-c7b166b27f88",
+          "team1": "Kuwait",
+          "team2": "Qatar",
+          "venue": "Bayuemas Oval, Kuala Lumpur",
+          "time": "00:00 IST",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.9852,
+          "team2_win_prob": 0.0148,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": null,
+          "team2_implied_prob": null,
+          "total_line": null
+        },
+        "venue": {
+          "avg_first_innings": 230.0,
+          "chase_win_rate": 0.0
+        },
+        "weather": {
+          "temperature": 28,
+          "humidity": 60,
+          "dew_flag": false,
+          "windspeed": 10
+        },
+        "team_form": {
+          "team1": [
+            {
+              "match_id": 1142223,
+              "date": "2018-04-27",
+              "innings": 1,
+              "opponent": "Saudi Arabia",
+              "result": "W",
+              "score": 104,
+              "opp_score": 99,
+              "wickets": 10,
+              "powerplay_runs": 18,
+              "death_economy": 5.0
+            },
+            {
+              "match_id": 1142220,
+              "date": "2018-04-26",
+              "innings": 2,
+              "opponent": "United Arab Emirates",
+              "result": "L",
+              "score": 115,
+              "opp_score": 201,
+              "wickets": 8,
+              "powerplay_runs": 41,
+              "death_economy": 13.75
+            },
+            {
+              "match_id": 1142219,
+              "date": "2018-04-24",
+              "innings": 1,
+              "opponent": "Bahrain",
+              "result": "W",
+              "score": 153,
+              "opp_score": 130,
+              "wickets": 6,
+              "powerplay_runs": 31,
+              "death_economy": 8.75
+            },
+            {
+              "match_id": 1142215,
+              "date": "2018-04-23",
+              "innings": 1,
+              "opponent": "Saudi Arabia",
+              "result": "L",
+              "score": 92,
+              "opp_score": 96,
+              "wickets": 10,
+              "powerplay_runs": 12,
+              "death_economy": null
+            },
+            {
+              "match_id": 1142211,
+              "date": "2018-04-21",
+              "innings": 2,
+              "opponent": "Qatar",
+              "result": "L",
+              "score": 141,
+              "opp_score": 167,
+              "wickets": 9,
+              "powerplay_runs": 43,
+              "death_economy": 12.75
+            }
+          ],
+          "team2": [
+            {
+              "match_id": 1142224,
+              "date": "2018-04-27",
+              "innings": 1,
+              "opponent": "United Arab Emirates",
+              "result": "L",
+              "score": 115,
+              "opp_score": 121,
+              "wickets": 10,
+              "powerplay_runs": 39,
+              "death_economy": 2.5
+            },
+            {
+              "match_id": 1142221,
+              "date": "2018-04-26",
+              "innings": 2,
+              "opponent": "Bahrain",
+              "result": "W",
+              "score": 115,
+              "opp_score": 112,
+              "wickets": 5,
+              "powerplay_runs": 42,
+              "death_economy": 13.0
+            },
+            {
+              "match_id": 1142218,
+              "date": "2018-04-24",
+              "innings": 2,
+              "opponent": "Saudi Arabia",
+              "result": "W",
+              "score": 136,
+              "opp_score": 135,
+              "wickets": 6,
+              "powerplay_runs": 46,
+              "death_economy": 11.5
+            },
+            {
+              "match_id": 1142214,
+              "date": "2018-04-23",
+              "innings": 1,
+              "opponent": "Maldives",
+              "result": "W",
+              "score": 149,
+              "opp_score": 105,
+              "wickets": 7,
+              "powerplay_runs": 49,
+              "death_economy": 8.75
+            },
+            {
+              "match_id": 1142211,
+              "date": "2018-04-21",
+              "innings": 1,
+              "opponent": "Kuwait",
+              "result": "W",
+              "score": 167,
+              "opp_score": 141,
+              "wickets": 6,
+              "powerplay_runs": 65,
+              "death_economy": 9.5
+            }
+          ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "available",
+          "rivalries": "unavailable"
+        }
+      },
+      "611950b4-b02b-496f-be67-8134b73533a8": {
+        "match": {
+          "match_id": "611950b4-b02b-496f-be67-8134b73533a8",
+          "team1": "Bahrain",
+          "team2": "Thailand",
+          "venue": "YSD-UKM Cricket Oval, Bangi",
+          "time": "00:00 IST",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.9852,
+          "team2_win_prob": 0.0148,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": null,
+          "team2_implied_prob": null,
+          "total_line": null
+        },
+        "venue": {
+          "avg_first_innings": 192.0,
+          "chase_win_rate": 0.0
+        },
+        "weather": {
+          "temperature": 28,
+          "humidity": 60,
+          "dew_flag": false,
+          "windspeed": 10
+        },
+        "team_form": {
+          "team1": [
+            {
+              "match_id": 1142221,
+              "date": "2018-04-26",
+              "innings": 1,
+              "opponent": "Qatar",
+              "result": "L",
+              "score": 112,
+              "opp_score": 115,
+              "wickets": 8,
+              "powerplay_runs": 28,
+              "death_economy": 3.25
+            },
+            {
+              "match_id": 1142219,
+              "date": "2018-04-24",
+              "innings": 2,
+              "opponent": "Kuwait",
+              "result": "L",
+              "score": 130,
+              "opp_score": 153,
+              "wickets": 10,
+              "powerplay_runs": 33,
+              "death_economy": 17.25
+            },
+            {
+              "match_id": 1142216,
+              "date": "2018-04-23",
+              "innings": 2,
+              "opponent": "United Arab Emirates",
+              "result": "L",
+              "score": 98,
+              "opp_score": 149,
+              "wickets": 8,
+              "powerplay_runs": 20,
+              "death_economy": 9.5
+            },
+            {
+              "match_id": 1142212,
+              "date": "2018-04-21",
+              "innings": 2,
+              "opponent": "Maldives",
+              "result": "W",
+              "score": 142,
+              "opp_score": 140,
+              "wickets": 4,
+              "powerplay_runs": 35,
+              "death_economy": 14.0
+            },
+            {
+              "match_id": 1142209,
+              "date": "2018-04-20",
+              "innings": 1,
+              "opponent": "Saudi Arabia",
+              "result": "L",
+              "score": 106,
+              "opp_score": 107,
+              "wickets": 10,
+              "powerplay_runs": 20,
+              "death_economy": 0.5
+            }
+          ],
+          "team2": [
+            {
+              "match_id": 1549212,
+              "date": "2026-08-17",
+              "innings": 2,
+              "opponent": "Papua New Guinea",
+              "result": "W",
+              "score": 126,
+              "opp_score": 122,
+              "wickets": 5,
+              "powerplay_runs": 30,
+              "death_economy": 1.75
+            },
+            {
+              "match_id": 1549211,
+              "date": "2026-08-15",
+              "innings": 1,
+              "opponent": "Papua New Guinea",
+              "result": "W",
+              "score": 191,
+              "opp_score": 151,
+              "wickets": 10,
+              "powerplay_runs": 12,
+              "death_economy": 3.0
+            },
+            {
+              "match_id": 1549210,
+              "date": "2026-08-13",
+              "innings": 1,
+              "opponent": "Papua New Guinea",
+              "result": "W",
+              "score": 237,
+              "opp_score": 116,
+              "wickets": 8,
+              "powerplay_runs": 16,
+              "death_economy": 7.0
+            },
+            {
+              "match_id": 1477023,
+              "date": "2025-04-19",
+              "innings": 1,
+              "opponent": "West Indies",
+              "result": "L",
+              "score": 166,
+              "opp_score": 168,
+              "wickets": 10,
+              "powerplay_runs": 30,
+              "death_economy": null
+            },
+            {
+              "match_id": 1477020,
+              "date": "2025-04-17",
+              "innings": 2,
+              "opponent": "Pakistan",
+              "result": "L",
+              "score": 118,
+              "opp_score": 205,
+              "wickets": 10,
+              "powerplay_runs": 16,
+              "death_economy": 2.75
+            }
+          ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "available",
+          "rivalries": "unavailable"
+        }
+      },
+      "f7d2bef8-87e1-422f-b446-e27eeab1baf9": {
+        "match": {
+          "match_id": "f7d2bef8-87e1-422f-b446-e27eeab1baf9",
+          "team1": "Bhutan",
+          "team2": "Myanmar",
+          "venue": "Bayuemas Oval, Kuala Lumpur",
+          "time": "00:00 IST",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.9852,
+          "team2_win_prob": 0.0148,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": null,
+          "team2_implied_prob": null,
+          "total_line": null
+        },
+        "venue": {
+          "avg_first_innings": 230.0,
+          "chase_win_rate": 0.0
+        },
+        "weather": {
+          "temperature": 28,
+          "humidity": 60,
+          "dew_flag": false,
+          "windspeed": 10
+        },
+        "team_form": {
+          "team1": [
+            {
+              "match_id": 1160961,
+              "date": "2018-10-10",
+              "innings": 2,
+              "opponent": "Singapore",
+              "result": "L",
+              "score": 66,
+              "opp_score": 161,
+              "wickets": 10,
+              "powerplay_runs": 31,
+              "death_economy": 6.25
+            },
+            {
+              "match_id": 1160958,
+              "date": "2018-10-09",
+              "innings": 2,
+              "opponent": "Nepal",
+              "result": "L",
+              "score": 33,
+              "opp_score": 150,
+              "wickets": 10,
+              "powerplay_runs": 8,
+              "death_economy": 12.0
+            },
+            {
+              "match_id": 1160948,
+              "date": "2018-10-04",
+              "innings": 2,
+              "opponent": "China",
+              "result": "W",
+              "score": 47,
+              "opp_score": 45,
+              "wickets": 1,
+              "powerplay_runs": 45,
+              "death_economy": null
+            }
+          ],
+          "team2": [
+            {
+              "match_id": 1160962,
+              "date": "2018-10-10",
+              "innings": 2,
+              "opponent": "Thailand",
+              "result": "L",
+              "score": 27,
+              "opp_score": 151,
+              "wickets": 2,
+              "powerplay_runs": 8,
+              "death_economy": 13.25
+            },
+            {
+              "match_id": 1160959,
+              "date": "2018-10-09",
+              "innings": 1,
+              "opponent": "Malaysia",
+              "result": "L",
+              "score": 9,
+              "opp_score": 11,
+              "wickets": 8,
+              "powerplay_runs": 3,
+              "death_economy": null
+            },
+            {
+              "match_id": 1160950,
+              "date": "2018-10-04",
+              "innings": 1,
+              "opponent": "Singapore",
+              "result": "L",
+              "score": 68,
+              "opp_score": 69,
+              "wickets": 10,
+              "powerplay_runs": 8,
+              "death_economy": null
+            },
+            {
+              "match_id": 1160947,
+              "date": "2018-10-03",
+              "innings": 1,
+              "opponent": "Nepal",
+              "result": "L",
+              "score": 29,
+              "opp_score": 30,
+              "wickets": 10,
+              "powerplay_runs": 21,
+              "death_economy": null
+            }
+          ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "available",
+          "rivalries": "unavailable"
+        }
+      },
       "e3cb10ced3e8190f557f9ac8ed99d966": {
         "match": {
           "match_id": "e3cb10ced3e8190f557f9ac8ed99d966",
@@ -24,8 +483,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.7704,
-          "team2_implied_prob": 0.2296,
+          "team1_implied_prob": 0.7944,
+          "team2_implied_prob": 0.2056,
           "total_line": null
         },
         "venue": {},
@@ -160,6 +619,46 @@
               "death_economy": 11.75
             }
           ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "unavailable",
+          "rivalries": "unavailable"
+        }
+      },
+      "93df24ce470168b6a3de64b6a7cfe461": {
+        "match": {
+          "match_id": "93df24ce470168b6a3de64b6a7cfe461",
+          "team1": "UAE",
+          "team2": "USA",
+          "venue": "",
+          "time": "2026-10-05T15:00:00Z",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.9852,
+          "team2_win_prob": 0.0148,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": 0.3206,
+          "team2_implied_prob": 0.6794,
+          "total_line": null
+        },
+        "venue": {},
+        "weather": {
+          "temperature": null,
+          "humidity": null,
+          "dew_flag": false,
+          "windspeed": null
+        },
+        "team_form": {
+          "team1": [],
+          "team2": []
         },
         "key_rivalries": [],
         "top_props": [],
