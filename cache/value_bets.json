@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-07T12:59:54.173193+00:00",
-  "source_run_id": "87ccc382-f66b-4aae-ab2b-46e4c7ad613c",
+  "generated_at": "2026-10-08T13:08:26.786357+00:00",
+  "source_run_id": "22c4a53a-7f29-4d13-b5ae-41217239dcfb",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,21 +10,10 @@
       "bet": "Sri Lanka ML",
       "type": "Match Winner",
       "model_prob": 0.9077,
-      "implied_prob": 0.3444,
-      "edge": 0.5633,
-      "dk_odds": "+175",
-      "kelly_stake": "7.4%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "Namibia vs USA",
-      "bet": "USA ML",
-      "type": "Match Winner",
-      "model_prob": 0.9261,
-      "implied_prob": 0.6499,
-      "edge": 0.2762,
-      "dk_odds": "-220",
-      "kelly_stake": "12.8%",
+      "implied_prob": 0.3373,
+      "edge": 0.5704,
+      "dk_odds": "+180",
+      "kelly_stake": "7.3%",
       "tier": "Elite Pick"
     },
     {
@@ -32,10 +21,10 @@
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.9925,
-      "implied_prob": 0.7979,
-      "edge": 0.1946,
-      "dk_odds": "-525",
-      "kelly_stake": "19.2%",
+      "implied_prob": 0.7803,
+      "edge": 0.2122,
+      "dk_odds": "-475",
+      "kelly_stake": "18.8%",
       "tier": "Elite Pick"
     }
   ]
