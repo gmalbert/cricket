@@ -1,34 +1,46 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-08T13:08:29.385412+00:00",
+    "generated_at": "2026-10-09T12:53:14.354660+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-10-08",
+      "game_date": "2026-10-09",
+      "game": "UAE vs Namibia",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "UAE ML",
+      "confidence": 0.9856,
+      "edge": 0.5578,
+      "odds": 120,
+      "tier": "Elite",
+      "notes": "Kelly stake: 10.4%"
+    },
+    {
+      "game_date": "2026-10-09",
       "game": "Pakistan vs Sri Lanka",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "Sri Lanka ML",
-      "confidence": 0.9077,
-      "edge": 0.5704,
-      "odds": 180,
+      "pick": "Pakistan ML",
+      "confidence": 0.9856,
+      "edge": 0.3284,
+      "odds": -230,
       "tier": "Elite",
-      "notes": "Kelly stake: 7.3%"
+      "notes": "Kelly stake: 15.7%"
     },
     {
-      "game_date": "2026-10-08",
+      "game_date": "2026-10-09",
       "game": "India vs West Indies",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
-      "confidence": 0.9925,
-      "edge": 0.2122,
-      "odds": -475,
+      "confidence": 0.9856,
+      "edge": 0.211,
+      "odds": -450,
       "tier": "Elite",
-      "notes": "Kelly stake: 18.8%"
+      "notes": "Kelly stake: 18.1%"
     }
   ]
 }
