@@ -1,30 +1,41 @@
 {
-  "generated_at": "2026-10-08T13:08:26.786357+00:00",
-  "source_run_id": "22c4a53a-7f29-4d13-b5ae-41217239dcfb",
+  "generated_at": "2026-10-09T12:53:12.022242+00:00",
+  "source_run_id": "985dd134-c005-4833-a123-a610f815a63f",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "Pakistan vs Sri Lanka",
-      "bet": "Sri Lanka ML",
+      "match": "UAE vs Namibia",
+      "bet": "UAE ML",
       "type": "Match Winner",
-      "model_prob": 0.9077,
-      "implied_prob": 0.3373,
-      "edge": 0.5704,
-      "dk_odds": "+180",
-      "kelly_stake": "7.3%",
+      "model_prob": 0.9856,
+      "implied_prob": 0.4278,
+      "edge": 0.5578,
+      "dk_odds": "+120",
+      "kelly_stake": "10.4%",
+      "tier": "Elite Pick"
+    },
+    {
+      "match": "Pakistan vs Sri Lanka",
+      "bet": "Pakistan ML",
+      "type": "Match Winner",
+      "model_prob": 0.9856,
+      "implied_prob": 0.6572,
+      "edge": 0.3284,
+      "dk_odds": "-230",
+      "kelly_stake": "15.7%",
       "tier": "Elite Pick"
     },
     {
       "match": "India vs West Indies",
       "bet": "India ML",
       "type": "Match Winner",
-      "model_prob": 0.9925,
-      "implied_prob": 0.7803,
-      "edge": 0.2122,
-      "dk_odds": "-475",
-      "kelly_stake": "18.8%",
+      "model_prob": 0.9856,
+      "implied_prob": 0.7746,
+      "edge": 0.211,
+      "dk_odds": "-450",
+      "kelly_stake": "18.1%",
       "tier": "Elite Pick"
     }
   ]
