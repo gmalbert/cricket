@@ -1,46 +1,58 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-09T12:53:14.354660+00:00",
+    "generated_at": "2026-10-10T12:13:01.279089+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-10-09",
-      "game": "UAE vs Namibia",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "UAE ML",
-      "confidence": 0.9856,
-      "edge": 0.5578,
-      "odds": 120,
-      "tier": "Elite",
-      "notes": "Kelly stake: 10.4%"
-    },
-    {
-      "game_date": "2026-10-09",
+      "game_date": "2026-10-10",
       "game": "Pakistan vs Sri Lanka",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "Pakistan ML",
-      "confidence": 0.9856,
-      "edge": 0.3284,
-      "odds": -230,
+      "pick": "Sri Lanka ML",
+      "confidence": 0.9077,
+      "edge": 0.6022,
+      "odds": 210,
       "tier": "Elite",
-      "notes": "Kelly stake: 15.7%"
+      "notes": "Kelly stake: 6.6%"
     },
     {
-      "game_date": "2026-10-09",
+      "game_date": "2026-10-10",
+      "game": "USA vs UAE",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "UAE ML",
+      "confidence": 0.9077,
+      "edge": 0.5871,
+      "odds": 195,
+      "tier": "Elite",
+      "notes": "Kelly stake: 6.9%"
+    },
+    {
+      "game_date": "2026-10-10",
+      "game": "Canada vs Nepal",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Canada ML",
+      "confidence": 0.9836,
+      "edge": 0.5751,
+      "odds": 130,
+      "tier": "Elite",
+      "notes": "Kelly stake: 9.9%"
+    },
+    {
+      "game_date": "2026-10-10",
       "game": "India vs West Indies",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
-      "confidence": 0.9856,
-      "edge": 0.211,
-      "odds": -450,
+      "confidence": 0.9925,
+      "edge": 0.2624,
+      "odds": -340,
       "tier": "Elite",
-      "notes": "Kelly stake: 18.1%"
+      "notes": "Kelly stake: 17.7%"
     }
   ]
 }
