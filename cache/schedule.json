@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-10T12:12:58.913666+00:00",
-  "source_run_id": "4001757c-74a6-4101-a46f-54ea452ca908",
+  "generated_at": "2026-10-11T12:27:03.826951+00:00",
+  "source_run_id": "5a887f3f-13f5-43f1-9b65-176351127ed9",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -37,24 +37,6 @@
       "competition": "international_t20",
       "competition_name": "International T20",
       "format": "T20",
-      "gender": "male",
-      "fixture_source": "odds_api",
-      "fixture_status": "provisional"
-    },
-    {
-      "match_id": "c6a06c592748573a1806eb648d6e4dc5",
-      "team1": "Canada",
-      "team2": "Nepal",
-      "venue": "",
-      "city": "",
-      "time": "2026-10-11T06:00:00Z",
-      "scheduled_start": "2026-10-11T06:00:00Z",
-      "status": "Scheduled from DraftKings market",
-      "matchStarted": false,
-      "matchEnded": false,
-      "competition": "odi_internationals",
-      "competition_name": "ODI internationals",
-      "format": "ODI",
       "gender": "male",
       "fixture_source": "odds_api",
       "fixture_status": "provisional"

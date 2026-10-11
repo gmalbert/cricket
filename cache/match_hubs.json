@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-10T12:12:59.158982+00:00",
-  "source_run_id": "4001757c-74a6-4101-a46f-54ea452ca908",
+  "generated_at": "2026-10-11T12:27:04.065102+00:00",
+  "source_run_id": "5a887f3f-13f5-43f1-9b65-176351127ed9",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-10-10T12:12:58.694093+00:00",
+    "generated_at": "2026-10-11T12:27:03.619227+00:00",
     "matches": {
       "1212aa43d192423c6c1cda27800c8342": {
         "match": {
@@ -24,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.6945,
-          "team2_implied_prob": 0.3055,
+          "team1_implied_prob": 0.6989,
+          "team2_implied_prob": 0.3011,
           "total_line": null
         },
         "venue": {},
@@ -186,8 +186,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.7301,
-          "team2_implied_prob": 0.2699,
+          "team1_implied_prob": 0.7596,
+          "team2_implied_prob": 0.2404,
           "total_line": null
         },
         "venue": {},
@@ -332,168 +332,6 @@
           "rivalries": "unavailable"
         }
       },
-      "c6a06c592748573a1806eb648d6e4dc5": {
-        "match": {
-          "match_id": "c6a06c592748573a1806eb648d6e4dc5",
-          "team1": "Canada",
-          "team2": "Nepal",
-          "venue": "",
-          "time": "2026-10-11T06:00:00Z",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.9836,
-          "team2_win_prob": 0.0164,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": 0.4085,
-          "team2_implied_prob": 0.5915,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": null,
-          "humidity": null,
-          "dew_flag": false,
-          "windspeed": null
-        },
-        "team_form": {
-          "team1": [
-            {
-              "match_id": 1546003,
-              "date": "2026-08-13",
-              "innings": 2,
-              "opponent": "Scotland",
-              "result": "L",
-              "score": 177,
-              "opp_score": 347,
-              "wickets": 10,
-              "powerplay_runs": 22,
-              "death_economy": 9.5
-            },
-            {
-              "match_id": 1546002,
-              "date": "2026-08-11",
-              "innings": 2,
-              "opponent": "United Arab Emirates",
-              "result": "L",
-              "score": 185,
-              "opp_score": 282,
-              "wickets": 9,
-              "powerplay_runs": 31,
-              "death_economy": 5.75
-            },
-            {
-              "match_id": 1546000,
-              "date": "2026-08-07",
-              "innings": 2,
-              "opponent": "Scotland",
-              "result": "L",
-              "score": 272,
-              "opp_score": 281,
-              "wickets": 10,
-              "powerplay_runs": 27,
-              "death_economy": 5.5
-            },
-            {
-              "match_id": 1538428,
-              "date": "2026-06-12",
-              "innings": 1,
-              "opponent": "United States of America",
-              "result": "L",
-              "score": 275,
-              "opp_score": 276,
-              "wickets": 8,
-              "powerplay_runs": 31,
-              "death_economy": 6.25
-            },
-            {
-              "match_id": 1538427,
-              "date": "2026-06-10",
-              "innings": 2,
-              "opponent": "Netherlands",
-              "result": "W",
-              "score": 218,
-              "opp_score": 214,
-              "wickets": 8,
-              "powerplay_runs": 22,
-              "death_economy": 6.5
-            }
-          ],
-          "team2": [
-            {
-              "match_id": 1549969,
-              "date": "2026-09-12",
-              "innings": 1,
-              "opponent": "United Arab Emirates",
-              "result": "W",
-              "score": 313,
-              "opp_score": 269,
-              "wickets": 9,
-              "powerplay_runs": 22,
-              "death_economy": 6.0
-            },
-            {
-              "match_id": 1549966,
-              "date": "2026-09-10",
-              "innings": 1,
-              "opponent": "Oman",
-              "result": "W",
-              "score": 147,
-              "opp_score": 60,
-              "wickets": 10,
-              "powerplay_runs": 22,
-              "death_economy": 2.75
-            },
-            {
-              "match_id": 1544128,
-              "date": "2026-07-29",
-              "innings": 2,
-              "opponent": "Netherlands",
-              "result": "L",
-              "score": 168,
-              "opp_score": 225,
-              "wickets": 10,
-              "powerplay_runs": 19,
-              "death_economy": 2.75
-            },
-            {
-              "match_id": 1544127,
-              "date": "2026-07-27",
-              "innings": 2,
-              "opponent": "Namibia",
-              "result": "L",
-              "score": 208,
-              "opp_score": 211,
-              "wickets": 6,
-              "powerplay_runs": 25,
-              "death_economy": 3.75
-            },
-            {
-              "match_id": 1544125,
-              "date": "2026-07-23",
-              "innings": 1,
-              "opponent": "Netherlands",
-              "result": "L",
-              "score": 157,
-              "opp_score": 158,
-              "wickets": 10,
-              "powerplay_runs": 23,
-              "death_economy": 3.75
-            }
-          ]
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "unavailable",
-          "rivalries": "unavailable"
-        }
-      },
       "0d5032f2025e7bedbc643c93e2147755": {
         "match": {
           "match_id": "0d5032f2025e7bedbc643c93e2147755",
@@ -504,8 +342,8 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.0923,
-          "team2_win_prob": 0.9077,
+          "team1_win_prob": 0.0769,
+          "team2_win_prob": 0.9231,
           "predicted_total": null,
           "predicted_first_innings": null
         },
