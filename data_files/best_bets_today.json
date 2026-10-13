@@ -1,49 +1,37 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-12T14:55:34.372964+00:00",
+    "generated_at": "2026-10-13T13:55:20.448375+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-10-12",
+      "game_date": "2026-10-13",
+      "game": "USA vs Namibia",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "USA ML",
+      "confidence": 0.9885,
+      "edge": 0.3403,
+      "odds": -215,
+      "tier": "Elite",
+      "notes": "Kelly stake: 15.7%"
+    },
+    {
+      "game_date": "2026-10-13",
       "game": "Pakistan vs Sri Lanka",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Sri Lanka ML",
       "confidence": 0.9077,
-      "edge": 0.62,
-      "odds": 230,
+      "edge": 0.327,
+      "odds": -160,
       "tier": "Elite",
-      "notes": "Kelly stake: 6.3%"
+      "notes": "Kelly stake: 11.3%"
     },
     {
-      "game_date": "2026-10-12",
-      "game": "Oman vs Nepal",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "Oman ML",
-      "confidence": 0.9831,
-      "edge": 0.5719,
-      "odds": 130,
-      "tier": "Elite",
-      "notes": "Kelly stake: 10.0%"
-    },
-    {
-      "game_date": "2026-10-12",
-      "game": "USA vs Namibia",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "USA ML",
-      "confidence": 0.9852,
-      "edge": 0.3556,
-      "odds": -200,
-      "tier": "Elite",
-      "notes": "Kelly stake: 15.1%"
-    },
-    {
-      "game_date": "2026-10-12",
+      "game_date": "2026-10-13",
       "game": "India vs West Indies",
       "game_time": "",
       "bet_type": "Match Winner",
