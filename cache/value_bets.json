@@ -1,41 +1,19 @@
 {
-  "generated_at": "2026-10-13T13:55:17.692853+00:00",
-  "source_run_id": "be2ab914-1e44-42dd-b0f4-b4520014a6c3",
+  "generated_at": "2026-10-14T11:32:06.065240+00:00",
+  "source_run_id": "b09d12ab-6d1e-46d7-8955-fd62c25b141a",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "USA vs Namibia",
-      "bet": "USA ML",
-      "type": "Match Winner",
-      "model_prob": 0.9885,
-      "implied_prob": 0.6482,
-      "edge": 0.3403,
-      "dk_odds": "-215",
-      "kelly_stake": "15.7%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "Pakistan vs Sri Lanka",
-      "bet": "Sri Lanka ML",
-      "type": "Match Winner",
-      "model_prob": 0.9077,
-      "implied_prob": 0.5807,
-      "edge": 0.327,
-      "dk_odds": "-160",
-      "kelly_stake": "11.3%",
-      "tier": "Elite Pick"
-    },
-    {
       "match": "India vs West Indies",
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.9925,
-      "implied_prob": 0.7407,
-      "edge": 0.2518,
-      "dk_odds": "-360",
-      "kelly_stake": "18.0%",
+      "implied_prob": 0.7215,
+      "edge": 0.271,
+      "dk_odds": "-320",
+      "kelly_stake": "17.6%",
       "tier": "Elite Pick"
     }
   ]
