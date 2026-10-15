@@ -1,19 +1,41 @@
 {
-  "generated_at": "2026-10-14T11:32:06.065240+00:00",
-  "source_run_id": "b09d12ab-6d1e-46d7-8955-fd62c25b141a",
+  "generated_at": "2026-10-15T11:09:49.305366+00:00",
+  "source_run_id": "24645600-1c6c-41f4-aeab-3d4a387e3576",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
+      "match": "Oman vs Canada",
+      "bet": "Oman ML",
+      "type": "Match Winner",
+      "model_prob": 0.9831,
+      "implied_prob": 0.364,
+      "edge": 0.6191,
+      "dk_odds": "+160",
+      "kelly_stake": "8.9%",
+      "tier": "Elite Pick"
+    },
+    {
+      "match": "Pakistan vs Sri Lanka",
+      "bet": "Sri Lanka ML",
+      "type": "Match Winner",
+      "model_prob": 0.9077,
+      "implied_prob": 0.3256,
+      "edge": 0.5821,
+      "dk_odds": "+190",
+      "kelly_stake": "7.0%",
+      "tier": "Elite Pick"
+    },
+    {
       "match": "India vs West Indies",
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.9925,
-      "implied_prob": 0.7215,
-      "edge": 0.271,
-      "dk_odds": "-320",
-      "kelly_stake": "17.6%",
+      "implied_prob": 0.6945,
+      "edge": 0.298,
+      "dk_odds": "-275",
+      "kelly_stake": "16.9%",
       "tier": "Elite Pick"
     }
   ]
