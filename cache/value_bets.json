@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-15T11:09:49.305366+00:00",
-  "source_run_id": "24645600-1c6c-41f4-aeab-3d4a387e3576",
+  "generated_at": "2026-10-16T11:03:19.094370+00:00",
+  "source_run_id": "86e10b40-af93-40bc-ba36-2f89e02bd59d",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "Oman vs Canada",
-      "bet": "Oman ML",
+      "match": "Canada vs Nepal",
+      "bet": "Canada ML",
       "type": "Match Winner",
-      "model_prob": 0.9831,
-      "implied_prob": 0.364,
-      "edge": 0.6191,
-      "dk_odds": "+160",
-      "kelly_stake": "8.9%",
+      "model_prob": 0.9822,
+      "implied_prob": 0.3518,
+      "edge": 0.6304,
+      "dk_odds": "+170",
+      "kelly_stake": "8.6%",
       "tier": "Elite Pick"
     },
     {
@@ -28,14 +28,25 @@
       "tier": "Elite Pick"
     },
     {
+      "match": "Bangladesh vs Zimbabwe",
+      "bet": "Bangladesh ML",
+      "type": "Match Winner",
+      "model_prob": 0.9836,
+      "implied_prob": 0.6482,
+      "edge": 0.3354,
+      "dk_odds": "-215",
+      "kelly_stake": "15.4%",
+      "tier": "Elite Pick"
+    },
+    {
       "match": "India vs West Indies",
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.9925,
-      "implied_prob": 0.6945,
-      "edge": 0.298,
-      "dk_odds": "-275",
-      "kelly_stake": "16.9%",
+      "implied_prob": 0.7215,
+      "edge": 0.271,
+      "dk_odds": "-320",
+      "kelly_stake": "17.6%",
       "tier": "Elite Pick"
     }
   ]
