@@ -1,25 +1,25 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-15T11:09:51.632786+00:00",
+    "generated_at": "2026-10-16T11:03:21.532243+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-10-15",
-      "game": "Oman vs Canada",
+      "game_date": "2026-10-16",
+      "game": "Canada vs Nepal",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "Oman ML",
-      "confidence": 0.9831,
-      "edge": 0.6191,
-      "odds": 160,
+      "pick": "Canada ML",
+      "confidence": 0.9822,
+      "edge": 0.6304,
+      "odds": 170,
       "tier": "Elite",
-      "notes": "Kelly stake: 8.9%"
+      "notes": "Kelly stake: 8.6%"
     },
     {
-      "game_date": "2026-10-15",
+      "game_date": "2026-10-16",
       "game": "Pakistan vs Sri Lanka",
       "game_time": "",
       "bet_type": "Match Winner",
@@ -31,16 +31,28 @@
       "notes": "Kelly stake: 7.0%"
     },
     {
-      "game_date": "2026-10-15",
+      "game_date": "2026-10-16",
+      "game": "Bangladesh vs Zimbabwe",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Bangladesh ML",
+      "confidence": 0.9836,
+      "edge": 0.3354,
+      "odds": -215,
+      "tier": "Elite",
+      "notes": "Kelly stake: 15.4%"
+    },
+    {
+      "game_date": "2026-10-16",
       "game": "India vs West Indies",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.9925,
-      "edge": 0.298,
-      "odds": -275,
+      "edge": 0.271,
+      "odds": -320,
       "tier": "Elite",
-      "notes": "Kelly stake: 16.9%"
+      "notes": "Kelly stake: 17.6%"
     }
   ]
 }
