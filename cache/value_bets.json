@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T11:03:19.094370+00:00",
-  "source_run_id": "86e10b40-af93-40bc-ba36-2f89e02bd59d",
+  "generated_at": "2026-10-17T10:25:06.775142+00:00",
+  "source_run_id": "8b2d5a7e-bfe0-4ce8-8953-85773207d327",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,10 +10,10 @@
       "bet": "Canada ML",
       "type": "Match Winner",
       "model_prob": 0.9822,
-      "implied_prob": 0.3518,
-      "edge": 0.6304,
-      "dk_odds": "+170",
-      "kelly_stake": "8.6%",
+      "implied_prob": 0.2877,
+      "edge": 0.6945,
+      "dk_odds": "+230",
+      "kelly_stake": "7.0%",
       "tier": "Elite Pick"
     },
     {
@@ -43,10 +43,10 @@
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.9925,
-      "implied_prob": 0.7215,
-      "edge": 0.271,
-      "dk_odds": "-320",
-      "kelly_stake": "17.6%",
+      "implied_prob": 0.6989,
+      "edge": 0.2936,
+      "dk_odds": "-280",
+      "kelly_stake": "17.0%",
       "tier": "Elite Pick"
     }
   ]
