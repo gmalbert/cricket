@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-17T10:25:06.775142+00:00",
-  "source_run_id": "8b2d5a7e-bfe0-4ce8-8953-85773207d327",
+  "generated_at": "2026-10-18T10:42:58.464086+00:00",
+  "source_run_id": "132e92ec-e4a3-48c0-913c-8be3871d0536",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "Canada vs Nepal",
-      "bet": "Canada ML",
+      "match": "Oman vs Nepal",
+      "bet": "Oman ML",
       "type": "Match Winner",
-      "model_prob": 0.9822,
-      "implied_prob": 0.2877,
-      "edge": 0.6945,
-      "dk_odds": "+230",
-      "kelly_stake": "7.0%",
+      "model_prob": 0.982,
+      "implied_prob": 0.3704,
+      "edge": 0.6116,
+      "dk_odds": "+155",
+      "kelly_stake": "9.0%",
       "tier": "Elite Pick"
     },
     {
@@ -21,33 +21,33 @@
       "bet": "Sri Lanka ML",
       "type": "Match Winner",
       "model_prob": 0.9077,
-      "implied_prob": 0.3256,
-      "edge": 0.5821,
-      "dk_odds": "+190",
-      "kelly_stake": "7.0%",
+      "implied_prob": 0.3055,
+      "edge": 0.6022,
+      "dk_odds": "+210",
+      "kelly_stake": "6.6%",
       "tier": "Elite Pick"
     },
     {
-      "match": "Bangladesh vs Zimbabwe",
-      "bet": "Bangladesh ML",
+      "match": "Afghanistan vs Zimbabwe",
+      "bet": "Afghanistan ML",
       "type": "Match Winner",
-      "model_prob": 0.9836,
+      "model_prob": 0.9831,
       "implied_prob": 0.6482,
-      "edge": 0.3354,
+      "edge": 0.3349,
       "dk_odds": "-215",
       "kelly_stake": "15.4%",
       "tier": "Elite Pick"
     },
     {
-      "match": "India vs West Indies",
+      "match": "New Zealand vs India",
       "bet": "India ML",
       "type": "Match Winner",
-      "model_prob": 0.9925,
-      "implied_prob": 0.6989,
-      "edge": 0.2936,
-      "dk_odds": "-280",
-      "kelly_stake": "17.0%",
-      "tier": "Elite Pick"
+      "model_prob": 0.6903,
+      "implied_prob": 0.6342,
+      "edge": 0.0561,
+      "dk_odds": "-200",
+      "kelly_stake": "2.4%",
+      "tier": "Strong"
     }
   ]
 }
