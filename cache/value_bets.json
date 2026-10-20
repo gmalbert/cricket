@@ -1,31 +1,42 @@
 {
-  "generated_at": "2026-10-19T12:41:18.474185+00:00",
-  "source_run_id": "86d778f3-79f8-4af8-9353-bb46671bd40a",
+  "generated_at": "2026-10-20T11:13:18.111704+00:00",
+  "source_run_id": "31739407-fbd9-46d2-8486-3622b8be1f4f",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
+      "match": "Afghanistan vs Bangladesh",
+      "bet": "Afghanistan ML",
+      "type": "Match Winner",
+      "model_prob": 0.9843,
+      "implied_prob": 0.6067,
+      "edge": 0.3776,
+      "dk_odds": "-180",
+      "kelly_stake": "14.6%",
+      "tier": "Elite Pick"
+    },
+    {
       "match": "Pakistan vs England",
       "bet": "England ML",
       "type": "Match Winner",
       "model_prob": 0.9784,
-      "implied_prob": 0.5888,
-      "edge": 0.3896,
-      "dk_odds": "-165",
-      "kelly_stake": "13.9%",
+      "implied_prob": 0.6831,
+      "edge": 0.2953,
+      "dk_odds": "-255",
+      "kelly_stake": "15.9%",
       "tier": "Elite Pick"
     },
     {
-      "match": "Afghanistan vs Zimbabwe",
-      "bet": "Afghanistan ML",
+      "match": "New Zealand vs India",
+      "bet": "India ML",
       "type": "Match Winner",
-      "model_prob": 0.9831,
-      "implied_prob": 0.8541,
-      "edge": 0.129,
-      "dk_odds": "-900",
-      "kelly_stake": "18.9%",
-      "tier": "Elite Pick"
+      "model_prob": 0.6903,
+      "implied_prob": 0.636,
+      "edge": 0.0543,
+      "dk_odds": "-205",
+      "kelly_stake": "2.4%",
+      "tier": "Strong"
     }
   ]
 }
