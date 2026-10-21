@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-10-20T11:13:18.111704+00:00",
-  "source_run_id": "31739407-fbd9-46d2-8486-3622b8be1f4f",
+  "generated_at": "2026-10-21T11:28:31.056395+00:00",
+  "source_run_id": "ca5ee0fa-9681-4194-a2d3-45d9f7023c9c",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match": "Afghanistan vs Bangladesh",
-      "bet": "Afghanistan ML",
+      "match": "Namibia vs Ireland",
+      "bet": "Namibia ML",
       "type": "Match Winner",
-      "model_prob": 0.9843,
-      "implied_prob": 0.6067,
-      "edge": 0.3776,
-      "dk_odds": "-180",
-      "kelly_stake": "14.6%",
+      "model_prob": 0.9798,
+      "implied_prob": 0.3444,
+      "edge": 0.6354,
+      "dk_odds": "+175",
+      "kelly_stake": "8.3%",
       "tier": "Elite Pick"
     },
     {
-      "match": "Pakistan vs England",
-      "bet": "England ML",
+      "match": "Afghanistan vs Bangladesh",
+      "bet": "Afghanistan ML",
       "type": "Match Winner",
-      "model_prob": 0.9784,
-      "implied_prob": 0.6831,
-      "edge": 0.2953,
-      "dk_odds": "-255",
-      "kelly_stake": "15.9%",
+      "model_prob": 0.9992,
+      "implied_prob": 0.6296,
+      "edge": 0.3696,
+      "dk_odds": "-200",
+      "kelly_stake": "15.7%",
       "tier": "Elite Pick"
     },
     {
@@ -32,10 +32,10 @@
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.6903,
-      "implied_prob": 0.636,
-      "edge": 0.0543,
-      "dk_odds": "-205",
-      "kelly_stake": "2.4%",
+      "implied_prob": 0.6276,
+      "edge": 0.0627,
+      "dk_odds": "-195",
+      "kelly_stake": "2.6%",
       "tier": "Strong"
     }
   ]
