@@ -1,46 +1,46 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-20T11:13:20.828718+00:00",
+    "generated_at": "2026-10-21T11:28:33.892770+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-10-20",
+      "game_date": "2026-10-21",
+      "game": "Namibia vs Ireland",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Namibia ML",
+      "confidence": 0.9798,
+      "edge": 0.6354,
+      "odds": 175,
+      "tier": "Elite",
+      "notes": "Kelly stake: 8.3%"
+    },
+    {
+      "game_date": "2026-10-21",
       "game": "Afghanistan vs Bangladesh",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Afghanistan ML",
-      "confidence": 0.9843,
-      "edge": 0.3776,
-      "odds": -180,
+      "confidence": 0.9992,
+      "edge": 0.3696,
+      "odds": -200,
       "tier": "Elite",
-      "notes": "Kelly stake: 14.6%"
+      "notes": "Kelly stake: 15.7%"
     },
     {
-      "game_date": "2026-10-20",
-      "game": "Pakistan vs England",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "England ML",
-      "confidence": 0.9784,
-      "edge": 0.2953,
-      "odds": -255,
-      "tier": "Elite",
-      "notes": "Kelly stake: 15.9%"
-    },
-    {
-      "game_date": "2026-10-20",
+      "game_date": "2026-10-21",
       "game": "New Zealand vs India",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.6903,
-      "edge": 0.0543,
-      "odds": -205,
+      "edge": 0.0627,
+      "odds": -195,
       "tier": "Strong",
-      "notes": "Kelly stake: 2.4%"
+      "notes": "Kelly stake: 2.6%"
     }
   ]
 }
