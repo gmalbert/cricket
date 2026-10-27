@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26T12:35:17.524114+00:00",
-  "source_run_id": "2e1f4da2-2bfc-44f6-86da-7e29b6cd9425",
+  "generated_at": "2026-10-27T11:52:56.425205+00:00",
+  "source_run_id": "3ec3eb51-6ed2-4f89-a33d-818f2187cdea",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,43 +10,21 @@
       "bet": "Namibia ML",
       "type": "Match Winner",
       "model_prob": 0.9827,
-      "implied_prob": 0.4085,
-      "edge": 0.5742,
-      "dk_odds": "+130",
-      "kelly_stake": "9.9%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "Pakistan vs Sri Lanka",
-      "bet": "Sri Lanka ML",
-      "type": "Match Winner",
-      "model_prob": 0.9077,
-      "implied_prob": 0.3444,
-      "edge": 0.5633,
-      "dk_odds": "+175",
-      "kelly_stake": "7.4%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "Netherlands vs Oman",
-      "bet": "Netherlands ML",
-      "type": "Match Winner",
-      "model_prob": 0.9844,
-      "implied_prob": 0.5888,
-      "edge": 0.3956,
-      "dk_odds": "-165",
-      "kelly_stake": "14.2%",
+      "implied_prob": 0.7032,
+      "edge": 0.2795,
+      "dk_odds": "-285",
+      "kelly_stake": "16.6%",
       "tier": "Elite Pick"
     },
     {
       "match": "Afghanistan vs Zimbabwe",
       "bet": "Afghanistan ML",
       "type": "Match Winner",
-      "model_prob": 0.9836,
+      "model_prob": 0.9857,
       "implied_prob": 0.7287,
-      "edge": 0.2549,
+      "edge": 0.257,
       "dk_odds": "-330",
-      "kelly_stake": "17.1%",
+      "kelly_stake": "17.3%",
       "tier": "Elite Pick"
     },
     {
@@ -54,11 +32,11 @@
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.6903,
-      "implied_prob": 0.5505,
-      "edge": 0.1398,
-      "dk_odds": "-140",
-      "kelly_stake": "4.3%",
-      "tier": "Elite Pick"
+      "implied_prob": 0.6209,
+      "edge": 0.0694,
+      "dk_odds": "-190",
+      "kelly_stake": "2.8%",
+      "tier": "Strong"
     }
   ]
 }
