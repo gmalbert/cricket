@@ -1,70 +1,46 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-26T12:35:19.987924+00:00",
+    "generated_at": "2026-10-27T11:52:59.100675+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-10-26",
+      "game_date": "2026-10-27",
       "game": "Namibia vs Ireland",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Namibia ML",
       "confidence": 0.9827,
-      "edge": 0.5742,
-      "odds": 130,
+      "edge": 0.2795,
+      "odds": -285,
       "tier": "Elite",
-      "notes": "Kelly stake: 9.9%"
+      "notes": "Kelly stake: 16.6%"
     },
     {
-      "game_date": "2026-10-26",
-      "game": "Pakistan vs Sri Lanka",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "Sri Lanka ML",
-      "confidence": 0.9077,
-      "edge": 0.5633,
-      "odds": 175,
-      "tier": "Elite",
-      "notes": "Kelly stake: 7.4%"
-    },
-    {
-      "game_date": "2026-10-26",
-      "game": "Netherlands vs Oman",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "Netherlands ML",
-      "confidence": 0.9844,
-      "edge": 0.3956,
-      "odds": -165,
-      "tier": "Elite",
-      "notes": "Kelly stake: 14.2%"
-    },
-    {
-      "game_date": "2026-10-26",
+      "game_date": "2026-10-27",
       "game": "Afghanistan vs Zimbabwe",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Afghanistan ML",
-      "confidence": 0.9836,
-      "edge": 0.2549,
+      "confidence": 0.9857,
+      "edge": 0.257,
       "odds": -330,
       "tier": "Elite",
-      "notes": "Kelly stake: 17.1%"
+      "notes": "Kelly stake: 17.3%"
     },
     {
-      "game_date": "2026-10-26",
+      "game_date": "2026-10-27",
       "game": "New Zealand vs India",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.6903,
-      "edge": 0.1398,
-      "odds": -140,
-      "tier": "Elite",
-      "notes": "Kelly stake: 4.3%"
+      "edge": 0.0694,
+      "odds": -190,
+      "tier": "Strong",
+      "notes": "Kelly stake: 2.8%"
     }
   ]
 }
