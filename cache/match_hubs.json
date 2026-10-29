@@ -1,13 +1,175 @@
 {
-  "generated_at": "2026-10-28T12:27:11.859663+00:00",
-  "source_run_id": "f5c30c2d-27c6-4f2d-9947-4d82d3353628",
+  "generated_at": "2026-10-29T12:37:00.394232+00:00",
+  "source_run_id": "96bd67a0-6c38-4107-a444-2b2828f124e0",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-10-28T12:27:11.518492+00:00",
+    "generated_at": "2026-10-29T12:36:59.893045+00:00",
     "matches": {
+      "5dfe214e-3c24-4553-a0eb-a8d6ae12c063": {
+        "match": {
+          "match_id": "5dfe214e-3c24-4553-a0eb-a8d6ae12c063",
+          "team1": "United Arab Emirates",
+          "team2": "Oman",
+          "venue": "ICC Academy Ground, Dubai",
+          "time": "00:00 IST",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.986,
+          "team2_win_prob": 0.014,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": null,
+          "team2_implied_prob": null,
+          "total_line": null
+        },
+        "venue": {},
+        "weather": {
+          "temperature": 28,
+          "humidity": 60,
+          "dew_flag": false,
+          "windspeed": 10
+        },
+        "team_form": {
+          "team1": [
+            {
+              "match_id": 1559563,
+              "date": "2026-10-25",
+              "innings": 1,
+              "opponent": "Netherlands",
+              "result": "L",
+              "score": 244,
+              "opp_score": 245,
+              "wickets": 8,
+              "powerplay_runs": 30,
+              "death_economy": 7.0
+            },
+            {
+              "match_id": 1554413,
+              "date": "2026-10-11",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "L",
+              "score": 213,
+              "opp_score": 214,
+              "wickets": 10,
+              "powerplay_runs": 8,
+              "death_economy": 3.5
+            },
+            {
+              "match_id": 1554412,
+              "date": "2026-10-09",
+              "innings": 1,
+              "opponent": "Namibia",
+              "result": "L",
+              "score": 134,
+              "opp_score": 135,
+              "wickets": 10,
+              "powerplay_runs": 35,
+              "death_economy": 5.25
+            },
+            {
+              "match_id": 1554410,
+              "date": "2026-10-05",
+              "innings": 1,
+              "opponent": "United States of America",
+              "result": "L",
+              "score": 330,
+              "opp_score": 332,
+              "wickets": 8,
+              "powerplay_runs": 26,
+              "death_economy": 5.25
+            },
+            {
+              "match_id": 1549969,
+              "date": "2026-09-12",
+              "innings": 2,
+              "opponent": "Nepal",
+              "result": "L",
+              "score": 269,
+              "opp_score": 313,
+              "wickets": 10,
+              "powerplay_runs": 47,
+              "death_economy": 4.0
+            }
+          ],
+          "team2": [
+            {
+              "match_id": 1554420,
+              "date": "2026-10-19",
+              "innings": 2,
+              "opponent": "Nepal",
+              "result": "L",
+              "score": 270,
+              "opp_score": 280,
+              "wickets": 7,
+              "powerplay_runs": 14,
+              "death_economy": 7.0
+            },
+            {
+              "match_id": 1554418,
+              "date": "2026-10-15",
+              "innings": 2,
+              "opponent": "Canada",
+              "result": "L",
+              "score": 198,
+              "opp_score": 256,
+              "wickets": 10,
+              "powerplay_runs": 36,
+              "death_economy": 4.0
+            },
+            {
+              "match_id": 1554417,
+              "date": "2026-10-13",
+              "innings": 2,
+              "opponent": "Nepal",
+              "result": "L",
+              "score": 150,
+              "opp_score": 263,
+              "wickets": 10,
+              "powerplay_runs": 12,
+              "death_economy": 5.0
+            },
+            {
+              "match_id": 1554415,
+              "date": "2026-10-09",
+              "innings": 1,
+              "opponent": "Canada",
+              "result": "W",
+              "score": 263,
+              "opp_score": 222,
+              "wickets": 10,
+              "powerplay_runs": 45,
+              "death_economy": 3.25
+            },
+            {
+              "match_id": 1549966,
+              "date": "2026-09-10",
+              "innings": 2,
+              "opponent": "Nepal",
+              "result": "L",
+              "score": 60,
+              "opp_score": 147,
+              "wickets": 10,
+              "powerplay_runs": 15,
+              "death_economy": 6.0
+            }
+          ]
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "available",
+          "rivalries": "unavailable"
+        }
+      },
       "64445235d9c58f413a990f6ff8d91c1c": {
         "match": {
           "match_id": "64445235d9c58f413a990f6ff8d91c1c",
@@ -18,14 +180,14 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.9992,
-          "team2_win_prob": 0.0008,
+          "team1_win_prob": 0.9968,
+          "team2_win_prob": 0.0032,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.7704,
-          "team2_implied_prob": 0.2296,
+          "team1_implied_prob": 0.7746,
+          "team2_implied_prob": 0.2254,
           "total_line": null
         },
         "venue": {},
@@ -125,8 +287,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.3791,
-          "team2_implied_prob": 0.6209,
+          "team1_implied_prob": 0.4224,
+          "team2_implied_prob": 0.5776,
           "total_line": null
         },
         "venue": {},
@@ -271,114 +433,13 @@
           "rivalries": "unavailable"
         }
       },
-      "926c9976567415aa6e779e3cb61cfae8": {
-        "match": {
-          "match_id": "926c9976567415aa6e779e3cb61cfae8",
-          "team1": "UAE",
-          "team2": "Oman",
-          "venue": "",
-          "time": "2026-10-29T05:30:00Z",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.9992,
-          "team2_win_prob": 0.0008,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": 0.6116,
-          "team2_implied_prob": 0.3884,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": null,
-          "humidity": null,
-          "dew_flag": false,
-          "windspeed": null
-        },
-        "team_form": {
-          "team1": [],
-          "team2": [
-            {
-              "match_id": 1554420,
-              "date": "2026-10-19",
-              "innings": 2,
-              "opponent": "Nepal",
-              "result": "L",
-              "score": 270,
-              "opp_score": 280,
-              "wickets": 7,
-              "powerplay_runs": 14,
-              "death_economy": 7.0
-            },
-            {
-              "match_id": 1554418,
-              "date": "2026-10-15",
-              "innings": 2,
-              "opponent": "Canada",
-              "result": "L",
-              "score": 198,
-              "opp_score": 256,
-              "wickets": 10,
-              "powerplay_runs": 36,
-              "death_economy": 4.0
-            },
-            {
-              "match_id": 1554417,
-              "date": "2026-10-13",
-              "innings": 2,
-              "opponent": "Nepal",
-              "result": "L",
-              "score": 150,
-              "opp_score": 263,
-              "wickets": 10,
-              "powerplay_runs": 12,
-              "death_economy": 5.0
-            },
-            {
-              "match_id": 1554415,
-              "date": "2026-10-09",
-              "innings": 1,
-              "opponent": "Canada",
-              "result": "W",
-              "score": 263,
-              "opp_score": 222,
-              "wickets": 10,
-              "powerplay_runs": 45,
-              "death_economy": 3.25
-            },
-            {
-              "match_id": 1549966,
-              "date": "2026-09-10",
-              "innings": 2,
-              "opponent": "Nepal",
-              "result": "L",
-              "score": 60,
-              "opp_score": 147,
-              "wickets": 10,
-              "powerplay_runs": 15,
-              "death_economy": 6.0
-            }
-          ]
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "unavailable",
-          "rivalries": "unavailable"
-        }
-      },
       "66a3eceb780381907635cfe940393943": {
         "match": {
           "match_id": "66a3eceb780381907635cfe940393943",
           "team1": "Sri Lanka",
           "team2": "England",
           "venue": "",
-          "time": "2026-10-29T08:00:00Z",
+          "time": "2026-10-29T07:59:00Z",
           "status": null
         },
         "prediction": {
@@ -388,8 +449,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.3578,
-          "team2_implied_prob": 0.6422,
+          "team1_implied_prob": 0.1563,
+          "team2_implied_prob": 0.8437,
           "total_line": null
         },
         "venue": {},
@@ -540,7 +601,7 @@
           "team1": "Namibia",
           "team2": "Ireland",
           "venue": "",
-          "time": "2026-10-30T08:00:00Z",
+          "time": "2026-10-30T07:30:00Z",
           "status": null
         },
         "prediction": {

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-28T12:27:11.674079+00:00",
-  "source_run_id": "f5c30c2d-27c6-4f2d-9947-4d82d3353628",
+  "generated_at": "2026-10-29T12:37:00.158449+00:00",
+  "source_run_id": "96bd67a0-6c38-4107-a444-2b2828f124e0",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -17,25 +17,25 @@
       "tier": "Elite Pick"
     },
     {
-      "match": "UAE vs Oman",
-      "bet": "UAE ML",
-      "type": "Match Winner",
-      "model_prob": 0.9992,
-      "implied_prob": 0.6116,
-      "edge": 0.3876,
-      "dk_odds": "-180",
-      "kelly_stake": "15.3%",
-      "tier": "Elite Pick"
-    },
-    {
       "match": "Afghanistan vs Zimbabwe",
       "bet": "Afghanistan ML",
       "type": "Match Winner",
-      "model_prob": 0.9992,
-      "implied_prob": 0.7704,
-      "edge": 0.2288,
+      "model_prob": 0.9968,
+      "implied_prob": 0.7746,
+      "edge": 0.2222,
       "dk_odds": "-450",
-      "kelly_stake": "19.2%",
+      "kelly_stake": "19.1%",
+      "tier": "Elite Pick"
+    },
+    {
+      "match": "Sri Lanka vs England",
+      "bet": "Sri Lanka ML",
+      "type": "Match Winner",
+      "model_prob": 0.3005,
+      "implied_prob": 0.1563,
+      "edge": 0.1442,
+      "dk_odds": "+500",
+      "kelly_stake": "0.7%",
       "tier": "Elite Pick"
     },
     {
@@ -43,22 +43,11 @@
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.6903,
-      "implied_prob": 0.6209,
-      "edge": 0.0694,
-      "dk_odds": "-190",
-      "kelly_stake": "2.8%",
-      "tier": "Strong"
-    },
-    {
-      "match": "Sri Lanka vs England",
-      "bet": "England ML",
-      "type": "Match Winner",
-      "model_prob": 0.6995,
-      "implied_prob": 0.6422,
-      "edge": 0.0573,
-      "dk_odds": "-210",
-      "kelly_stake": "2.6%",
-      "tier": "Strong"
+      "implied_prob": 0.5776,
+      "edge": 0.1127,
+      "dk_odds": "-155",
+      "kelly_stake": "3.9%",
+      "tier": "Elite Pick"
     }
   ]
 }
