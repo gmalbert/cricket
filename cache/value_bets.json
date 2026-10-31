@@ -1,30 +1,52 @@
 {
-  "generated_at": "2026-10-30T12:28:29.352242+00:00",
-  "source_run_id": "d820a12c-7113-4a28-8859-46831f33b741",
+  "generated_at": "2026-10-31T11:58:03.605706+00:00",
+  "source_run_id": "475ed8cf-ed9a-4b42-a7cf-7c65f60df74f",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
+      "match": "Namibia vs Ireland",
+      "bet": "Namibia ML",
+      "type": "Match Winner",
+      "model_prob": 0.9827,
+      "implied_prob": 0.4193,
+      "edge": 0.5634,
+      "dk_odds": "+125",
+      "kelly_stake": "10.2%",
+      "tier": "Elite Pick"
+    },
+    {
       "match": "Pakistan vs Sri Lanka",
       "bet": "Sri Lanka ML",
       "type": "Match Winner",
       "model_prob": 0.9077,
-      "implied_prob": 0.3658,
-      "edge": 0.5419,
-      "dk_odds": "+160",
-      "kelly_stake": "7.8%",
+      "implied_prob": 0.5263,
+      "edge": 0.3814,
+      "dk_odds": "-125",
+      "kelly_stake": "10.6%",
       "tier": "Elite Pick"
     },
     {
       "match": "Afghanistan vs Zimbabwe",
       "bet": "Afghanistan ML",
       "type": "Match Winner",
-      "model_prob": 0.9831,
-      "implied_prob": 0.7704,
-      "edge": 0.2127,
-      "dk_odds": "-450",
-      "kelly_stake": "17.8%",
+      "model_prob": 0.9857,
+      "implied_prob": 0.764,
+      "edge": 0.2217,
+      "dk_odds": "-425",
+      "kelly_stake": "17.9%",
+      "tier": "Elite Pick"
+    },
+    {
+      "match": "New Zealand vs India",
+      "bet": "India ML",
+      "type": "Match Winner",
+      "model_prob": 0.6903,
+      "implied_prob": 0.5633,
+      "edge": 0.127,
+      "dk_odds": "-150",
+      "kelly_stake": "4.1%",
       "tier": "Elite Pick"
     }
   ]
