@@ -1,22 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-11-01T12:57:34.700566+00:00",
+    "generated_at": "2026-11-02T15:13:51.533263+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-11-01",
-      "game": "Afghanistan vs Zimbabwe",
+      "game_date": "2026-11-02",
+      "game": "New Zealand vs India",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "Afghanistan ML",
-      "confidence": 0.9797,
-      "edge": 0.2627,
-      "odds": -310,
+      "pick": "India ML",
+      "confidence": 0.8306,
+      "edge": 0.2418,
+      "odds": -165,
       "tier": "Elite",
-      "notes": "Kelly stake: 16.6%"
+      "notes": "Kelly stake: 8.7%"
     }
   ]
 }
