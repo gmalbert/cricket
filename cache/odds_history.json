@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-01T12:57:32.090011+00:00",
-  "source_run_id": "a57222a6-ebd4-44cd-99dd-35e434e61372",
+  "generated_at": "2026-11-02T15:13:48.923565+00:00",
+  "source_run_id": "817bcc2d-fc01-4bda-9f70-872fa7ac8f50",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -5932,6 +5932,30 @@
       "closing_price_team2": null,
       "event_status": "no_draftkings_market",
       "observed_at": "2026-11-01T12:57:32.089916+00:00"
+    },
+    {
+      "event_id": "c80156c72c67fb9410d7459b452dcdb6",
+      "team1": "New Zealand",
+      "team2": "India",
+      "commence_time": "2026-11-04T02:00:00Z",
+      "dk_implied_prob_team1": 0.4112,
+      "dk_implied_prob_team2": 0.5888,
+      "dk_odds_team1": 130,
+      "dk_odds_team2": -165,
+      "sport_key": "cricket_odi",
+      "competition": "odi_internationals",
+      "competition_name": "ODI internationals",
+      "format": "ODI",
+      "gender": "male",
+      "bookmaker": "draftkings",
+      "market": "h2h",
+      "odds_timestamp": "2026-11-02T15:12:52Z",
+      "first_observed_price_team1": 130,
+      "first_observed_price_team2": -165,
+      "closing_price_team1": 130,
+      "closing_price_team2": -165,
+      "event_status": "draftkings_available",
+      "observed_at": "2026-11-02T15:13:48.923465+00:00"
     }
   ]
 }
