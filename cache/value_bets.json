@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-02T15:13:48.921520+00:00",
-  "source_run_id": "817bcc2d-fc01-4bda-9f70-872fa7ac8f50",
+  "generated_at": "2026-11-03T13:55:22.414425+00:00",
+  "source_run_id": "46f01e88-bf94-47da-8eab-87f85e5a0818",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,10 +10,21 @@
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.8306,
-      "implied_prob": 0.5888,
-      "edge": 0.2418,
-      "dk_odds": "-165",
-      "kelly_stake": "8.7%",
+      "implied_prob": 0.5599,
+      "edge": 0.2707,
+      "dk_odds": "-145",
+      "kelly_stake": "8.6%",
+      "tier": "Elite Pick"
+    },
+    {
+      "match": "UAE vs Oman",
+      "bet": "Oman ML",
+      "type": "Match Winner",
+      "model_prob": 0.4996,
+      "implied_prob": 0.3518,
+      "edge": 0.1478,
+      "dk_odds": "+170",
+      "kelly_stake": "2.0%",
       "tier": "Elite Pick"
     }
   ]
