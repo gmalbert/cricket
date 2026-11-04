@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-03T13:55:22.414425+00:00",
-  "source_run_id": "46f01e88-bf94-47da-8eab-87f85e5a0818",
+  "generated_at": "2026-11-04T14:03:24.769565+00:00",
+  "source_run_id": "f7c920fa-f5f5-46cb-bf56-139d09fbf7db",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -9,22 +9,11 @@
       "match": "New Zealand vs India",
       "bet": "India ML",
       "type": "Match Winner",
-      "model_prob": 0.8306,
-      "implied_prob": 0.5599,
-      "edge": 0.2707,
-      "dk_odds": "-145",
-      "kelly_stake": "8.6%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "UAE vs Oman",
-      "bet": "Oman ML",
-      "type": "Match Winner",
-      "model_prob": 0.4996,
-      "implied_prob": 0.3518,
-      "edge": 0.1478,
-      "dk_odds": "+170",
-      "kelly_stake": "2.0%",
+      "model_prob": 0.6903,
+      "implied_prob": 0.5505,
+      "edge": 0.1398,
+      "dk_odds": "-140",
+      "kelly_stake": "4.3%",
       "tier": "Elite Pick"
     }
   ]
