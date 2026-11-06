@@ -1,13 +1,56 @@
 {
-  "generated_at": "2026-11-05T14:23:16.456956+00:00",
-  "source_run_id": "b8b0dd2a-4b65-4f02-9be2-a89787b54267",
+  "generated_at": "2026-11-06T14:00:46.065039+00:00",
+  "source_run_id": "d712fb53-3c77-4f00-a12b-2d1b54b7e6c0",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-05T14:23:16.151011+00:00",
+    "generated_at": "2026-11-06T14:00:45.609841+00:00",
     "matches": {
+      "0e3699f8-43b2-461b-a659-4d38daf9bf35": {
+        "match": {
+          "match_id": "0e3699f8-43b2-461b-a659-4d38daf9bf35",
+          "team1": "Melbourne Stars Women",
+          "team2": "Sydney Sixers Women",
+          "venue": "Junction Oval, Melbourne",
+          "time": "00:00 IST",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.0697,
+          "team2_win_prob": 0.9303,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": null,
+          "team2_implied_prob": null,
+          "total_line": null
+        },
+        "venue": {
+          "avg_first_innings": 136.4,
+          "chase_win_rate": 0.75
+        },
+        "weather": {
+          "temperature": 28,
+          "humidity": 60,
+          "dew_flag": false,
+          "windspeed": 10
+        },
+        "team_form": {
+          "team1": [],
+          "team2": []
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "available",
+          "rivalries": "unavailable"
+        }
+      },
       "5dd7763d9d798a61a5524816c802d75f": {
         "match": {
           "match_id": "5dd7763d9d798a61a5524816c802d75f",
@@ -18,14 +61,14 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.3097,
-          "team2_win_prob": 0.6903,
+          "team1_win_prob": 0.1694,
+          "team2_win_prob": 0.8306,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.4401,
-          "team2_implied_prob": 0.5599,
+          "team1_implied_prob": 0.4278,
+          "team2_implied_prob": 0.5722,
           "total_line": null
         },
         "venue": {},
@@ -180,14 +223,14 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.0599,
-          "team2_win_prob": 0.9401,
+          "team1_win_prob": 0.0239,
+          "team2_win_prob": 0.9761,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.5468,
-          "team2_implied_prob": 0.4532,
+          "team1_implied_prob": 0.5505,
+          "team2_implied_prob": 0.4495,
           "total_line": null
         },
         "venue": {},

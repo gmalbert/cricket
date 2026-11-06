@@ -1,10 +1,30 @@
 {
-  "generated_at": "2026-11-05T14:23:16.296654+00:00",
-  "source_run_id": "b8b0dd2a-4b65-4f02-9be2-a89787b54267",
+  "generated_at": "2026-11-06T14:00:45.830556+00:00",
+  "source_run_id": "d712fb53-3c77-4f00-a12b-2d1b54b7e6c0",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
+    {
+      "match_id": "0e3699f8-43b2-461b-a659-4d38daf9bf35",
+      "team1": "Melbourne Stars Women",
+      "team2": "Sydney Sixers Women",
+      "venue": "Junction Oval, Melbourne",
+      "time": "00:00 IST",
+      "status": "Sydney Sixers Women won by 1 run",
+      "toss_winner": null,
+      "toss_decision": null,
+      "matchStarted": true,
+      "matchEnded": true,
+      "competition": "big_bash",
+      "competition_name": "Big Bash League",
+      "format": "T20",
+      "gender": "male",
+      "scheduled_start": "2026-11-06T08:10:00",
+      "city": "",
+      "fixture_source": "cricketdata",
+      "fixture_status": "confirmed"
+    },
     {
       "match_id": "5dd7763d9d798a61a5524816c802d75f",
       "team1": "New Zealand",
