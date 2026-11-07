@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-06T14:00:45.821811+00:00",
-  "source_run_id": "d712fb53-3c77-4f00-a12b-2d1b54b7e6c0",
+  "generated_at": "2026-11-07T12:44:17.846735+00:00",
+  "source_run_id": "ab0e22e2-0284-4a6e-ba64-23b301374df4",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -14,17 +14,6 @@
       "edge": 0.5266,
       "dk_odds": "+110",
       "kelly_stake": "10.7%",
-      "tier": "Elite Pick"
-    },
-    {
-      "match": "New Zealand vs India",
-      "bet": "India ML",
-      "type": "Match Winner",
-      "model_prob": 0.8306,
-      "implied_prob": 0.5722,
-      "edge": 0.2584,
-      "dk_odds": "-155",
-      "kelly_stake": "8.6%",
       "tier": "Elite Pick"
     }
   ]

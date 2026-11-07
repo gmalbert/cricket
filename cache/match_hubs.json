@@ -1,25 +1,68 @@
 {
-  "generated_at": "2026-11-06T14:00:46.065039+00:00",
-  "source_run_id": "d712fb53-3c77-4f00-a12b-2d1b54b7e6c0",
+  "generated_at": "2026-11-07T12:44:18.045275+00:00",
+  "source_run_id": "ab0e22e2-0284-4a6e-ba64-23b301374df4",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-06T14:00:45.609841+00:00",
+    "generated_at": "2026-11-07T12:44:17.683701+00:00",
     "matches": {
-      "0e3699f8-43b2-461b-a659-4d38daf9bf35": {
+      "1f4f3716-c5f2-44e7-9a35-056e63a2b1cf": {
         "match": {
-          "match_id": "0e3699f8-43b2-461b-a659-4d38daf9bf35",
-          "team1": "Melbourne Stars Women",
-          "team2": "Sydney Sixers Women",
+          "match_id": "1f4f3716-c5f2-44e7-9a35-056e63a2b1cf",
+          "team1": "Brisbane Heat Women",
+          "team2": "Hobart Hurricanes Women",
+          "venue": "Allan Border Field, Brisbane",
+          "time": "00:00 IST",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.0239,
+          "team2_win_prob": 0.9761,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": null,
+          "team2_implied_prob": null,
+          "total_line": null
+        },
+        "venue": {
+          "avg_first_innings": 179.0,
+          "chase_win_rate": 0.778
+        },
+        "weather": {
+          "temperature": 28,
+          "humidity": 60,
+          "dew_flag": false,
+          "windspeed": 10
+        },
+        "team_form": {
+          "team1": [],
+          "team2": []
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "available",
+          "rivalries": "unavailable"
+        }
+      },
+      "300f2828-e1c8-44ad-8a74-be0a54ec4e02": {
+        "match": {
+          "match_id": "300f2828-e1c8-44ad-8a74-be0a54ec4e02",
+          "team1": "Melbourne Renegades Women",
+          "team2": "Adelaide Strikers Women",
           "venue": "Junction Oval, Melbourne",
           "time": "00:00 IST",
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.0697,
-          "team2_win_prob": 0.9303,
+          "team1_win_prob": 0.0239,
+          "team2_win_prob": 0.9761,
           "predicted_total": null,
           "predicted_first_innings": null
         },
@@ -48,168 +91,6 @@
           "fixtures": "available",
           "odds": "unavailable",
           "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
-      "5dd7763d9d798a61a5524816c802d75f": {
-        "match": {
-          "match_id": "5dd7763d9d798a61a5524816c802d75f",
-          "team1": "New Zealand",
-          "team2": "India",
-          "venue": "",
-          "time": "2026-11-07T02:00:00Z",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.1694,
-          "team2_win_prob": 0.8306,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": 0.4278,
-          "team2_implied_prob": 0.5722,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": null,
-          "humidity": null,
-          "dew_flag": false,
-          "windspeed": null
-        },
-        "team_form": {
-          "team1": [
-            {
-              "match_id": 1496573,
-              "date": "2026-06-25",
-              "innings": 3,
-              "opponent": "England",
-              "result": "W",
-              "score": 438,
-              "opp_score": 354,
-              "wickets": 9,
-              "powerplay_runs": 46,
-              "death_economy": 13.75
-            },
-            {
-              "match_id": 1496573,
-              "date": "2026-06-25",
-              "innings": 1,
-              "opponent": "England",
-              "result": "W",
-              "score": 438,
-              "opp_score": 354,
-              "wickets": 10,
-              "powerplay_runs": 46,
-              "death_economy": 13.75
-            },
-            {
-              "match_id": 1496572,
-              "date": "2026-06-17",
-              "innings": 3,
-              "opponent": "England",
-              "result": "W",
-              "score": 391,
-              "opp_score": 291,
-              "wickets": 10,
-              "powerplay_runs": 31,
-              "death_economy": 15.75
-            },
-            {
-              "match_id": 1496572,
-              "date": "2026-06-17",
-              "innings": 1,
-              "opponent": "England",
-              "result": "W",
-              "score": 391,
-              "opp_score": 291,
-              "wickets": 10,
-              "powerplay_runs": 31,
-              "death_economy": 15.75
-            },
-            {
-              "match_id": 1496571,
-              "date": "2026-06-04",
-              "innings": 4,
-              "opponent": "England",
-              "result": "L",
-              "score": 113,
-              "opp_score": 140,
-              "wickets": 10,
-              "powerplay_runs": 20,
-              "death_economy": 10.5
-            }
-          ],
-          "team2": [
-            {
-              "match_id": 1544002,
-              "date": "2026-08-23",
-              "innings": 1,
-              "opponent": "Sri Lanka",
-              "result": "W",
-              "score": 503,
-              "opp_score": 290,
-              "wickets": 9,
-              "powerplay_runs": 18,
-              "death_economy": 10.0
-            },
-            {
-              "match_id": 1544001,
-              "date": "2026-08-15",
-              "innings": 3,
-              "opponent": "Sri Lanka",
-              "result": "W",
-              "score": 462,
-              "opp_score": 284,
-              "wickets": 10,
-              "powerplay_runs": 36,
-              "death_economy": 4.25
-            },
-            {
-              "match_id": 1544001,
-              "date": "2026-08-15",
-              "innings": 1,
-              "opponent": "Sri Lanka",
-              "result": "W",
-              "score": 462,
-              "opp_score": 284,
-              "wickets": 10,
-              "powerplay_runs": 36,
-              "death_economy": 4.25
-            },
-            {
-              "match_id": 1496551,
-              "date": "2026-07-10",
-              "innings": 3,
-              "opponent": "England",
-              "result": "W",
-              "score": 285,
-              "opp_score": 170,
-              "wickets": 7,
-              "powerplay_runs": 48,
-              "death_economy": 8.75
-            },
-            {
-              "match_id": 1496551,
-              "date": "2026-07-10",
-              "innings": 1,
-              "opponent": "England",
-              "result": "W",
-              "score": 285,
-              "opp_score": 170,
-              "wickets": 10,
-              "powerplay_runs": 48,
-              "death_economy": 8.75
-            }
-          ]
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "unavailable",
           "rivalries": "unavailable"
         }
       },
