@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-07T12:44:17.846735+00:00",
-  "source_run_id": "ab0e22e2-0284-4a6e-ba64-23b301374df4",
+  "generated_at": "2026-11-08T13:02:01.225478+00:00",
+  "source_run_id": "58e3d64a-d788-4e28-b675-ba89e6476413",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -9,11 +9,22 @@
       "match": "Australia vs England",
       "bet": "England ML",
       "type": "Match Winner",
-      "model_prob": 0.9761,
+      "model_prob": 0.9998,
       "implied_prob": 0.4495,
-      "edge": 0.5266,
+      "edge": 0.5503,
       "dk_odds": "+110",
-      "kelly_stake": "10.7%",
+      "kelly_stake": "11.2%",
+      "tier": "Elite Pick"
+    },
+    {
+      "match": "New Zealand vs India",
+      "bet": "India ML",
+      "type": "Match Winner",
+      "model_prob": 0.9997,
+      "implied_prob": 0.5776,
+      "edge": 0.4221,
+      "dk_odds": "-155",
+      "kelly_stake": "14.4%",
       "tier": "Elite Pick"
     }
   ]
