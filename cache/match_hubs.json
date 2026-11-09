@@ -1,179 +1,13 @@
 {
-  "generated_at": "2026-11-08T13:02:01.470032+00:00",
-  "source_run_id": "58e3d64a-d788-4e28-b675-ba89e6476413",
+  "generated_at": "2026-11-09T15:43:32.103752+00:00",
+  "source_run_id": "89b35366-9b80-4f25-a2b7-770af355e012",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-08T13:02:01.024197+00:00",
+    "generated_at": "2026-11-09T15:43:31.656686+00:00",
     "matches": {
-      "958aa945-930f-4e17-af8a-c8966226ec1e": {
-        "match": {
-          "match_id": "958aa945-930f-4e17-af8a-c8966226ec1e",
-          "team1": "Uganda Women",
-          "team2": "United States of America Women",
-          "venue": "Entebbe Cricket Oval, Entebbe",
-          "time": "00:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.0003,
-          "team2_win_prob": 0.9997,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
-      "df484f6c-3c1d-4128-9f3e-4520ad03ba3c": {
-        "match": {
-          "match_id": "df484f6c-3c1d-4128-9f3e-4520ad03ba3c",
-          "team1": "Namibia Women",
-          "team2": "Rwanda Women",
-          "venue": "Entebbe Cricket Oval, Entebbe",
-          "time": "00:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.0003,
-          "team2_win_prob": 0.9997,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
-      "6f39b06b-e2b7-4a2b-ad14-88b29a3769f2": {
-        "match": {
-          "match_id": "6f39b06b-e2b7-4a2b-ad14-88b29a3769f2",
-          "team1": "Perth Scorchers Women",
-          "team2": "Melbourne Stars Women",
-          "venue": "North Sydney Oval, Sydney",
-          "time": "00:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.0003,
-          "team2_win_prob": 0.9997,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {
-          "avg_first_innings": 280.0,
-          "chase_win_rate": 1.0
-        },
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
-      "f9366950-2ae6-4b00-968c-4c6c8462e489": {
-        "match": {
-          "match_id": "f9366950-2ae6-4b00-968c-4c6c8462e489",
-          "team1": "Sydney Sixers Women",
-          "team2": "Sydney Thunder Women",
-          "venue": "North Sydney Oval, Sydney",
-          "time": "00:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.0003,
-          "team2_win_prob": 0.9997,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {
-          "avg_first_innings": 280.0,
-          "chase_win_rate": 1.0
-        },
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
       "3a466ba74c0042d217551623eb2d661e": {
         "match": {
           "match_id": "3a466ba74c0042d217551623eb2d661e",
@@ -184,14 +18,14 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.0003,
-          "team2_win_prob": 0.9997,
+          "team1_win_prob": 0.3097,
+          "team2_win_prob": 0.6903,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.4224,
-          "team2_implied_prob": 0.5776,
+          "team1_implied_prob": 0.4401,
+          "team2_implied_prob": 0.5599,
           "total_line": null
         },
         "venue": {},
@@ -346,8 +180,8 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.0002,
-          "team2_win_prob": 0.9998,
+          "team1_win_prob": 0.0599,
+          "team2_win_prob": 0.9401,
           "predicted_total": null,
           "predicted_first_innings": null
         },
