@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-10T14:37:45.495270+00:00",
-  "source_run_id": "60bb0bec-d861-451b-84f2-4a3e6c128ad1",
+  "generated_at": "2026-11-11T13:52:34.714331+00:00",
+  "source_run_id": "c91da5c3-34dc-4f9c-a2c6-93334050186a",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-10T14:37:45.116038+00:00",
+    "generated_at": "2026-11-11T13:52:34.329125+00:00",
     "matches": {
-      "37c4b752-cba7-474c-a413-45679a2f8927": {
+      "e2f98e6f-8267-433a-a915-f4d4b3b73ad0": {
         "match": {
-          "match_id": "37c4b752-cba7-474c-a413-45679a2f8927",
+          "match_id": "e2f98e6f-8267-433a-a915-f4d4b3b73ad0",
           "team1": "Namibia Women",
-          "team2": "Uganda Women",
+          "team2": "United States of America Women",
           "venue": "Entebbe Cricket Oval, Entebbe",
           "time": "00:00 IST",
           "status": null
@@ -48,11 +48,11 @@
           "rivalries": "unavailable"
         }
       },
-      "1f8b1266-3bbc-4b01-9269-62ec2db5b7c6": {
+      "41a2b361-72c1-43a8-919a-eb7f68e50ef0": {
         "match": {
-          "match_id": "1f8b1266-3bbc-4b01-9269-62ec2db5b7c6",
-          "team1": "Rwanda Women",
-          "team2": "United States of America Women",
+          "match_id": "41a2b361-72c1-43a8-919a-eb7f68e50ef0",
+          "team1": "Uganda Women",
+          "team2": "Rwanda Women",
           "venue": "Entebbe Cricket Oval, Entebbe",
           "time": "00:00 IST",
           "status": null
@@ -104,8 +104,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.4112,
-          "team2_implied_prob": 0.5888,
+          "team1_implied_prob": 0.4193,
+          "team2_implied_prob": 0.5807,
           "total_line": null
         },
         "venue": {},
