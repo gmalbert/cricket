@@ -1,93 +1,13 @@
 {
-  "generated_at": "2026-11-11T13:52:34.714331+00:00",
-  "source_run_id": "c91da5c3-34dc-4f9c-a2c6-93334050186a",
+  "generated_at": "2026-11-12T14:54:40.641486+00:00",
+  "source_run_id": "f0926e7a-512e-482a-8696-8d00422a2f49",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-11T13:52:34.329125+00:00",
+    "generated_at": "2026-11-12T14:54:40.266123+00:00",
     "matches": {
-      "e2f98e6f-8267-433a-a915-f4d4b3b73ad0": {
-        "match": {
-          "match_id": "e2f98e6f-8267-433a-a915-f4d4b3b73ad0",
-          "team1": "Namibia Women",
-          "team2": "United States of America Women",
-          "venue": "Entebbe Cricket Oval, Entebbe",
-          "time": "00:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.1265,
-          "team2_win_prob": 0.8735,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
-      "41a2b361-72c1-43a8-919a-eb7f68e50ef0": {
-        "match": {
-          "match_id": "41a2b361-72c1-43a8-919a-eb7f68e50ef0",
-          "team1": "Uganda Women",
-          "team2": "Rwanda Women",
-          "venue": "Entebbe Cricket Oval, Entebbe",
-          "time": "00:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.1265,
-          "team2_win_prob": 0.8735,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
       "df23d8f6095a9d000aa84d668f516803": {
         "match": {
           "match_id": "df23d8f6095a9d000aa84d668f516803",
@@ -104,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.4193,
-          "team2_implied_prob": 0.5807,
+          "team1_implied_prob": 0.4495,
+          "team2_implied_prob": 0.5505,
           "total_line": null
         },
         "venue": {},
@@ -266,8 +186,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.5505,
-          "team2_implied_prob": 0.4495,
+          "team1_implied_prob": 0.5408,
+          "team2_implied_prob": 0.4592,
           "total_line": null
         },
         "venue": {},

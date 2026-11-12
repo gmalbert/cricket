@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-11T13:52:34.504530+00:00",
-  "source_run_id": "c91da5c3-34dc-4f9c-a2c6-93334050186a",
+  "generated_at": "2026-11-12T14:54:40.436170+00:00",
+  "source_run_id": "f0926e7a-512e-482a-8696-8d00422a2f49",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,10 +10,10 @@
       "bet": "England ML",
       "type": "Match Winner",
       "model_prob": 0.9401,
-      "implied_prob": 0.4495,
-      "edge": 0.4906,
-      "dk_odds": "+110",
-      "kelly_stake": "10.0%",
+      "implied_prob": 0.4592,
+      "edge": 0.4809,
+      "dk_odds": "+105",
+      "kelly_stake": "10.2%",
       "tier": "Elite Pick"
     },
     {
@@ -21,10 +21,10 @@
       "bet": "India ML",
       "type": "Match Winner",
       "model_prob": 0.6903,
-      "implied_prob": 0.5807,
-      "edge": 0.1096,
-      "dk_odds": "-160",
-      "kelly_stake": "3.8%",
+      "implied_prob": 0.5505,
+      "edge": 0.1398,
+      "dk_odds": "-140",
+      "kelly_stake": "4.3%",
       "tier": "Elite Pick"
     }
   ]
