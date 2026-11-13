@@ -1,13 +1,13 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-11-12T14:54:43.064134+00:00",
+    "generated_at": "2026-11-13T14:19:26.575979+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-11-12",
+      "game_date": "2026-11-13",
       "game": "Australia vs England",
       "game_time": "",
       "bet_type": "Match Winner",
@@ -19,7 +19,7 @@
       "notes": "Kelly stake: 10.2%"
     },
     {
-      "game_date": "2026-11-12",
+      "game_date": "2026-11-13",
       "game": "New Zealand vs India",
       "game_time": "",
       "bet_type": "Match Winner",
