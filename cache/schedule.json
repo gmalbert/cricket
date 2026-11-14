@@ -1,8 +1,45 @@
 {
-  "generated_at": "2026-11-13T14:19:23.427340+00:00",
-  "source_run_id": "88a81fc8-8b8c-4e61-8e1b-0b77549d103d",
+  "generated_at": "2026-11-14T13:19:48.932481+00:00",
+  "source_run_id": "f4aa073c-c4df-48a1-be40-112db5062b6b",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
-  "data": []
+  "data": [
+    {
+      "match_id": "a9df6e8486f9174c7cc08df31222f666",
+      "team1": "New Zealand",
+      "team2": "India",
+      "venue": "",
+      "city": "",
+      "time": "2026-11-15T02:00:00Z",
+      "scheduled_start": "2026-11-15T02:00:00Z",
+      "status": "Scheduled from DraftKings market",
+      "matchStarted": false,
+      "matchEnded": false,
+      "competition": "odi_internationals",
+      "competition_name": "ODI internationals",
+      "format": "ODI",
+      "gender": "male",
+      "fixture_source": "odds_api",
+      "fixture_status": "provisional"
+    },
+    {
+      "match_id": "222b84cefb9137eba82dfde26bfdf4f5",
+      "team1": "Australia",
+      "team2": "England",
+      "venue": "",
+      "city": "",
+      "time": "2026-11-15T03:30:00Z",
+      "scheduled_start": "2026-11-15T03:30:00Z",
+      "status": "Scheduled from DraftKings market",
+      "matchStarted": false,
+      "matchEnded": false,
+      "competition": "odi_internationals",
+      "competition_name": "ODI internationals",
+      "format": "ODI",
+      "gender": "male",
+      "fixture_source": "odds_api",
+      "fixture_status": "provisional"
+    }
+  ]
 }
