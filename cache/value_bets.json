@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-15T13:44:14.229583+00:00",
-  "source_run_id": "33f696fd-6b76-4e2e-9bca-576c46fa940d",
+  "generated_at": "2026-11-16T15:18:35.352049+00:00",
+  "source_run_id": "aec706ba-c225-4fe9-9e18-63502ffded6d",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -9,11 +9,11 @@
       "match": "Australia vs England",
       "bet": "England ML",
       "type": "Match Winner",
-      "model_prob": 0.9401,
-      "implied_prob": 0.4737,
-      "edge": 0.4664,
-      "dk_odds": "+100",
-      "kelly_stake": "10.5%",
+      "model_prob": 0.9761,
+      "implied_prob": 0.4495,
+      "edge": 0.5266,
+      "dk_odds": "+110",
+      "kelly_stake": "10.7%",
       "tier": "Elite Pick"
     }
   ]
