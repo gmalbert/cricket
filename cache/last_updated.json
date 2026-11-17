@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-11-16T15:18:35.568664+00:00",
-  "source_run_id": "aec706ba-c225-4fe9-9e18-63502ffded6d",
+  "generated_at": "2026-11-17T15:45:31.744917+00:00",
+  "source_run_id": "0b854e0c-577a-499f-940d-3ed6e065265f",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
-    "timestamp": "2026-11-16T15:18:35.568655+00:00",
-    "run_id": "aec706ba-c225-4fe9-9e18-63502ffded6d",
-    "matches_count": 99,
+    "timestamp": "2026-11-17T15:45:31.744906+00:00",
+    "run_id": "0b854e0c-577a-499f-940d-3ed6e065265f",
+    "matches_count": 2,
     "props_count": 0,
     "value_bets_count": 1,
     "monte_carlo_sims": 0,
     "matchup_bets_analysed": 0,
     "prediction_log_records": 0,
     "rivalry_records": 3150,
-    "match_hubs_count": 99,
+    "match_hubs_count": 2,
     "errors": {},
     "competition_status": {
       "schema_version": 1,
-      "generated_at": "2026-11-16T15:18:35.152657+00:00",
+      "generated_at": "2026-11-17T15:45:31.287187+00:00",
       "competitions": {
         "ipl_male": {
           "competition": "ipl_male",
@@ -41,7 +41,7 @@
           "qualifying_bets": 1,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152491+00:00"
+          "updated_at": "2026-11-17T15:45:31.287040+00:00"
         },
         "international_t20": {
           "competition": "international_t20",
@@ -109,14 +109,14 @@
             "completed_matches": 5849,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:17:31.731162+00:00",
+            "last_update": "2026-11-17T15:44:14.786923+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152520+00:00"
+          "updated_at": "2026-11-17T15:45:31.287061+00:00"
         },
         "odi_internationals": {
           "competition": "odi_internationals",
@@ -191,24 +191,26 @@
             "completed_matches": 3237,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:17:45.298812+00:00",
+            "last_update": "2026-11-17T15:44:33.583587+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "model_not_ready",
           "status": "model_not_ready",
-          "updated_at": "2026-11-16T15:18:35.152537+00:00"
+          "updated_at": "2026-11-17T15:45:31.287075+00:00"
         },
         "big_bash": {
           "competition": "big_bash",
           "competition_name": "Big Bash League",
           "format": "T20",
           "gender": "male",
-          "fixtures_found": false,
-          "fixtures_count": 0,
+          "fixtures_found": true,
+          "fixtures_count": 1,
           "provisional_fixtures": 0,
-          "fixture_sources": [],
+          "fixture_sources": [
+            "cricketdata"
+          ],
           "odds_found": true,
           "draftkings_available": false,
           "draftkings_events": 0,
@@ -236,14 +238,14 @@
             "completed_matches": 662,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:17:48.950240+00:00",
+            "last_update": "2026-11-17T15:44:38.238279+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
-          "reason": "no_fixtures",
-          "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152550+00:00"
+          "reason": "no_draftkings_market",
+          "status": "no_draftkings_market",
+          "updated_at": "2026-11-17T15:45:31.287091+00:00"
         },
         "psl": {
           "competition": "psl",
@@ -278,14 +280,14 @@
             "completed_matches": 357,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:17:51.548422+00:00",
+            "last_update": "2026-11-17T15:44:41.159327+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152564+00:00"
+          "updated_at": "2026-11-17T15:45:31.287102+00:00"
         },
         "cpl": {
           "competition": "cpl",
@@ -322,26 +324,24 @@
             "completed_matches": 445,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:17:54.482830+00:00",
+            "last_update": "2026-11-17T15:44:44.437892+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152576+00:00"
+          "updated_at": "2026-11-17T15:45:31.287113+00:00"
         },
         "t20_world_cup": {
           "competition": "t20_world_cup",
           "competition_name": "ICC T20 World Cup",
           "format": "T20",
           "gender": "male",
-          "fixtures_found": true,
-          "fixtures_count": 41,
+          "fixtures_found": false,
+          "fixtures_count": 0,
           "provisional_fixtures": 0,
-          "fixture_sources": [
-            "cricketdata"
-          ],
+          "fixture_sources": [],
           "odds_found": false,
           "draftkings_available": false,
           "draftkings_events": 0,
@@ -367,26 +367,24 @@
             "completed_matches": 320,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:17:57.649832+00:00",
+            "last_update": "2026-11-17T15:44:48.472720+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
-          "reason": "no_draftkings_market",
-          "status": "no_draftkings_market",
-          "updated_at": "2026-11-16T15:18:35.152590+00:00"
+          "reason": "no_fixtures",
+          "status": "no_fixtures",
+          "updated_at": "2026-11-17T15:45:31.287123+00:00"
         },
         "odi_world_cup": {
           "competition": "odi_world_cup",
           "competition_name": "ICC World Cup",
           "format": "ODI",
           "gender": "male",
-          "fixtures_found": true,
-          "fixtures_count": 57,
+          "fixtures_found": false,
+          "fixtures_count": 0,
           "provisional_fixtures": 0,
-          "fixture_sources": [
-            "cricketdata"
-          ],
+          "fixture_sources": [],
           "odds_found": false,
           "draftkings_available": false,
           "draftkings_events": 0,
@@ -449,14 +447,14 @@
             "completed_matches": 3237,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:18:11.397258+00:00",
+            "last_update": "2026-11-17T15:45:07.117630+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
-          "reason": "no_draftkings_market",
-          "status": "no_draftkings_market",
-          "updated_at": "2026-11-16T15:18:35.152610+00:00"
+          "reason": "no_fixtures",
+          "status": "no_fixtures",
+          "updated_at": "2026-11-17T15:45:31.287138+00:00"
         },
         "mlc": {
           "competition": "mlc",
@@ -483,14 +481,14 @@
             "completed_matches": 109,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:18:13.060368+00:00",
+            "last_update": "2026-11-17T15:45:08.722663+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152620+00:00"
+          "updated_at": "2026-11-17T15:45:31.287148+00:00"
         },
         "lanka_premier_league": {
           "competition": "lanka_premier_league",
@@ -519,14 +517,14 @@
             "completed_matches": 143,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:18:15.069061+00:00",
+            "last_update": "2026-11-17T15:45:10.516545+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152630+00:00"
+          "updated_at": "2026-11-17T15:45:31.287157+00:00"
         },
         "test_matches": {
           "competition": "test_matches",
@@ -599,14 +597,14 @@
             "completed_matches": 923,
             "team_identity_rate": 1.0,
             "player_identity_rate": 1.0,
-            "last_update": "2026-11-16T15:18:23.244696+00:00",
+            "last_update": "2026-11-17T15:45:20.674251+00:00",
             "ready": true
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152638+00:00"
+          "updated_at": "2026-11-17T15:45:31.287165+00:00"
         },
         "womens_bbl": {
           "competition": "womens_bbl",
@@ -628,14 +626,14 @@
             "completed_matches": 0,
             "team_identity_rate": 0.0,
             "player_identity_rate": 0.0,
-            "last_update": "2026-11-16T15:18:23.861534+00:00",
+            "last_update": "2026-11-17T15:45:21.166999+00:00",
             "ready": false
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152647+00:00"
+          "updated_at": "2026-11-17T15:45:31.287175+00:00"
         },
         "womens_international_t20": {
           "competition": "womens_international_t20",
@@ -657,14 +655,14 @@
             "completed_matches": 0,
             "team_identity_rate": 0.0,
             "player_identity_rate": 0.0,
-            "last_update": "2026-11-16T15:18:24.211218+00:00",
+            "last_update": "2026-11-17T15:45:21.666242+00:00",
             "ready": false
           },
           "model_ready": false,
           "qualifying_bets": 0,
           "reason": "no_fixtures",
           "status": "no_fixtures",
-          "updated_at": "2026-11-16T15:18:35.152655+00:00"
+          "updated_at": "2026-11-17T15:45:31.287184+00:00"
         }
       }
     }
