@@ -1,22 +1,22 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-11-16T15:18:38.314531+00:00",
+    "generated_at": "2026-11-17T15:45:33.961897+00:00",
     "model_version": "1.0.0",
     "season": "2026"
   },
   "bets": [
     {
-      "game_date": "2026-11-16",
+      "game_date": "2026-11-17",
       "game": "Australia vs England",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "England ML",
-      "confidence": 0.9761,
-      "edge": 0.5266,
-      "odds": 110,
+      "confidence": 0.9401,
+      "edge": 0.4809,
+      "odds": 105,
       "tier": "Elite",
-      "notes": "Kelly stake: 10.7%"
+      "notes": "Kelly stake: 10.2%"
     }
   ]
 }
