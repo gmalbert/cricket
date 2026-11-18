@@ -1,47 +1,8 @@
 {
-  "generated_at": "2026-11-17T15:45:31.506767+00:00",
-  "source_run_id": "0b854e0c-577a-499f-940d-3ed6e065265f",
+  "generated_at": "2026-11-18T15:24:52.486089+00:00",
+  "source_run_id": "d20b07e2-a8e9-4f17-9963-ca01e71071fe",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
-  "data": [
-    {
-      "match_id": "127588b2-a969-4fe5-9a56-72bbe279d40f",
-      "team1": "Adelaide Strikers Women",
-      "team2": "Sydney Sixers Women",
-      "venue": "Karen Rolton Oval, Adelaide, South Australia",
-      "time": "00:00 IST",
-      "status": "Sydney Sixers Women won by 9 wkts",
-      "toss_winner": null,
-      "toss_decision": null,
-      "matchStarted": true,
-      "matchEnded": true,
-      "competition": "big_bash",
-      "competition_name": "Big Bash League",
-      "format": "T20",
-      "gender": "male",
-      "scheduled_start": "2026-11-17T08:10:00",
-      "city": "",
-      "fixture_source": "cricketdata",
-      "fixture_status": "confirmed"
-    },
-    {
-      "match_id": "1857a397f60bb0fe3a442a8dc14e9fbc",
-      "team1": "Australia",
-      "team2": "England",
-      "venue": "",
-      "city": "",
-      "time": "2026-11-18T03:30:00Z",
-      "scheduled_start": "2026-11-18T03:30:00Z",
-      "status": "Scheduled from DraftKings market",
-      "matchStarted": false,
-      "matchEnded": false,
-      "competition": "odi_internationals",
-      "competition_name": "ODI internationals",
-      "format": "ODI",
-      "gender": "male",
-      "fixture_source": "odds_api",
-      "fixture_status": "provisional"
-    }
-  ]
+  "data": []
 }
