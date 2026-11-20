@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-19T15:32:06.165389+00:00",
-  "source_run_id": "d728f174-b666-43bf-982f-547a58b65c2f",
+  "generated_at": "2026-11-20T15:10:33.252230+00:00",
+  "source_run_id": "a3fa48d0-2559-409c-8760-dd5413844076",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-19T15:32:05.979060+00:00",
+    "generated_at": "2026-11-20T15:10:32.873956+00:00",
     "matches": {
       "88effd7d2c1313bf6c1de12f924f149d": {
         "match": {
@@ -18,14 +18,14 @@
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.9856,
-          "team2_win_prob": 0.0144,
+          "team1_win_prob": 0.0599,
+          "team2_win_prob": 0.9401,
           "predicted_total": null,
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.5263,
-          "team2_implied_prob": 0.4737,
+          "team1_implied_prob": 0.4737,
+          "team2_implied_prob": 0.5263,
           "total_line": null
         },
         "venue": {},
@@ -36,8 +36,130 @@
           "windspeed": null
         },
         "team_form": {
-          "team1": [],
-          "team2": []
+          "team1": [
+            {
+              "match_id": 1525661,
+              "date": "2026-10-27",
+              "innings": 4,
+              "opponent": "South Africa",
+              "result": "W",
+              "score": 429,
+              "opp_score": 329,
+              "wickets": 10,
+              "powerplay_runs": 40,
+              "death_economy": 7.5
+            },
+            {
+              "match_id": 1525661,
+              "date": "2026-10-27",
+              "innings": 2,
+              "opponent": "South Africa",
+              "result": "W",
+              "score": 429,
+              "opp_score": 329,
+              "wickets": 10,
+              "powerplay_runs": 40,
+              "death_economy": 7.5
+            },
+            {
+              "match_id": 1525660,
+              "date": "2026-10-18",
+              "innings": 3,
+              "opponent": "South Africa",
+              "result": "L",
+              "score": 99,
+              "opp_score": 425,
+              "wickets": 10,
+              "powerplay_runs": 24,
+              "death_economy": 3.25
+            },
+            {
+              "match_id": 1525660,
+              "date": "2026-10-18",
+              "innings": 2,
+              "opponent": "South Africa",
+              "result": "L",
+              "score": 99,
+              "opp_score": 425,
+              "wickets": 10,
+              "powerplay_runs": 24,
+              "death_economy": 3.25
+            },
+            {
+              "match_id": 1525659,
+              "date": "2026-10-09",
+              "innings": 3,
+              "opponent": "South Africa",
+              "result": "W",
+              "score": 390,
+              "opp_score": 284,
+              "wickets": 6,
+              "powerplay_runs": 36,
+              "death_economy": 12.0
+            }
+          ],
+          "team2": [
+            {
+              "match_id": 1496584,
+              "date": "2026-09-09",
+              "innings": 4,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 453,
+              "opp_score": 133,
+              "wickets": 2,
+              "powerplay_runs": 43,
+              "death_economy": 11.25
+            },
+            {
+              "match_id": 1496584,
+              "date": "2026-09-09",
+              "innings": 2,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 453,
+              "opp_score": 133,
+              "wickets": 10,
+              "powerplay_runs": 43,
+              "death_economy": 11.25
+            },
+            {
+              "match_id": 1496583,
+              "date": "2026-08-27",
+              "innings": 3,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 290,
+              "opp_score": 110,
+              "wickets": 10,
+              "powerplay_runs": 42,
+              "death_economy": 13.0
+            },
+            {
+              "match_id": 1496583,
+              "date": "2026-08-27",
+              "innings": 1,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 290,
+              "opp_score": 110,
+              "wickets": 10,
+              "powerplay_runs": 42,
+              "death_economy": 13.0
+            },
+            {
+              "match_id": 1496582,
+              "date": "2026-08-19",
+              "innings": 2,
+              "opponent": "Pakistan",
+              "result": "W",
+              "score": 409,
+              "opp_score": 171,
+              "wickets": 10,
+              "powerplay_runs": 27,
+              "death_economy": 9.0
+            }
+          ]
         },
         "key_rivalries": [],
         "top_props": [],
