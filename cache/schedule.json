@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-21T14:28:09.133222+00:00",
-  "source_run_id": "791f8f8d-973b-40b5-b1fe-dbe10cd58fa2",
+  "generated_at": "2026-11-22T14:22:11.636105+00:00",
+  "source_run_id": "03d7d2bd-7193-412e-a132-ba7f6650a24c",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match_id": "137259d7-7a59-4ce4-9a5e-3add8dc7875c",
-      "team1": "Australia",
-      "team2": "England",
-      "venue": "Melbourne Cricket Ground, Melbourne",
+      "match_id": "8e97677f-1eae-440e-bb87-d0c6153c4c84",
+      "team1": "Malaysia Women",
+      "team2": "China Women",
+      "venue": "Bayuemas Oval, Kuala Lumpur",
       "time": "00:00 IST",
-      "status": "Australia won by 3 wkts",
+      "status": "Malaysia Women won by 6 wkts",
       "toss_winner": null,
       "toss_decision": null,
       "matchStarted": true,
@@ -20,10 +20,28 @@
       "competition_name": "International T20",
       "format": "T20",
       "gender": "male",
-      "scheduled_start": "2026-11-21T08:15:00",
+      "scheduled_start": "2026-11-22T02:00:00",
       "city": "",
       "fixture_source": "cricketdata",
       "fixture_status": "confirmed"
+    },
+    {
+      "match_id": "f12fd193b66e5e9edc78f21d5ebee872",
+      "team1": "Australia",
+      "team2": "England",
+      "venue": "",
+      "city": "",
+      "time": "2026-11-24T08:15:00Z",
+      "scheduled_start": "2026-11-24T08:15:00Z",
+      "status": "Scheduled from DraftKings market",
+      "matchStarted": false,
+      "matchEnded": false,
+      "competition": "international_t20",
+      "competition_name": "International T20",
+      "format": "T20",
+      "gender": "male",
+      "fixture_source": "odds_api",
+      "fixture_status": "provisional"
     }
   ]
 }

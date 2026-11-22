@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-21T14:28:09.374223+00:00",
-  "source_run_id": "791f8f8d-973b-40b5-b1fe-dbe10cd58fa2",
+  "generated_at": "2026-11-22T14:22:11.809854+00:00",
+  "source_run_id": "03d7d2bd-7193-412e-a132-ba7f6650a24c",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-21T14:28:08.917156+00:00",
+    "generated_at": "2026-11-22T14:22:11.486439+00:00",
     "matches": {
-      "137259d7-7a59-4ce4-9a5e-3add8dc7875c": {
+      "8e97677f-1eae-440e-bb87-d0c6153c4c84": {
         "match": {
-          "match_id": "137259d7-7a59-4ce4-9a5e-3add8dc7875c",
-          "team1": "Australia",
-          "team2": "England",
-          "venue": "Melbourne Cricket Ground, Melbourne",
+          "match_id": "8e97677f-1eae-440e-bb87-d0c6153c4c84",
+          "team1": "Malaysia Women",
+          "team2": "China Women",
+          "venue": "Bayuemas Oval, Kuala Lumpur",
           "time": "00:00 IST",
           "status": null
         },
@@ -28,12 +28,55 @@
           "team2_implied_prob": null,
           "total_line": null
         },
-        "venue": {},
+        "venue": {
+          "avg_first_innings": 230.0,
+          "chase_win_rate": 0.0
+        },
         "weather": {
           "temperature": 28,
           "humidity": 60,
           "dew_flag": false,
           "windspeed": 10
+        },
+        "team_form": {
+          "team1": [],
+          "team2": []
+        },
+        "key_rivalries": [],
+        "top_props": [],
+        "data_status": {
+          "fixtures": "available",
+          "odds": "unavailable",
+          "weather": "available",
+          "rivalries": "unavailable"
+        }
+      },
+      "f12fd193b66e5e9edc78f21d5ebee872": {
+        "match": {
+          "match_id": "f12fd193b66e5e9edc78f21d5ebee872",
+          "team1": "Australia",
+          "team2": "England",
+          "venue": "",
+          "time": "2026-11-24T08:15:00Z",
+          "status": null
+        },
+        "prediction": {
+          "team1_win_prob": 0.0599,
+          "team2_win_prob": 0.9401,
+          "predicted_total": null,
+          "predicted_first_innings": null
+        },
+        "market": {
+          "team1_implied_prob": 0.5203,
+          "team2_implied_prob": 0.4797,
+          "total_line": null
+        },
+        "venue": {},
+        "weather": {
+          "temperature": null,
+          "humidity": null,
+          "dew_flag": false,
+          "windspeed": null
         },
         "team_form": {
           "team1": [
@@ -166,7 +209,7 @@
         "data_status": {
           "fixtures": "available",
           "odds": "unavailable",
-          "weather": "available",
+          "weather": "unavailable",
           "rivalries": "unavailable"
         }
       }

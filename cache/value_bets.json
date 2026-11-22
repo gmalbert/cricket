@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-21T00:47:35.786727+00:00",
-  "source_run_id": "ed68e9b2-06a1-413e-ad6a-c62382b7ca7b",
+  "generated_at": "2026-11-22T14:22:11.628301+00:00",
+  "source_run_id": "03d7d2bd-7193-412e-a132-ba7f6650a24c",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
@@ -10,10 +10,10 @@
       "bet": "England ML",
       "type": "Match Winner",
       "model_prob": 0.9401,
-      "implied_prob": 0.5,
-      "edge": 0.4401,
-      "dk_odds": "-115",
-      "kelly_stake": "11.0%",
+      "implied_prob": 0.4797,
+      "edge": 0.4604,
+      "dk_odds": "-105",
+      "kelly_stake": "10.6%",
       "tier": "Elite Pick"
     }
   ]
