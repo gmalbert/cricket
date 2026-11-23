@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-22T14:22:11.488985+00:00",
-  "source_run_id": "03d7d2bd-7193-412e-a132-ba7f6650a24c",
+  "generated_at": "2026-11-23T17:45:33.727783+00:00",
+  "source_run_id": "970fc755-4c56-4f3e-8c1b-e76581f4fa08",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": [
     {
-      "match_id": "8e97677f-1eae-440e-bb87-d0c6153c4c84",
+      "match_id": "cc5fbd79-6d33-4ae8-be50-5be987be9110",
       "team1": "Malaysia Women",
-      "team2": "China Women",
+      "team2": "Indonesia Women",
       "venue": "Bayuemas Oval, Kuala Lumpur",
       "time": "00:00 IST",
       "toss_winner": null,
@@ -64,7 +64,7 @@
       "edge_team2": 0.4604,
       "dk_odds_team1": -125,
       "dk_odds_team2": -105,
-      "odds_timestamp": "2026-11-22T14:21:49Z",
+      "odds_timestamp": "2026-11-23T17:44:47Z",
       "odds_event_id": "f12fd193b66e5e9edc78f21d5ebee872",
       "odds_bookmaker": "draftkings",
       "odds_market": "h2h",
