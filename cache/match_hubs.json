@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-11-23T17:45:34.106371+00:00",
-  "source_run_id": "970fc755-4c56-4f3e-8c1b-e76581f4fa08",
+  "generated_at": "2026-11-24T17:17:15.043176+00:00",
+  "source_run_id": "8becefac-6091-4837-be50-4761f131e860",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-23T17:45:33.724132+00:00",
+    "generated_at": "2026-11-24T17:17:14.764308+00:00",
     "matches": {
-      "cc5fbd79-6d33-4ae8-be50-5be987be9110": {
+      "55d8876a-0e3e-44df-9826-dece3fe4d219": {
         "match": {
-          "match_id": "cc5fbd79-6d33-4ae8-be50-5be987be9110",
-          "team1": "Malaysia Women",
+          "match_id": "55d8876a-0e3e-44df-9826-dece3fe4d219",
+          "team1": "China Women",
           "team2": "Indonesia Women",
           "venue": "Bayuemas Oval, Kuala Lumpur",
           "time": "00:00 IST",
           "status": null
         },
         "prediction": {
-          "team1_win_prob": 0.0599,
-          "team2_win_prob": 0.9401,
+          "team1_win_prob": 0.9856,
+          "team2_win_prob": 0.0144,
           "predicted_total": null,
           "predicted_first_innings": null
         },
@@ -48,168 +48,6 @@
           "fixtures": "available",
           "odds": "unavailable",
           "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
-      "f12fd193b66e5e9edc78f21d5ebee872": {
-        "match": {
-          "match_id": "f12fd193b66e5e9edc78f21d5ebee872",
-          "team1": "Australia",
-          "team2": "England",
-          "venue": "",
-          "time": "2026-11-24T08:15:00Z",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.0599,
-          "team2_win_prob": 0.9401,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": 0.5203,
-          "team2_implied_prob": 0.4797,
-          "total_line": null
-        },
-        "venue": {},
-        "weather": {
-          "temperature": null,
-          "humidity": null,
-          "dew_flag": false,
-          "windspeed": null
-        },
-        "team_form": {
-          "team1": [
-            {
-              "match_id": 1525661,
-              "date": "2026-10-27",
-              "innings": 4,
-              "opponent": "South Africa",
-              "result": "W",
-              "score": 429,
-              "opp_score": 329,
-              "wickets": 10,
-              "powerplay_runs": 40,
-              "death_economy": 7.5
-            },
-            {
-              "match_id": 1525661,
-              "date": "2026-10-27",
-              "innings": 2,
-              "opponent": "South Africa",
-              "result": "W",
-              "score": 429,
-              "opp_score": 329,
-              "wickets": 10,
-              "powerplay_runs": 40,
-              "death_economy": 7.5
-            },
-            {
-              "match_id": 1525660,
-              "date": "2026-10-18",
-              "innings": 3,
-              "opponent": "South Africa",
-              "result": "L",
-              "score": 99,
-              "opp_score": 425,
-              "wickets": 10,
-              "powerplay_runs": 24,
-              "death_economy": 3.25
-            },
-            {
-              "match_id": 1525660,
-              "date": "2026-10-18",
-              "innings": 2,
-              "opponent": "South Africa",
-              "result": "L",
-              "score": 99,
-              "opp_score": 425,
-              "wickets": 10,
-              "powerplay_runs": 24,
-              "death_economy": 3.25
-            },
-            {
-              "match_id": 1525659,
-              "date": "2026-10-09",
-              "innings": 3,
-              "opponent": "South Africa",
-              "result": "W",
-              "score": 390,
-              "opp_score": 284,
-              "wickets": 6,
-              "powerplay_runs": 36,
-              "death_economy": 12.0
-            }
-          ],
-          "team2": [
-            {
-              "match_id": 1496584,
-              "date": "2026-09-09",
-              "innings": 4,
-              "opponent": "Pakistan",
-              "result": "W",
-              "score": 453,
-              "opp_score": 133,
-              "wickets": 2,
-              "powerplay_runs": 43,
-              "death_economy": 11.25
-            },
-            {
-              "match_id": 1496584,
-              "date": "2026-09-09",
-              "innings": 2,
-              "opponent": "Pakistan",
-              "result": "W",
-              "score": 453,
-              "opp_score": 133,
-              "wickets": 10,
-              "powerplay_runs": 43,
-              "death_economy": 11.25
-            },
-            {
-              "match_id": 1496583,
-              "date": "2026-08-27",
-              "innings": 3,
-              "opponent": "Pakistan",
-              "result": "W",
-              "score": 290,
-              "opp_score": 110,
-              "wickets": 10,
-              "powerplay_runs": 42,
-              "death_economy": 13.0
-            },
-            {
-              "match_id": 1496583,
-              "date": "2026-08-27",
-              "innings": 1,
-              "opponent": "Pakistan",
-              "result": "W",
-              "score": 290,
-              "opp_score": 110,
-              "wickets": 10,
-              "powerplay_runs": 42,
-              "death_economy": 13.0
-            },
-            {
-              "match_id": 1496582,
-              "date": "2026-08-19",
-              "innings": 2,
-              "opponent": "Pakistan",
-              "result": "W",
-              "score": 409,
-              "opp_score": 171,
-              "wickets": 10,
-              "powerplay_runs": 27,
-              "death_economy": 9.0
-            }
-          ]
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "unavailable",
           "rivalries": "unavailable"
         }
       }
