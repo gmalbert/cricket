@@ -1,56 +1,13 @@
 {
-  "generated_at": "2026-11-25T16:59:41.370282+00:00",
-  "source_run_id": "be8b8270-8a2b-47a3-81d2-982d45825b71",
+  "generated_at": "2026-11-26T16:39:25.965403+00:00",
+  "source_run_id": "9c2a339f-8039-4a78-9f7f-6835b1410e3e",
   "source_status": "ready",
   "schema_version": 1,
   "is_mock": false,
   "data": {
     "schema_version": 1,
-    "generated_at": "2026-11-25T16:59:40.993840+00:00",
+    "generated_at": "2026-11-26T16:39:25.683692+00:00",
     "matches": {
-      "20c5f3c7-3f93-46c7-a445-e4bcb2322ab4": {
-        "match": {
-          "match_id": "20c5f3c7-3f93-46c7-a445-e4bcb2322ab4",
-          "team1": "Malaysia Women",
-          "team2": "China Women",
-          "venue": "Bayuemas Oval, Kuala Lumpur",
-          "time": "00:00 IST",
-          "status": null
-        },
-        "prediction": {
-          "team1_win_prob": 0.0599,
-          "team2_win_prob": 0.9401,
-          "predicted_total": null,
-          "predicted_first_innings": null
-        },
-        "market": {
-          "team1_implied_prob": null,
-          "team2_implied_prob": null,
-          "total_line": null
-        },
-        "venue": {
-          "avg_first_innings": 230.0,
-          "chase_win_rate": 0.0
-        },
-        "weather": {
-          "temperature": 28,
-          "humidity": 60,
-          "dew_flag": false,
-          "windspeed": 10
-        },
-        "team_form": {
-          "team1": [],
-          "team2": []
-        },
-        "key_rivalries": [],
-        "top_props": [],
-        "data_status": {
-          "fixtures": "available",
-          "odds": "unavailable",
-          "weather": "available",
-          "rivalries": "unavailable"
-        }
-      },
       "0d80ad8d9a13dd3db51a952c7e2d19f4": {
         "match": {
           "match_id": "0d80ad8d9a13dd3db51a952c7e2d19f4",
@@ -67,8 +24,8 @@
           "predicted_first_innings": null
         },
         "market": {
-          "team1_implied_prob": 0.4495,
-          "team2_implied_prob": 0.5505,
+          "team1_implied_prob": 0.4737,
+          "team2_implied_prob": 0.5263,
           "total_line": null
         },
         "venue": {},
